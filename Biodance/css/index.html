@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>바이오던스리뉴얼포트폴리오</title>
-    <link rel="stylesheet" href="../css/default.css">
-    <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../font/css/pretendardvariable.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="../npm/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../font/css/pretendardvariable.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="../../npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -31,12 +31,16 @@
                         </div>
                     </div>
 
+                    <!-- Figma Hero controls: current / progress line / total / arrows -->
                     <div class="hero-controls">
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-scrollbar"></div>
+                        <div class="hero-pagination" aria-label="배너 진행 상태">
+                            <span class="hero-pagination-current">01</span>
+                            <div class="swiper-scrollbar" aria-label="배너 진행 막대"></div>
+                            <span class="hero-pagination-total">03</span>
+                        </div>
                         <div class="hero-navigation">
-                            <div class="swiper-button-prev" aria-label="이전 배너"></div>
-                            <div class="swiper-button-next" aria-label="다음 배너"></div>
+                            <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
+                            <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
                         </div>
                     </div>
                 </div>
@@ -45,15 +49,20 @@
         <footer>&copy;</footer>
     </div>
     <script>
+        function updateHeroCounter(swiper) {
+            const current = document.querySelector('.hero-pagination-current');
+            const total = document.querySelector('.hero-pagination-total');
+            const slideCount = swiper.slides.filter(
+                slide => !slide.classList.contains('swiper-slide-duplicate')
+            ).length;
+
+            current.textContent = String(swiper.realIndex + 1).padStart(2, '0');
+            total.textContent = String(slideCount).padStart(2, '0');
+        }
+
         const swiperHero = new Swiper('.hero-sec > .swiper', {
             direction: 'horizontal',
             loop: true,
-            pagination: {
-                el: '.visual .swiper-pagination',
-                type: 'fraction',
-                formatFractionCurrent: number => String(number).padStart(2, '0'),
-                formatFractionTotal: number => String(number).padStart(2, '0'),
-            },
             navigation: {
                 nextEl: '.visual .swiper-button-next',
                 prevEl: '.visual .swiper-button-prev',
@@ -61,6 +70,10 @@
             scrollbar: {
                 el: '.visual .swiper-scrollbar',
                 draggable: true,
+            },
+            on: {
+                init: updateHeroCounter,
+                slideChange: updateHeroCounter,
             },
         });
     </script>
