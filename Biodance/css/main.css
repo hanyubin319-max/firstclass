@@ -66,71 +66,70 @@ body {
     object-fit: cover;
 }
 
-/* Banner controls: fraction + progress bar + circular arrows */
+/* Figma Hero controls: 01 — progress line — 03 — chevron arrows */
 .hero-sec .hero-controls {
     position: absolute;
     z-index: 5;
-    left: 50%;
-    bottom: 22px;
-    transform: translateX(-50%);
-    width: calc(100% - 120px);
-    max-width: 1720px;
+    left: max(20px, calc((100% - 1504px) / 2));
+    bottom: 18px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 7px;
+    width: 375px;
+    height: 36px;
     color: var(--neutral-charcoal);
 }
 
-.hero-sec .hero-controls .swiper-pagination {
-    position: static;
-    width: auto;
-    flex: 0 0 auto;
+.hero-sec .hero-pagination {
     display: flex;
-    align-items: baseline;
-    gap: 5px;
-    color: var(--neutral-charcoal);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 0 1 313px;
+    min-width: 0;
+    height: 36px;
+    padding: 8px 0;
+    box-sizing: border-box;
     font-family: var(--font-primary);
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 1;
-    letter-spacing: .02em;
-}
-
-.hero-sec .hero-controls .swiper-pagination-current {
     color: var(--neutral-charcoal);
-    font-size: 16px;
-    font-weight: 700;
 }
 
-.hero-sec .hero-controls .swiper-pagination-total {
-    color: var(--neutral-gray);
-    font-size: 13px;
-    font-weight: 500;
+.hero-sec .hero-pagination-current,
+.hero-sec .hero-pagination-total {
+    flex: 0 0 auto;
+    white-space: nowrap;
 }
 
-.hero-sec .hero-controls .swiper-scrollbar {
+.hero-sec .hero-pagination .swiper-scrollbar {
     position: relative;
     inset: auto;
-    width: auto;
-    height: 3px;
     flex: 1 1 auto;
-    min-width: 30px;
-    border-radius: 999px;
-    background: rgba(41, 41, 41, .18);
+    width: auto;
+    min-width: 24px;
+    height: 1px;
+    margin: 0;
+    border-radius: 0;
+    background: var(--neutral-border-gray);
     cursor: grab;
 }
 
-.hero-sec .hero-controls .swiper-scrollbar-drag {
-    height: 100%;
-    border-radius: 999px;
-    background: var(--brand-rose);
+.hero-sec .hero-pagination .swiper-scrollbar-drag {
+    height: 1px;
+    border-radius: 0;
+    background: var(--neutral-charcoal);
 }
 
 .hero-sec .hero-navigation {
     display: flex;
     align-items: center;
-    gap: 8px;
-    flex: 0 0 auto;
+    justify-content: space-between;
+    gap: 7px;
+    flex: 0 0 55px;
+    width: 55px;
+    height: 24px;
 }
 
 .hero-sec .hero-navigation .swiper-button-prev,
@@ -138,26 +137,26 @@ body {
     position: static;
     inset: auto;
     display: flex;
-    width: 36px;
-    height: 36px;
-    margin: 0;
-    padding: 0;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(41, 41, 41, .25);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .88);
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     color: var(--neutral-charcoal);
     cursor: pointer;
-    transition: background-color .2s ease, border-color .2s ease, color .2s ease;
 }
 
 .hero-sec .hero-navigation .swiper-button-prev::after,
 .hero-sec .hero-navigation .swiper-button-next::after {
     content: "";
     display: block;
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-top: 1.5px solid currentColor;
     border-right: 1.5px solid currentColor;
     font-family: inherit;
@@ -176,15 +175,13 @@ body {
 
 .hero-sec .hero-navigation .swiper-button-prev:hover,
 .hero-sec .hero-navigation .swiper-button-next:hover {
-    border-color: var(--brand-rose);
-    background: var(--brand-pink);
-    color: var(--neutral-charcoal);
+    color: var(--brand-rose);
 }
 
 .hero-sec .hero-navigation .swiper-button-prev:focus-visible,
 .hero-sec .hero-navigation .swiper-button-next:focus-visible {
     outline: 2px solid var(--brand-rose);
-    outline-offset: 3px;
+    outline-offset: 2px;
 }
 
 @media (max-width: 1024px) {
@@ -209,27 +206,19 @@ body {
     }
 
     .hero-sec .hero-controls {
+        left: 20px;
         bottom: 22px;
-        width: calc(100% - 32px);
-        gap: 12px;
+        width: min(375px, calc(100% - 40px));
+        gap: 7px;
     }
 
-    .hero-sec .hero-controls .swiper-pagination-current {
+    .hero-sec .hero-pagination {
+        gap: 8px;
         font-size: 14px;
     }
 
-    .hero-sec .hero-controls .swiper-pagination-total {
-        font-size: 12px;
-    }
-
     .hero-sec .hero-navigation {
-        gap: 6px;
-    }
-
-    .hero-sec .hero-navigation .swiper-button-prev,
-    .hero-sec .hero-navigation .swiper-button-next {
-        width: 30px;
-        height: 30px;
+        gap: 7px;
     }
 }
 
