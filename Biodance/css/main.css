@@ -1,35 +1,48 @@
 /* Figma Variables: Primitives + Semantic (Mode 1)
-   Source: kyochon Figma design / Local Variables
-   Note: neutral/border is #707070 in the current Figma file. */
+   Source: Biodance Figma file / Local Variables
+   Colors are mapped to the existing Figma variable names. */
 :root {
     /* Primitives */
-    --brand-yellow: #F8B915;
-    --brand-black: #020000;
-    --yellow-soft: #FFF0C2;
-    --neutral-ivory: #FFFDF5;
+    --brand-pink: #FFCDDB;
+    --brand-rose: #FD7E9E;
+    --teal-mint: #5AD8CC;
+    --neutral-cream: #FEFAF7;
     --neutral-white: #FFFFFF;
-    --neutral-charcoal: #333333;
-    --neutral-gray: #707070;
-    --neutral-border: #707070;
+    --neutral-charcoal: #292929;
+    --neutral-border-gray: #CFCFCF;
+    --neutral-product-gray: #F8F9FA;
+    --neutral-gray: #949494;
+    --neutral-light-gray: #F2F4F5;
+    --sale: #F8A48A;
 
     /* Semantic: aliases to Primitives */
     --bg-default: var(--neutral-white);
-    --bg-subtle: var(--neutral-ivory);
-    --bg-accent: var(--yellow-soft);
+    --bg-subtle: var(--neutral-cream);
+    --bg-accent: var(--brand-pink);
+    --bg-product-list: var(--neutral-product-gray);
+    --bg-best-products: var(--neutral-light-gray);
     --surface-default: var(--neutral-white);
-    --text-primary: var(--brand-black);
+    --surface-brand: var(--brand-pink);
+    --text-primary: var(--neutral-product-gray);
     --text-secondary: var(--neutral-charcoal);
     --text-muted: var(--neutral-gray);
-    --border-default: var(--neutral-border);
-    --action-primary: var(--brand-yellow);
-    --action-text: var(--brand-black);
-    --accent-primary: var(--brand-yellow);
+    --text-rose: var(--sale);
+    --border-default: var(--neutral-border-gray);
+    --action-primary: var(--brand-pink);
+    --action-hover: var(--teal-mint);
+    --action-active: var(--teal-mint);
+    --action-on-primary: var(--neutral-charcoal);
+    --action-on-secondary: var(--neutral-charcoal);
+    --action-brand: var(--brand-pink);
+    --action-highlight: var(--teal-mint);
+    --accent-slider-control: var(--brand-rose);
+    --accent-indicator: var(--brand-rose);
 
     --font-primary: "Pretendard Variable", sans-serif;
 }
 
 body {
-    background-color: yellow;
+    background-color: var(--bg-default);
     font-family: var(--font-primary);
 }
 .mo {
@@ -58,7 +71,7 @@ body {
         position: fixed;
         width: 100%;
         height: 60px;
-        background-color: orange;
+        background-color: var(--bg-accent);
         z-index: 10;
     }
     .hero-sec .swiper {
@@ -81,7 +94,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    color: #020000;
+    color: var(--text-secondary);
 }
 .hero-sec .hero-controls .swiper-scrollbar {
     position: relative;
@@ -94,12 +107,12 @@ body {
     flex: 1 1 auto;
     min-width: 30px;
     border-radius: 0;
-    background: rgba(2, 0, 0, .2);
+    background: rgba(41, 41, 41, .2);
 }
 .hero-sec .hero-controls .swiper-scrollbar-drag {
     height: 2px;
     border-radius: 0;
-    background: #020000;
+    background: var(--text-secondary);
 }
 .hero-sec .hero-controls .swiper-pagination {
     position: static;
@@ -108,8 +121,8 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #020000;
-    font-family: "Pretendard Variable", sans-serif;
+    color: var(--text-secondary);
+    font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 700;
     line-height: 1;
@@ -138,7 +151,7 @@ body {
     justify-content: center;
     border: 0;
     background: transparent;
-    color: #020000;
+    color: var(--text-secondary);
     cursor: pointer;
 }
 .hero-sec .hero-navigation .swiper-button-prev::after,
@@ -158,7 +171,7 @@ body {
     background-image: url("../img/swiper_next.png");
 }
 .hero-sec .hero-navigation button:focus-visible {
-    outline: 2px solid #020000;
+    outline: 2px solid var(--text-secondary);
     outline-offset: 3px;
 }
 @media (max-width: 1024px) {
