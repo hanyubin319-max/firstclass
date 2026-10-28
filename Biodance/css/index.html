@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>교촌치킨리뉴얼포트폴리오</title>
+    <title>바이오던스리뉴얼포트폴리오</title>
     <link rel="stylesheet" href="../css/default.css">
     <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../font/css/pretendardvariable.css">
-    <link rel="stylesheet" href="css/main.css">  
-    <script src="../npm/swiper/swiper-bundle.min.js"></script>  
+    <link rel="stylesheet" href="css/main.css">
+    <script src="../npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -19,24 +19,25 @@
                 <div class="swiper visual">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                        <!-- Slides -->
+                        <!-- PC Hero-1 / Mobile model-1 -->
                         <div class="swiper-slide">
-                            <img src="img/visual01.png" alt="할인배너" class="pc">
-                            <img src="img/m_visual01.png" alt="모바일할인배너" class="mo">
+                            <img src="../img/Hero-1.png" alt="바이오던스 PC 배너 1" class="pc">
+                            <img src="../img/model-1.png" alt="바이오던스 모바일 배너 1" class="mo">
                         </div>
+                        <!-- PC Hero-2 / Mobile model-2 -->
                         <div class="swiper-slide">
-                            <img src="img/visual02.png" alt="달콤고구마" class="pc">
-                            <img src="img/m_visual02.png" alt="모바일달콤고구마" class="mo">
+                            <img src="../img/Hero-2.png" alt="바이오던스 PC 배너 2" class="pc">
+                            <img src="../img/model-2.png" alt="바이오던스 모바일 배너 2" class="mo">
+                        </div>
+                        <!-- PC Hero-3 / Mobile model-3 -->
+                        <div class="swiper-slide">
+                            <img src="../img/Hero-3.png" alt="바이오던스 PC 배너 3" class="pc">
+                            <img src="../img/model-3.png" alt="바이오던스 모바일 배너 3" class="mo">
                         </div>
                     </div>
-                    <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
-
-                    <!-- If we need scrollbar -->
                     <div class="swiper-scrollbar"></div>
                 </div>
             </div>
@@ -45,22 +46,15 @@
     </div>
     <script>
         const swiperHero = new Swiper('.hero-sec > .swiper', {
-            // Optional parameters
             direction: 'horizontal',
             loop: true,
-
-            // If we need pagination
             pagination: {
                 el: '.visual .swiper-pagination',
             },
-
-            // Navigation arrows
             navigation: {
                 nextEl: '.visual .swiper-button-next',
                 prevEl: '.visual .swiper-button-prev',
             },
-
-            // And if we need scrollbar
             scrollbar: {
                 el: '.visual .swiper-scrollbar',
             },
