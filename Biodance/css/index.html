@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바이오던스</title>
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../font/css/pretendardvariable.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="../../npm/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header>바이오던스</header>
+        <main>
+            <section class="hero-sec" aria-label="바이오던스 주요 배너">
+                <div class="swiper visual">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../img/Hero-1.png" alt="바이오던스 메인 배너 1" class="pc">
+                            <img src="../img/model-1.png" alt="바이오던스 모바일 배너 1" class="mo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/Hero-2.png" alt="바이오던스 메인 배너 2" class="pc">
+                            <img src="../img/model-2.png" alt="바이오던스 모바일 배너 2" class="mo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../img/Hero-3.png" alt="바이오던스 메인 배너 3" class="pc">
+                            <img src="../img/model-3.png" alt="바이오던스 모바일 배너 3" class="mo">
+                        </div>
+                    </div>
+                    <div class="hero-controls">
+                        <div class="swiper-pagination"></div>
+                        <span class="hero-pagination-divider" aria-hidden="true"></span>
+                        <div class="swiper-scrollbar"></div>
+                        <div class="hero-navigation">
+                            <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
+                            <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>&copy; Biodance</footer>
+    </div>
+    <script>
+        const swiperHero = new Swiper('.hero-sec .visual', {
+            direction: 'horizontal',
+            loop: true,
+            pagination: {
+                el: '.visual .swiper-pagination',
+                type: 'fraction',
+            },
+            navigation: {
+                nextEl: '.visual .swiper-button-next',
+                prevEl: '.visual .swiper-button-prev',
+            },
+            scrollbar: {
+                el: '.visual .swiper-scrollbar',
+                draggable: true,
+            },
+        });
+    </script>
+</body>
+</html>
