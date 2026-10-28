@@ -1,4 +1,4 @@
-/* Biodance Figma Variables: Primitives + Semantic */
+/* Biodance Figma Variables — current local variables */
 :root {
     /* Primitives */
     --brand-pink: #FFCDDB;
@@ -13,7 +13,7 @@
     --neutral-light-gray: #F2F4F5;
     --sale: #F8A48A;
 
-    /* Semantic aliases */
+    /* Semantic variables */
     --bg-default: var(--neutral-white);
     --bg-subtle: var(--neutral-cream);
     --bg-accent: var(--brand-pink);
@@ -21,9 +21,10 @@
     --bg-best-products: var(--neutral-light-gray);
     --surface-default: var(--neutral-white);
     --surface-brand: var(--brand-pink);
-    --text-primary: var(--neutral-charcoal);
+    --text-primary: var(--neutral-product-gray);
     --text-secondary: var(--neutral-charcoal);
     --text-muted: var(--neutral-gray);
+    --text-text: var(--neutral-white);
     --text-rose: var(--sale);
     --border-default: var(--neutral-border-gray);
     --action-primary: var(--brand-pink);
@@ -35,8 +36,11 @@
     --action-highlight: var(--teal-mint);
     --accent-slider-control: var(--brand-rose);
     --accent-indicator: var(--brand-rose);
-    --font-primary: "Pretendard Variable", sans-serif;
+
+    /* Typography */
+    --font-primary: "Pretendard Variable", Pretendard, sans-serif;
 }
+
 
 body {
     background-color: var(--bg-default);
