@@ -15,30 +15,30 @@
         <header>제목공간</header>
         <main>
             <div class="hero-sec">
-                <!-- Slider main container -->
                 <div class="swiper visual">
-                    <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                        <!-- PC Hero-1 / Mobile model-1 -->
                         <div class="swiper-slide">
                             <img src="../img/Hero-1.png" alt="바이오던스 PC 배너 1" class="pc">
                             <img src="../img/model-1.png" alt="바이오던스 모바일 배너 1" class="mo">
                         </div>
-                        <!-- PC Hero-2 / Mobile model-2 -->
                         <div class="swiper-slide">
                             <img src="../img/Hero-2.png" alt="바이오던스 PC 배너 2" class="pc">
                             <img src="../img/model-2.png" alt="바이오던스 모바일 배너 2" class="mo">
                         </div>
-                        <!-- PC Hero-3 / Mobile model-3 -->
                         <div class="swiper-slide">
                             <img src="../img/Hero-3.png" alt="바이오던스 PC 배너 3" class="pc">
                             <img src="../img/model-3.png" alt="바이오던스 모바일 배너 3" class="mo">
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-scrollbar"></div>
+
+                    <div class="hero-controls">
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-scrollbar"></div>
+                        <div class="hero-navigation">
+                            <div class="swiper-button-prev" aria-label="이전 배너"></div>
+                            <div class="swiper-button-next" aria-label="다음 배너"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -50,6 +50,9 @@
             loop: true,
             pagination: {
                 el: '.visual .swiper-pagination',
+                type: 'fraction',
+                formatFractionCurrent: number => String(number).padStart(2, '0'),
+                formatFractionTotal: number => String(number).padStart(2, '0'),
             },
             navigation: {
                 nextEl: '.visual .swiper-button-next',
@@ -57,6 +60,7 @@
             },
             scrollbar: {
                 el: '.visual .swiper-scrollbar',
+                draggable: true,
             },
         });
     </script>
