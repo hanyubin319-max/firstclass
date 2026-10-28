@@ -1,0 +1,175 @@
+/* Figma Variables: Primitives + Semantic (Mode 1)
+   Source: kyochon Figma design / Local Variables
+   Note: neutral/border is #707070 in the current Figma file. */
+:root {
+    /* Primitives */
+    --brand-yellow: #F8B915;
+    --brand-black: #020000;
+    --yellow-soft: #FFF0C2;
+    --neutral-ivory: #FFFDF5;
+    --neutral-white: #FFFFFF;
+    --neutral-charcoal: #333333;
+    --neutral-gray: #707070;
+    --neutral-border: #707070;
+
+    /* Semantic: aliases to Primitives */
+    --bg-default: var(--neutral-white);
+    --bg-subtle: var(--neutral-ivory);
+    --bg-accent: var(--yellow-soft);
+    --surface-default: var(--neutral-white);
+    --text-primary: var(--brand-black);
+    --text-secondary: var(--neutral-charcoal);
+    --text-muted: var(--neutral-gray);
+    --border-default: var(--neutral-border);
+    --action-primary: var(--brand-yellow);
+    --action-text: var(--brand-black);
+    --accent-primary: var(--brand-yellow);
+
+    --font-primary: "Pretendard Variable", sans-serif;
+}
+
+body {
+    background-color: yellow;
+    font-family: var(--font-primary);
+}
+.mo {
+    display: none;
+}
+.hero-sec .swiper {
+    width: 100%;
+    height: 510px;
+}
+/* 높이를 고정하고 싶은 경우는 px값 적용 */
+/* 반응형에 따라 높이값이 점점 줄어들길 바라면 높이값 주지 않기! max-height정도는 가능 */
+.hero-sec .swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .pc {
+        display: none;
+    }
+    .mo {
+        display: block;
+    }
+    header {
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        background-color: orange;
+        z-index: 10;
+    }
+    .hero-sec .swiper {
+        height: 100dvh;
+    }
+}
+
+/* Figma Hero (20:20): 1920 × 720 / controls at y=664 */
+.hero-sec .visual {
+    position: relative;
+}
+.hero-sec .hero-controls {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
+    width: calc(100% - 200px);
+    max-width: 1720px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #020000;
+}
+.hero-sec .hero-controls .swiper-scrollbar {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+    flex: 1 1 auto;
+    min-width: 30px;
+    border-radius: 0;
+    background: rgba(2, 0, 0, .2);
+}
+.hero-sec .hero-controls .swiper-scrollbar-drag {
+    height: 2px;
+    border-radius: 0;
+    background: #020000;
+}
+.hero-sec .hero-controls .swiper-pagination {
+    position: static;
+    width: auto;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #020000;
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+.hero-sec .hero-pagination-divider {
+    display: block;
+    width: 2px;
+    height: 12px;
+    flex: 0 0 2px;
+    background: url("../img/line.svg") center / 2px 12px no-repeat;
+}
+.hero-sec .hero-navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.hero-sec .hero-navigation .swiper-button-prev,
+.hero-sec .hero-navigation .swiper-button-next {
+    position: static;
+    display: flex;
+    width: 24px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: #020000;
+    cursor: pointer;
+}
+.hero-sec .hero-navigation .swiper-button-prev::after,
+.hero-sec .hero-navigation .swiper-button-next::after {
+    content: "";
+    display: block;
+    width: 7px;
+    height: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.hero-sec .hero-navigation .swiper-button-prev::after {
+    background-image: url("../img/swiper_prev.png");
+}
+.hero-sec .hero-navigation .swiper-button-next::after {
+    background-image: url("../img/swiper_next.png");
+}
+.hero-sec .hero-navigation button:focus-visible {
+    outline: 2px solid #020000;
+    outline-offset: 3px;
+}
+@media (max-width: 1024px) {
+    .hero-sec .hero-controls {
+        bottom: 30px;
+        width: calc(100% - 40px);
+        gap: 14px;
+    }
+    .hero-sec .hero-controls .swiper-pagination {
+        font-size: 13px;
+        gap: 8px;
+    }
+    .hero-sec .hero-navigation { gap: 8px; }
+}
