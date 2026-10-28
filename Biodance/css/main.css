@@ -216,3 +216,108 @@ body {
  .main-nav.is-open { display: flex; } .main-nav a { padding: 14px 0; font-size: 16px; }
 }
 @media (max-width: 420px) { .header-actions { gap: 8px; } .header-actions .icon-link:nth-child(2) { display: none; } }
+
+
+/* Figma Frame 2 header: 1621px-wide reference, 63px high */
+.site-header {
+    height: 63px;
+    background: var(--teal-mint);
+    font-family: "Pretendard Variable", Pretendard, sans-serif;
+}
+.header-main { height: 63px; background: transparent; }
+.header-inner {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+.brand-logo {
+    position: absolute;
+    left: 25px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 269px;
+    height: 63px;
+    flex: none;
+    color: #1e1e1e;
+    font-family: "Pretendard Variable", Pretendard, sans-serif;
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+.main-nav {
+    position: absolute;
+    inset: 0 auto auto 0;
+    display: block;
+    width: 100%;
+    height: 63px;
+    margin: 0;
+    flex: none;
+}
+.main-nav a {
+    position: absolute;
+    top: 13px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -.456px;
+}
+.main-nav a:nth-child(1) { left: 26.35%; }
+.main-nav a:nth-child(2) { left: 38.68%; }
+.main-nav a:nth-child(3) { left: 49.04%; }
+.main-nav a:nth-child(4) { left: 58.09%; }
+.main-nav a:nth-child(5) { left: 67.93%; }
+.main-nav a:hover, .main-nav a:focus-visible { color: #fff; opacity: .75; }
+.header-actions {
+    position: absolute;
+    top: 0;
+    right: 37px;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.icon-link {
+    width: 42px;
+    height: 39px;
+    color: #fff;
+}
+.icon-link img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.menu-toggle { display: none; }
+@media (max-width: 1024px) {
+    .site-header, .header-main { height: 63px; }
+    .header-inner { width: 100%; }
+    .brand-logo { left: 12px; width: 150px; height: 63px; font-size: 30px; }
+    .header-actions { right: 12px; height: 63px; }
+    .icon-link { width: 32px; height: 32px; }
+    .menu-toggle { display: block; }
+    .menu-toggle span { background: #fff; }
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 63px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        padding: 8px 20px 16px;
+        background: var(--teal-mint);
+        border-top: 1px solid rgba(255,255,255,.3);
+        box-shadow: 0 8px 16px rgba(41,41,41,.08);
+    }
+    .main-nav.is-open { display: flex; flex-direction: column; align-items: stretch; }
+    .main-nav a, .main-nav a:nth-child(n) {
+        position: static;
+        display: block;
+        padding: 12px 0;
+        color: #fff;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
