@@ -493,3 +493,24 @@ body {
 .hero-sec .hero-controls .swiper-scrollbar {
     display: none !important;
 }
+
+
+/* Promo bar arrows only — keep the hero-controls styles separate */
+.site-header .promo-bar .promo-arrow {
+    display: flex;
+    flex: 0 0 20px;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+}
+.site-header .promo-bar .promo-arrow img {
+    display: block;
+    width: 6px;
+    height: 12px;
+    flex: 0 0 6px;
+    object-fit: contain;
+}
