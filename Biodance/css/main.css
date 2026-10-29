@@ -1231,3 +1231,41 @@ body {
         box-sizing: border-box;
     }
 }
+
+
+/* Center the complete five-column navigation group in the viewport */
+@media (min-width: 1025px) {
+    .site-header .header-inner {
+        position: relative;
+    }
+
+    .site-header .main-nav {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        width: 1000px;
+        flex: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .site-header .main-nav > a {
+        flex: 0 0 200px;
+        width: 200px;
+        min-width: 200px;
+        height: 80px;
+    }
+
+    .site-header .header-mega-menu {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 1000px;
+        grid-template-columns: repeat(5, 200px);
+        margin: 0;
+    }
+}
