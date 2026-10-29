@@ -509,8 +509,8 @@ body {
 }
 .site-header .promo-bar .promo-arrow img {
     display: block;
-    width: 6px;
-    height: 12px;
-    flex: 0 0 6px;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
     object-fit: contain;
 }
