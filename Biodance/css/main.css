@@ -1321,3 +1321,21 @@ body {
     font-weight: 400;
     text-align: center;
 }
+
+
+/* User-requested dropdown text styling */
+@media (min-width: 768px) {
+    .site-header .header-mega-menu .mega-secondary a,
+    .site-header .header-mega-menu .mega-secondary a:hover,
+    .site-header .header-mega-menu .mega-secondary a:focus-visible {
+        color: var(--neutral-white);
+    }
+
+    .site-header .header-mega-menu.product-active .mega-primary,
+    .site-header .header-mega-menu.product-active .mega-primary a,
+    .site-header .header-mega-menu.product-active .mega-primary a:hover,
+    .site-header .header-mega-menu.product-active .mega-primary a:focus-visible {
+        text-align: center;
+        font-weight: 400;
+    }
+}
