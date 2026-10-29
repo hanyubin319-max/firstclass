@@ -536,7 +536,7 @@ body {
 }
 
 /* Hero-1 only: brand rose color for pagination and hero navigation */
-.hero-sec .visual:has(.swiper-slide-active img[src*="Hero-1.png"]) .hero-controls .swiper-pagination {
+.hero-sec .visual:has(.swiper-slide-active img[src*="Hero-1.png"]) .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal {
     color: var(--brand-rose);
 }
 .hero-sec .visual:has(.swiper-slide-active img[src*="Hero-1.png"]) .hero-controls .hero-navigation button.swiper-button-prev,
