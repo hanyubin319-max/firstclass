@@ -1683,3 +1683,42 @@ body {
         content: none !important;
     }
 }
+
+
+/* Correct mega-menu column colors: only the selected top-level section is mint */
+@media (min-width: 1025px) {
+    .site-header .header-mega-menu .mega-intro[data-panel="biodance"],
+    .site-header .header-mega-menu .mega-community {
+        background: var(--neutral-white) !important;
+    }
+
+    .site-header .header-mega-menu .mega-intro[data-panel="biodance"] a,
+    .site-header .header-mega-menu .mega-community a {
+        color: #666 !important;
+    }
+
+    .site-header .header-mega-menu.biodance-active .mega-intro[data-panel="biodance"] {
+        background: var(--teal-mint) !important;
+    }
+
+    .site-header .header-mega-menu.biodance-active .mega-intro[data-panel="biodance"] a {
+        color: var(--neutral-white) !important;
+    }
+
+    .site-header .header-mega-menu.community-active .mega-community {
+        background: var(--teal-mint) !important;
+    }
+
+    .site-header .header-mega-menu.community-active .mega-community a {
+        color: var(--neutral-white) !important;
+    }
+
+    .site-header .main-nav > a[data-menu].is-active {
+        background: var(--teal-mint) !important;
+        color: var(--neutral-white) !important;
+    }
+
+    .site-header .header-inner:has(.main-nav > a.is-active) {
+        border-bottom: 1px solid var(--neutral-border-gray) !important;
+    }
+}
