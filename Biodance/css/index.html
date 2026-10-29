@@ -14,9 +14,9 @@
     <div id="wrap">
         <header class="site-header">
             <div class="promo-bar" aria-label="혜택 안내">
-                <span class="promo-arrow" aria-hidden="true"><img src="../img/chevron-left.svg" alt=""></span>
+                <button type="button" class="promo-arrow promo-prev" aria-label="이전 혜택"><img src="../img/chevron-left.svg" alt=""></button>
                 <p id="promo-message" aria-live="polite">첫구매 반값 50% 혜택</p>
-                <span class="promo-arrow" aria-hidden="true"><img src="../img/chevron-right.svg" alt=""></span>
+                <button type="button" class="promo-arrow promo-next" aria-label="다음 혜택"><img src="../img/chevron-right.svg" alt=""></button>
             </div>
             <div class="header-main">
                 <div class="header-inner">
@@ -100,17 +100,39 @@
     </div>
     <script>
         const promoMessage = document.querySelector('#promo-message');
+        const promoPrev = document.querySelector('.promo-prev');
+        const promoNext = document.querySelector('.promo-next');
         const promoMessages = ['첫구매 반값 50% 혜택', '회원 가입 시 5천원 즉시사용 쿠폰'];
         let promoIndex = 0;
+        let promoTimer;
 
-        window.setInterval(() => {
+        function showPromoMessage(nextIndex) {
             promoMessage.classList.add('is-changing');
             window.setTimeout(() => {
-                promoIndex = (promoIndex + 1) % promoMessages.length;
+                promoIndex = (nextIndex + promoMessages.length) % promoMessages.length;
                 promoMessage.textContent = promoMessages[promoIndex];
                 promoMessage.classList.remove('is-changing');
             }, 250);
-        }, 7000);
+        }
+
+        function resetPromoTimer() {
+            window.clearInterval(promoTimer);
+            promoTimer = window.setInterval(() => {
+                showPromoMessage(promoIndex + 1);
+            }, 7000);
+        }
+
+        promoPrev.addEventListener('click', () => {
+            showPromoMessage(promoIndex - 1);
+            resetPromoTimer();
+        });
+
+        promoNext.addEventListener('click', () => {
+            showPromoMessage(promoIndex + 1);
+            resetPromoTimer();
+        });
+
+        resetPromoTimer();
 
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNav = document.querySelector('#main-nav');
