@@ -408,8 +408,8 @@ body {
 /* Hero controls: 01 — line — 03 */
 .hero-sec .hero-controls .swiper-pagination {
     box-sizing: border-box;
-    width: 264px;
-    flex: 0 0 264px;
+    width: 286px;
+    flex: 0 0 286px;
     justify-content: space-between;
     gap: 10px;
     font-size: 20px;
@@ -437,8 +437,8 @@ body {
 }
 @media (max-width: 1024px) {
     .hero-sec .hero-controls .swiper-pagination {
-        width: 264px;
-        flex-basis: 264px;
+        width: 286px;
+        flex-basis: 286px;
         font-size: 20px;
     }
     .hero-sec .hero-controls .swiper-pagination-current,
