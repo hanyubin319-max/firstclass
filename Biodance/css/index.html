@@ -142,17 +142,23 @@
             });
         });
 
-        submenuLinks.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                const selected = link.dataset.submenu;
-                megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
-                    panel.hidden = panel.dataset.panel !== selected;
-                });
-                megaMenu.querySelectorAll('[data-submenu]').forEach(item => {
-                    item.classList.toggle('is-active', item === link);
-                });
+        function selectSubmenu(link) {
+            const selected = link.dataset.submenu;
+            megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
+                panel.hidden = panel.dataset.panel !== selected;
             });
-            link.addEventListener('focus', () => link.dispatchEvent(new Event('mouseenter')));
+            megaMenu.querySelectorAll('[data-submenu]').forEach(item => {
+                item.classList.toggle('is-active', item === link);
+            });
+        }
+
+        submenuLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => selectSubmenu(link));
+            link.addEventListener('focus', () => selectSubmenu(link));
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                selectSubmenu(link);
+            });
         });
 
         document.addEventListener('click', event => {
