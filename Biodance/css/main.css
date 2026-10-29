@@ -1903,3 +1903,9 @@ body {
 .site-header .header-mega-menu a:focus-visible {
     opacity: 1;
 }
+
+/* Vertically center every label in the separate secondary dropdown menu */
+.site-header .header-mega-menu .mega-secondary a {
+    display: flex;
+    align-items: center;
+}
