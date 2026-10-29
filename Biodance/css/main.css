@@ -1382,3 +1382,15 @@ body {
         font-weight: 400;
     }
 }
+
+
+/* Requested: place Community links in the far-right dropdown column and use the Figma light-gray border */
+@media (min-width: 1025px) {
+    .site-header .header-mega-menu .mega-community {
+        grid-column: 5;
+    }
+
+    .site-header .header-mega-menu.product-active {
+        border-bottom: 1px solid var(--neutral-light-gray);
+    }
+}
