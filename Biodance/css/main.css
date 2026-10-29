@@ -514,3 +514,23 @@ body {
     flex: 0 0 20px;
     object-fit: contain;
 }
+
+
+/* Requested hero navigation sizing and spacing only */
+.hero-sec .hero-controls {
+    gap: 7px;
+}
+.hero-sec .hero-navigation {
+    gap: 7px;
+}
+.hero-sec .hero-navigation button.swiper-button-next,
+.hero-sec .hero-navigation button.swiper-button-prev {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+}
+.hero-sec .hero-navigation button.swiper-button-next::after,
+.hero-sec .hero-navigation button.swiper-button-prev::after {
+    width: 6px;
+    height: 12px;
+}
