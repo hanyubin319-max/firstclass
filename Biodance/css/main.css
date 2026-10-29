@@ -1941,8 +1941,8 @@ body {
     height: 241px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    column-gap: 3px;
+    justify-content: center;
+    column-gap: 101.33px;
 }
 
 .category-section .category-item {
