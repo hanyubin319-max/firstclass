@@ -107,7 +107,7 @@
 
         function closeMegaMenu() {
             megaMenu.hidden = true;
-            megaMenu.classList.remove('is-open');
+            megaMenu.classList.remove('is-open', 'product-active');
             menuLinks.forEach(link => {
                 link.classList.remove('is-active');
                 link.setAttribute('aria-expanded', 'false');
@@ -117,6 +117,7 @@
         function openMegaMenu(menuName, activeLink) {
             megaMenu.hidden = false;
             megaMenu.classList.add('is-open');
+            megaMenu.classList.toggle('product-active', menuName === 'product');
 
             megaMenu.querySelectorAll('[data-panel]').forEach(panel => {
                 const panelName = panel.dataset.panel;
