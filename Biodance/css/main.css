@@ -1722,3 +1722,51 @@ body {
         border-bottom: 1px solid var(--neutral-border-gray) !important;
     }
 }
+
+
+/* Fix only top-level mega-menu color states */
+@media (min-width: 1025px) {
+    .site-header .header-mega-menu.product-active .mega-primary {
+        background: var(--teal-mint) !important;
+    }
+
+    .site-header .header-mega-menu:not(.product-active) .mega-primary {
+        background: var(--neutral-white) !important;
+    }
+
+    .site-header .header-mega-menu:not(.product-active) .mega-primary a {
+        color: #666 !important;
+    }
+
+    .site-header .header-mega-menu.biodance-active .mega-intro[data-panel="biodance"] {
+        background: var(--teal-mint) !important;
+    }
+
+    .site-header .header-mega-menu.biodance-active .mega-intro[data-panel="biodance"] a {
+        color: var(--neutral-white) !important;
+    }
+
+    .site-header .header-mega-menu:not(.biodance-active) .mega-intro[data-panel="biodance"] {
+        background: var(--neutral-white) !important;
+    }
+
+    .site-header .header-mega-menu:not(.biodance-active) .mega-intro[data-panel="biodance"] a {
+        color: #666 !important;
+    }
+
+    .site-header .header-mega-menu.community-active .mega-community {
+        background: var(--teal-mint) !important;
+    }
+
+    .site-header .header-mega-menu.community-active .mega-community a {
+        color: var(--neutral-white) !important;
+    }
+
+    .site-header .header-mega-menu:not(.community-active) .mega-community {
+        background: var(--neutral-white) !important;
+    }
+
+    .site-header .header-mega-menu:not(.community-active) .mega-community a {
+        color: #666 !important;
+    }
+}
