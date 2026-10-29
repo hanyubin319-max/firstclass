@@ -1583,10 +1583,6 @@ body {
         display: flex;
     }
 
-    .site-header .header-mega-menu.has-secondary-open .mega-primary > a[href="#new-products"] {
-        display: none;
-    }
-
     .site-header .header-mega-menu.has-secondary-open .mega-secondary:not([hidden]) {
         background: var(--teal-mint);
     }
