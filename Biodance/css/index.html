@@ -155,6 +155,7 @@
             megaMenu.classList.toggle('product-active', menuName === 'product');
             megaMenu.classList.toggle('biodance-active', menuName === 'biodance');
             megaMenu.classList.toggle('community-active', menuName === 'community');
+            megaMenu.classList.remove('has-secondary-open');
 
             megaMenu.querySelectorAll('[data-panel]').forEach(panel => {
                 const panelName = panel.dataset.panel;
