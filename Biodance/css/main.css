@@ -207,7 +207,7 @@ body {
 .menu-toggle { display: none; width: 32px; height: 32px; padding: 6px 3px; border: 0; background: transparent; cursor: pointer; }
 .menu-toggle span { display: block; width: 25px; height: 2px; margin: 5px 0; background: var(--neutral-charcoal); }
 @media (max-width: 1024px) {
- .promo-bar { padding: 0 16px; } .promo-bar p { font-size: 12px; }
+ .promo-bar { height: 32px; padding: 0 16px; } .promo-bar p { font-size: 14px; }
  .header-main { height: 64px; } .header-inner { width: calc(100% - 32px); }
  .brand-logo, .brand-logo img { width: 126px; height: auto; }
  .header-actions { gap: 12px; } .header-actions .icon-link { width: 28px; height: 28px; } .header-actions .icon-link svg { width: 24px; height: 24px; }
