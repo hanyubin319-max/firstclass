@@ -1770,3 +1770,58 @@ body {
         color: #666 !important;
     }
 }
+
+
+/* Keep product menu labels centered and arrows aligned right in every interaction state */
+@media (min-width: 768px) {
+    .site-header .header-mega-menu .mega-primary > a {
+        position: relative;
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 400 !important;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a > span {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a > span::before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 12px;
+        background: currentColor;
+        -webkit-mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat;
+        mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat;
+    }
+}
+
+/* Keep the single gray separator visible during every active menu state */
+.site-header .header-inner:has(.main-nav > a.is-active) {
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid var(--neutral-border-gray) !important;
+}
+
+/* Restore a larger chevron in the top benefit bar */
+.site-header .promo-bar .promo-arrow img {
+    width: 10px;
+    height: 16px;
+    flex: 0 0 10px;
+}
