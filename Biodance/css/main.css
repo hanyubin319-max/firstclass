@@ -611,6 +611,6 @@ body {
 @media (max-width: 1024px) {
     .hero-sec .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal,
     .hero-sec .hero-controls .hero-navigation {
-        align-items: center;
+        align-self: center;
     }
 }
