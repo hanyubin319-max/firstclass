@@ -2018,3 +2018,9 @@ body {
 .site-header .header-mega-menu a {
     font-weight: 400 !important;
 }
+
+
+/* Keep every top-level header navigation label, including New, Regular */
+.site-header .main-nav > a {
+    font-weight: 400 !important;
+}
