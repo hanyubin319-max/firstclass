@@ -176,6 +176,15 @@
             });
         }
 
+        mainNav.querySelectorAll('a:not([data-menu])').forEach(link => {
+            link.addEventListener('click', () => {
+                megaMenu.classList.remove('has-secondary-open');
+                megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
+                    panel.hidden = true;
+                });
+            });
+        });
+
         menuLinks.forEach(link => {
             link.addEventListener('click', event => {
                 event.preventDefault();
