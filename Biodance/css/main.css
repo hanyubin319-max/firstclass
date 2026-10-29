@@ -627,3 +627,31 @@ body {
         transform: translateX(-50%);
     }
 }
+
+/* Mobile only: slightly reduce hero pagination text/line and navigation arrows */
+@media (max-width: 1024px) {
+    .hero-sec .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal {
+        width: 279px !important;
+        min-width: 279px;
+        flex-basis: 279px !important;
+        font-size: 15px !important;
+    }
+    .hero-sec .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal .swiper-pagination-current,
+    .hero-sec .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal .swiper-pagination-total {
+        font-size: 15px !important;
+    }
+    .hero-sec .hero-controls .hero-pagination-line {
+        flex: 1 1 auto;
+    }
+    .hero-sec .hero-navigation button.swiper-button-next,
+    .hero-sec .hero-navigation button.swiper-button-prev {
+        width: 13px;
+        height: 13px;
+        flex: 0 0 13px;
+    }
+    .hero-sec .hero-navigation button.swiper-button-next::after,
+    .hero-sec .hero-navigation button.swiper-button-prev::after {
+        width: 5px;
+        height: 7px;
+    }
+}
