@@ -1302,9 +1302,21 @@ body {
     color: var(--neutral-white);
 }
 
-.site-header .header-inner:has(.main-nav > a.is-active) {
-    border-bottom: 1px solid var(--neutral-border-gray);
+.site-header .header-inner {
+    position: relative;
     box-sizing: border-box;
+}
+
+.site-header .header-inner:has(.main-nav > a.is-active)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--neutral-border-gray);
+    pointer-events: none;
+    z-index: 1000;
 }
 
 
@@ -1395,8 +1407,7 @@ body {
 
 /* The only header separator belongs to .header-inner, including while the mega menu is open */
 .site-header .header-mega-menu {
-    border-top: 0;
-    border-bottom: 0;
+    border: 0;
 }
 
 .site-header .header-mega-menu::before {
