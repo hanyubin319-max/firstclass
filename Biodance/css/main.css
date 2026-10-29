@@ -1885,3 +1885,10 @@ body {
     height: 18px !important;
     flex: 0 0 12px !important;
 }
+
+/* Mobile menu separator between the top navigation and dropdown */
+@media (max-width: 767px) {
+    .site-header .header-mega-menu {
+        border-top: 1px solid var(--neutral-border-gray) !important;
+    }
+}
