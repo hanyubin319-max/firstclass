@@ -1909,3 +1909,18 @@ body {
     display: flex;
     align-items: center;
 }
+
+/* Center the entire separate submenu link group horizontally and vertically */
+.site-header .header-mega-menu .mega-secondary:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.site-header .header-mega-menu .mega-secondary:not([hidden]) a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
