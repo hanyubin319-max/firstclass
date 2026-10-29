@@ -2037,3 +2037,13 @@ body {
         text-shadow: none !important;
     }
 }
+
+
+/* Keep the top-level navigation in Mint 100 on hover and focus */
+.site-header .main-nav > a,
+.site-header .main-nav > a:hover,
+.site-header .main-nav > a:focus-visible,
+.site-header .main-nav > a:active {
+    background-color: var(--teal-mint) !important;
+    color: var(--neutral-white) !important;
+}
