@@ -142,7 +142,7 @@
 
         function closeMegaMenu() {
             megaMenu.hidden = true;
-            megaMenu.classList.remove('is-open', 'product-active');
+            megaMenu.classList.remove('is-open', 'product-active', 'has-secondary-open');
             menuLinks.forEach(link => {
                 link.classList.remove('is-active');
                 link.setAttribute('aria-expanded', 'false');
@@ -201,6 +201,7 @@
                 panel.hidden = true;
             });
             target.hidden = !shouldOpen;
+            megaMenu.classList.toggle('has-secondary-open', shouldOpen);
             megaMenu.querySelectorAll('[data-submenu]').forEach(item => {
                 item.classList.toggle('is-active', item === link);
             });
