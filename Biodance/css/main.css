@@ -615,12 +615,15 @@ body {
     }
 }
 
-/* Mobile: center hero controls in the screen-height hero area without changing element sizes */
+/* Mobile: center pagination and navigation horizontally without changing element heights */
 @media (max-width: 1024px) {
     .hero-sec .hero-controls {
-        position: absolute;
-        top: 50%;
-        bottom: auto;
-        transform: translate(-50%, -50%);
+        left: 50%;
+        top: auto;
+        bottom: 30px;
+        width: calc(100% - 40px);
+        justify-content: center;
+        gap: 7px;
+        transform: translateX(-50%);
     }
 }
