@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/default.css">
     <link rel="stylesheet" href="../../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../../font/css/pretendardvariable.css">
-    <link rel="stylesheet" href="main.css?v=725f37d">
+    <link rel="stylesheet" href="main.css?v=512d5ee">
     <script src="../../npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -128,10 +128,10 @@
             });
 
             megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
-                panel.hidden = true;
+                panel.hidden = panel.dataset.panel !== 'menu_product';
             });
             megaMenu.querySelectorAll('[data-submenu]').forEach(item => {
-                item.classList.remove('is-active');
+                item.classList.toggle('is-active', item.dataset.submenu === 'menu_product');
             });
 
             menuLinks.forEach(link => {
