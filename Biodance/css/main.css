@@ -1873,7 +1873,7 @@ body {
         display: block !important;
         width: 10px !important;
         height: 24px !important;
-        background: url("../img/chevron-right-2.svg") center / contain no-repeat !important;
+        background: url("../img/chevron-right-2.svg") center / 16px 24px no-repeat !important;
         -webkit-mask: none !important;
         mask: none !important;
     }
