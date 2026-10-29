@@ -1413,3 +1413,20 @@ body {
     z-index: 101;
     pointer-events: none;
 }
+
+
+/* Promo bar message rotation */
+.site-header .promo-bar p {
+    opacity: 1;
+    transition: opacity 0.25s ease;
+}
+
+.site-header .promo-bar p.is-changing {
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header .promo-bar p {
+        transition: none;
+    }
+}
