@@ -606,3 +606,11 @@ body {
         display: block;
     }
 }
+
+/* Mobile hero controls: vertically center pagination and navigation without changing heights */
+@media (max-width: 1024px) {
+    .hero-sec .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal,
+    .hero-sec .hero-controls .hero-navigation {
+        align-items: center;
+    }
+}
