@@ -1825,3 +1825,63 @@ body {
     height: 16px;
     flex: 0 0 10px;
 }
+
+
+/* Final correction: visible gray divider, centered product labels, right-aligned arrows */
+@media (min-width: 768px) {
+    .site-header .header-main:has(.main-nav > a.is-active) {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .site-header .header-inner:has(.main-nav > a.is-active) {
+        border-bottom: 1px solid var(--neutral-border-gray) !important;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a {
+        position: relative !important;
+        display: flex !important;
+        width: 100% !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        font-weight: 400 !important;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a > span {
+        position: absolute !important;
+        top: 50% !important;
+        right: 12px !important;
+        left: auto !important;
+        transform: translateY(-50%) !important;
+        display: inline-flex !important;
+        width: 24px !important;
+        height: 24px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a > span::before {
+        content: "" !important;
+        display: block !important;
+        width: 6px !important;
+        height: 12px !important;
+        background: currentColor !important;
+        -webkit-mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat !important;
+        mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat !important;
+    }
+}
+
+/* Benefit-bar arrows are intentionally larger than the dropdown arrows */
+.site-header .promo-bar .promo-arrow img {
+    width: 12px !important;
+    height: 18px !important;
+    flex: 0 0 12px !important;
+}
