@@ -987,3 +987,26 @@ body {
         min-height: 150px;
     }
 }
+
+/* Active top-level header item: full-height mint tab, as in the reference */
+.site-header .main-nav > a.is-active {
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    color: #fff;
+    background: #58d2c7;
+}
+@media (max-width: 1024px) {
+    .site-header .main-nav > a.is-active {
+        top: auto;
+        display: block;
+        height: auto;
+        padding: 12px 0;
+        color: #58d2c7;
+        background: transparent;
+    }
+}
