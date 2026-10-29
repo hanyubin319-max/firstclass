@@ -1390,28 +1390,17 @@ body {
         grid-column: 5;
     }
 
-    .site-header .header-mega-menu.product-active {
-        border-bottom: 1px solid var(--neutral-light-gray);
-    }
 }
 
 
-/* Keep the header separator visible above every mega-menu interaction state */
+/* The only header separator belongs to .header-inner, including while the mega menu is open */
 .site-header .header-mega-menu {
-    border-top: 1px solid var(--neutral-light-gray);
-    z-index: 100;
+    border-top: 0;
+    border-bottom: 0;
 }
 
 .site-header .header-mega-menu::before {
-    content: "";
-    position: absolute;
-    top: -1px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--neutral-light-gray);
-    z-index: 101;
-    pointer-events: none;
+    content: none;
 }
 
 
