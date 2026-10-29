@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/default.css">
     <link rel="stylesheet" href="../../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../../font/css/pretendardvariable.css">
-    <link rel="stylesheet" href="main.css?v=8cf1247">
+    <link rel="stylesheet" href="main.css?v=all-menus">
     <script src="../../npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -121,11 +121,7 @@
 
             megaMenu.querySelectorAll('[data-panel]').forEach(panel => {
                 const panelName = panel.dataset.panel;
-                if (menuName === 'product') {
-                    panel.hidden = !['biodance', 'product', 'community'].includes(panelName);
-                } else {
-                    panel.hidden = panelName !== menuName;
-                }
+                panel.hidden = !['biodance', 'product', 'community'].includes(panelName);
             });
 
             megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
