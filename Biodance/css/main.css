@@ -1154,3 +1154,42 @@ body {
     .site-header .header-mega-menu .mega-secondary,
     .site-header .header-mega-menu .mega-community { grid-column: 2; }
 }
+
+
+/* Alignment pass 1: 200×80 top items and 200×253 dropdown columns */
+@media (min-width: 768px) {
+    .site-header .main-nav > a {
+        flex: 0 0 200px;
+        width: 200px;
+        min-width: 200px;
+        height: 80px;
+    }
+
+    .site-header .header-mega-menu {
+        display: grid;
+        grid-template-columns: repeat(4, 200px);
+        grid-auto-columns: 200px;
+        justify-content: start;
+        align-items: stretch;
+        width: 100%;
+        height: 253px;
+        min-height: 253px;
+        padding: 0;
+        gap: 0;
+    }
+
+    .site-header .header-mega-menu .mega-intro,
+    .site-header .header-mega-menu .mega-column {
+        width: 200px;
+        min-width: 200px;
+        height: 253px;
+        min-height: 253px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .site-header .header-mega-menu .mega-intro { grid-column: 1; }
+    .site-header .header-mega-menu .mega-primary { grid-column: 2; }
+    .site-header .header-mega-menu .mega-secondary { grid-column: 3; }
+    .site-header .header-mega-menu .mega-community { grid-column: 4; }
+}
