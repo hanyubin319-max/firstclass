@@ -1271,16 +1271,19 @@ body {
 }
 
 
-/* Full-width dropdown frame; keep the existing 200px menu columns in the same centered positions */
+/* Full-width dropdown frame across the viewport; preserve the existing menu columns */
 @media (min-width: 1025px) {
     .site-header .header-mega-menu {
         left: 50%;
         right: auto;
-        transform: translateX(-50%);
-        width: 100%;
+        width: 100vw;
+        max-width: none;
+        margin-left: -50vw;
+        transform: none;
         grid-template-columns: repeat(5, 200px);
         justify-content: center;
         height: 253px;
         min-height: 253px;
+        box-sizing: border-box;
     }
 }
