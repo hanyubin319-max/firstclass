@@ -2012,3 +2012,9 @@ body {
         aspect-ratio: 1;
     }
 }
+
+
+/* All dropdown and separate menu labels use Regular weight */
+.site-header .header-mega-menu a {
+    font-weight: 400 !important;
+}
