@@ -354,3 +354,29 @@ body {
  .hero-sec .swiper { aspect-ratio:auto; height:calc(100svh - 86px); min-height:420px; }
 }
 @media(max-width:420px) { .header-actions { gap:5px; } .header-actions .icon-link { width:23px; } .header-actions .icon-link img { width:19px; height:19px; } }
+
+
+/* Promo bar chevrons: 20×20 frame, 6×12 vector */
+.promo-bar .promo-arrow {
+    display: flex;
+    flex: 0 0 20px;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    line-height: 0;
+}
+.promo-bar .promo-arrow::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 12px;
+    background: currentColor;
+}
+.promo-bar .promo-arrow:first-child::before {
+    clip-path: polygon(100% 0, 100% 17%, 33% 50%, 100% 83%, 100% 100%, 0 50%);
+}
+.promo-bar .promo-arrow:last-child::before {
+    clip-path: polygon(0 0, 0 17%, 67% 50%, 0 83%, 0 100%, 100% 50%);
+}
