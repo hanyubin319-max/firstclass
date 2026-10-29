@@ -403,3 +403,46 @@ body {
     height: 12px;
     object-fit: contain;
 }
+
+
+/* Hero controls: 01 — line — 03 */
+.hero-sec .hero-controls .swiper-pagination {
+    box-sizing: border-box;
+    width: 264px;
+    flex: 0 0 264px;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+}
+.hero-sec .hero-controls .swiper-pagination-current,
+.hero-sec .hero-controls .swiper-pagination-total {
+    display: block;
+    flex: 0 0 auto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+}
+.hero-sec .hero-controls .hero-pagination-line {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 1px;
+    background: currentColor;
+}
+.hero-sec .hero-controls .swiper-scrollbar,
+.hero-sec .hero-controls .hero-pagination-divider {
+    display: none;
+}
+@media (max-width: 1024px) {
+    .hero-sec .hero-controls .swiper-pagination {
+        width: 264px;
+        flex-basis: 264px;
+        font-size: 20px;
+    }
+    .hero-sec .hero-controls .swiper-pagination-current,
+    .hero-sec .hero-controls .swiper-pagination-total {
+        font-size: 20px;
+    }
+}
