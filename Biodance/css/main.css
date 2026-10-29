@@ -1609,3 +1609,24 @@ body {
         mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat;
     }
 }
+
+
+/* Header navigation interaction states requested */
+.site-header .header-inner:has(.main-nav > a.is-active) {
+    border-bottom: 1px solid var(--neutral-border-gray) !important;
+    box-sizing: border-box;
+}
+
+.site-header .main-nav > a[data-menu].is-active {
+    background: var(--teal-mint) !important;
+    color: var(--neutral-white) !important;
+}
+
+/* When a product secondary menu opens, mute only the top-level New tab */
+@media (min-width: 1025px) {
+    .site-header .header-mega-menu.has-secondary-open ~ .header-inner .main-nav > a[href="#new"],
+    .site-header .header-inner:has(+ .header-mega-menu.has-secondary-open) .main-nav > a[href="#new"] {
+        background: rgba(90, 216, 204, 0.2) !important;
+        color: transparent !important;
+    }
+}
