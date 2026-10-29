@@ -1573,17 +1573,43 @@ body {
 }
 
 
-/* When a secondary product menu is open, replace the white New column with mint */
+/* Keep the primary menu unchanged; show the secondary menu as a separate 100% mint column */
 @media (min-width: 1025px) {
-    .site-header .header-mega-menu.has-secondary-open .mega-primary > a[data-submenu="menu_product"] {
+    .site-header .header-mega-menu.has-secondary-open .mega-primary {
+        background: var(--teal-mint);
+    }
+
+    .site-header .header-mega-menu.has-secondary-open .mega-primary > a {
+        display: flex;
+    }
+
+    .site-header .header-mega-menu.has-secondary-open .mega-primary > a[href="#new-products"] {
         display: none;
     }
 
-    .site-header .header-mega-menu.has-secondary-open .mega-primary {
-        background: rgba(90, 216, 204, 0.8);
+    .site-header .header-mega-menu.has-secondary-open .mega-secondary:not([hidden]) {
+        background: var(--teal-mint);
     }
 
-    .site-header .header-mega-menu.has-secondary-open .mega-secondary:not([hidden]) {
-        background: rgba(90, 216, 204, 0.8);
+    .site-header .header-mega-menu .mega-primary > a > span {
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a > span::before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 12px;
+        flex: 0 0 6px;
+        background: currentColor;
+        -webkit-mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat;
+        mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat;
     }
 }
