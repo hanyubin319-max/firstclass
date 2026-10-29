@@ -1892,3 +1892,14 @@ body {
         border-top: 1px solid var(--neutral-border-gray) !important;
     }
 }
+
+/* Dropdown menu links: 80% by default, full opacity on hover/focus (including submenu arrows) */
+.site-header .header-mega-menu a {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.site-header .header-mega-menu a:hover,
+.site-header .header-mega-menu a:focus-visible {
+    opacity: 1;
+}
