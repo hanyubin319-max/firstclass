@@ -2024,3 +2024,16 @@ body {
 .site-header .main-nav > a {
     font-weight: 400 !important;
 }
+
+
+/* New top-level tab should blend into the secondary column only while a Product submenu is open */
+@media (min-width: 1025px) {
+    .site-header .header-mega-menu.product-active.has-secondary-open ~ * {
+        /* State is applied on the mega menu; the adjacent header nav is styled via :has below. */
+    }
+    .site-header .header-main:has(+ .header-mega-menu.product-active.has-secondary-open) .main-nav > a[href*="new_list.html"] {
+        background: rgba(90, 216, 204, 0.8) !important;
+        color: transparent !important;
+        text-shadow: none !important;
+    }
+}
