@@ -1306,3 +1306,18 @@ body {
     border-bottom: 1px solid var(--neutral-border-gray);
     box-sizing: border-box;
 }
+
+
+/* Requested dropdown typography adjustments only */
+.site-header .header-mega-menu .mega-secondary a {
+    color: var(--neutral-white);
+}
+
+.site-header .header-mega-menu.product-active .mega-primary {
+    text-align: center;
+}
+
+.site-header .header-mega-menu.product-active .mega-primary a {
+    font-weight: 400;
+    text-align: center;
+}
