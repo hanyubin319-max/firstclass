@@ -424,3 +424,35 @@ body {
         font-size: 20px;
     }
 }
+
+
+/* Hero controls pagination: 01 — line — 03 */
+.visual .hero-controls .swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 284px;
+    flex: 0 0 284px;
+    gap: 10px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+}
+.visual .hero-controls .swiper-pagination-current,
+.visual .hero-controls .swiper-pagination-total {
+    display: block;
+    flex: 0 0 auto;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+}
+.visual .hero-controls .hero-pagination-line {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 1px;
+    background: currentColor;
+}
