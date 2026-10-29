@@ -2039,10 +2039,17 @@ body {
 }
 
 
-/* Keep the original top-level navigation colors until interaction; use Mint 100 only on hover/focus/press */
+/* Only interactive top-level items switch to Mint 100; New and Event keep their original colors */
+.site-header .main-nav > a:not([href*="new_list.html"]):not([href*="board/gallery"]):hover,
+.site-header .main-nav > a:not([href*="new_list.html"]):not([href*="board/gallery"]):focus-visible,
+.site-header .main-nav > a:not([href*="new_list.html"]):not([href*="board/gallery"]):active {
+    background-color: var(--teal-mint) !important;
+    color: var(--neutral-white) !important;
+}
+
+/* The 80% mint belongs only to the opened secondary menu, never to a top-level hover */
 .site-header .main-nav > a:hover,
 .site-header .main-nav > a:focus-visible,
 .site-header .main-nav > a:active {
-    background-color: var(--teal-mint) !important;
-    color: var(--neutral-white) !important;
+    opacity: 1 !important;
 }
