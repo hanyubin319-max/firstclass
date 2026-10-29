@@ -1863,7 +1863,7 @@ body {
         margin: 0 !important;
         padding: 0 !important;
         align-items: center !important;
-        justify-content: center !important;
+        justify-content: flex-end !important;
         font-size: 0 !important;
         line-height: 0 !important;
     }
