@@ -356,7 +356,7 @@ body {
 @media(max-width:420px) { .header-actions { gap:5px; } .header-actions .icon-link { width:23px; } .header-actions .icon-link img { width:19px; height:19px; } }
 
 
-/* Promo bar chevrons: 20×20 frame, 6×12 vector */
+/* Promo bar chevrons: 20×20 frame, SVG vector 6×12 */
 .promo-bar .promo-arrow {
     display: flex;
     flex: 0 0 20px;
@@ -368,42 +368,16 @@ body {
     line-height: 0;
 }
 .promo-bar .promo-arrow::before {
-    content: "";
-    display: block;
-    width: 6px;
-    height: 12px;
-    background: currentColor;
-}
-.promo-bar .promo-arrow:first-child::before {
-    clip-path: polygon(100% 0, 100% 17%, 33% 50%, 100% 83%, 100% 100%, 0 50%);
-}
-.promo-bar .promo-arrow:last-child::before {
-    clip-path: polygon(0 0, 0 17%, 67% 50%, 0 83%, 0 100%, 100% 50%);
-}
-
-
-/* Promo bar: use the existing chevron SVGs at the Figma-specified size */
-.promo-bar .promo-arrow {
-    display: flex;
-    flex: 0 0 20px;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    font-size: 0;
-    line-height: 0;
-}
-.promo-bar .promo-arrow::before {
-    display: none;
     content: none;
+    display: none;
 }
 .promo-bar .promo-arrow img {
     display: block;
+    flex: 0 0 6px;
     width: 6px;
     height: 12px;
     object-fit: contain;
 }
-
 
 /* Hero controls: 01 — line — 03; 264px between number edges */
 .hero-sec .hero-controls .swiper-pagination {
