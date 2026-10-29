@@ -590,3 +590,19 @@ body {
     -webkit-mask-image: url("../img/swiper_next.png");
     mask-image: url("../img/swiper_next.png");
 }
+
+/* Responsive hero banners: desktop assets by default, mobile assets at 1024px and below */
+.hero-sec .visual .swiper-slide img.pc {
+    display: block;
+}
+.hero-sec .visual .swiper-slide img.mo {
+    display: none;
+}
+@media (max-width: 1024px) {
+    .hero-sec .visual .swiper-slide img.pc {
+        display: none;
+    }
+    .hero-sec .visual .swiper-slide img.mo {
+        display: block;
+    }
+}
