@@ -1193,3 +1193,41 @@ body {
     .site-header .header-mega-menu .mega-secondary { grid-column: 3; }
     .site-header .header-mega-menu .mega-community { grid-column: 4; }
 }
+
+
+/* Header alignment pass 1: align dropdown columns directly under five 200px nav slots */
+@media (min-width: 768px) {
+    .site-header .main-nav {
+        flex: 0 0 auto;
+        width: 1000px;
+        margin: 0;
+        gap: 0;
+        justify-content: center;
+    }
+
+    .site-header .main-nav > a {
+        flex: 0 0 200px;
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .site-header .header-mega-menu {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 1000px;
+        grid-template-columns: repeat(5, 200px);
+        justify-content: start;
+        height: 253px;
+        min-height: 253px;
+    }
+
+    .site-header .header-mega-menu .mega-intro,
+    .site-header .header-mega-menu .mega-column {
+        width: 200px;
+        min-width: 200px;
+        height: 253px;
+        min-height: 253px;
+        box-sizing: border-box;
+    }
+}
