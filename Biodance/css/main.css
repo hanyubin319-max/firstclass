@@ -563,3 +563,30 @@ body {
     mask-image: url("../img/swiper_next.png");
 }
 
+/* mobile-1 only: brand rose color for pagination and hero navigation */
+.hero-sec .visual:has(.swiper-slide-active img[src*="mobile-1.png"]) .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal {
+    color: var(--brand-rose);
+}
+.hero-sec .visual:has(.swiper-slide-active img[src*="mobile-1.png"]) .hero-controls .hero-navigation button.swiper-button-prev,
+.hero-sec .visual:has(.swiper-slide-active img[src*="mobile-1.png"]) .hero-controls .hero-navigation button.swiper-button-next {
+    color: var(--brand-rose);
+}
+.hero-sec .visual:has(.swiper-slide-active img[src*="mobile-1.png"]) .hero-controls .hero-navigation button.swiper-button-prev::after,
+.hero-sec .visual:has(.swiper-slide-active img[src*="mobile-1.png"]) .hero-controls .hero-navigation button.swiper-button-next::after {
+    background-image: none;
+    background-color: var(--brand-rose);
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+.hero-sec .visual:has(.swiper-slide-active img[src*="mobile-1.png"]) .hero-controls .hero-navigation button.swiper-button-prev::after {
+    -webkit-mask-image: url("../img/swiper_prev.png");
+    mask-image: url("../img/swiper_prev.png");
+}
+.hero-sec .visual:has(.swiper-slide-active img[src*="mobile-1.png"]) .hero-controls .hero-navigation button.swiper-button-next::after {
+    -webkit-mask-image: url("../img/swiper_next.png");
+    mask-image: url("../img/swiper_next.png");
+}
