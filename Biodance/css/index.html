@@ -117,17 +117,28 @@
         function openMegaMenu(menuName, activeLink) {
             megaMenu.hidden = false;
             megaMenu.classList.add('is-open');
+
             megaMenu.querySelectorAll('[data-panel]').forEach(panel => {
-                panel.hidden = panel.dataset.panel !== menuName;
+                const panelName = panel.dataset.panel;
+                if (menuName === 'product') {
+                    panel.hidden = !['biodance', 'product', 'community'].includes(panelName);
+                } else {
+                    panel.hidden = panelName !== menuName;
+                }
             });
+
+            megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
+                panel.hidden = true;
+            });
+            megaMenu.querySelectorAll('[data-submenu]').forEach(item => {
+                item.classList.remove('is-active');
+            });
+
             menuLinks.forEach(link => {
                 const active = link === activeLink;
                 link.classList.toggle('is-active', active);
                 link.setAttribute('aria-expanded', String(active));
             });
-            if (menuName === 'product') {
-                megaMenu.querySelector('[data-panel="menu_product"]').hidden = false;
-            }
         }
 
         menuLinks.forEach(link => {
