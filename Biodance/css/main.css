@@ -867,9 +867,6 @@ body {
 .site-header .main-nav {
     height: 64px;
 }
-.site-header .main-nav a {
-    font-size: 14px;
-}
 .site-header .header-actions {
     height: 64px;
 }
@@ -959,9 +956,6 @@ body {
     }
     .site-header .main-nav {
         top: 58px;
-    }
-    .site-header .main-nav a {
-        font-size: 16px;
     }
     .site-header .header-mega-menu {
         position: relative;
