@@ -22,7 +22,11 @@
                 <div class="header-inner">
                     <a class="brand-logo" href="index.html" aria-label="Biodance 홈"><img src="../img/logo-1.png" alt="Biodance"></a>
                     <nav class="main-nav" id="main-nav" aria-label="주요 메뉴">
-                        <a href="#biodance">Biodance</a><a href="#product">Product</a><a href="#new">New</a><a href="#event">Event</a><a href="#community">Community</a>
+                        <a href="#biodance" data-menu="biodance" aria-expanded="false">Biodance</a>
+                        <a href="#product" data-menu="product" aria-expanded="false">Product</a>
+                        <a href="#new">New</a>
+                        <a href="#event">Event</a>
+                        <a href="#community" data-menu="community" aria-expanded="false">Community</a>
                     </nav>
                     <div class="header-actions">
                         <a href="#mypage" aria-label="마이페이지" class="icon-link"><img src="../img/my.svg" alt=""></a>
@@ -30,6 +34,37 @@
                         <button type="button" class="icon-link search-button" aria-label="검색"><img src="../img/search.svg" alt=""></button>
                         <button type="button" class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
                     </div>
+                </div>
+            </div>
+            <div class="header-mega-menu" id="header-mega-menu" hidden>
+                <div class="mega-intro" data-panel="biodance">
+                    <a href="#brand">Brand</a>
+                    <a href="#key-ingredients">Key Ingredients</a>
+                    <a href="#real-deep-mask">Real Deep Mask</a>
+                </div>
+                <div class="mega-column mega-primary" data-panel="product">
+                    <a href="#best" data-submenu="menu_product">Best</a>
+                    <a href="#new-products" data-submenu="menu_product">New</a>
+                    <a href="#type" data-submenu="menu_product">유형별 <span>›</span></a>
+                    <a href="#concern" data-submenu="menu_product2">고민별 <span>›</span></a>
+                    <a href="#skin-type" data-submenu="menu_product3">피부타입별 <span>›</span></a>
+                    <a href="#exclusive" data-submenu="menu_product4">공식몰 단독기획 <span>›</span></a>
+                    <a href="#promotion" data-submenu="menu_product">Promotion</a>
+                </div>
+                <div class="mega-column mega-secondary" data-panel="menu_product" hidden>
+                    <a href="#mask">마스크팩</a><a href="#serum">세럼/토너</a><a href="#cream">크림</a><a href="#cleanser">클렌징</a><a href="#set">스킨케어</a>
+                </div>
+                <div class="mega-column mega-secondary" data-panel="menu_product2" hidden>
+                    <a href="#moisture">모공/탄력</a><a href="#hydration">수분/보습</a><a href="#trouble">잡티/흔적</a><a href="#aging">영양/안티에이징</a><a href="#texture">트러블/진정</a><a href="#other">각질케어</a>
+                </div>
+                <div class="mega-column mega-secondary" data-panel="menu_product3" hidden>
+                    <a href="#dry-skin">건성</a><a href="#oily-skin">중성/복합성</a><a href="#sensitive-skin">지성</a><a href="#all-skin">민감성</a>
+                </div>
+                <div class="mega-column mega-secondary" data-panel="menu_product4" hidden>
+                    <a href="#exclusive-set">공식몰 단독 세트</a><a href="#limited">한정 기획</a><a href="#gift">증정 혜택</a>
+                </div>
+                <div class="mega-intro mega-community" data-panel="community" hidden>
+                    <a href="#review">Review</a><a href="#notice">Notice</a><a href="#membership">Membership</a><a href="#stores">Global Stores</a><a href="#faq">FAQ</a>
                 </div>
             </div>
         </header>
@@ -66,11 +101,69 @@
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNav = document.querySelector('#main-nav');
+        const megaMenu = document.querySelector('#header-mega-menu');
+        const menuLinks = mainNav.querySelectorAll('[data-menu]');
+        const submenuLinks = megaMenu.querySelectorAll('[data-submenu]');
+
+        function closeMegaMenu() {
+            megaMenu.hidden = true;
+            megaMenu.classList.remove('is-open');
+            menuLinks.forEach(link => {
+                link.classList.remove('is-active');
+                link.setAttribute('aria-expanded', 'false');
+            });
+        }
+
+        function openMegaMenu(menuName, activeLink) {
+            megaMenu.hidden = false;
+            megaMenu.classList.add('is-open');
+            megaMenu.querySelectorAll('[data-panel]').forEach(panel => {
+                panel.hidden = panel.dataset.panel !== menuName;
+            });
+            menuLinks.forEach(link => {
+                const active = link === activeLink;
+                link.classList.toggle('is-active', active);
+                link.setAttribute('aria-expanded', String(active));
+            });
+            if (menuName === 'product') {
+                megaMenu.querySelector('[data-panel="menu_product"]').hidden = false;
+            }
+        }
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const alreadyOpen = !megaMenu.hidden && link.classList.contains('is-active');
+                if (alreadyOpen) {
+                    closeMegaMenu();
+                    return;
+                }
+                openMegaMenu(link.dataset.menu, link);
+            });
+        });
+
+        submenuLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                const selected = link.dataset.submenu;
+                megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
+                    panel.hidden = panel.dataset.panel !== selected;
+                });
+                megaMenu.querySelectorAll('[data-submenu]').forEach(item => {
+                    item.classList.toggle('is-active', item === link);
+                });
+            });
+            link.addEventListener('focus', () => link.dispatchEvent(new Event('mouseenter')));
+        });
+
+        document.addEventListener('click', event => {
+            if (!event.target.closest('.site-header')) closeMegaMenu();
+        });
 
         menuToggle.addEventListener('click', () => {
             const isOpen = mainNav.classList.toggle('is-open');
             menuToggle.setAttribute('aria-expanded', String(isOpen));
             menuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+            if (!isOpen) closeMegaMenu();
         });
 
         const swiperHero = new Swiper('.hero-sec .visual', {
