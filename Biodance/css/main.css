@@ -1526,3 +1526,48 @@ body {
 .site-header .header-mega-menu::after {
     content: none !important;
 }
+
+
+/* Promo bar arrows: 24×24 button frame, 6×12 arrow glyph */
+.site-header .promo-bar .promo-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.site-header .promo-bar .promo-arrow img {
+    display: block;
+    width: 6px;
+    height: 12px;
+    flex: 0 0 6px;
+    object-fit: contain;
+}
+
+/* One 1px separator only: header-inner bottom border */
+.site-header .header-inner:has(.main-nav > a.is-active) {
+    position: relative;
+    z-index: 100;
+    border-bottom: 1px solid var(--neutral-border-gray);
+    box-sizing: border-box;
+}
+
+.site-header .header-inner:has(.main-nav > a.is-active)::after {
+    content: none !important;
+}
+
+.site-header .header-mega-menu {
+    border: 0 !important;
+    z-index: 40;
+}
+
+.site-header .header-mega-menu::before,
+.site-header .header-mega-menu::after {
+    content: none !important;
+}
