@@ -128,10 +128,10 @@
             });
 
             megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
-                panel.hidden = panel.dataset.panel !== 'menu_product';
+                panel.hidden = true;
             });
             megaMenu.querySelectorAll('[data-submenu]').forEach(item => {
-                item.classList.toggle('is-active', item.dataset.submenu === 'menu_product');
+                item.classList.remove('is-active');
             });
 
             menuLinks.forEach(link => {
@@ -154,22 +154,49 @@
         });
 
         function selectSubmenu(link) {
-            const selected = link.dataset.submenu;
-            megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
-                panel.hidden = panel.dataset.panel !== selected;
+            megaMenu.querySelectorAll('[data-submenu]').forEach(item => {
+                item.classList.toggle('is-active', item === link);
             });
+        }
+
+        function toggleSecondaryMenu(link) {
+            const selected = link.dataset.submenu;
+            const target = megaMenu.querySelector('[data-panel="' + selected + '"]');
+            if (!target) return;
+
+            const shouldOpen = target.hidden;
+            megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
+                panel.hidden = true;
+            });
+            target.hidden = !shouldOpen;
             megaMenu.querySelectorAll('[data-submenu]').forEach(item => {
                 item.classList.toggle('is-active', item === link);
             });
         }
 
         submenuLinks.forEach(link => {
-            link.addEventListener('mouseenter', () => selectSubmenu(link));
-            link.addEventListener('focus', () => selectSubmenu(link));
             link.addEventListener('click', event => {
                 event.preventDefault();
                 selectSubmenu(link);
             });
+
+            const arrow = link.querySelector('span');
+            if (arrow) {
+                arrow.setAttribute('role', 'button');
+                arrow.setAttribute('tabindex', '0');
+                arrow.setAttribute('aria-label', link.textContent.trim() + ' 하위 메뉴 열기');
+                arrow.addEventListener('click', event => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    toggleSecondaryMenu(link);
+                });
+                arrow.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        toggleSecondaryMenu(link);
+                    }
+                });
+            }
         });
 
         document.addEventListener('click', event => {
