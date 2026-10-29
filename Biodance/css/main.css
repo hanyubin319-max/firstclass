@@ -516,7 +516,7 @@ body {
 }
 
 
-/* Hero navigation: 21x21 button frames, 6x12 arrows, 7px gaps */
+/* Hero navigation: 18x18 button frames, 6x12 arrows, 7px gaps */
 .hero-sec .hero-controls {
     gap: 7px;
 }
@@ -525,9 +525,9 @@ body {
 }
 .hero-sec .hero-navigation button.swiper-button-next,
 .hero-sec .hero-navigation button.swiper-button-prev {
-    width: 21px;
-    height: 21px;
-    flex: 0 0 21px;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
 }
 .hero-sec .hero-navigation button.swiper-button-next::after,
 .hero-sec .hero-navigation button.swiper-button-prev::after {
