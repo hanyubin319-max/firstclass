@@ -516,7 +516,7 @@ body {
 }
 
 
-/* Hero navigation: 24x24 button frames, 6x12 arrows, 7px gaps */
+/* Hero navigation: 21x21 button frames, 6x12 arrows, 7px gaps */
 .hero-sec .hero-controls {
     gap: 7px;
 }
