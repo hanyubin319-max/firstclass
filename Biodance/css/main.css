@@ -1624,8 +1624,7 @@ body {
 
 /* When a product secondary menu opens, mute only the top-level New tab */
 @media (min-width: 1025px) {
-    .site-header .header-mega-menu.has-secondary-open ~ .header-inner .main-nav > a[href="#new"],
-    .site-header .header-inner:has(+ .header-mega-menu.has-secondary-open) .main-nav > a[href="#new"] {
+    .site-header .header-main:has(+ .header-mega-menu.has-secondary-open) .main-nav > a[href="#new"] {
         background: rgba(90, 216, 204, 0.2) !important;
         color: transparent !important;
     }
