@@ -525,9 +525,9 @@ body {
 }
 .hero-sec .hero-navigation button.swiper-button-next,
 .hero-sec .hero-navigation button.swiper-button-prev {
-    width: 24px;
-    height: 24px;
-    flex: 0 0 24px;
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
 }
 .hero-sec .hero-navigation button.swiper-button-next::after,
 .hero-sec .hero-navigation button.swiper-button-prev::after {
