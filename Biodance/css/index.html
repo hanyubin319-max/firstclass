@@ -52,8 +52,7 @@
                     </div>
                     <div class="hero-controls">
                         <div class="swiper-pagination"></div>
-                        <span class="hero-pagination-divider" aria-hidden="true"></span>
-                        <div class="swiper-scrollbar"></div>
+                        <div class="swiper-scrollbar" aria-hidden="true"></div>
                         <div class="hero-navigation">
                             <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
                             <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
@@ -80,6 +79,12 @@
             pagination: {
                 el: '.visual .swiper-pagination',
                 type: 'fraction',
+                formatFractionCurrent: number => String(number).padStart(2, '0'),
+                formatFractionTotal: number => String(number).padStart(2, '0'),
+                renderFraction: (currentClass, totalClass) =>
+                    '<span class="' + currentClass + '"></span>' +
+                    '<span class="hero-pagination-line" aria-hidden="true"></span>' +
+                    '<span class="' + totalClass + '"></span>',
             },
             navigation: {
                 nextEl: '.visual .swiper-button-next',
