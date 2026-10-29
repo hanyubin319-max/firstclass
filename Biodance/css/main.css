@@ -1419,3 +1419,20 @@ body {
         transition: none;
     }
 }
+
+
+/* Keep the single separator on header-inner visible above the open mega menu */
+.site-header .header-inner:has(.main-nav > a.is-active) {
+    position: relative;
+    z-index: 50;
+    border-bottom: 1px solid var(--neutral-border-gray);
+    box-sizing: border-box;
+}
+
+/* No separator is allowed on the mega menu itself */
+.site-header .header-mega-menu,
+.site-header .header-mega-menu::before {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    content: none;
+}
