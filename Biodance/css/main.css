@@ -355,3 +355,27 @@ body {
 }
 @media(max-width:420px) { .header-actions { gap:5px; } .header-actions .icon-link { width:23px; } .header-actions .icon-link img { width:19px; height:19px; } }
 
+
+
+/* Promo bar SVG chevrons: 20×20 frame, 6×12 vector */
+.promo-bar .promo-arrow {
+    display: flex;
+    flex: 0 0 20px;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    line-height: 0;
+}
+.promo-bar .promo-arrow::before {
+    content: none;
+    display: none;
+}
+.promo-bar .promo-arrow img {
+    display: block;
+    width: 6px;
+    height: 12px;
+    flex: 0 0 6px;
+    object-fit: contain;
+}
