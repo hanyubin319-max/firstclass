@@ -1269,3 +1269,18 @@ body {
         margin: 0;
     }
 }
+
+
+/* Full-width dropdown frame; keep the existing 200px menu columns in the same centered positions */
+@media (min-width: 1025px) {
+    .site-header .header-mega-menu {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 100%;
+        grid-template-columns: repeat(5, 200px);
+        justify-content: center;
+        height: 253px;
+        min-height: 253px;
+    }
+}
