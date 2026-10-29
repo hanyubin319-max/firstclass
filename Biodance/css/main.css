@@ -1356,3 +1356,29 @@ body {
         font-weight: 400 !important;
     }
 }
+
+
+/* Product menu labels centered; only submenu arrows align to the right edge */
+@media (min-width: 768px) {
+    .site-header .header-mega-menu.product-active .mega-primary > a {
+        position: relative;
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 400 !important;
+    }
+
+    .site-header .header-mega-menu.product-active .mega-primary > a > span {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: 400;
+    }
+}
