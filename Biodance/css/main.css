@@ -2039,8 +2039,7 @@ body {
 }
 
 
-/* Keep the top-level navigation in Mint 100 on hover and focus */
-.site-header .main-nav > a,
+/* Keep the original top-level navigation colors until interaction; use Mint 100 only on hover/focus/press */
 .site-header .main-nav > a:hover,
 .site-header .main-nav > a:focus-visible,
 .site-header .main-nav > a:active {
