@@ -142,7 +142,7 @@
 
         function closeMegaMenu() {
             megaMenu.hidden = true;
-            megaMenu.classList.remove('is-open', 'product-active', 'has-secondary-open');
+            megaMenu.classList.remove('is-open', 'product-active', 'biodance-active', 'community-active', 'has-secondary-open');
             menuLinks.forEach(link => {
                 link.classList.remove('is-active');
                 link.setAttribute('aria-expanded', 'false');
@@ -153,6 +153,8 @@
             megaMenu.hidden = false;
             megaMenu.classList.add('is-open');
             megaMenu.classList.toggle('product-active', menuName === 'product');
+            megaMenu.classList.toggle('biodance-active', menuName === 'biodance');
+            megaMenu.classList.toggle('community-active', menuName === 'community');
 
             megaMenu.querySelectorAll('[data-panel]').forEach(panel => {
                 const panelName = panel.dataset.panel;
