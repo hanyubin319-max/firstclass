@@ -1339,3 +1339,20 @@ body {
         font-weight: 400;
     }
 }
+
+
+/* Fix product dropdown links: center each label within the full 200px column and remove bold */
+@media (min-width: 768px) {
+    .site-header .header-mega-menu.product-active .mega-primary > a,
+    .site-header .header-mega-menu.product-active .mega-primary > a:hover,
+    .site-header .header-mega-menu.product-active .mega-primary > a:focus-visible,
+    .site-header .header-mega-menu.product-active .mega-primary > a.is-active {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 400 !important;
+    }
+}
