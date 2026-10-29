@@ -856,19 +856,19 @@ body {
     height: 28px;
 }
 .site-header .header-main {
-    height: 64px;
+    height: 80px;
 }
 .site-header .header-inner {
-    height: 64px;
+    height: 80px;
 }
 .site-header .brand-logo {
-    height: 64px;
+    height: 80px;
 }
 .site-header .main-nav {
-    height: 64px;
+    height: 80px;
 }
 .site-header .header-actions {
-    height: 64px;
+    height: 80px;
 }
 .site-header .header-mega-menu {
     position: absolute;
@@ -988,7 +988,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 64px;
+    height: 80px;
     box-sizing: border-box;
     padding: 0 16px;
     color: #fff;
