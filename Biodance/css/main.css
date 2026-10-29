@@ -1447,3 +1447,34 @@ body {
     border-bottom: 0 !important;
     content: none;
 }
+
+
+/* Figma spec: all bottom mega-menu text is 20px; arrow uses a 24×24 frame with a 6×12 glyph */
+@media (min-width: 1025px) {
+    .site-header .header-mega-menu .mega-intro a,
+    .site-header .header-mega-menu .mega-primary > a,
+    .site-header .header-mega-menu .mega-secondary a {
+        font-size: 20px !important;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a > span {
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        font-size: 0;
+        line-height: 1;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a > span::before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 12px;
+        background: currentColor;
+        -webkit-mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat;
+        mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat;
+    }
+}
