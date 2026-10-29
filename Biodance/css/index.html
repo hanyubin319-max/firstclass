@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/default.css">
     <link rel="stylesheet" href="../../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../../font/css/pretendardvariable.css">
-    <link rel="stylesheet" href="main.css?v=category-2">
+    <link rel="stylesheet" href="main.css?v=hero-autoplay-10s">
     <script src="../../npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -269,6 +269,10 @@
         const swiperHero = new Swiper('.hero-sec .visual', {
             direction: 'horizontal',
             loop: true,
+            autoplay: {
+                delay: 10000,
+                disableOnInteraction: false,
+            },
             pagination: {
                 el: '.hero-sec .hero-controls .swiper-pagination',
                 type: 'fraction',
