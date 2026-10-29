@@ -1874,8 +1874,8 @@ body {
         width: 6px !important;
         height: 12px !important;
         background: currentColor !important;
-        -webkit-mask: url("../img/chevron-right.svg") center / 20px 20px no-repeat !important;
-        mask: url("../img/chevron-right.svg") center / 20px 20px no-repeat !important;
+        -webkit-mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat !important;
+        mask: url("../img/chevron-right.svg") center / 6px 12px no-repeat !important;
     }
 }
 
