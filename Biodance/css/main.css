@@ -516,7 +516,7 @@ body {
 }
 
 
-/* Requested hero navigation sizing and spacing only */
+/* Hero navigation: 24x24 button frames, 6x12 arrows, 7px gaps */
 .hero-sec .hero-controls {
     gap: 7px;
 }
