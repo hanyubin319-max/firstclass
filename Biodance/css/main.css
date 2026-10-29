@@ -1871,11 +1871,11 @@ body {
     .site-header .header-mega-menu .mega-primary > a > span::before {
         content: "" !important;
         display: block !important;
-        width: 24px !important;
-        height: 24px !important;
-        background: currentColor !important;
-        -webkit-mask: url("../img/chevron-right.svg") center / 24px 24px no-repeat !important;
-        mask: url("../img/chevron-right.svg") center / 24px 24px no-repeat !important;
+        width: 20px !important;
+        height: 20px !important;
+        background: url("../img/chevron-right.svg") center / contain no-repeat !important;
+        -webkit-mask: none !important;
+        mask: none !important;
     }
 }
 
