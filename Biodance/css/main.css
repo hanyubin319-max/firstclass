@@ -2298,3 +2298,34 @@ body {
         margin-top: 48px;
     }
 }
+
+
+/* Best Sellers — spacing and product-name refinements */
+.best-section {
+    padding-top: 110px;
+}
+.best-section .best-heading h2 {
+    margin-bottom: 16px;
+}
+.best-product-name {
+    font-size: 18px;
+    font-weight: 500;
+}
+.best-product-price {
+    margin: 8px 0 4px;
+}
+.best-product-rating {
+    margin-top: 0;
+}
+
+/* Keep the requested 18px product-name size on small screens too. */
+@media (max-width: 600px) {
+    .best-product-name {
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .best-product-price {
+        margin-top: 8px;
+        margin-bottom: 4px;
+    }
+}
