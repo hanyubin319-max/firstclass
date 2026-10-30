@@ -3341,3 +3341,18 @@ body {
         color: var(--neutral-white) !important;
     }
 }
+
+/* New / Event dropdown links: 80% opacity by default, 100% on hover when inactive */
+.site-header .header-mega-menu:not(.new-active) .mega-new > a,
+.site-header .header-mega-menu:not(.event-active) .mega-event > a {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.site-header .header-mega-menu:not(.new-active) .mega-new > a:hover,
+.site-header .header-mega-menu:not(.new-active) .mega-new > a:focus-visible,
+.site-header .header-mega-menu:not(.event-active) .mega-event > a:hover,
+.site-header .header-mega-menu:not(.event-active) .mega-event > a:focus-visible {
+    opacity: 1;
+}
+
