@@ -3290,3 +3290,23 @@ body {
 .site-header .header-mega-menu a {
     font-size: 18px !important;
 }
+
+
+.community-bottom {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.community-bottom > div {
+    width: 50%;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.community-bottom p {
+    font-size: 22px;
+    color: #333;
+    margin: 0;
+}
