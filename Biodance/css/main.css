@@ -3292,3 +3292,26 @@ body {
         font-size: clamp(14px, 2.5333vw, 38px);
     }
 }
+
+
+/* New and Event mega-menu panels */
+.site-header .header-mega-menu.new-active .mega-new,
+.site-header .header-mega-menu.event-active .mega-event {
+    display: flex;
+}
+
+/* Main navigation font size: mega menu is 2px smaller */
+.site-header .header-mega-menu a {
+    font-size: 18px;
+}
+
+/* Keep every hero pagination state in one consistent brand color */
+.hero-sec .hero-controls .swiper-pagination,
+.hero-sec .hero-controls .swiper-pagination-current,
+.hero-sec .hero-controls .swiper-pagination-total,
+.hero-sec .hero-controls .hero-pagination-line {
+    color: var(--neutral-charcoal) !important;
+}
+.hero-sec .hero-controls .hero-pagination-line {
+    background: var(--neutral-charcoal) !important;
+}
