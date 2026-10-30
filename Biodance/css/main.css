@@ -1,36 +1,9 @@
-/* Color tokens mirrored from Biodance Figma Local Variables (Mode 1).
-   Keep these values aligned with the Figma collections: primitives + semantic. */
-:root {
-    /* Primitives: Figma collection "primitives" */
-    --teal-mint: #5AD8CC;
-    --brand-pink: #FFCDDB;
-    --brand-rose: #FD7E9E;
-    --neutral-cream: #FEFAF7;
+/* Color tokens mirrored from Biodance Figma Local Variables (Mode  collel-mintEFAF7;
     --neutral-white: #FFFFFF;
-    --neutral-charcoal: #292929;
-    --neutral-border-gray: #CFCFCF;
-    --neutral-gray: #949494;
-    --neutral-product-gray: #F8F9FA;
-    --neutral-light-gray: #F2F4F5;
-    --sale: #F8A48A;
-
-    /* Semantic: aliases matching Figma collection "semantic" */
-    --bg-default: var(--neutral-white);
-    --surface-default: var(--neutral-white);
-    --bg-subtle: var(--neutral-cream);
-    --bg-accent: var(--brand-pink);
-    --surface-brand: var(--brand-pink);
+    --neutral-charray: #--surface-default: var(--neutral-white);
+    --bg-subtle: --surface-brand: var(--brand-pink);
     --text-primary: var(--neutral-product-gray);
-    --text-secondary: var(--neutral-charcoal);
-    --text-muted: var(--neutral-gray);
-    --border-default: var(--neutral-border-gray);
-    --action-primary: var(--brand-pink);
-    --action-hover: var(--teal-mint);
-    --action-active: var(--teal-mint);
-    --action-on-primary: var(--neutral-charcoal);
-    --action-on-secondary: var(--neutral-charcoal);
-    --action-brand: var(--brand-pink);
-    --action-highlight: var(--teal-mint);
+    --text-secondary: var(--neutral-chint);
     --accent-slider-control: var(--brand-rose);
     --accent-indicator: var(--brand-rose);
     --bg-product-list: var(--neutral-product-gray);
