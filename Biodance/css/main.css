@@ -3180,28 +3180,30 @@ body {
 }
 
 
-/* Instagram image frame: two large + stacked small image groups */
+/* Instagram: outer frame with vertical auto-layout (Hug contents) */
 .instagram-section {
     width: 100%;
     box-sizing: border-box;
 }
 
 .instagram-frame {
-    position: relative;
     width: min(1500px, 100%);
-    height: 700px;
+    height: auto;
     box-sizing: border-box;
     margin: 0 auto;
+    padding: 45px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 45px;
 }
 
 .instagram-handle-frame {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: static;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
 }
 
@@ -3214,10 +3216,8 @@ body {
 }
 
 .instagram-image-row {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: static;
+    width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
@@ -3259,12 +3259,13 @@ body {
 
 @media (max-width: 1500px) {
     .instagram-frame {
-        height: min(700px, 46.6667vw);
+        padding-right: 16px;
+        padding-left: 16px;
     }
 
     .instagram-image-row {
         transform: scale(min(1, 100vw / 1501));
-        transform-origin: bottom left;
+        transform-origin: top left;
     }
 
     .instagram-handle-frame p {
@@ -3275,12 +3276,16 @@ body {
 @media (max-width: 700px) {
     .instagram-frame {
         height: auto;
-        aspect-ratio: 1500 / 700;
-        overflow: hidden;
+        aspect-ratio: auto;
+        overflow: visible;
+        gap: 45px;
+        padding-top: 45px;
+        padding-bottom: 45px;
     }
 
     .instagram-image-row {
         transform: scale(calc(100vw / 1501));
+        transform-origin: top left;
     }
 
     .instagram-handle-frame p {
