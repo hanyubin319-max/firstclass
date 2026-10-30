@@ -2997,3 +2997,109 @@ body {
         top: calc(100% + 12px);
     }
 }
+
+
+/* Woni's Pick: title and product frame grouped in a centered vertical auto-layout */
+.model-pick-layout {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 110px 0;
+}
+
+.model-pick-title-frame {
+    width: min(1500px, 100%);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.model-pick-title-frame h2 {
+    margin: 0;
+    color: var(--neutral-charcoal);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.model-pick-frame {
+    width: min(1500px, 100%);
+    margin: 0 auto;
+}
+
+/* Mobile: keep image and its text in normal document flow so cards never overlap. */
+@media (max-width: 700px) {
+    .model-pick-layout {
+        gap: 60px;
+        padding: 110px 16px;
+    }
+
+    .model-pick-title-frame {
+        width: 100%;
+    }
+
+    .model-pick-frame {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        gap: 24px;
+    }
+
+    .model-pick-grid {
+        width: 100%;
+        height: auto;
+        flex: none;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        align-content: start;
+        column-gap: 12px;
+        row-gap: 32px;
+    }
+
+    .model-pick-item {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .model-pick-item > img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        flex: none;
+        object-fit: contain;
+    }
+
+    .model-pick-info {
+        position: static;
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .model-pick-name {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 360px) {
+    .model-pick-grid {
+        column-gap: 10px;
+        row-gap: 28px;
+    }
+
+    .model-pick-name {
+        font-size: 16px;
+    }
+}
