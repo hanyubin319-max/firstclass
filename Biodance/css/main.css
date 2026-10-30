@@ -3346,3 +3346,17 @@ body {
     background: var(--teal-mint) !important;
     color: var(--neutral-white) !important;
 }
+
+
+/* New / Event: mint background and white text only while the matching menu is active */
+@media (min-width: 768px) {
+    .site-header .header-mega-menu.new-active .mega-new:not([hidden]),
+    .site-header .header-mega-menu.event-active .mega-event:not([hidden]) {
+        background: var(--teal-mint) !important;
+    }
+
+    .site-header .header-mega-menu.new-active .mega-new:not([hidden]) > a,
+    .site-header .header-mega-menu.event-active .mega-event:not([hidden]) > a {
+        color: var(--neutral-white) !important;
+    }
+}
