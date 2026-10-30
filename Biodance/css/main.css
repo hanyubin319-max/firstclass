@@ -3398,9 +3398,9 @@ body {
     box-sizing: border-box;
 }
 
-/* White 1px top divider only on the visible separate Product submenu */
+/* White 1px top divider only on the separate Product submenu while it is active */
 @media (min-width: 1025px) {
-    .site-header .header-mega-menu .mega-secondary:not([hidden]) {
+    .site-header .header-mega-menu.product-active.has-secondary-open .mega-secondary:not([hidden]) {
         border-top: 1px solid #fff !important;
         box-sizing: border-box;
     }
