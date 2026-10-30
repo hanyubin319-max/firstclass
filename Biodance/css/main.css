@@ -1612,7 +1612,7 @@ body {
 
     .site-header .header-mega-menu.has-secondary-open .mega-secondary:not([hidden]) {
         grid-column: 3 !important;
-        background: rgba(90, 216, 204, 0.8) !important;
+        background: color-mix(in srgb, var(--teal-mint) 80%, transparent) !important;
     }
 
     .site-header .header-main:has(+ .header-mega-menu.has-secondary-open) .main-nav > a[data-menu="new"] {
