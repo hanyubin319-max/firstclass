@@ -3356,3 +3356,19 @@ body {
     opacity: 1;
 }
 
+/* New / Event dropdown text opacity: inactive 80%, hover 100%; mint active state stays 100% */
+.site-header .header-mega-menu .mega-new > a,
+.site-header .header-mega-menu .mega-event > a {
+    opacity: 0.8 !important;
+    transition: opacity 0.2s ease;
+}
+
+.site-header .header-mega-menu .mega-new > a:hover,
+.site-header .header-mega-menu .mega-new > a:focus-visible,
+.site-header .header-mega-menu .mega-event > a:hover,
+.site-header .header-mega-menu .mega-event > a:focus-visible,
+.site-header .header-mega-menu.new-active .mega-new > a,
+.site-header .header-mega-menu.event-active .mega-event > a {
+    opacity: 1 !important;
+}
+
