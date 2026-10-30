@@ -3372,3 +3372,19 @@ body {
     opacity: 1 !important;
 }
 
+/* Exact dropdown links circled in the reference: New and Event */
+.site-header .header-mega-menu .mega-intro.mega-new > a,
+.site-header .header-mega-menu .mega-intro.mega-event > a {
+    opacity: 0.8 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.site-header .header-mega-menu .mega-intro.mega-new > a:hover,
+.site-header .header-mega-menu .mega-intro.mega-new > a:focus-visible,
+.site-header .header-mega-menu .mega-intro.mega-event > a:hover,
+.site-header .header-mega-menu .mega-intro.mega-event > a:focus-visible,
+.site-header .header-mega-menu.new-active .mega-intro.mega-new > a,
+.site-header .header-mega-menu.event-active .mega-intro.mega-event > a {
+    opacity: 1 !important;
+}
+
