@@ -3388,8 +3388,13 @@ body {
     opacity: 1 !important;
 }
 
-/* Active top navigation separator: 1px white line above the matching mint dropdown */
+/* Keep the general divider gray; only the active mint tab gets a white 1px bottom line */
 .site-header .header-inner:has(.main-nav > a.is-active) {
+    border-bottom: 1px solid var(--neutral-border-gray) !important;
+}
+
+.site-header .main-nav > a.is-active {
     border-bottom: 1px solid #fff !important;
+    box-sizing: border-box;
 }
 
