@@ -3406,3 +3406,25 @@ body {
     }
 }
 
+/* New / Event dropdown links: keep gray text color and change opacity only */
+.site-header .header-mega-menu .mega-intro.mega-new > a,
+.site-header .header-mega-menu .mega-intro.mega-event > a {
+    color: #666 !important;
+    opacity: 0.8 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.site-header .header-mega-menu .mega-intro.mega-new > a:hover,
+.site-header .header-mega-menu .mega-intro.mega-new > a:focus-visible,
+.site-header .header-mega-menu .mega-intro.mega-event > a:hover,
+.site-header .header-mega-menu .mega-intro.mega-event > a:focus-visible {
+    color: #666 !important;
+    opacity: 1 !important;
+}
+
+.site-header .header-mega-menu.new-active .mega-intro.mega-new > a,
+.site-header .header-mega-menu.event-active .mega-intro.mega-event > a {
+    color: #fff !important;
+    opacity: 1 !important;
+}
+
