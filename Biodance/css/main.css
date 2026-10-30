@@ -3264,3 +3264,25 @@ body {
 .hero-sec .hero-controls .hero-pagination-line {
     background-color: #000 !important;
 }
+
+/* Mega menu correction: keep only the first-row menu columns */
+.site-header .header-mega-menu .mega-new,
+.site-header .header-mega-menu .mega-event {
+    display: none !important;
+}
+
+/* Brand submenu: center the links consistently within its column */
+.site-header .header-mega-menu .mega-intro[data-panel="biodance"] {
+    align-items: center !important;
+    justify-content: flex-start;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+/* Hero pagination arrows: render both directions in black */
+.hero-sec .hero-controls .hero-navigation .swiper-button-prev::after,
+.hero-sec .hero-controls .hero-navigation .swiper-button-next::after {
+    filter: brightness(0) !important;
+}
+
