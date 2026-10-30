@@ -3398,14 +3398,9 @@ body {
     box-sizing: border-box;
 }
 
-/* White 1px top divider only on the mint-colored active dropdown column */
+/* White 1px top divider only on the visible separate Product submenu */
 @media (min-width: 1025px) {
-    .site-header .header-mega-menu.product-active .mega-primary,
-    .site-header .header-mega-menu.biodance-active .mega-intro[data-panel="biodance"],
-    .site-header .header-mega-menu.community-active .mega-community,
-    .site-header .header-mega-menu.new-active .mega-new:not([hidden]),
-    .site-header .header-mega-menu.event-active .mega-event:not([hidden]),
-    .site-header .header-mega-menu.product-active.has-secondary-open .mega-secondary:not([hidden]) {
+    .site-header .header-mega-menu .mega-secondary:not([hidden]) {
         border-top: 1px solid #fff !important;
         box-sizing: border-box;
     }
