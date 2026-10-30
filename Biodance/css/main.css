@@ -3289,3 +3289,68 @@ body {
 
 
 
+
+
+/* One continuous five-column mega-menu row: Biodance / Product / New / Event / Community */
+@media (min-width: 768px) {
+    .site-header .header-mega-menu {
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        grid-auto-flow: row;
+        align-items: stretch;
+        justify-content: stretch;
+        gap: 0 !important;
+        width: 100% !important;
+        height: 253px !important;
+        min-height: 253px !important;
+        padding: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 !important;
+        transform: none !important;
+        box-sizing: border-box;
+    }
+
+    .site-header .header-mega-menu > [data-panel="biodance"],
+    .site-header .header-mega-menu > [data-panel="product"],
+    .site-header .header-mega-menu > [data-panel="new"],
+    .site-header .header-mega-menu > [data-panel="event"],
+    .site-header .header-mega-menu > [data-panel="community"] {
+        position: static !important;
+        grid-row: 1 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        height: 253px !important;
+        min-height: 253px !important;
+        margin: 0 !important;
+        padding: 12px 8px !important;
+        box-sizing: border-box !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 2px !important;
+        text-align: center !important;
+    }
+
+    .site-header .header-mega-menu > [data-panel="biodance"] { grid-column: 1 !important; }
+    .site-header .header-mega-menu > [data-panel="product"] { grid-column: 2 !important; }
+    .site-header .header-mega-menu > [data-panel="new"] { grid-column: 3 !important; }
+    .site-header .header-mega-menu > [data-panel="event"] { grid-column: 4 !important; }
+    .site-header .header-mega-menu > [data-panel="community"] { grid-column: 5 !important; }
+
+    .site-header .header-mega-menu > .mega-secondary {
+        grid-row: 1 !important;
+        grid-column: 3 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-header .header-mega-menu > [data-panel="new"],
+    .site-header .header-mega-menu > [data-panel="event"] {
+        width: auto !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 150px !important;
+    }
+}
