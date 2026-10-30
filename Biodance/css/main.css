@@ -3444,3 +3444,8 @@ body {
     opacity: 1 !important;
 }
 
+
+/* 메가 메뉴가 열리면 상단 New 메뉴를 가려 중복 노출 방지 */
+.site-header:has(.header-mega-menu.is-open) .main-nav > a[data-menu="new"] {
+    visibility: hidden;
+}
