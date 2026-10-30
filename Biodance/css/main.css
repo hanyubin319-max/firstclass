@@ -3286,3 +3286,7 @@ body {
     filter: brightness(0) !important;
 }
 
+/* Mega menu typography: all submenu links at 18px */
+.site-header .header-mega-menu a {
+    font-size: 18px !important;
+}
