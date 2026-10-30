@@ -3265,12 +3265,6 @@ body {
     background-color: #000 !important;
 }
 
-/* Mega menu correction: keep only the first-row menu columns */
-.site-header .header-mega-menu .mega-new,
-.site-header .header-mega-menu .mega-event {
-    display: none !important;
-}
-
 /* Brand submenu: center the links consistently within its column */
 .site-header .header-mega-menu .mega-intro[data-panel="biodance"] {
     align-items: center !important;
