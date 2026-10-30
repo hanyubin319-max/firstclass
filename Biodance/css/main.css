@@ -887,10 +887,7 @@ body {
     border: 0;
     box-shadow: none;
 }
-.site-header .header-mega-menu[hidden],
-.site-header .header-mega-menu [data-panel][hidden] {
-    display: none !important;
-}
+
 .site-header .header-mega-menu .mega-intro,
 .site-header .header-mega-menu .mega-column {
     box-sizing: border-box;
@@ -1542,35 +1539,15 @@ body {
     cursor: pointer;
 }
 
-.site-header .promo-bar .promo-arrow img {
-    display: block;
-    width: 6px;
-    height: 12px;
-    flex: 0 0 6px;
-    object-fit: contain;
-}
 
-/* One 1px separator only: header-inner bottom border */
-.site-header .header-inner:has(.main-nav > a.is-active) {
-    position: relative;
-    z-index: 100;
-    border-bottom: 1px solid var(--neutral-border-gray);
-    box-sizing: border-box;
-}
 
-.site-header .header-inner:has(.main-nav > a.is-active)::after {
-    content: none !important;
-}
 
-.site-header .header-mega-menu {
-    border: 0 !important;
-    z-index: 40;
-}
 
-.site-header .header-mega-menu::before,
-.site-header .header-mega-menu::after {
-    content: none !important;
-}
+
+
+
+
+
 
 
 /* Keep the primary menu unchanged; show the secondary menu as a separate 100% mint column */
@@ -2531,23 +2508,9 @@ body {
     overflow: hidden;
 }
 
-.brand-video-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
 
-.brand-video-section .brand-video {
-    display: block;
-    width: min(828px, 100%);
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: contain;
-    object-position: center;
-}
+
+
 
 @media (max-width: 1024px) {
     .best-section {
@@ -2664,12 +2627,7 @@ body {
     object-fit: contain;
 }
 
-.brand-video-heading h2 {
-    margin: 0;
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 1;
-}
+
 
 .brand-video-section .brand-video {
     display: block;
@@ -2754,32 +2712,11 @@ body {
     text-align: left;
 }
 
-.brand-video-heading img {
-    display: block;
-    flex: 0 0 150px;
-    width: 150px;
-    height: 37px;
-    object-fit: contain;
-}
 
-.brand-video-heading h2 {
-    margin: 0;
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 1;
-}
 
-.brand-video-section .brand-video {
-    display: block;
-    width: 100%;
-    max-width: 1600px;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 24px;
-    overflow: hidden;
-}
+
+
+
 
 @media (max-width: 600px) {
     .brand-video-content {
@@ -3314,4 +3251,16 @@ body {
 }
 .hero-sec .hero-controls .hero-pagination-line {
     background: var(--neutral-charcoal) !important;
+}
+
+
+/* Hero banner pagination: fixed black across every slide */
+.hero-sec .hero-controls .swiper-pagination,
+.hero-sec .hero-controls .swiper-pagination-current,
+.hero-sec .hero-controls .swiper-pagination-total,
+.hero-sec .hero-controls .hero-pagination-line {
+    color: #000 !important;
+}
+.hero-sec .hero-controls .hero-pagination-line {
+    background-color: #000 !important;
 }
