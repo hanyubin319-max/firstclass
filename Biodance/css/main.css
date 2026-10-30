@@ -3326,3 +3326,17 @@ body {
     gap: 12px;
     width: 100%;
 }
+
+
+/* New / Event: one submenu link in each column */
+.site-header .community-bottom > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-header .community-bottom > div > a {
+    font-size: 22px;
+    color: #333;
+    text-decoration: none;
+}
