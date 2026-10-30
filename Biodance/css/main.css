@@ -3338,3 +3338,11 @@ body {
         display: none !important;
     }
 }
+
+
+/* New / Event top navigation: mint background and white text only while active */
+.site-header .main-nav > a[data-menu="new"].is-active,
+.site-header .main-nav > a[data-menu="event"].is-active {
+    background: var(--teal-mint) !important;
+    color: var(--neutral-white) !important;
+}
