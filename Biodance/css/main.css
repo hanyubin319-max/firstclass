@@ -2568,3 +2568,57 @@ body {
         width: 100%;
     }
 }
+
+/* Brand video heading and 1600×900 video refinement */
+.brand-video-section {
+    padding: 20px;
+}
+
+.brand-video-content {
+    width: min(1600px, 100%);
+    align-items: center;
+    gap: 20px;
+}
+
+.brand-video-heading {
+    width: 100%;
+    align-self: stretch;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.brand-video-heading h2 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.brand-video-section .brand-video {
+    width: 100%;
+    max-width: 1600px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .brand-video-section {
+        padding: 20px 16px;
+    }
+
+    .brand-video-heading img {
+        width: 110px;
+        height: auto;
+    }
+
+    .brand-video-heading h2 {
+        font-size: 25px;
+    }
+}
