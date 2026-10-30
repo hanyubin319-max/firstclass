@@ -3445,7 +3445,10 @@ body {
 }
 
 
-/* 메가 메뉴가 열리면 상단 New 메뉴를 가려 중복 노출 방지 */
-.site-header:has(.header-mega-menu.is-open) .main-nav > a[data-menu="new"] {
-    visibility: hidden;
+
+/* 데스크톱 메가 메뉴는 프로모션 바 아래에서 헤더 메뉴 위를 덮도록 배치 */
+@media (min-width: 1025px) {
+    .site-header .header-mega-menu {
+        top: 28px;
+    }
 }
