@@ -2329,3 +2329,26 @@ body {
         margin-bottom: 4px;
     }
 }
+
+
+/* Best Sellers — product image frames and text line-height */
+.best-product-image {
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: var(--neutral-product-gray);
+}
+.best-product-image > img {
+    object-fit: contain;
+    border-radius: inherit;
+}
+.best-product-name {
+    line-height: 1.2;
+}
+.best-product-price,
+.best-product-price .discount,
+.best-product-price strong,
+.best-product-price del,
+.best-product-rating,
+.best-product-rating span {
+    line-height: 1;
+}
