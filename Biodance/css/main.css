@@ -2716,3 +2716,87 @@ body {
     background: transparent;
     overflow: visible;
 }
+
+/* Unified auto-layout frame for YouTube heading and video */
+.brand-video-section {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+.brand-video-content {
+    width: min(1600px, 100%);
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 55px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 11px;
+}
+
+.brand-video-heading {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    text-align: left;
+}
+
+.brand-video-heading img {
+    display: block;
+    flex: 0 0 150px;
+    width: 150px;
+    height: 37px;
+    object-fit: contain;
+}
+
+.brand-video-heading h2 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.brand-video-section .brand-video {
+    display: block;
+    width: 100%;
+    max-width: 1600px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .brand-video-content {
+        padding: 55px 16px;
+    }
+
+    .brand-video-heading {
+        gap: 20px;
+    }
+
+    .brand-video-heading img {
+        flex-basis: 150px;
+        width: 150px;
+        height: 37px;
+    }
+
+    .brand-video-heading h2 {
+        font-size: 25px;
+    }
+}
