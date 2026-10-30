@@ -1615,7 +1615,7 @@ body {
         background: rgba(90, 216, 204, 0.8) !important;
     }
 
-    .site-header .header-main:has(+ .header-mega-menu.has-secondary-open) .main-nav > a[href="#new"] {
+    .site-header .header-main:has(+ .header-mega-menu.has-secondary-open) .main-nav > a[data-menu="new"] {
         background: rgba(90, 216, 204, 0.8) !important;
         color: transparent !important;
     }
