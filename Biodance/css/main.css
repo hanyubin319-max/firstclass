@@ -1443,12 +1443,12 @@ body {
 }
 
 
-/* Figma spec: all bottom mega-menu text is 20px; arrow uses a 24×24 frame with a 6×12 glyph */
+/* Figma spec: all bottom mega-menu text is 18px; arrow uses a 24×24 frame with a 6×12 glyph */
 @media (min-width: 1025px) {
     .site-header .header-mega-menu .mega-intro a,
     .site-header .header-mega-menu .mega-primary > a,
     .site-header .header-mega-menu .mega-secondary a {
-        font-size: 20px !important;
+        font-size: 18px !important;
     }
 
     .site-header .header-mega-menu .mega-primary > a > span {
