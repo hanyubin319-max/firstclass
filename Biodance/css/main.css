@@ -535,18 +535,15 @@ body {
     height: 12px;
 }
 
-/* Hero-1 only: brand rose color for pagination and hero navigation */
-.hero-sec .visual:has(.swiper-slide-active img[src*="Hero-1.png"]) .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal {
-    color: var(--brand-rose);
-}
+/* Hero-1 only: black hero navigation arrows */
 .hero-sec .visual:has(.swiper-slide-active img[src*="Hero-1.png"]) .hero-controls .hero-navigation button.swiper-button-prev,
 .hero-sec .visual:has(.swiper-slide-active img[src*="Hero-1.png"]) .hero-controls .hero-navigation button.swiper-button-next {
-    color: var(--brand-rose);
+    color: #000;
 }
 .hero-sec .visual:has(.swiper-slide-active img[src*="Hero-1.png"]) .hero-controls .hero-navigation button.swiper-button-prev::after,
 .hero-sec .visual:has(.swiper-slide-active img[src*="Hero-1.png"]) .hero-controls .hero-navigation button.swiper-button-next::after {
     background-image: none;
-    background-color: var(--brand-rose);
+    background-color: #000;
     -webkit-mask-position: center;
     mask-position: center;
     -webkit-mask-repeat: no-repeat;
