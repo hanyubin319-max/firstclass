@@ -2417,20 +2417,3 @@ body {
 .best-section .best-heading p {
     line-height: 1;
 }
-
-
-/* Hero background video — responsive full viewport height */
-.hero-sec {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
-    overflow: hidden;
-}
-.hero-sec .hero-video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
