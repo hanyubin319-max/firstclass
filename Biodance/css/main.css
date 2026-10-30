@@ -2419,3 +2419,18 @@ body {
 .best-section .best-heading p {
     line-height: 1;
 }
+
+/* Brand video directly below Best Sellers */
+.brand-video-section {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.brand-video-section .brand-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+}
