@@ -24,8 +24,8 @@
                     <nav class="main-nav" id="main-nav" aria-label="주요 메뉴">
                         <a href="https://biodance.co.kr/brand/brand.html" data-menu="biodance" aria-expanded="false">Biodance</a>
                         <a href="https://biodance.co.kr/product/list.html?cate_no=28" data-menu="product" aria-expanded="false">Product</a>
-                        <a href="https://biodance.co.kr/product/new_list.html?cate_no=167">New</a>
-                        <a href="https://biodance.co.kr/board/gallery/list.html?board_no=8&amp;category_no=1">Event</a>
+                        <a href="#new" data-menu="new" aria-expanded="false">New</a>
+                        <a href="#event" data-menu="event" aria-expanded="false">Event</a>
                         <a href="https://biodance.co.kr/board/product/list.html?board_no=4" data-menu="community" aria-expanded="false">Community</a>
                     </nav>
                     <div class="header-actions">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="mega-column mega-primary" data-panel="product">
                     <a href="https://biodance.co.kr/product/list.html?cate_no=120" data-submenu="menu_product">Best</a>
-                    <a href="https://biodance.co.kr/product/new_list.html?cate_no=122" data-submenu="menu_product">New</a>
+                    <a href="#" data-submenu="menu_product">New</a>
                     <a href="https://biodance.co.kr/product/list.html?cate_no=28" data-submenu="menu_product">유형별 <span>›</span></a>
                     <a href="https://biodance.co.kr/product/list.html?cate_no=28" data-submenu="menu_product2">고민별 <span>›</span></a>
                     <a href="https://biodance.co.kr/product/list.html?cate_no=28" data-submenu="menu_product3">피부타입별 <span>›</span></a>
@@ -65,6 +65,14 @@
                 </div>
                 <div class="mega-intro mega-community" data-panel="community" hidden>
                     <a href="https://biodance.co.kr/board/product/list.html?board_no=4">Review</a><a href="https://biodance.co.kr/board/free/list.html?board_no=1">Notice</a><a href="https://biodance.co.kr/membership.html">Membership</a><a href="https://biodance.co.kr/global.html">Global Stores</a><a href="https://biodance.co.kr/faq.html">FAQ</a>
+                </div>
+                <div class="mega-intro mega-new" data-panel="new" hidden>
+                    <a href="#new-arrivals">New Arrivals</a>
+                    <a href="#new-products">신제품</a>
+                </div>
+                <div class="mega-intro mega-event" data-panel="event" hidden>
+                    <a href="#ongoing-events">진행중 이벤트</a>
+                    <a href="#ended-events">종료된 이벤트</a>
                 </div>
             </div>
         </header>
@@ -307,7 +315,7 @@
 
         function closeMegaMenu() {
             megaMenu.hidden = true;
-            megaMenu.classList.remove('is-open', 'product-active', 'biodance-active', 'community-active', 'has-secondary-open');
+            megaMenu.classList.remove('is-open', 'product-active', 'biodance-active', 'community-active', 'new-active', 'event-active', 'has-secondary-open');
             menuLinks.forEach(link => {
                 link.classList.remove('is-active');
                 link.setAttribute('aria-expanded', 'false');
@@ -320,11 +328,13 @@
             megaMenu.classList.toggle('product-active', menuName === 'product');
             megaMenu.classList.toggle('biodance-active', menuName === 'biodance');
             megaMenu.classList.toggle('community-active', menuName === 'community');
+            megaMenu.classList.toggle('new-active', menuName === 'new');
+            megaMenu.classList.toggle('event-active', menuName === 'event');
             megaMenu.classList.remove('has-secondary-open');
 
             megaMenu.querySelectorAll('[data-panel]').forEach(panel => {
                 const panelName = panel.dataset.panel;
-                panel.hidden = !['biodance', 'product', 'community'].includes(panelName);
+                panel.hidden = !['biodance', 'product', 'community', 'new', 'event'].includes(panelName);
             });
 
             megaMenu.querySelectorAll('.mega-secondary').forEach(panel => {
