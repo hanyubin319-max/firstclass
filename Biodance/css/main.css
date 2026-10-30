@@ -2133,7 +2133,7 @@ body {
 }
 .label-best-second {
     right: 9px;
-    transform: translateX(51px);
+    transform: none;
     background: #b65bea;
 }
 .best-product-image:has(.label-best-second) .label-only {
@@ -2284,7 +2284,7 @@ body {
     }
     .label-only { right: 6px; }
     .label-best { right: 6px; }
-    .label-best-second { right: 6px; transform: translateX(42px); }
+    .label-best-second { right: 6px; transform: none; }
     .best-product-image:has(.label-best-second) .label-only { right: 48px; }
     .product-quantity {
         right: 6px;
