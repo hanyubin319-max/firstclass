@@ -211,7 +211,6 @@ body {
  .header-main { height: 64px; } .header-inner { width: calc(100% - 32px); }
  .brand-logo, .brand-logo img { width: 126px; height: auto; }
  .header-actions { gap: 12px; } .header-actions .icon-link { width: 28px; height: 28px; } .header-actions .icon-link svg { width: 24px; height: 24px; }
- .menu-toggle { display: block; }
  .main-nav { display: none; position: absolute; top: 96px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; margin: 0; padding: 8px 20px 16px; background: var(--neutral-white); border-top: 1px solid var(--neutral-border-gray); box-shadow: 0 8px 16px rgba(41,41,41,.08); }
  .main-nav.is-open { display: flex; } .main-nav a { padding: 14px 0; font-size: 16px; }
 }
@@ -2562,9 +2561,6 @@ body {
         height: auto;
     }
 
-    .brand-video-heading h2 {
-        font-size: 25px;
-    }
 }
 
 /* Best Sellers: keep all product information inside the frame */
@@ -2631,16 +2627,6 @@ body {
 }
 
 @media (max-width: 600px) {
-    .brand-video-heading {
-        gap: 20px;
-    }
-
-    .brand-video-heading img {
-        flex-basis: 150px;
-        width: 150px;
-        height: 37px;
-    }
-}
 
 /* Remove outer video-section frame and padding; keep brand-video-content intact */
 .brand-video-section {
