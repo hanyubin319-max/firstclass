@@ -3238,26 +3238,6 @@ body {
 }
 
 
-/* Place New and Event panels under their matching top navigation items */
-@media (min-width: 768px) {
-    .site-header .header-mega-menu .mega-new {
-        grid-column: 3;
-    }
-
-    .site-header .header-mega-menu .mega-event {
-        grid-column: 4;
-    }
-}
-
-@media (max-width: 767px) {
-    .site-header .header-mega-menu .mega-new {
-        grid-column: 1;
-    }
-
-    .site-header .header-mega-menu .mega-event {
-        grid-column: 2;
-    }
-}
 
 /* Main navigation font size: mega menu is 2px smaller */
 .site-header .header-mega-menu a {
