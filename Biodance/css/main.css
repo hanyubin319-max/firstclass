@@ -3178,3 +3178,112 @@ body {
     height: auto;
     aspect-ratio: 1500 / 844;
 }
+
+
+/* Instagram image frame: two large + stacked small image groups */
+.instagram-section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.instagram-frame {
+    position: relative;
+    width: min(1500px, 100%);
+    height: 700px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.instagram-handle-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.instagram-handle-frame p {
+    margin: 0;
+    color: var(--neutral-charcoal);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.instagram-image-row {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.instagram-image-group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.instagram-image-large {
+    display: block;
+    width: 502px;
+    height: 614px;
+    flex: 0 0 502px;
+    object-fit: cover;
+}
+
+.instagram-image-stack {
+    width: 241px;
+    height: 614px;
+    flex: 0 0 241px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0;
+}
+
+.instagram-image-stack img {
+    display: block;
+    width: 241px;
+    height: 307px;
+    flex: 0 0 307px;
+    object-fit: cover;
+}
+
+@media (max-width: 1500px) {
+    .instagram-frame {
+        height: min(700px, 46.6667vw);
+    }
+
+    .instagram-image-row {
+        transform: scale(min(1, 100vw / 1501));
+        transform-origin: bottom left;
+    }
+
+    .instagram-handle-frame p {
+        font-size: clamp(22px, 2.5333vw, 38px);
+    }
+}
+
+@media (max-width: 700px) {
+    .instagram-frame {
+        height: auto;
+        aspect-ratio: 1500 / 700;
+        overflow: hidden;
+    }
+
+    .instagram-image-row {
+        transform: scale(calc(100vw / 1501));
+    }
+
+    .instagram-handle-frame p {
+        font-size: clamp(14px, 2.5333vw, 38px);
+    }
+}
