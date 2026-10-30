@@ -2202,11 +2202,13 @@ body {
     margin: 0;
     color: #222;
     font-size: 14px;
+    font-weight: 500;
     line-height: 1;
 }
 .best-product-rating span {
     color: #777;
     font-size: 14px;
+    font-weight: 500;
 }
 .best-more {
     display: flex;
