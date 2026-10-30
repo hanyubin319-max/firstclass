@@ -3444,11 +3444,3 @@ body {
     opacity: 1 !important;
 }
 
-
-
-/* 데스크톱 메가 메뉴는 프로모션 바 아래에서 헤더 메뉴 위를 덮도록 배치 */
-@media (min-width: 1025px) {
-    .site-header .header-mega-menu {
-        top: 28px;
-    }
-}
