@@ -2410,3 +2410,10 @@ body {
         right: 62px;
     }
 }
+
+
+/* Best Sellers heading and subtitle line-height */
+.best-section .best-heading h2,
+.best-section .best-heading p {
+    line-height: 1;
+}
