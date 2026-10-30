@@ -2622,3 +2622,83 @@ body {
         font-size: 25px;
     }
 }
+
+/* Best Sellers: keep all product information inside the frame */
+.best-section {
+    height: auto;
+    min-height: 650px;
+    box-sizing: border-box;
+    padding-bottom: 55px;
+    margin-bottom: 0;
+    overflow: visible;
+}
+
+/* Video heading: YouTube logo and title in one left-aligned auto-layout row */
+.brand-video-content {
+    width: min(1600px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+}
+
+.brand-video-heading {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 0;
+    text-align: left;
+}
+
+.brand-video-heading img {
+    display: block;
+    flex: 0 0 150px;
+    width: 150px;
+    height: 37px;
+    object-fit: contain;
+}
+
+.brand-video-heading h2 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.brand-video-section .brand-video {
+    display: block;
+    width: 100%;
+    max-width: 1600px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+    .best-section {
+        height: auto;
+        min-height: 650px;
+        padding-bottom: 55px;
+    }
+}
+
+@media (max-width: 600px) {
+    .brand-video-heading {
+        gap: 20px;
+    }
+
+    .brand-video-heading img {
+        flex-basis: 150px;
+        width: 150px;
+        height: 37px;
+    }
+}
