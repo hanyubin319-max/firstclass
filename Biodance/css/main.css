@@ -2352,3 +2352,61 @@ body {
 .best-product-rating span {
     line-height: 1;
 }
+
+
+/* Best Sellers — Figma variable-based BEST / ONLY badges */
+.best-product-image .product-label {
+    top: 9px;
+    display: flex;
+    width: 50px;
+    min-width: 50px;
+    height: 22px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    color: var(--neutral-white);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+}
+.best-product-image .label-best {
+    right: 9px;
+    background: var(--teal-mint);
+}
+.best-product-image .label-best-second {
+    right: 9px;
+    transform: none;
+    background: var(--teal-mint);
+}
+.best-product-image .label-only {
+    right: 9px;
+    background: var(--brand-rose);
+}
+/* When both badges are present, keep a 6px gap between their 50px boxes. */
+.best-product-image:has(.label-only):has(.label-best) .label-only {
+    right: 65px;
+}
+@media (max-width: 600px) {
+    .best-product-image .product-label {
+        top: 6px;
+        width: 50px;
+        min-width: 50px;
+        height: 22px;
+        font-size: 14px;
+    }
+    .best-product-image .label-best,
+    .best-product-image .label-best-second {
+        right: 6px;
+        transform: none;
+    }
+    .best-product-image .label-only {
+        right: 6px;
+    }
+    .best-product-image:has(.label-only):has(.label-best) .label-only {
+        right: 62px;
+    }
+}
