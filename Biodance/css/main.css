@@ -2702,3 +2702,17 @@ body {
         height: 37px;
     }
 }
+
+/* Remove outer video-section frame and padding; keep brand-video-content intact */
+.brand-video-section {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    overflow: visible;
+}
