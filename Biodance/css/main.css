@@ -3165,3 +3165,16 @@ body {
     outline: 2px solid var(--neutral-charcoal);
     outline-offset: 3px;
 }
+
+
+/* Brand video group: 1500px frame and 1500×844 video */
+.brand-video-content {
+    width: min(1500px, 100%);
+}
+
+.brand-video-section .brand-video {
+    width: 100%;
+    max-width: 1500px;
+    height: auto;
+    aspect-ratio: 1500 / 844;
+}
