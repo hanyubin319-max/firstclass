@@ -3398,3 +3398,8 @@ body {
     box-sizing: border-box;
 }
 
+/* White 1px divider at the bottom edge of the active mint menu panel */
+.site-header .header-inner:has(.main-nav > a.is-active) {
+    border-bottom-color: #fff !important;
+}
+
