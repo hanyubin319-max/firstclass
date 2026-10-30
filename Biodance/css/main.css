@@ -2434,3 +2434,75 @@ body {
     object-fit: cover;
     object-position: center;
 }
+
+/* Best Sellers frame: 650px tall, content aligned from the top */
+.best-section {
+    height: 650px;
+    box-sizing: border-box;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    overflow: visible;
+}
+
+/* Video frame: 55px external gap, 987px frame, vertically centered auto-layout */
+.brand-video-section {
+    width: 100%;
+    height: 987px;
+    box-sizing: border-box;
+    margin-top: 55px;
+    padding: 20px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.brand-video-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.brand-video-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    line-height: 1;
+}
+.brand-video-heading img {
+    display: block;
+    width: 150px;
+    height: 37px;
+    object-fit: contain;
+}
+.brand-video-heading h2 {
+    margin: 0;
+    color: var(--neutral-charcoal);
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1;
+}
+.brand-video-section .brand-video {
+    display: block;
+    width: min(828px, 100%);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center;
+}
+@media (max-width: 600px) {
+    .brand-video-section {
+        height: auto;
+        min-height: 987px;
+        padding: 20px 16px;
+    }
+    .brand-video-heading {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .brand-video-heading h2 {
+        font-size: 20px;
+    }
+}
