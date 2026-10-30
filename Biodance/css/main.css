@@ -3103,3 +3103,65 @@ body {
         font-size: 16px;
     }
 }
+
+
+/* Woni's Pick MORE button: single control with default and hover states */
+.model-pick-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.model-pick-more {
+    width: 160px;
+    height: 48px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 62px;
+    padding: 0 12px;
+    border: 2px solid var(--teal-mint);
+    border-radius: 24px;
+    background: var(--neutral-white);
+    color: var(--teal-mint);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.model-pick-more > span:first-child {
+    flex: 0 0 auto;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.model-pick-chevron {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.model-pick-chevron svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.model-pick-more:hover,
+.model-pick-more:focus-visible {
+    background: var(--teal-mint);
+    color: var(--neutral-white);
+}
+
+.model-pick-more:focus-visible {
+    outline: 2px solid var(--neutral-charcoal);
+    outline-offset: 3px;
+}
