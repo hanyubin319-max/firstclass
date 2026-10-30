@@ -296,7 +296,6 @@ body {
     .brand-logo { left: 12px; width: 150px; height: 63px; font-size: 30px; }
     .header-actions { right: 12px; height: 63px; }
     .icon-link { width: 32px; height: 32px; }
-    .menu-toggle { display: block; }
     .menu-toggle span { background: #fff; }
     .main-nav {
         display: none;
@@ -2702,20 +2701,6 @@ body {
 @media (max-width: 600px) {
     .brand-video-content {
         padding: 55px 16px;
-    }
-
-    .brand-video-heading {
-        gap: 20px;
-    }
-
-    .brand-video-heading img {
-        flex-basis: 150px;
-        width: 150px;
-        height: 37px;
-    }
-
-    .brand-video-heading h2 {
-        font-size: 25px;
     }
 }
 
