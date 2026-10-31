@@ -3648,7 +3648,7 @@ body {
     }
 
     .biodance-footer-logo {
-        width: min(300px, 75%);
+        width: min(270px, 75%);
         max-width: 100%;
         height: auto;
     }
