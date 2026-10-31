@@ -432,11 +432,15 @@
 
         if (modelPickButton && modelPickImage && modelPickProductImages.length === 4) {
             let isAlternatePick = false;
+            let isRotating = false;
             const modelPickImages = [modelPickImage, ...modelPickProductImages];
             const fadeDuration = 500;
 
-            modelPickButton.addEventListener('click', async () => {
-                if (modelPickButton.disabled) return;
+            modelPickButton.style.zIndex = '2';
+
+            const rotateModelPick = async () => {
+                if (isRotating) return;
+                isRotating = true;
 
                 const nextIsAlternatePick = !isAlternatePick;
                 const nextSources = [
@@ -447,8 +451,6 @@
                             : `../img/pick-${index + 5}.png`
                     ),
                 ];
-
-                modelPickButton.disabled = true;
 
                 try {
                     await Promise.all(nextSources.map(source => new Promise((resolve, reject) => {
@@ -479,19 +481,14 @@
                             parent.style.position = 'relative';
                         }
                         parent.appendChild(nextImage);
-
-                        currentImage.style.transition = `opacity ${fadeDuration}ms ease`;
-                        currentImage.style.opacity = '1';
-
                         return nextImage;
                     });
 
                     window.requestAnimationFrame(() => {
                         window.requestAnimationFrame(() => {
-                            nextLayers.forEach(image => {
-                                image.style.opacity = '1';
-                            });
+                            nextLayers.forEach(image => image.style.opacity = '1');
                             modelPickImages.forEach(image => {
+                                image.style.transition = `opacity ${fadeDuration}ms ease`;
                                 image.style.opacity = '0';
                             });
                         });
@@ -499,22 +496,23 @@
 
                     window.setTimeout(() => {
                         modelPickImages.forEach(image => image.remove());
-
                         nextLayers.forEach(image => {
-                            image.style.position = 'absolute';
-                            image.style.inset = '0';
                             image.style.opacity = '1';
+                            image.style.transition = 'none';
                         });
 
                         modelPickImages.splice(0, modelPickImages.length, ...nextLayers);
                         isAlternatePick = nextIsAlternatePick;
                         modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
-                        modelPickButton.disabled = false;
+                        isRotating = false;
                     }, fadeDuration + 50);
                 } catch (error) {
-                    modelPickButton.disabled = false;
+                    isRotating = false;
                 }
-            });
+            };
+
+            modelPickButton.addEventListener('click', rotateModelPick);
+            window.setInterval(rotateModelPick, 6000);
         }
 
         const swiperHero = new Swiper('.hero-sec .visual', {
