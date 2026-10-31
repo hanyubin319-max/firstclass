@@ -3855,3 +3855,9 @@ body {
 .model-pick-grid .model-pick-item .model-pick-image-frame {
     background: var(--neutral-light-gray);
 }
+
+
+/* Best Sellers: hide the circular product-quantity stickers on PC and mobile */
+.best-product-image .product-quantity {
+    display: none !important;
+}
