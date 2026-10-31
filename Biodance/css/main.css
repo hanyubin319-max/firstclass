@@ -3873,7 +3873,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 5px;
     }
 
     .biodance-footer-info-frame .biodance-footer-contact-divider {
