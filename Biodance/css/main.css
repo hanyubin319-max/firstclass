@@ -3867,16 +3867,22 @@ body {
 }
 
 
-/* Footer inquiry: split into two 10px-spaced lines on mobile only */
+/* Footer inquiry: force two separate mobile text rows with a 5px gap */
 @media (max-width: 700px) {
-    .biodance-footer-info-frame .biodance-footer-contact-inquiry {
-        display: flex;
-        flex-direction: column;
+    .biodance-footer-info-frame p.biodance-footer-contact-inquiry {
+        display: flex !important;
+        flex-direction: column !important;
         align-items: flex-start;
-        gap: 5px;
+        row-gap: 5px !important;
+        gap: 5px !important;
+    }
+
+    .biodance-footer-info-frame p.biodance-footer-contact-inquiry > span {
+        display: block;
+        margin: 0;
     }
 
     .biodance-footer-info-frame .biodance-footer-contact-divider {
-        display: none;
+        display: none !important;
     }
 }
