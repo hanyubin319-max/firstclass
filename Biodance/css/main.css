@@ -3499,6 +3499,6 @@ body {
 
 /* Woni's Pick images: 12px corner radius only */
 .model-pick-section .model-pick-model,
-.model-pick-section .model-pick-item > img {
+.model-pick-section .model-pick-item img {
     border-radius: 12px;
 }
