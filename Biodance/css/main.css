@@ -3522,10 +3522,11 @@ body {
 .biodance-footer-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 940px;
     height: 432px;
     flex: 0 0 940px;
+    gap: 28px;
 }
 
 .biodance-footer-logo {
