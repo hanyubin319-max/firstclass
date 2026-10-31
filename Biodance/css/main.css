@@ -3557,7 +3557,7 @@ body {
 .biodance-footer-info-frame {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 715px;
     height: 80px;
     flex: 0 0 715px;
