@@ -3505,6 +3505,33 @@ body {
     border-radius: 12px;
 }
 
+/* Biodance footer navigation */
+.biodance-footer-nav-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: fit-content;
+    height: fit-content;
+    gap: 111px;
+}
+
+.biodance-footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    height: fit-content;
+    gap: 16px;
+}
+
+.biodance-footer-nav-list p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    text-align: left;
+}
+
 /* Biodance footer frame */
 .biodance-footer {
     display: flex;
