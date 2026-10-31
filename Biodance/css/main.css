@@ -3958,9 +3958,10 @@ body {
 }
 
 
-/* Mobile: YouTube logo 100px and heading text 10px */
+/* Mobile: centered brand video heading with 100px YouTube logo */
 @media (max-width: 600px) {
     .brand-video-heading {
+        justify-content: center;
         gap: 16px;
     }
 
@@ -3971,6 +3972,7 @@ body {
     }
 
     .brand-video-heading h2 {
-        font-size: 10px;
+        font-size: 15px;
+        text-align: center;
     }
 }
