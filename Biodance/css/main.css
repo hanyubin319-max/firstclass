@@ -3564,6 +3564,11 @@ body {
     gap: 16px;
 }
 
+
+
+.biodance-footer-info-frame p:nth-child(2) {
+    white-space: nowrap;
+}
 .biodance-footer-info-frame p {
     margin: 0;
     font-size: 16px;
