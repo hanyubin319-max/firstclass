@@ -3529,7 +3529,7 @@ body {
     align-items: stretch;
     width: 100%;
     height: fit-content;
-    gap: 16px;
+    gap: 5px;
 }
 
 .biodance-footer-nav-list p {
