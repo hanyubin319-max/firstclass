@@ -3549,5 +3549,7 @@ body {
 
 .biodance-footer-customer-frame p {
     margin: 0;
+    font-size: 20px;
+    font-weight: 500;
     white-space: nowrap;
 }
