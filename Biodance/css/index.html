@@ -433,11 +433,7 @@
         if (modelPickButton && modelPickImage && modelPickProductImages.length === 4) {
             let isAlternatePick = false;
             const modelPickImages = [modelPickImage, ...modelPickProductImages];
-            const fadeDuration = 350;
-
-            modelPickImages.forEach(image => {
-                image.style.transition = `opacity ${fadeDuration}ms ease`;
-            });
+            const fadeDuration = 500;
 
             modelPickButton.addEventListener('click', async () => {
                 if (modelPickButton.disabled) return;
@@ -462,26 +458,55 @@
                         preloadImage.src = source;
                     })));
 
+                    const overlays = modelPickImages.map((image, index) => {
+                        const overlay = image.cloneNode(false);
+                        overlay.removeAttribute('class');
+                        overlay.setAttribute('aria-hidden', 'true');
+                        overlay.alt = '';
+                        overlay.src = nextSources[index];
+                        overlay.style.position = 'absolute';
+                        overlay.style.inset = '0';
+                        overlay.style.width = '100%';
+                        overlay.style.height = '100%';
+                        overlay.style.objectFit = getComputedStyle(image).objectFit;
+                        overlay.style.objectPosition = getComputedStyle(image).objectPosition;
+                        overlay.style.opacity = '0';
+                        overlay.style.transition = `opacity ${fadeDuration}ms ease`;
+                        overlay.style.pointerEvents = 'none';
+
+                        const parent = image.parentElement;
+                        if (getComputedStyle(parent).position === 'static') {
+                            parent.style.position = 'relative';
+                        }
+                        parent.appendChild(overlay);
+
+                        image.style.transition = `opacity ${fadeDuration}ms ease`;
+                        return overlay;
+                    });
+
                     modelPickImages.forEach(image => {
-                        image.style.opacity = '0';
+                        image.style.opacity = '1';
+                    });
+
+                    window.requestAnimationFrame(() => {
+                        overlays.forEach(overlay => {
+                            overlay.style.opacity = '1';
+                        });
+                        modelPickImages.forEach(image => {
+                            image.style.opacity = '0';
+                        });
                     });
 
                     window.setTimeout(() => {
                         modelPickImages.forEach((image, index) => {
                             image.src = nextSources[index];
+                            image.style.opacity = '1';
                         });
-
-                        window.requestAnimationFrame(() => {
-                            modelPickImages.forEach(image => {
-                                image.style.opacity = '1';
-                            });
-                        });
+                        overlays.forEach(overlay => overlay.remove());
 
                         isAlternatePick = nextIsAlternatePick;
                         modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
-                        window.setTimeout(() => {
-                            modelPickButton.disabled = false;
-                        }, fadeDuration);
+                        modelPickButton.disabled = false;
                     }, fadeDuration);
                 } catch (error) {
                     modelPickButton.disabled = false;
