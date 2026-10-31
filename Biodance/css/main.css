@@ -3575,3 +3575,10 @@ body {
     font-weight: 600;
     line-height: 100%;
 }
+
+.biodance-footer-copyright {
+    margin: 0;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 500;
+}
