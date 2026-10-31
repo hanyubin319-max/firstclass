@@ -3886,3 +3886,17 @@ body {
         display: none !important;
     }
 }
+
+
+/* Footer navigation: right-align both link columns on mobile only */
+@media (max-width: 700px) {
+    .biodance-footer-nav-frame .biodance-footer-nav-list {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .biodance-footer-nav-frame .biodance-footer-nav-list p {
+        width: 100%;
+        text-align: right !important;
+    }
+}
