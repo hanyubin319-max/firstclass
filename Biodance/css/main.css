@@ -3508,11 +3508,19 @@ body {
 /* Biodance footer navigation */
 .biodance-footer-nav-frame {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     width: fit-content;
     height: fit-content;
     gap: 111px;
+}
+
+.biodance-footer-nav-frame {
+    order: 2;
+}
+
+.biodance-footer-content {
+    order: 1;
 }
 
 .biodance-footer-nav-list {
