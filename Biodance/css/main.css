@@ -3517,3 +3517,37 @@ body {
     border-radius: 85px 85px 0 0;
     background: var(--brand-pink);
 }
+
+/* Biodance footer content frame */
+.biodance-footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 940px;
+    height: 432px;
+    flex: 0 0 940px;
+}
+
+.biodance-footer-logo {
+    display: block;
+    width: 494px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.biodance-footer-customer-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 745px;
+    height: 44px;
+    box-sizing: border-box;
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: var(--surface-brand);
+}
+
+.biodance-footer-customer-frame p {
+    margin: 0;
+    white-space: nowrap;
+}
