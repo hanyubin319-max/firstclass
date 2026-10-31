@@ -3958,19 +3958,19 @@ body {
 }
 
 
-/* Mobile: reduce the YouTube + Biodance X WONI heading by 20% */
+/* Mobile: YouTube logo 100px and heading text 10px */
 @media (max-width: 600px) {
     .brand-video-heading {
         gap: 16px;
     }
 
     .brand-video-heading img {
-        flex-basis: 120px;
-        width: 120px;
+        flex-basis: 100px;
+        width: 100px;
         height: auto;
     }
 
     .brand-video-heading h2 {
-        font-size: 20px;
+        font-size: 10px;
     }
 }
