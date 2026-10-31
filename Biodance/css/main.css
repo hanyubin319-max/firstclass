@@ -4026,3 +4026,11 @@ body {
         object-fit: cover;
     }
 }
+
+
+/* Instagram: show only the first three images on mobile */
+@media (max-width: 700px) {
+    .instagram-image-row > .instagram-image-group:nth-child(n + 2) {
+        display: none !important;
+    }
+}
