@@ -3924,3 +3924,20 @@ body {
         text-align: right !important;
     }
 }
+
+
+/* Mobile footer navigation: align both menu columns to the left */
+@media (max-width: 700px) {
+    .biodance-footer .biodance-footer-nav-frame {
+        justify-content: flex-start !important;
+    }
+
+    .biodance-footer .biodance-footer-nav-frame .biodance-footer-nav-list {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .biodance-footer .biodance-footer-nav-frame .biodance-footer-nav-list p {
+        text-align: left !important;
+    }
+}
