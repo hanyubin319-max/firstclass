@@ -497,16 +497,24 @@
                         });
                     });
 
-                    window.setTimeout(() => {
-                        modelPickImages.forEach((image, index) => {
+                    window.setTimeout(async () => {
+                        await Promise.all(modelPickImages.map((image, index) => {
                             image.src = nextSources[index];
+                            return image.decode ? image.decode().catch(() => {}) : Promise.resolve();
+                        }));
+
+                        modelPickImages.forEach(image => {
                             image.style.opacity = '1';
                         });
-                        overlays.forEach(overlay => overlay.remove());
 
-                        isAlternatePick = nextIsAlternatePick;
-                        modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
-                        modelPickButton.disabled = false;
+                        window.requestAnimationFrame(() => {
+                            window.requestAnimationFrame(() => {
+                                overlays.forEach(overlay => overlay.remove());
+                                isAlternatePick = nextIsAlternatePick;
+                                modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
+                                modelPickButton.disabled = false;
+                            });
+                        });
                     }, fadeDuration);
                 } catch (error) {
                     modelPickButton.disabled = false;
