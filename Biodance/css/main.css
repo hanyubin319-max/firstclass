@@ -3561,7 +3561,7 @@ body {
     justify-content: flex-start;
     width: 800px;
     height: 80px;
-    flex: 0 0 800px;
+    flex: 0 0 80px;
     gap: 16px;
 }
 
