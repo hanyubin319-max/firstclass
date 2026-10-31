@@ -3625,3 +3625,82 @@ body {
     font-size: 13px;
     font-weight: 500;
 }
+
+
+/* Biodance footer responsive */
+@media (max-width: 700px) {
+    .biodance-footer {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: 100%;
+        height: auto;
+        padding: 60px 20px 40px;
+        border-radius: 40px 40px 0 0;
+        gap: 40px;
+    }
+
+    .biodance-footer-content {
+        order: 1;
+        width: 100%;
+        min-width: 0;
+        gap: 20px;
+    }
+
+    .biodance-footer-logo {
+        width: min(300px, 75%);
+        max-width: 100%;
+        height: auto;
+    }
+
+    .biodance-footer-customer-frame {
+        max-width: 100%;
+        padding: 6px 14px;
+    }
+
+    .biodance-footer-customer-frame p {
+        font-size: 13px;
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .biodance-footer-info-frame {
+        width: 100%;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .biodance-footer-info-frame p,
+    .biodance-footer-info-frame p:nth-child(2) {
+        font-size: 12px;
+        line-height: 1.4;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .biodance-footer-copyright {
+        font-size: 11px;
+    }
+
+    .biodance-footer-nav-frame {
+        order: 2;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        gap: 24px;
+    }
+
+    .biodance-footer-nav-list {
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto;
+        gap: 8px;
+    }
+
+    .biodance-footer-nav-list p {
+        font-size: 14px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+}
