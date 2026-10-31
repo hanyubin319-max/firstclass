@@ -4056,3 +4056,11 @@ body {
         font-size: 25px !important;
     }
 }
+
+
+/* Mobile: put footer holiday notice on its own line */
+@media (max-width: 700px) {
+    .biodance-footer-customer-frame .biodance-footer-customer-text .biodance-footer-holiday {
+        display: block;
+    }
+}
