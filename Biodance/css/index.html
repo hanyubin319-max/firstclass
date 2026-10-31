@@ -458,64 +458,59 @@
                         preloadImage.src = source;
                     })));
 
-                    const overlays = modelPickImages.map((image, index) => {
-                        const overlay = image.cloneNode(false);
-                        overlay.removeAttribute('class');
-                        overlay.setAttribute('aria-hidden', 'true');
-                        overlay.alt = '';
-                        overlay.src = nextSources[index];
-                        overlay.style.position = 'absolute';
-                        overlay.style.inset = '0';
-                        overlay.style.width = '100%';
-                        overlay.style.height = '100%';
-                        overlay.style.objectFit = getComputedStyle(image).objectFit;
-                        overlay.style.objectPosition = getComputedStyle(image).objectPosition;
-                        overlay.style.opacity = '0';
-                        overlay.style.transition = `opacity ${fadeDuration}ms ease`;
-                        overlay.style.pointerEvents = 'none';
+                    const nextLayers = modelPickImages.map((currentImage, index) => {
+                        const nextImage = currentImage.cloneNode(false);
+                        nextImage.removeAttribute('id');
+                        nextImage.alt = currentImage.alt;
+                        nextImage.src = nextSources[index];
+                        nextImage.style.position = 'absolute';
+                        nextImage.style.inset = '0';
+                        nextImage.style.width = '100%';
+                        nextImage.style.height = '100%';
+                        nextImage.style.objectFit = getComputedStyle(currentImage).objectFit;
+                        nextImage.style.objectPosition = getComputedStyle(currentImage).objectPosition;
+                        nextImage.style.opacity = '0';
+                        nextImage.style.transition = `opacity ${fadeDuration}ms ease`;
+                        nextImage.style.pointerEvents = 'none';
+                        nextImage.style.zIndex = '1';
 
-                        const parent = image.parentElement;
+                        const parent = currentImage.parentElement;
                         if (getComputedStyle(parent).position === 'static') {
                             parent.style.position = 'relative';
                         }
-                        parent.appendChild(overlay);
+                        parent.appendChild(nextImage);
 
-                        image.style.transition = `opacity ${fadeDuration}ms ease`;
-                        return overlay;
-                    });
+                        currentImage.style.transition = `opacity ${fadeDuration}ms ease`;
+                        currentImage.style.opacity = '1';
 
-                    modelPickImages.forEach(image => {
-                        image.style.opacity = '1';
+                        return nextImage;
                     });
 
                     window.requestAnimationFrame(() => {
-                        overlays.forEach(overlay => {
-                            overlay.style.opacity = '1';
-                        });
-                        modelPickImages.forEach(image => {
-                            image.style.opacity = '0';
+                        window.requestAnimationFrame(() => {
+                            nextLayers.forEach(image => {
+                                image.style.opacity = '1';
+                            });
+                            modelPickImages.forEach(image => {
+                                image.style.opacity = '0';
+                            });
                         });
                     });
 
-                    window.setTimeout(async () => {
-                        await Promise.all(modelPickImages.map((image, index) => {
-                            image.src = nextSources[index];
-                            return image.decode ? image.decode().catch(() => {}) : Promise.resolve();
-                        }));
+                    window.setTimeout(() => {
+                        modelPickImages.forEach(image => image.remove());
 
-                        modelPickImages.forEach(image => {
+                        nextLayers.forEach(image => {
+                            image.style.position = 'absolute';
+                            image.style.inset = '0';
                             image.style.opacity = '1';
                         });
 
-                        window.requestAnimationFrame(() => {
-                            window.requestAnimationFrame(() => {
-                                overlays.forEach(overlay => overlay.remove());
-                                isAlternatePick = nextIsAlternatePick;
-                                modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
-                                modelPickButton.disabled = false;
-                            });
-                        });
-                    }, fadeDuration);
+                        modelPickImages.splice(0, modelPickImages.length, ...nextLayers);
+                        isAlternatePick = nextIsAlternatePick;
+                        modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
+                        modelPickButton.disabled = false;
+                    }, fadeDuration + 50);
                 } catch (error) {
                     modelPickButton.disabled = false;
                 }
