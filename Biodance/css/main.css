@@ -3560,8 +3560,9 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     width: 800px;
-    height: 80px;
-    flex: 0 0 80px;
+    height: auto;
+    flex: 0 0 auto;
+    align-items: flex-start;
     gap: 16px;
 }
 
