@@ -3544,7 +3544,7 @@ body {
     box-sizing: border-box;
     padding: 12px 30px;
     border-radius: 30px;
-    background: var(--surface-brand);
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .biodance-footer-customer-frame p {
