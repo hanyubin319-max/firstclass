@@ -4064,3 +4064,11 @@ body {
         display: block;
     }
 }
+
+
+/* Mobile footer customer-service frame corner radius */
+@media (max-width: 700px) {
+    .biodance-footer .biodance-footer-customer-frame {
+        border-radius: 12px;
+    }
+}
