@@ -3558,9 +3558,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 715px;
+    width: 800px;
     height: 80px;
-    flex: 0 0 715px;
+    flex: 0 0 800px;
     gap: 16px;
 }
 
