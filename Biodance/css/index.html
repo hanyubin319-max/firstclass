@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/default.css">
     <link rel="stylesheet" href="../../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../../font/css/pretendardvariable.css">
-    <link rel="stylesheet" href="main.css?v=woni-pick-radius-12">
+    <link rel="stylesheet" href="main.css?v=woni-pick-frame-fix">
     <script src="../../npm/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
@@ -209,28 +209,28 @@
                     </div>
                     <div class="model-pick-grid">
                         <article class="model-pick-item">
-                            <img src="../img/pick-5.png" alt="포어 퍼펙팅 콜라겐 펩타이드 듀오">
+                            <div class="model-pick-image-frame"><img src="../img/pick-5.png" alt="포어 퍼펙팅 콜라겐 펩타이드 듀오"></div>
                             <div class="model-pick-info">
                                 <p class="model-pick-name">[원이PICK/화잘먹듀오] 포어 퍼펙팅 콜라겐 펩타이드 듀오</p>
                                 <p class="model-pick-price">71,000</p>
                             </div>
                         </article>
                         <article class="model-pick-item">
-                            <img src="../img/pick-6.png" alt="화잘먹 세럼 포어 퍼펙팅 콜라겐 펩타이드 세럼 30ml">
+                            <div class="model-pick-image-frame"><img src="../img/pick-6.png" alt="화잘먹 세럼 포어 퍼펙팅 콜라겐 펩타이드 세럼 30ml"></div>
                             <div class="model-pick-info">
                                 <p class="model-pick-name">[원이PICK] 화잘먹 세럼 포어 퍼펙팅 콜라겐 펩타이드 세럼 30ml</p>
                                 <p class="model-pick-price">32,000</p>
                             </div>
                         </article>
                         <article class="model-pick-item">
-                            <img src="../img/pick-7.png" alt="콜라겐 더블 케어 SET (마스크+세럼)">
+                            <div class="model-pick-image-frame"><img src="../img/pick-7.png" alt="콜라겐 더블 케어 SET (마스크+세럼)"></div>
                             <div class="model-pick-info">
                                 <p class="model-pick-name">[원이PICK] 콜라겐 더블 케어 SET (마스크+세럼)</p>
                                 <p class="model-pick-price">72,000</p>
                             </div>
                         </article>
                         <article class="model-pick-item">
-                            <img src="../img/pick-8.png" alt="콜라겐 펩타이드 젤리 세럼 미스트 50ml">
+                            <div class="model-pick-image-frame"><img src="../img/pick-8.png" alt="콜라겐 펩타이드 젤리 세럼 미스트 50ml"></div>
                             <div class="model-pick-info">
                                 <p class="model-pick-name">[원이PICK] 콜라겐 펩타이드 젤리 세럼 미스트 50ml</p>
                                 <p class="model-pick-price">19,000</p>
@@ -457,7 +457,7 @@
 
         const modelPickButton = document.querySelector('.model-pick-image-button');
         const modelPickImage = document.querySelector('.model-pick-model');
-        const modelPickProductImages = document.querySelectorAll('.model-pick-grid .model-pick-item > img');
+        const modelPickProductImages = document.querySelectorAll('.model-pick-grid .model-pick-item .model-pick-image-frame > img');
 
         if (modelPickButton && modelPickImage && modelPickProductImages.length === 4) {
             let isAlternatePick = false;
