@@ -426,6 +426,30 @@
             if (!isOpen) closeMegaMenu();
         });
 
+        const modelPickButton = document.querySelector('.model-pick-image-button');
+        const modelPickImage = document.querySelector('.model-pick-model');
+        const modelPickProductImages = document.querySelectorAll('.model-pick-grid .model-pick-item > img');
+
+        if (modelPickButton && modelPickImage && modelPickProductImages.length === 4) {
+            let isAlternatePick = false;
+
+            modelPickButton.addEventListener('click', () => {
+                isAlternatePick = !isAlternatePick;
+
+                modelPickImage.src = isAlternatePick
+                    ? '../img/model-1.png'
+                    : '../img/model-2.png';
+
+                modelPickProductImages.forEach((image, index) => {
+                    image.src = isAlternatePick
+                        ? `../img/pick-${index + 1}.png`
+                        : `../img/pick-${index + 5}.png`;
+                });
+
+                modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
+            });
+        }
+
         const swiperHero = new Swiper('.hero-sec .visual', {
             direction: 'horizontal',
             loop: true,
