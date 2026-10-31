@@ -3580,11 +3580,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 745px;
+    width: fit-content;
     height: auto;
     flex: 0 0 auto;
     box-sizing: border-box;
-    padding: 12px 30px;
+    padding: 10px 25px;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.7);
 }
