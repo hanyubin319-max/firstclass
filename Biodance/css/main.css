@@ -3535,7 +3535,7 @@ body {
 .biodance-footer-nav-list p {
     width: 100%;
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 100%;
     text-align: right;
@@ -3570,7 +3570,10 @@ body {
     display: block;
     width: 474px;
     height: 80px;
+    margin: 0;
+    align-self: flex-start;
     object-fit: contain;
+    object-position: left center;
 }
 
 .biodance-footer-customer-frame {
@@ -3578,7 +3581,8 @@ body {
     align-items: center;
     justify-content: center;
     width: 745px;
-    height: 44px;
+    height: auto;
+    flex: 0 0 auto;
     box-sizing: border-box;
     padding: 12px 30px;
     border-radius: 30px;
@@ -3587,7 +3591,7 @@ body {
 
 .biodance-footer-customer-frame p {
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     white-space: nowrap;
 }
@@ -3610,7 +3614,7 @@ body {
 }
 .biodance-footer-info-frame p {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 100%;
 }
@@ -3618,6 +3622,6 @@ body {
 .biodance-footer-copyright {
     margin: 0;
     color: #000000;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
 }
