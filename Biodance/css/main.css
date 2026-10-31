@@ -3104,7 +3104,7 @@ body {
     text-align: center;
 }
 
-.instagram-handle-frame p {
+.instagram-handle-frame p, .instagram-handle-frame a {
     margin: 0;
     color: var(--neutral-charcoal);
     font-size: 38px;
@@ -3165,7 +3165,7 @@ body {
         transform-origin: top left;
     }
 
-    .instagram-handle-frame p {
+    .instagram-handle-frame p, .instagram-handle-frame a {
         font-size: clamp(22px, 2.5333vw, 38px);
     }
 }
@@ -3185,7 +3185,7 @@ body {
         transform-origin: top left;
     }
 
-    .instagram-handle-frame p {
+    .instagram-handle-frame p, .instagram-handle-frame a {
         font-size: clamp(14px, 2.5333vw, 38px);
     }
 }
