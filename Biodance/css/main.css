@@ -3845,3 +3845,13 @@ body {
         aspect-ratio: 1 / 1;
     }
 }
+
+
+/* Woni's Pick: gray background belongs only to the exact product-image frame */
+.model-pick-grid .model-pick-item {
+    background: transparent;
+}
+
+.model-pick-grid .model-pick-item .model-pick-image-frame {
+    background: var(--neutral-light-gray);
+}
