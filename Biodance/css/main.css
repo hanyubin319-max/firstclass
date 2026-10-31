@@ -3548,7 +3548,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 700px;
+    height: 600px;
     box-sizing: border-box;
     padding: 209px 140px;
     border-radius: 85px 85px 0 0;
@@ -3568,8 +3568,8 @@ body {
 
 .biodance-footer-logo {
     display: block;
-    width: 494px;
-    height: 100px;
+    width: 474px;
+    height: 80px;
     object-fit: contain;
 }
 
