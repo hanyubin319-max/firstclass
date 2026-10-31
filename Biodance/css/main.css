@@ -3547,8 +3547,8 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 700px;
-    height: 850px;
+    width: 100%;
+    height: 700px;
     box-sizing: border-box;
     padding: 209px 140px;
     border-radius: 85px 85px 0 0;
