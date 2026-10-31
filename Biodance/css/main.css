@@ -3956,3 +3956,21 @@ body {
         display: none;
     }
 }
+
+
+/* Mobile: reduce the YouTube + Biodance X WONI heading by 20% */
+@media (max-width: 600px) {
+    .brand-video-heading {
+        gap: 16px;
+    }
+
+    .brand-video-heading img {
+        flex-basis: 120px;
+        width: 120px;
+        height: auto;
+    }
+
+    .brand-video-heading h2 {
+        font-size: 20px;
+    }
+}
