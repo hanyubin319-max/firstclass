@@ -432,21 +432,60 @@
 
         if (modelPickButton && modelPickImage && modelPickProductImages.length === 4) {
             let isAlternatePick = false;
+            const modelPickImages = [modelPickImage, ...modelPickProductImages];
+            const fadeDuration = 350;
 
-            modelPickButton.addEventListener('click', () => {
-                isAlternatePick = !isAlternatePick;
+            modelPickImages.forEach(image => {
+                image.style.transition = `opacity ${fadeDuration}ms ease`;
+            });
 
-                modelPickImage.src = isAlternatePick
-                    ? '../img/model-1.png'
-                    : '../img/model-2.png';
+            modelPickButton.addEventListener('click', async () => {
+                if (modelPickButton.disabled) return;
 
-                modelPickProductImages.forEach((image, index) => {
-                    image.src = isAlternatePick
-                        ? `../img/pick-${index + 1}.png`
-                        : `../img/pick-${index + 5}.png`;
-                });
+                const nextIsAlternatePick = !isAlternatePick;
+                const nextSources = [
+                    nextIsAlternatePick ? '../img/model-1.png' : '../img/model-2.png',
+                    ...Array.from({ length: 4 }, (_, index) =>
+                        nextIsAlternatePick
+                            ? `../img/pick-${index + 1}.png`
+                            : `../img/pick-${index + 5}.png`
+                    ),
+                ];
 
-                modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
+                modelPickButton.disabled = true;
+
+                try {
+                    await Promise.all(nextSources.map(source => new Promise((resolve, reject) => {
+                        const preloadImage = new Image();
+                        preloadImage.onload = resolve;
+                        preloadImage.onerror = reject;
+                        preloadImage.src = source;
+                    })));
+
+                    modelPickImages.forEach(image => {
+                        image.style.opacity = '0';
+                    });
+
+                    window.setTimeout(() => {
+                        modelPickImages.forEach((image, index) => {
+                            image.src = nextSources[index];
+                        });
+
+                        window.requestAnimationFrame(() => {
+                            modelPickImages.forEach(image => {
+                                image.style.opacity = '1';
+                            });
+                        });
+
+                        isAlternatePick = nextIsAlternatePick;
+                        modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
+                        window.setTimeout(() => {
+                            modelPickButton.disabled = false;
+                        }, fadeDuration);
+                    }, fadeDuration);
+                } catch (error) {
+                    modelPickButton.disabled = false;
+                }
             });
         }
 
