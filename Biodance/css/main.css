@@ -3900,3 +3900,27 @@ body {
         text-align: right !important;
     }
 }
+
+
+/* Mobile footer navigation: move both menu columns to the right edge */
+@media (max-width: 700px) {
+    .biodance-footer .biodance-footer-nav-frame {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        gap: 24px;
+    }
+
+    .biodance-footer .biodance-footer-nav-frame .biodance-footer-nav-list {
+        flex: 0 0 auto !important;
+        width: max-content !important;
+        align-items: flex-end !important;
+        text-align: right !important;
+    }
+
+    .biodance-footer .biodance-footer-nav-frame .biodance-footer-nav-list p {
+        width: 100% !important;
+        text-align: right !important;
+    }
+}
