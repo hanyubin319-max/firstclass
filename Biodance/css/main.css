@@ -3553,3 +3553,20 @@ body {
     font-weight: 500;
     white-space: nowrap;
 }
+
+.biodance-footer-info-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 715px;
+    height: 80px;
+    flex: 0 0 715px;
+    gap: 16px;
+}
+
+.biodance-footer-info-frame p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+}
