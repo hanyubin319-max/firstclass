@@ -3706,7 +3706,7 @@ body {
 }
 
 
-/* Woni's Pick mobile: keep the same side-by-side composition as desktop */
+/* Woni's Pick mobile: cropped model image above the product grid */
 @media (max-width: 700px) {
     .model-pick-layout {
         gap: 32px;
@@ -3723,40 +3723,43 @@ body {
 
     .model-pick-frame {
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
         width: 100%;
         height: auto;
         padding: 0;
-        gap: 10px;
+        gap: 24px;
     }
 
     .model-pick-model-wrap {
-        flex: 0 0 40%;
-        width: 40%;
+        flex: none;
+        width: 100%;
         max-width: none;
-        height: auto;
-        aspect-ratio: 700 / 911;
+        height: 260px;
+        aspect-ratio: auto;
+        overflow: hidden;
     }
 
     .model-pick-model-wrap .model-pick-model {
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
     }
 
     .model-pick-grid {
         display: grid;
-        flex: 0 0 57%;
-        width: 57%;
+        flex: none;
+        width: 100%;
         max-width: none;
         height: auto;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(2, auto);
         align-content: start;
-        justify-content: end;
-        column-gap: 8px;
+        justify-content: stretch;
+        column-gap: 12px;
         row-gap: 28px;
     }
 
