@@ -3586,7 +3586,7 @@ body {
     box-sizing: border-box;
     padding: 6px 25px;
     border-radius: 30px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .biodance-footer-customer-frame p {
@@ -3667,7 +3667,11 @@ body {
     .biodance-footer-info-frame {
         width: 100%;
         min-width: 0;
-        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px !important;
+        column-gap: 10px !important;
+        gap: 10px !important;
     }
 
     .biodance-footer-info-frame p,
