@@ -4034,3 +4034,25 @@ body {
         display: none !important;
     }
 }
+
+
+/* Mobile footer: stack every slash-separated information item */
+@media (max-width: 700px) {
+    .biodance-footer-info-frame .biodance-footer-split-info,
+    .biodance-footer-info-frame .biodance-footer-contact-inquiry {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start;
+        gap: 5px !important;
+    }
+
+    .biodance-footer-info-frame .biodance-footer-info-divider,
+    .biodance-footer-info-frame .biodance-footer-contact-divider {
+        display: none !important;
+    }
+
+    .instagram-handle-frame p,
+    .instagram-handle-frame a {
+        font-size: 25px !important;
+    }
+}
