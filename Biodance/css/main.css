@@ -4492,7 +4492,7 @@ body {
 }
 
 /* Mobile navigation colors: match the PC menu and its interaction states only */
-@media (max-width: 767px) {
+@media (max-width: 700px) {
     .site-header .main-nav {
         left: 0 !important;
         right: 0 !important;
@@ -4502,15 +4502,20 @@ body {
         padding-left: 0 !important;
         padding-right: 0 !important;
         background: var(--neutral-white) !important;
+        background-image: none !important;
         border-top: 1px solid var(--neutral-border-gray) !important;
     }
 
     .site-header .main-nav > a,
     .site-header .main-nav > a:nth-child(n) {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
         padding-left: 10px !important;
         padding-right: 10px !important;
         color: var(--neutral-charcoal) !important;
-        background: transparent !important;
+        background: var(--neutral-white) !important;
+        background-image: none !important;
         transition: background-color 0.15s ease, color 0.15s ease;
     }
 
