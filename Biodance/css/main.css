@@ -3651,6 +3651,8 @@ body {
         width: min(270px, 75%);
         max-width: 100%;
         height: auto;
+        align-self: center;
+        object-position: center;
     }
 
     .biodance-footer-customer-frame {
