@@ -4675,6 +4675,7 @@ body {
     .hero-sec .hero-2-copy {
         position: absolute;
         z-index: 2;
+        display: flex !important;
         top: 7%;
         left: 6%;
         right: 6%;
