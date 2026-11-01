@@ -3715,7 +3715,7 @@ body {
 /* Woni's Pick mobile: cropped model image above the product grid */
 @media (max-width: 700px) {
     .model-pick-layout {
-        gap: 5px;
+        gap: 15px;
         padding: 56px 12px;
     }
 
