@@ -4523,3 +4523,39 @@ body {
     }
 }
 
+/* Keep the desktop navigation unchanged above the mobile breakpoint */
+@media (min-width: 701px) and (max-width: 1024px) {
+    .site-header .main-nav {
+        display: flex !important;
+        position: absolute !important;
+        left: 27.5% !important;
+        right: 25.8% !important;
+        top: 0 !important;
+        width: auto !important;
+        height: 100% !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .site-header .main-nav > a,
+    .site-header .main-nav > a:nth-child(n) {
+        position: static !important;
+        display: block !important;
+        padding: 0 !important;
+        color: var(--neutral-charcoal) !important;
+        background: transparent !important;
+        font-size: 20px !important;
+        line-height: 1 !important;
+    }
+
+    .site-header .menu-toggle {
+        display: none !important;
+    }
+}
+
