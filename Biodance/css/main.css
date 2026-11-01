@@ -4494,6 +4494,13 @@ body {
 /* Mobile navigation colors: match the PC menu and its interaction states only */
 @media (max-width: 767px) {
     .site-header .main-nav {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
         background: var(--neutral-white) !important;
         border-top: 1px solid var(--neutral-border-gray) !important;
     }
