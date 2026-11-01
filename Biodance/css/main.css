@@ -4507,6 +4507,8 @@ body {
 
     .site-header .main-nav > a,
     .site-header .main-nav > a:nth-child(n) {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
         color: var(--neutral-charcoal) !important;
         background: transparent !important;
         transition: background-color 0.15s ease, color 0.15s ease;
