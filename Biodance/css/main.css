@@ -4214,3 +4214,50 @@ body {
         background: transparent !important;
     }
 }
+
+
+/* Mobile footer: mint text frame, keeping logo and its adjacent copyright outside */
+.biodance-footer-text-frame {
+    display: contents;
+}
+
+@media (max-width: 700px) {
+    .biodance-footer {
+        background: var(--brand-pink);
+    }
+
+    .biodance-footer .biodance-footer-text-frame {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        height: 800px !important;
+        min-height: 800px !important;
+        box-sizing: border-box !important;
+        padding: 32px 20px !important;
+        gap: 32px !important;
+        background: var(--teal-mint) !important;
+    }
+
+    /* Keep the original type sizes except for the copyright directly below the logo */
+    .biodance-footer .biodance-footer-nav-list p {
+        font-size: 14px !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-text {
+        font-size: 13px !important;
+    }
+
+    .biodance-footer .biodance-footer-info-frame p {
+        font-size: 12px !important;
+    }
+
+    .biodance-footer .biodance-footer-copyright {
+        font-size: 18px !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-frame {
+        background: transparent !important;
+    }
+}
