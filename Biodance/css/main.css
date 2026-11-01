@@ -4134,27 +4134,3 @@ body {
         text-align: center !important;
     }
 }
-
-
-/* Mobile footer: center the two final menu labels directly beneath the logo */
-@media (max-width: 700px) {
-    .biodance-footer-last-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 24px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .biodance-footer-last-nav a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .biodance-footer-last-nav p {
-        margin: 0;
-        font-size: 14px;
-        line-height: 1.35;
-    }
-}
