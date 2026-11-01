@@ -4490,3 +4490,27 @@ body {
         text-align: left !important;
     }
 }
+
+/* Mobile navigation colors: match the PC menu and its interaction states only */
+@media (max-width: 767px) {
+    .site-header .main-nav {
+        background: var(--neutral-white) !important;
+        border-top: 1px solid var(--neutral-border-gray) !important;
+    }
+
+    .site-header .main-nav > a,
+    .site-header .main-nav > a:nth-child(n) {
+        color: var(--neutral-charcoal) !important;
+        background: transparent !important;
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .site-header .main-nav > a.is-active,
+    .site-header .main-nav > a:hover,
+    .site-header .main-nav > a:focus-visible,
+    .site-header .main-nav > a:active {
+        color: var(--neutral-white) !important;
+        background: var(--teal-mint) !important;
+    }
+}
+
