@@ -4349,3 +4349,18 @@ body {
         min-height: 600px !important;
     }
 }
+
+
+/* Mobile footer: let the footer and mint text frame fit their content */
+@media (max-width: 700px) {
+    .biodance-footer {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .biodance-footer .biodance-footer-text-frame {
+        height: auto !important;
+        min-height: 0 !important;
+        padding-bottom: 32px !important;
+    }
+}
