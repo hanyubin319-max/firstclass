@@ -4743,32 +4743,13 @@ body {
     }
 }
 
-/* PC footer: remove the customer-service wrapper box itself */
+/* PC footer: remove any background behind the customer-service text */
 @media (min-width: 701px) {
-    .biodance-footer .biodance-footer-customer-frame {
-        display: contents !important;
-        background: none !important;
-        border: 0 !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-    }
-
-    .biodance-footer .biodance-footer-customer-text,
-    .biodance-footer .biodance-footer-customer-text span {
-        background: none !important;
+    .biodance-footer .biodance-footer-customer-frame,
+    .biodance-footer .biodance-footer-customer-frame p,
+    .biodance-footer .biodance-footer-customer-frame span {
+        background: transparent !important;
         background-color: transparent !important;
-        background-image: none !important;
-        border: 0 !important;
         box-shadow: none !important;
-        outline: 0 !important;
-    }
-
-    .biodance-footer .biodance-footer-customer-frame::before,
-    .biodance-footer .biodance-footer-customer-frame::after,
-    .biodance-footer .biodance-footer-customer-text::before,
-    .biodance-footer .biodance-footer-customer-text::after {
-        content: none !important;
-        display: none !important;
     }
 }
