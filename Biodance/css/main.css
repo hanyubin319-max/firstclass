@@ -4594,8 +4594,12 @@ body {
 
 
 
-/* PC Hero-2 copy layout only */
+/* PC Hero-2 copy layout: scale proportionally with the hero image */
 @media (min-width: 1025px) {
+    .hero-sec .visual {
+        container-type: inline-size;
+    }
+
     .hero-sec .swiper-slide {
         position: relative;
     }
@@ -4603,8 +4607,8 @@ body {
     .hero-sec .hero-2-copy {
         position: absolute;
         z-index: 2;
-        top: 208px;
-        left: 208px;
+        top: 28.8889%;
+        left: 10.8333%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -4612,16 +4616,16 @@ body {
 
     .hero-sec .hero-2-label {
         display: flex;
-        width: 159px;
-        height: 30px;
+        width: 8.28125cqw;
+        height: 1.5625cqw;
         box-sizing: border-box;
         align-items: center;
         justify-content: center;
-        margin-bottom: 40px;
+        margin-bottom: 2.08333cqw;
         border-radius: 999px;
         background: var(--neutral-charcoal);
         color: var(--neutral-white);
-        font-size: 14px;
+        font-size: 0.72917cqw;
         font-weight: 600;
         line-height: 1.5;
         white-space: nowrap;
@@ -4630,22 +4634,22 @@ body {
     .hero-sec .hero-2-title {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 0.52083cqw;
     }
 
     .hero-sec .hero-2-title p {
         margin: 0;
         color: var(--neutral-charcoal);
-        font-size: 60px;
+        font-size: 3.125cqw;
         font-weight: 700;
         line-height: 1;
         white-space: nowrap;
     }
 
     .hero-sec .hero-2-promotion {
-        margin: 24px 0 0;
+        margin: 1.25cqw 0 0;
         color: var(--neutral-charcoal);
-        font-size: 20px;
+        font-size: 1.04167cqw;
         font-weight: 500;
         line-height: 1.5;
         white-space: nowrap;
