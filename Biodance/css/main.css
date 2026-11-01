@@ -4616,7 +4616,7 @@ body {
 
     .hero-sec .hero-2-label {
         display: flex;
-        width: 4.16667cqw;
+        width: 8.28125cqw;
         height: 1.5625cqw;
         box-sizing: border-box;
         align-items: center;
@@ -4629,6 +4629,10 @@ body {
         font-weight: 600;
         line-height: 1.5;
         white-space: nowrap;
+    }
+
+    .hero-sec .hero-3-copy .hero-2-label {
+        width: 4.16667cqw;
     }
 
     .hero-sec .hero-2-title {
