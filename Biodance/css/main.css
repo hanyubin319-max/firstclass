@@ -1895,7 +1895,7 @@ body {
     flex-direction: column;
     align-items: center;
     flex: 0 0 165px;
-    gap: 30px;
+    gap: 28px;
     color: inherit;
     text-decoration: none;
     font-family: "Pretendard", sans-serif;
@@ -1946,7 +1946,7 @@ body {
     .category-section .category-item {
         width: 100%;
         flex-basis: auto;
-        gap: 18px;
+        gap: 16px;
         font-size: 16px;
         line-height: 22px;
     }
