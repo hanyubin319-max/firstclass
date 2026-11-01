@@ -4743,3 +4743,13 @@ body {
     }
 }
 
+/* PC footer: remove any background behind the customer-service text */
+@media (min-width: 701px) {
+    .biodance-footer .biodance-footer-customer-frame,
+    .biodance-footer .biodance-footer-customer-frame p,
+    .biodance-footer .biodance-footer-customer-frame span {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+}
