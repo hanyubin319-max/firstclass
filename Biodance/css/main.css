@@ -4688,6 +4688,7 @@ body {
 
     .hero-sec .hero-2-label {
         display: inline-flex;
+        font-weight: 600;
         width: auto;
         height: auto;
         min-height: 22px;
@@ -4711,6 +4712,7 @@ body {
 
     .hero-sec .hero-2-title p {
         margin: 0;
+        font-weight: 700;
         font-size: clamp(20px, 6vw, 30px);
         line-height: 1.15;
         white-space: normal;
@@ -4720,6 +4722,7 @@ body {
     .hero-sec .hero-2-promotion {
         max-width: 100%;
         margin: 10px 0 0;
+        font-weight: 500;
         font-size: clamp(11px, 3.2vw, 14px);
         line-height: 1.45;
         white-space: normal;
