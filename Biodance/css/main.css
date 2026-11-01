@@ -3586,7 +3586,7 @@ body {
     box-sizing: border-box;
     padding: 6px 25px;
     border-radius: 30px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .biodance-footer-customer-frame p {
@@ -4740,16 +4740,5 @@ body {
         line-height: 1.5;
         white-space: normal;
         overflow-wrap: break-word;
-    }
-}
-
-/* PC footer: remove any background behind the customer-service text */
-@media (min-width: 701px) {
-    .biodance-footer .biodance-footer-customer-frame,
-    .biodance-footer .biodance-footer-customer-frame p,
-    .biodance-footer .biodance-footer-customer-frame span {
-        background: transparent !important;
-        background-color: transparent !important;
-        box-shadow: none !important;
     }
 }
