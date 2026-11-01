@@ -3586,7 +3586,7 @@ body {
     box-sizing: border-box;
     padding: 6px 25px;
     border-radius: 30px;
-    background: rgba(255, 255, 255, 0.5);
+    background: transparent;
 }
 
 .biodance-footer-customer-frame p {
