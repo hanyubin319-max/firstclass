@@ -4151,3 +4151,23 @@ body {
         text-align: left !important;
     }
 }
+
+
+/* Mobile footer: center the menu frame while keeping each menu label left-aligned */
+@media (max-width: 700px) {
+    .biodance-footer .biodance-footer-nav-frame {
+        align-self: center !important;
+        width: max-content !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+
+    .biodance-footer .biodance-footer-nav-frame .biodance-footer-nav-list {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .biodance-footer .biodance-footer-nav-frame .biodance-footer-nav-list p {
+        text-align: left !important;
+    }
+}
