@@ -4199,3 +4199,18 @@ body {
         order: 5 !important;
     }
 }
+
+
+/* Mobile footer: enlarge every text item below the logo and remove customer-frame background */
+@media (max-width: 700px) {
+    .biodance-footer .biodance-footer-nav-list p,
+    .biodance-footer .biodance-footer-copyright,
+    .biodance-footer .biodance-footer-customer-text,
+    .biodance-footer .biodance-footer-info-frame p {
+        font-size: 18px !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-frame {
+        background: transparent !important;
+    }
+}
