@@ -4419,3 +4419,27 @@ body {
         color: var(--neutral-white) !important;
     }
 }
+
+
+/* Mobile charcoal footer information: align every text block to the same left edge */
+@media (max-width: 700px) {
+    .biodance-footer .biodance-footer-text-frame {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-frame,
+    .biodance-footer .biodance-footer-info-frame,
+    .biodance-footer .biodance-footer-copyright {
+        align-self: stretch !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-frame .biodance-footer-customer-text,
+    .biodance-footer .biodance-footer-info-frame .biodance-footer-split-info,
+    .biodance-footer .biodance-footer-info-frame .biodance-footer-contact-inquiry {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+}
