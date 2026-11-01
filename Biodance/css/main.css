@@ -4305,3 +4305,20 @@ body {
         font-size: 12px !important;
     }
 }
+
+
+/* Mobile footer: full-bleed mint frame and 1200px total footer height */
+@media (max-width: 700px) {
+    .biodance-footer {
+        height: 1200px !important;
+        min-height: 1200px !important;
+        box-sizing: border-box !important;
+    }
+
+    .biodance-footer .biodance-footer-text-frame {
+        width: calc(100% + 40px) !important;
+        max-width: none !important;
+        margin-left: -20px !important;
+        box-sizing: border-box !important;
+    }
+}
