@@ -4564,3 +4564,31 @@ body {
     }
 }
 
+/* Mobile only: keep the initial navigation white and suppress desktop mega panels */
+@media (max-width: 700px) {
+    .site-header .main-nav,
+    .site-header .main-nav.is-open {
+        background-color: var(--neutral-white) !important;
+        background-image: none !important;
+    }
+
+    .site-header .main-nav > a,
+    .site-header .main-nav > a:nth-child(n) {
+        background-color: var(--neutral-white) !important;
+        background-image: none !important;
+    }
+
+    .site-header .header-mega-menu {
+        display: none !important;
+    }
+
+    .site-header .main-nav > a.is-active,
+    .site-header .main-nav > a:hover,
+    .site-header .main-nav > a:focus-visible,
+    .site-header .main-nav > a:active {
+        background-color: var(--teal-mint) !important;
+        background-image: none !important;
+        color: var(--neutral-white) !important;
+    }
+}
+
