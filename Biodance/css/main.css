@@ -4171,3 +4171,31 @@ body {
         text-align: left !important;
     }
 }
+
+
+/* Mobile footer: keep the logo at the top, then place navigation before all other footer text */
+@media (max-width: 700px) {
+    .biodance-footer-content {
+        display: contents !important;
+    }
+
+    .biodance-footer .biodance-footer-logo {
+        order: 1 !important;
+    }
+
+    .biodance-footer .biodance-footer-nav-frame {
+        order: 2 !important;
+    }
+
+    .biodance-footer .biodance-footer-copyright {
+        order: 3 !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-frame {
+        order: 4 !important;
+    }
+
+    .biodance-footer .biodance-footer-info-frame {
+        order: 5 !important;
+    }
+}
