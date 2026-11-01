@@ -4743,11 +4743,19 @@ body {
     }
 }
 
-/* PC footer: remove the customer-service pill background completely */
+/* PC footer: remove the customer-service wrapper box itself */
 @media (min-width: 701px) {
-    .biodance-footer .biodance-footer-customer-frame,
-    .biodance-footer .biodance-footer-customer-frame p,
-    .biodance-footer .biodance-footer-customer-frame span {
+    .biodance-footer .biodance-footer-customer-frame {
+        display: contents !important;
+        background: none !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-text,
+    .biodance-footer .biodance-footer-customer-text span {
         background: none !important;
         background-color: transparent !important;
         background-image: none !important;
@@ -4758,10 +4766,9 @@ body {
 
     .biodance-footer .biodance-footer-customer-frame::before,
     .biodance-footer .biodance-footer-customer-frame::after,
-    .biodance-footer .biodance-footer-customer-frame p::before,
-    .biodance-footer .biodance-footer-customer-frame p::after {
+    .biodance-footer .biodance-footer-customer-text::before,
+    .biodance-footer .biodance-footer-customer-text::after {
         content: none !important;
         display: none !important;
-        background: none !important;
     }
 }
