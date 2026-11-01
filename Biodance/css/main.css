@@ -1938,7 +1938,7 @@ body {
 
     .category-section .category-list {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 165px));
+        grid-template-columns: repeat(2, minmax(0, 155px));
         justify-content: center;
         gap: 32px 20px;
     }
@@ -1952,7 +1952,7 @@ body {
     }
 
     .category-section .category-item img {
-        width: min(100%, 165px);
+        width: min(100%, 155px);
         height: auto;
         aspect-ratio: 1;
     }
