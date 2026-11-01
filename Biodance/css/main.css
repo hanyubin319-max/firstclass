@@ -4443,3 +4443,32 @@ body {
         text-align: left !important;
     }
 }
+
+
+/* Mobile charcoal footer: match the centered Brand story column's left edge */
+@media (max-width: 700px) {
+    .biodance-footer .biodance-footer-customer-frame,
+    .biodance-footer .biodance-footer-info-frame,
+    .biodance-footer .biodance-footer-copyright {
+        box-sizing: border-box !important;
+        width: 264px !important;
+        max-width: calc(100% - 40px) !important;
+        align-self: center !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-frame {
+        justify-content: flex-start !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-text,
+    .biodance-footer .biodance-footer-info-frame .biodance-footer-split-info,
+    .biodance-footer .biodance-footer-info-frame .biodance-footer-contact-inquiry {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+}
