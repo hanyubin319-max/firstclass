@@ -4340,3 +4340,12 @@ body {
         min-height: 800px !important;
     }
 }
+
+
+/* Mobile footer total height: 600px */
+@media (max-width: 700px) {
+    .biodance-footer {
+        height: 600px !important;
+        min-height: 600px !important;
+    }
+}
