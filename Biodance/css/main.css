@@ -3176,7 +3176,7 @@ body {
         height: auto;
         aspect-ratio: auto;
         overflow: visible;
-        gap: 40px;
+        gap: 30px;
         padding-top: 45px;
         padding-bottom: 45px;
     }
@@ -3715,7 +3715,7 @@ body {
 /* Woni's Pick mobile: cropped model image above the product grid */
 @media (max-width: 700px) {
     .model-pick-layout {
-        gap: 27px;
+        gap: 17px;
         padding: 56px 12px;
     }
 
