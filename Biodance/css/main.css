@@ -4673,13 +4673,14 @@ body {
     }
 
     .hero-sec .visual .swiper-slide img.mo {
-        position: relative;
+        position: absolute;
+        inset: 0;
         z-index: 0;
     }
 
     .hero-sec .hero-2-copy {
         position: absolute;
-        z-index: 10;
+        z-index: 2;
         display: flex !important;
         top: 7%;
         left: 6%;
