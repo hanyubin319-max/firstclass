@@ -4705,7 +4705,7 @@ body {
         border-radius: 999px;
         background-color: var(--neutral-charcoal) !important;
         color: var(--neutral-white) !important;
-        font-size: clamp(11px, 3vw, 13px);
+        font-size: clamp(10px, 1.4vw, 14px);
         font-weight: 600 !important;
         line-height: 1.2;
         text-align: left;
@@ -4724,8 +4724,8 @@ body {
         color: var(--neutral-charcoal) !important;
         font-weight: 700 !important;
         text-align: left;
-        font-size: clamp(20px, 6vw, 30px);
-        line-height: 1.15;
+        font-size: clamp(20px, 6vw, 48px);
+        line-height: 1;
         white-space: normal;
         overflow-wrap: break-word;
     }
@@ -4736,8 +4736,8 @@ body {
         color: var(--neutral-gray) !important;
         font-weight: 500 !important;
         text-align: left;
-        font-size: clamp(11px, 3.2vw, 14px);
-        line-height: 1.45;
+        font-size: clamp(11px, 2vw, 24px);
+        line-height: 1.5;
         white-space: normal;
         overflow-wrap: break-word;
     }
