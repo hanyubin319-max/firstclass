@@ -3813,6 +3813,10 @@ body {
         width: 9px;
         height: 18px;
     }
+
+    .model-pick-actions {
+        margin-top: 10px;
+    }
 }
 
 
