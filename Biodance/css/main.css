@@ -4419,3 +4419,27 @@ body {
         color: var(--neutral-white) !important;
     }
 }
+
+
+/* Mobile charcoal footer: align its text start with the pink footer navigation's Brand story edge */
+@media (max-width: 700px) {
+    .biodance-footer .biodance-footer-text-frame {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-frame,
+    .biodance-footer .biodance-footer-info-frame,
+    .biodance-footer .biodance-footer-copyright {
+        align-self: flex-start !important;
+        margin-left: 0 !important;
+        text-align: left !important;
+    }
+
+    .biodance-footer .biodance-footer-customer-text,
+    .biodance-footer .biodance-footer-info-frame .biodance-footer-split-info,
+    .biodance-footer .biodance-footer-info-frame .biodance-footer-contact-inquiry {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+}
