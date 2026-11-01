@@ -4322,3 +4322,12 @@ body {
         box-sizing: border-box !important;
     }
 }
+
+
+/* Mobile footer total height: 1000px */
+@media (max-width: 700px) {
+    .biodance-footer {
+        height: 1000px !important;
+        min-height: 1000px !important;
+    }
+}
