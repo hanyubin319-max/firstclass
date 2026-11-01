@@ -4403,3 +4403,19 @@ body {
         text-align: center !important;
     }
 }
+
+
+/* Mobile footer information frame: use registered Figma color variables */
+@media (max-width: 700px) {
+    .biodance-footer .biodance-footer-text-frame {
+        background: var(--neutral-charcoal) !important;
+        color: var(--neutral-white) !important;
+    }
+
+    .biodance-footer .biodance-footer-text-frame,
+    .biodance-footer .biodance-footer-text-frame p,
+    .biodance-footer .biodance-footer-text-frame span,
+    .biodance-footer .biodance-footer-text-frame a {
+        color: var(--neutral-white) !important;
+    }
+}
