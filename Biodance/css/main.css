@@ -4396,7 +4396,7 @@ body {
         margin: 0 -20px -0px !important;
         padding: 20px 20px 24px !important;
         box-sizing: border-box !important;
-        gap: 20px !important;
+        gap: 15px !important;
         background: var(--teal-mint) !important;
     }
 
