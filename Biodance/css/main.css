@@ -4672,9 +4672,14 @@ body {
         position: relative;
     }
 
+    .hero-sec .visual .swiper-slide img.mo {
+        position: relative;
+        z-index: 0;
+    }
+
     .hero-sec .hero-2-copy {
         position: absolute;
-        z-index: 2;
+        z-index: 10;
         display: flex !important;
         top: 7%;
         left: 6%;
@@ -4697,7 +4702,7 @@ body {
         margin: 0 0 14px;
         padding: 4px 12px;
         border-radius: 999px;
-        background: var(--neutral-charcoal);
+        background-color: var(--neutral-charcoal) !important;
         color: var(--neutral-white) !important;
         font-size: clamp(11px, 3vw, 13px);
         font-weight: 600 !important;
