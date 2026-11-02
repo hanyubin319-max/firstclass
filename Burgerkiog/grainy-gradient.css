@@ -1,0 +1,324 @@
+/* Grainy Gradient theme - Burger King pages */
+:root {
+    --grain-bg: #241D3B;
+    --grain-card: #35284D;
+    --grain-coral: #FF806B;
+    --grain-peach: #FFB58A;
+    --grain-lilac: #B9A0F4;
+    --grain-cream: #FFF1D9;
+    --grain-muted: #D4C5D9;
+}
+
+html, body {
+    min-height: 100%;
+    background: var(--grain-bg);
+    color: var(--grain-cream);
+}
+
+body {
+    background:
+        radial-gradient(ellipse at 12% 12%, rgba(255,128,107,.38), transparent 34%),
+        radial-gradient(ellipse at 88% 26%, rgba(185,160,244,.34), transparent 36%),
+        linear-gradient(135deg, #211A38 0%, #49305D 48%, #9A5268 100%);
+}
+
+#wrap.grainy-gradient {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 1024px;
+    min-width: 0;
+    min-height: 100dvh;
+    margin: 0 auto;
+    overflow: hidden;
+    color: var(--grain-cream);
+    background:
+        radial-gradient(ellipse at 8% 18%, rgba(255,128,107,.94) 0%, rgba(255,128,107,.42) 22%, transparent 48%),
+        radial-gradient(ellipse at 92% 32%, rgba(185,160,244,.88) 0%, rgba(185,160,244,.35) 25%, transparent 52%),
+        radial-gradient(ellipse at 48% 100%, rgba(255,181,138,.42), transparent 48%),
+        linear-gradient(145deg, #28203F 0%, #493052 52%, #75445F 100%);
+}
+
+/* Fine grain overlay, built with CSS gradients only */
+#wrap.grainy-gradient::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+    pointer-events: none;
+    opacity: .19;
+    background-image:
+        radial-gradient(rgba(255,255,255,.8) .45px, transparent .8px),
+        radial-gradient(rgba(0,0,0,.8) .5px, transparent .9px);
+    background-position: 0 0, 2px 3px;
+    background-size: 4px 4px, 5px 5px;
+    mix-blend-mode: soft-light;
+}
+
+.grainy-gradient header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    color: var(--grain-cream);
+    background: rgba(35,27,57,.72);
+    border-bottom: 1px solid rgba(255,241,217,.24);
+    backdrop-filter: blur(8px);
+}
+
+.grainy-gradient header h1 {
+    color: var(--grain-cream);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-shadow: 0 2px 14px rgba(255,128,107,.45);
+}
+
+.grainy-gradient .prev_btn,
+.grainy-gradient .close_btn {
+    z-index: 6;
+    border: 1px solid rgba(255,241,217,.55);
+    border-radius: 14px;
+    background: linear-gradient(145deg, var(--grain-peach), var(--grain-coral));
+    color: #2C203B;
+    box-shadow: 0 5px 16px rgba(18,12,32,.25);
+}
+
+.grainy-gradient .prev_btn::before {
+    color: #2C203B;
+}
+
+.grainy-gradient main {
+    position: relative;
+    z-index: 1;
+    padding: 50px 22px 90px;
+}
+
+.grainy-gradient .title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px 20px;
+    margin-bottom: 42px;
+    color: var(--grain-cream);
+    background:
+        radial-gradient(ellipse at 0% 0%, rgba(255,181,138,.30), transparent 58%),
+        linear-gradient(125deg, rgba(255,128,107,.24), rgba(185,160,244,.22)),
+        rgba(42,32,65,.76);
+    border: 1px solid rgba(255,241,217,.25);
+    border-radius: 24px;
+    box-shadow: 0 16px 36px rgba(13,9,26,.22), inset 0 1px 0 rgba(255,255,255,.16);
+    backdrop-filter: blur(8px);
+}
+
+.grainy-gradient .title > span,
+.grainy-gradient .title h2,
+.grainy-gradient .title > span:last-child {
+    color: var(--grain-cream);
+    font-weight: 800;
+    text-shadow: 0 2px 16px rgba(255,128,107,.28);
+}
+
+.grainy-gradient .title p {
+    color: var(--grain-muted);
+}
+
+.grainy-gradient .email,
+.grainy-gradient .password_group legend {
+    color: var(--grain-cream);
+    font-weight: 700;
+}
+
+.grainy-gradient input[type="email"],
+.grainy-gradient input[type="password"] {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid rgba(255,241,217,.32) !important;
+    border-radius: 14px !important;
+    background: rgba(255,248,239,.94) !important;
+    color: #2B203B;
+    box-shadow: 0 8px 20px rgba(16,10,30,.16), inset 0 1px 2px rgba(255,255,255,.85);
+}
+
+.grainy-gradient input::placeholder {
+    color: #897C8E !important;
+}
+
+.grainy-gradient input[type="email"]:focus,
+.grainy-gradient input[type="password"]:focus {
+    outline: 2px solid var(--grain-peach);
+    outline-offset: 3px;
+}
+
+.grainy-gradient .pw_btn {
+    border: 1px solid rgba(44,32,59,.24);
+    border-radius: 9px;
+    background-color: var(--grain-peach);
+    box-shadow: 0 3px 8px rgba(16,10,30,.18);
+}
+
+.grainy-gradient .login_option span {
+    color: var(--grain-cream);
+    font-weight: 600;
+}
+
+.grainy-gradient .login_option .check + span::before {
+    border: 1px solid rgba(255,241,217,.4);
+    border-radius: 8px;
+    background: rgba(255,248,239,.95);
+    box-shadow: 0 3px 9px rgba(16,10,30,.16);
+}
+
+.grainy-gradient .login_option .check:checked + span::before {
+    color: #2B203B;
+    background: var(--grain-peach);
+    background-image: none;
+}
+
+.grainy-gradient .login_btn,
+.grainy-gradient .complete_btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+    border: 1px solid rgba(255,241,217,.42) !important;
+    border-radius: 16px !important;
+    background: linear-gradient(110deg, var(--grain-coral), var(--grain-peach) 52%, var(--grain-lilac)) !important;
+    color: #2B203B !important;
+    font-weight: 800;
+    letter-spacing: .04em;
+    box-shadow: 0 9px 22px rgba(16,10,30,.25), inset 0 1px 0 rgba(255,255,255,.45);
+    opacity: 1;
+    transition: transform .16s ease, filter .16s ease;
+}
+
+.grainy-gradient .login_btn:active,
+.grainy-gradient .complete_btn:active {
+    transform: translateY(2px);
+    filter: brightness(.96);
+}
+
+.grainy-gradient .complete_btn.active {
+    background: linear-gradient(110deg, var(--grain-coral), var(--grain-peach) 52%, var(--grain-lilac)) !important;
+    color: #2B203B !important;
+}
+
+.grainy-gradient .login_link {
+    color: var(--grain-cream);
+    font-weight: 600;
+}
+
+.grainy-gradient .login_link a {
+    text-decoration: underline;
+    text-decoration-color: var(--grain-coral);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.grainy-gradient .login_link a::after {
+    background: rgba(255,241,217,.55);
+}
+
+.grainy-gradient .sns_login > p {
+    color: var(--grain-cream);
+    font-weight: 700;
+}
+
+.grainy-gradient .sns_login > p::before,
+.grainy-gradient .sns_login > p::after {
+    height: 1px;
+    background: rgba(255,241,217,.62);
+    opacity: 1;
+}
+
+.grainy-gradient .sns_list > a {
+    border: 1px solid rgba(255,241,217,.28);
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(16,10,30,.22);
+}
+
+.grainy-gradient .password_rule,
+.grainy-gradient .sns_notice {
+    border: 1px solid rgba(255,241,217,.28);
+    border-radius: 18px;
+    background: rgba(42,32,65,.74);
+    box-shadow: 0 12px 26px rgba(13,9,26,.2), inset 0 1px 0 rgba(255,255,255,.12);
+    color: var(--grain-cream);
+}
+
+.grainy-gradient .password_rule li,
+.grainy-gradient .sns_notice p {
+    color: var(--grain-cream);
+}
+
+.grainy-gradient .password_rule li::before {
+    border: 1px solid rgba(255,241,217,.3);
+    border-radius: 6px;
+    background: var(--grain-lilac);
+    background-image: none;
+}
+
+.grainy-gradient .password_rule li.valid::before {
+    color: #2B203B;
+    background: var(--grain-peach);
+    background-image: none;
+}
+
+.grainy-gradient .password_notice {
+    border: 1px solid rgba(255,241,217,.28);
+    border-radius: 14px;
+    background: linear-gradient(110deg, rgba(255,128,107,.9), rgba(255,181,138,.9));
+    box-shadow: 0 8px 18px rgba(13,9,26,.18);
+    color: #2B203B;
+}
+
+.grainy-gradient .sns_notice h2 {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: var(--grain-lilac);
+    color: #2B203B;
+    font-weight: 800;
+}
+
+.grainy-gradient .password_error {
+    color: #FFC0B4;
+    font-weight: 700;
+}
+
+.grainy-gradient .success_message {
+    color: #C6F0D5;
+}
+
+.grainy-gradient a:focus-visible,
+.grainy-gradient button:focus-visible,
+.grainy-gradient input:focus-visible {
+    outline: 2px solid var(--grain-peach);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .grainy-gradient .login_btn:hover,
+    .grainy-gradient .complete_btn:hover {
+        filter: brightness(1.06);
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 480px) {
+    #wrap.grainy-gradient {
+        min-width: 0;
+    }
+
+    .grainy-gradient main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .grainy-gradient .title {
+        padding: 16px;
+        border-radius: 20px;
+    }
+}
