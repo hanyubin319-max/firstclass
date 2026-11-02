@@ -1,0 +1,31 @@
+/* Bold Yellow Illustrated Typography Poster inspired theme */
+:root{--yellow:#FFD400;--poster-black:#171717;--poster-white:#FFFDF2}
+html,body{min-height:100%;background:var(--yellow);color:var(--poster-black)}
+body{background:repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 1px,transparent 1px 5px),#FFD400}
+#wrap.yellowposter{position:relative;isolation:isolate;width:100%;max-width:1024px;min-width:0;min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--poster-black);background:radial-gradient(circle at 90% 18%,rgba(255,255,255,.22) 0 8%,transparent 8.2%),#FFD400}
+.yellowposter:before{content:"";position:absolute;z-index:-1;left:-12%;bottom:8%;width:125%;height:28%;border:4px solid #171717;border-radius:50% 50% 0 0;background:repeating-linear-gradient(135deg,transparent 0 9px,rgba(23,23,23,.08) 10px 12px);transform:rotate(-5deg)}
+.yellowposter header{height:58px;background:#171717;border-bottom:4px solid #fff}
+.yellowposter header h1{color:#FFD400;font-weight:1000;letter-spacing:.1em}
+.yellowposter .prev_btn,.yellowposter .close_btn{border:2px solid #171717;border-radius:50%;background:#fff;box-shadow:3px 3px 0 #171717}
+.yellowposter main{padding:40px 22px 60px}
+.yellowposter .title{padding:20px 12px 24px;margin-bottom:38px;border:0;border-radius:0;background:transparent;box-shadow:none;transform:none}
+.yellowposter .title>span:first-child{color:#171717;font-size:2rem;font-weight:1000;letter-spacing:.12em;text-transform:uppercase}
+.yellowposter .title>span:last-child,.yellowposter .title h2{color:#FFFDF2;font-family:Impact,"Arial Black",sans-serif;font-size:clamp(4.6rem,13vw,8rem);font-weight:1000;line-height:.88;letter-spacing:-.06em;text-transform:uppercase;-webkit-text-stroke:1.5px #171717;text-shadow:4px 5px 0 #171717}
+.yellowposter .title p{max-width:330px;color:#171717;font-weight:800}
+.yellowposter .email,.yellowposter .password_group legend{color:#171717;font-weight:1000;text-transform:uppercase}
+.yellowposter input[type=email],.yellowposter input[type=password]{width:100%;min-width:0;border:3px solid #171717!important;border-radius:0!important;background:#FFFDF2!important;color:#171717;box-shadow:5px 5px 0 #171717}
+.yellowposter input::placeholder{color:#777!important}
+.yellowposter .pw_btn{border:2px solid #171717;border-radius:0;background-color:#FFD400}
+.yellowposter .login_option span,.yellowposter .login_link{color:#171717;font-weight:900}
+.yellowposter .login_btn,.yellowposter .complete_btn{width:100%;min-width:0;min-height:54px;border:3px solid #171717!important;border-radius:0!important;background:#171717!important;color:#FFD400!important;font-weight:1000;font-size:1.8rem;letter-spacing:.1em;box-shadow:6px 6px 0 #fff;opacity:1}
+.yellowposter .complete_btn.active{color:#FFD400!important}
+.yellowposter .sns_login>p{color:#171717;font-weight:1000;text-transform:uppercase}
+.yellowposter .sns_login>p:before,.yellowposter .sns_login>p:after{height:3px;background:#171717;opacity:1}
+.yellowposter .sns_list>a{border:3px solid #171717;border-radius:0;background-color:#fff;box-shadow:4px 4px 0 #171717}
+.yellowposter .password_rule,.yellowposter .sns_notice{border:3px solid #171717;border-radius:0;background:#FFFDF2;box-shadow:6px 6px 0 #171717;color:#171717}
+.yellowposter .password_rule li,.yellowposter .sns_notice p{color:#171717}
+.yellowposter .password_rule li:before{border:2px solid #171717;border-radius:0;background:#FFD400}
+.yellowposter .password_notice{border-top:3px solid #171717;color:#171717;font-weight:700}
+.yellowposter .sns_notice h2{display:inline-block;padding:6px 9px;background:#FFD400;border:2px solid #171717;color:#171717;font-weight:1000}
+.yellowposter .password_error{color:#B3261E;font-weight:1000}
+@media(max-width:480px){#wrap.yellowposter{min-width:0}.yellowposter main{padding-left:18px;padding-right:18px}.yellowposter .title>span:last-child,.yellowposter .title h2{font-size:4.8rem}}
