@@ -1,0 +1,33 @@
+/* Y2K Chrome: glossy metallic surfaces, icy blue and holographic pink accents */
+:root{--chrome-ink:#263247;--chrome-silver:#e9f0f7;--chrome-blue:#8edcff;--chrome-pink:#f6a9df;--chrome-violet:#b8a8ff}
+html,body{min-height:100%;background:#b9c9d9;color:var(--chrome-ink)}
+body{background:linear-gradient(135deg,#dce8f2 0%,#aabed2 48%,#e9d5eb 100%);background-attachment:fixed}
+#wrap.y2k-chrome{width:100%;max-width:1024px;min-width:0;min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--chrome-ink);background:linear-gradient(145deg,#fafdff 0%,#dce8f2 48%,#f5eafa 100%);border-left:1px solid #fff;border-right:1px solid #fff;box-shadow:0 0 30px rgba(54,83,120,.22)}
+.y2k-chrome header{height:60px;background:linear-gradient(180deg,#fff 0%,#c9d8e8 48%,#f7fbff 52%,#aabdd2 100%);border-bottom:1px solid #8299b2;box-shadow:inset 0 1px 0 #fff}
+.y2k-chrome header h1{color:#344b68;font-size:1.45rem;font-weight:800;letter-spacing:.04em;text-shadow:0 1px 0 #fff}
+.y2k-chrome .prev_btn,.y2k-chrome .close_btn{border:1px solid #8199b5;border-radius:50%;background:linear-gradient(145deg,#fff 0%,#d9e6f2 45%,#9eb5cc 100%);box-shadow:inset 0 2px 3px #fff,0 2px 5px #8ca3bb}
+.y2k-chrome main{padding:56px 24px 72px}
+.y2k-chrome .title{padding:22px 18px 25px;margin:0 0 42px;border:1px solid #8ea8c2;border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(171,221,248,.78) 48%,rgba(247,202,239,.82));box-shadow:inset 0 2px 5px #fff,0 8px 18px rgba(75,108,145,.2);position:relative}
+.y2k-chrome .title>span:first-child{display:inline-block;padding:5px 11px;border:1px solid #a2b9d0;border-radius:20px;background:linear-gradient(#fff,#dce8f4);color:#526b89;font-size:.9rem;font-weight:800;letter-spacing:.08em}
+.y2k-chrome .title>span:last-child,.y2k-chrome .title h2{display:block;margin-top:12px;color:#334c6b;font-size:clamp(2.4rem,7vw,4.2rem);font-weight:900;line-height:1.1;letter-spacing:-.06em;text-shadow:0 2px 0 #fff,0 4px 12px rgba(104,143,181,.25)}
+.y2k-chrome .title p{max-width:440px;color:#5c718b;font-size:.95rem;line-height:1.7}
+.y2k-chrome .email,.y2k-chrome .password_group legend{color:#435d7b;font-size:.95rem;font-weight:800}
+.y2k-chrome input[type=email],.y2k-chrome input[type=password]{width:100%;min-width:0;border:1px solid #9db3ca!important;border-radius:12px!important;background:linear-gradient(180deg,#fff 0%,#f3f8fd 55%,#e2edf7 100%)!important;color:#344b68;box-shadow:inset 0 2px 4px rgba(91,122,154,.12),0 2px 4px rgba(91,122,154,.12);padding-left:14px}
+.y2k-chrome input::placeholder{color:#9aabc0!important}
+.y2k-chrome input:focus{outline:2px solid #c69be8;outline-offset:2px;box-shadow:0 0 0 4px rgba(198,155,232,.18)}
+.y2k-chrome .pw_btn{border:1px solid #91a9c3;border-radius:50%;background:linear-gradient(145deg,#fff,#b8d9f1);box-shadow:inset 0 1px 2px #fff}
+.y2k-chrome .login_option span,.y2k-chrome .login_link{color:#5b6f89;font-size:.88rem;font-weight:600}
+.y2k-chrome .login_btn,.y2k-chrome .complete_btn{width:100%;min-width:0;min-height:52px;border:1px solid #718eae!important;border-radius:14px!important;background:linear-gradient(180deg,#fff 0%,#bde8ff 18%,#75bce8 52%,#547fae 100%)!important;color:#fff!important;font-size:1rem;font-weight:900;letter-spacing:.05em;text-shadow:0 1px 2px #527394;box-shadow:inset 0 2px 3px rgba(255,255,255,.95),0 4px 8px rgba(68,102,143,.25);opacity:1}
+.y2k-chrome .complete_btn.active{color:#fff!important}
+.y2k-chrome .sns_login>p{color:#647b98;font-size:.85rem;font-weight:800;letter-spacing:.04em}
+.y2k-chrome .sns_login>p:before,.y2k-chrome .sns_login>p:after{height:1px;background:linear-gradient(90deg,transparent,#8fa9c4,transparent);opacity:1}
+.y2k-chrome .sns_list>a{border:1px solid #9db3ca;border-radius:50%;background-color:#fff;box-shadow:inset 0 2px 3px #fff,0 3px 7px rgba(75,108,145,.2)}
+.y2k-chrome .password_rule,.y2k-chrome .sns_notice{border:1px solid #a7bdd2;border-radius:13px;background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(224,237,249,.9));box-shadow:inset 0 1px 3px #fff,0 4px 10px rgba(75,108,145,.12);color:#5c718b}
+.y2k-chrome .password_rule li,.y2k-chrome .sns_notice p{color:#5c718b}
+.y2k-chrome .password_rule li:before{border:1px solid #8ea9c4;border-radius:50%;background:linear-gradient(145deg,#fff,#b8e5fb)}
+.y2k-chrome .password_notice{border-top:1px solid #a8bbd0;color:#71839a}
+.y2k-chrome .sns_notice h2{color:#405b7b;font-size:1rem;font-weight:800}
+.y2k-chrome .password_error{color:#c45b9d;font-size:.85rem;font-weight:700}
+.y2k-chrome a{text-decoration-thickness:1px;text-underline-offset:3px}
+.y2k-chrome a:focus-visible,.y2k-chrome button:focus-visible{outline:2px solid #b98cdb;outline-offset:3px}
+@media(max-width:480px){#wrap.y2k-chrome{min-width:0}.y2k-chrome main{padding:48px 20px 56px}.y2k-chrome .title{margin-bottom:34px}}
