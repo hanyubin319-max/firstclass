@@ -1,0 +1,28 @@
+/* Glassmorphism theme */
+:root{--glass-text:#18334b;--glass-blue:#8ec5fc;}
+html,body{min-height:100%;background:linear-gradient(135deg,#8ec5fc,#e0c3fc);color:var(--glass-text)}
+body{background:radial-gradient(circle at 15% 20%,rgba(255,255,255,.8),transparent 25%),linear-gradient(135deg,#83aee8,#c6b7ef 55%,#a8d9e8)}
+#wrap.glassmorphism{width:100%;max-width:1024px;min-width:0;min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--glass-text);background:linear-gradient(145deg,rgba(255,255,255,.34),rgba(255,255,255,.12));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-left:1px solid rgba(255,255,255,.45);border-right:1px solid rgba(255,255,255,.45)}
+.glassmorphism header{height:58px;background:rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.5);backdrop-filter:blur(14px)}
+.glassmorphism header h1{color:#18334b;font-weight:800}
+.glassmorphism .prev_btn,.glassmorphism .close_btn{border:1px solid rgba(255,255,255,.8);border-radius:14px;background-color:rgba(255,255,255,.35);box-shadow:0 4px 14px rgba(44,75,120,.12)}
+.glassmorphism main{padding:48px 22px 64px}
+.glassmorphism .title{padding:22px;border:1px solid rgba(255,255,255,.75);border-radius:24px;background:rgba(255,255,255,.3);box-shadow:0 12px 35px rgba(48,72,120,.12);backdrop-filter:blur(16px)}
+.glassmorphism .title>span,.glassmorphism .title h2,.glassmorphism .title>span:last-child{color:#173c60;font-weight:900}
+.glassmorphism .title>span:last-child{font-size:3.8rem}
+.glassmorphism .title p{color:#42627d}
+.glassmorphism .email,.glassmorphism .password_group legend{color:#244d70;font-weight:800}
+.glassmorphism input[type=email],.glassmorphism input[type=password]{width:100%;min-width:0;border:1px solid rgba(255,255,255,.9)!important;border-radius:14px!important;background:rgba(255,255,255,.55)!important;color:#18334b;box-shadow:0 6px 18px rgba(44,75,120,.1)}
+.glassmorphism input::placeholder{color:#7893aa!important}
+.glassmorphism .pw_btn{border:1px solid rgba(255,255,255,.8);border-radius:10px;background-color:rgba(255,255,255,.7)}
+.glassmorphism .login_option span,.glassmorphism .login_link{color:#244d70;font-weight:700}
+.glassmorphism .login_btn,.glassmorphism .complete_btn{width:100%;min-width:0;min-height:50px;border:1px solid rgba(255,255,255,.85)!important;border-radius:16px!important;background:rgba(46,112,177,.82)!important;color:white!important;font-weight:800;box-shadow:0 8px 22px rgba(35,83,140,.2);opacity:1}
+.glassmorphism .complete_btn.active{color:white!important}
+.glassmorphism .sns_login>p{color:#315875;font-weight:800}
+.glassmorphism .sns_list>a{border:1px solid rgba(255,255,255,.9);border-radius:15px;background-color:rgba(255,255,255,.55);box-shadow:0 5px 16px rgba(44,75,120,.12)}
+.glassmorphism .password_rule,.glassmorphism .sns_notice{border:1px solid rgba(255,255,255,.75);border-radius:18px;background:rgba(255,255,255,.3);box-shadow:0 8px 24px rgba(44,75,120,.1);color:#315875}
+.glassmorphism .password_rule li,.glassmorphism .sns_notice p{color:#315875}
+.glassmorphism .password_notice{border-top:1px solid rgba(255,255,255,.8);color:#315875}
+.glassmorphism .sns_notice h2{color:#244d70;font-weight:800}
+.glassmorphism .password_error{color:#b04f72}
+@media(max-width:480px){#wrap.glassmorphism{min-width:0}.glassmorphism main{padding-left:18px;padding-right:18px}}
