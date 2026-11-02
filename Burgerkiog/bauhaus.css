@@ -1,0 +1,326 @@
+/* Bauhaus theme - Burger King pages */
+:root {
+    --bauhaus-red: #D92724;
+    --bauhaus-yellow: #F4C62D;
+    --bauhaus-blue: #2457A6;
+    --bauhaus-black: #171717;
+    --bauhaus-white: #F7F5EF;
+    --bauhaus-gray: #D8D5CC;
+}
+
+html, body {
+    background: var(--bauhaus-white);
+    color: var(--bauhaus-black);
+}
+
+body {
+    font-family: var(--font-pre), Arial, sans-serif;
+}
+
+#wrap.bauhaus {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    min-width: 0;
+    min-height: 100dvh;
+    margin: 0 auto;
+    overflow: hidden;
+    color: var(--bauhaus-black);
+    background: var(--bauhaus-white);
+    border-left: 2px solid var(--bauhaus-black);
+    border-right: 2px solid var(--bauhaus-black);
+}
+
+/* Bauhaus geometric composition */
+.bauhaus::before {
+    content: "";
+    position: absolute;
+    top: 82px;
+    right: -54px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: var(--bauhaus-yellow);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bauhaus::after {
+    content: "";
+    position: absolute;
+    top: 265px;
+    right: 0;
+    width: 12px;
+    height: 150px;
+    background: var(--bauhaus-blue);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bauhaus header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 58px;
+    color: var(--bauhaus-white);
+    background: var(--bauhaus-black);
+    border-bottom: 6px solid var(--bauhaus-red);
+}
+
+.bauhaus header h1 {
+    color: var(--bauhaus-white);
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: .12em;
+}
+
+.bauhaus .prev_btn,
+.bauhaus .close_btn {
+    z-index: 2;
+    border: 2px solid var(--bauhaus-black);
+    border-radius: 0;
+    background: var(--bauhaus-yellow);
+    box-shadow: none;
+}
+
+.bauhaus .prev_btn::before {
+    color: var(--bauhaus-black);
+}
+
+.bauhaus main {
+    position: relative;
+    z-index: 1;
+    padding: 54px 24px 90px;
+}
+
+.bauhaus .title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 20px;
+    margin-bottom: 42px;
+    color: var(--bauhaus-black);
+    background: var(--bauhaus-yellow);
+    border-left: 12px solid var(--bauhaus-red);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.bauhaus .title > span,
+.bauhaus .title h2,
+.bauhaus .title > span:last-child {
+    color: var(--bauhaus-black);
+    font-weight: 900;
+    text-shadow: none;
+}
+
+.bauhaus .title > span:first-child {
+    font-size: 2.3rem;
+}
+
+.bauhaus .title > span:last-child {
+    font-size: 3.4rem;
+}
+
+.bauhaus .title p {
+    color: var(--bauhaus-black);
+}
+
+.bauhaus .email,
+.bauhaus .password_group legend {
+    color: var(--bauhaus-black);
+    font-weight: 800;
+}
+
+.bauhaus input[type="email"],
+.bauhaus input[type="password"] {
+    width: 100%;
+    min-width: 0;
+    border: 2px solid var(--bauhaus-black) !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    color: var(--bauhaus-black);
+    box-shadow: none;
+}
+
+.bauhaus input::placeholder {
+    color: #77736B !important;
+}
+
+.bauhaus input[type="email"]:focus,
+.bauhaus input[type="password"]:focus {
+    outline: 3px solid var(--bauhaus-blue);
+    outline-offset: 2px;
+}
+
+.bauhaus .pw_btn {
+    border: 2px solid var(--bauhaus-black);
+    border-radius: 0;
+    background-color: var(--bauhaus-yellow);
+    box-shadow: none;
+}
+
+.bauhaus .login_option span {
+    color: var(--bauhaus-black);
+    font-weight: 700;
+}
+
+.bauhaus .login_option .check + span::before {
+    border: 2px solid var(--bauhaus-black);
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+}
+
+.bauhaus .login_option .check:checked + span::before {
+    color: #fff;
+    background: var(--bauhaus-blue);
+    background-image: none;
+}
+
+.bauhaus .login_btn,
+.bauhaus .complete_btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+    border: 2px solid var(--bauhaus-black) !important;
+    border-radius: 0 !important;
+    background: var(--bauhaus-red) !important;
+    color: #fff !important;
+    font-weight: 900;
+    letter-spacing: .12em;
+    box-shadow: none;
+    opacity: 1;
+    transition: background-color .15s ease, transform .15s ease;
+}
+
+.bauhaus .login_btn:active,
+.bauhaus .complete_btn:active {
+    transform: translateY(2px);
+}
+
+.bauhaus .complete_btn.active {
+    background: var(--bauhaus-red) !important;
+    color: #fff !important;
+}
+
+.bauhaus .login_link {
+    color: var(--bauhaus-black);
+    font-weight: 700;
+}
+
+.bauhaus .login_link a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.bauhaus .login_link a::after {
+    background: var(--bauhaus-black);
+}
+
+.bauhaus .sns_login > p {
+    color: var(--bauhaus-black);
+    font-weight: 800;
+    letter-spacing: .04em;
+}
+
+.bauhaus .sns_login > p::before,
+.bauhaus .sns_login > p::after {
+    height: 2px;
+    background: var(--bauhaus-black);
+    opacity: 1;
+}
+
+.bauhaus .sns_list > a {
+    border: 2px solid var(--bauhaus-black);
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+.bauhaus .password_rule,
+.bauhaus .sns_notice {
+    border: 2px solid var(--bauhaus-black);
+    border-radius: 0;
+    background: var(--bauhaus-white);
+    box-shadow: none;
+    color: var(--bauhaus-black);
+}
+
+.bauhaus .password_rule li,
+.bauhaus .sns_notice p {
+    color: var(--bauhaus-black);
+}
+
+.bauhaus .password_rule li::before {
+    border: 2px solid var(--bauhaus-black);
+    border-radius: 0;
+    background: var(--bauhaus-yellow);
+    background-image: none;
+}
+
+.bauhaus .password_rule li.valid::before {
+    color: #fff;
+    background: var(--bauhaus-blue);
+    background-image: none;
+}
+
+.bauhaus .password_notice {
+    border: 2px solid var(--bauhaus-black);
+    border-radius: 0;
+    background: var(--bauhaus-yellow);
+    box-shadow: none;
+    color: var(--bauhaus-black);
+}
+
+.bauhaus .sns_notice h2 {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 0;
+    background: var(--bauhaus-blue);
+    color: #fff;
+    font-weight: 800;
+}
+
+.bauhaus .password_error {
+    color: var(--bauhaus-red);
+    font-weight: 800;
+}
+
+.bauhaus a:focus-visible,
+.bauhaus button:focus-visible,
+.bauhaus input:focus-visible {
+    outline: 3px solid var(--bauhaus-blue);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .bauhaus .login_btn:hover,
+    .bauhaus .complete_btn:hover {
+        background: var(--bauhaus-blue) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #wrap.bauhaus {
+        min-width: 0;
+    }
+
+    .bauhaus main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .bauhaus .title {
+        padding: 15px;
+    }
+
+    .bauhaus::before {
+        width: 110px;
+        height: 110px;
+        right: -42px;
+    }
+}
