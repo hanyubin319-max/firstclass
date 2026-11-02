@@ -8,7 +8,10 @@
     "grainy-gradient": { label: "그레이니 그라디언트", file: "grainy-gradient.css" },
     maximalism: { label: "맥시멀리즘", file: "maximalism.css" },
     propaganda: { label: "프로파간다 포스터", file: "propaganda.css" },
-    glassmorphism: { label: "글래스모피즘", file: "glassmorphism.css" }
+    glassmorphism: { label: "글래스모피즘", file: "glassmorphism.css" },
+    nature3d: { label: "3D 네이처 어드벤처", file: "nature-adventure.css" },
+    organic: { label: "오가닉 매거진", file: "organic-magazine.css" },
+    yellowposter: { label: "옐로우 일러스트 포스터", file: "yellow-poster.css" }
   };
   const selector = document.querySelector("#theme-select");
   const wrap = document.querySelector("#wrap");
