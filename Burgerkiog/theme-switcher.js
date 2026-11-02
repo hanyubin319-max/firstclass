@@ -3,7 +3,7 @@
   const themes = {
     claymorphism: { label: "클레이모피즘", file: "claymorphism.css" },
     bauhaus: { label: "바우하우스", file: "bauhaus.css" },
-    minimalism: { label: "미니멀리즘", file: "minimalism.css" },
+    collage: { label: "Collage", file: "collage.css" },
   };
   const selector = document.querySelector("#theme-select");
   const wrap = document.querySelector("#wrap");
