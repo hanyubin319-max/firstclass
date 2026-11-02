@@ -1,0 +1,289 @@
+/* Pop Art theme - Burger King login and password pages */
+:root {
+    --pop-yellow: #FFE23B;
+    --pop-pink: #FF4F9A;
+    --pop-cyan: #35D7E8;
+    --pop-red: #F02D20;
+    --pop-black: #171717;
+    --pop-cream: #FFF8E8;
+    --pop-ink: #24150F;
+}
+
+html, body {
+    background: var(--pop-cream);
+    color: var(--pop-black);
+}
+
+body {
+    background-image: radial-gradient(#171717 1.1px, transparent 1.1px);
+    background-size: 13px 13px;
+}
+
+#wrap.popart {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    min-width: 0;
+    min-height: 100dvh;
+    margin: 0 auto;
+    overflow: hidden;
+    color: var(--pop-black);
+    background-color: var(--pop-yellow);
+    background-image: radial-gradient(rgba(23,23,23,.14) 1px, transparent 1px);
+    background-size: 11px 11px;
+    border-left: 4px solid var(--pop-black);
+    border-right: 4px solid var(--pop-black);
+}
+
+/* Comic-book style top bar */
+.popart header {
+    position: relative;
+    z-index: 1;
+    height: 52px;
+    color: #fff;
+    background: var(--pop-red);
+    border-bottom: 4px solid var(--pop-black);
+    box-shadow: 0 5px 0 var(--pop-cyan);
+}
+
+.popart header h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 0 var(--pop-black);
+    letter-spacing: .04em;
+}
+
+.popart .prev_btn,
+.popart .close_btn {
+    z-index: 2;
+    border: 3px solid var(--pop-black);
+    background-color: var(--pop-cyan);
+    box-shadow: 4px 4px 0 var(--pop-black);
+}
+
+.popart .prev_btn::before {
+    color: var(--pop-black);
+    text-shadow: none;
+}
+
+.popart main {
+    padding: 48px 20px 90px;
+}
+
+.popart .title {
+    position: relative;
+    padding: 16px 14px;
+    margin-bottom: 36px;
+    color: var(--pop-black);
+    background: var(--pop-pink);
+    border: 3px solid var(--pop-black);
+    box-shadow: 7px 7px 0 var(--pop-black);
+    transform: rotate(-.5deg);
+}
+
+.popart .title > span,
+.popart .title h2,
+.popart .title > span:last-child {
+    color: var(--pop-black);
+    text-shadow: 2px 2px 0 #fff;
+    font-weight: 900;
+}
+
+.popart .title p {
+    color: var(--pop-black);
+}
+
+.popart .email,
+.popart .password_group legend {
+    color: var(--pop-black);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.popart input[type="email"],
+.popart input[type="password"] {
+    width: 100%;
+    min-width: 0;
+    border: 3px solid var(--pop-black) !important;
+    border-radius: 0 !important;
+    background: var(--pop-cream) !important;
+    color: var(--pop-black);
+    box-shadow: 4px 4px 0 var(--pop-black);
+}
+
+.popart input::placeholder {
+    color: #8A7569 !important;
+}
+
+.popart input[type="email"]:focus,
+.popart input[type="password"]:focus {
+    outline: 3px solid var(--pop-cyan);
+    outline-offset: 3px;
+}
+
+.popart .pw_btn {
+    border: 2px solid var(--pop-black);
+    border-radius: 0;
+    background-color: var(--pop-cyan);
+    box-shadow: 2px 2px 0 var(--pop-black);
+}
+
+.popart .login_option span {
+    color: var(--pop-black);
+    font-weight: 700;
+}
+
+.popart .login_option .check + span::before {
+    border: 2px solid var(--pop-black);
+    border-radius: 0;
+    background: var(--pop-cream);
+    box-shadow: 2px 2px 0 var(--pop-black);
+}
+
+.popart .login_option .check:checked + span::before {
+    color: var(--pop-black);
+    background: var(--pop-cyan);
+    border: 2px solid var(--pop-black);
+}
+
+.popart .login_btn,
+.popart .complete_btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    border: 3px solid var(--pop-black) !important;
+    border-radius: 0 !important;
+    background: var(--pop-red) !important;
+    color: #fff !important;
+    font-weight: 900;
+    letter-spacing: .04em;
+    text-shadow: 2px 2px 0 var(--pop-black);
+    box-shadow: 5px 5px 0 var(--pop-black);
+    opacity: 1;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.popart .login_btn:active,
+.popart .complete_btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0 var(--pop-black);
+}
+
+.popart .complete_btn.active {
+    background: var(--pop-red) !important;
+    color: #fff !important;
+}
+
+.popart .login_link {
+    color: var(--pop-black);
+    font-weight: 800;
+}
+
+.popart .login_link a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.popart .login_link a::after {
+    background: var(--pop-black);
+}
+
+.popart .sns_login > p {
+    color: var(--pop-black);
+    font-weight: 900;
+}
+
+.popart .sns_login > p::before,
+.popart .sns_login > p::after {
+    height: 3px;
+    background: var(--pop-black);
+    opacity: 1;
+}
+
+.popart .sns_list > a {
+    border: 3px solid var(--pop-black);
+    border-radius: 50%;
+    box-shadow: 3px 3px 0 var(--pop-black);
+}
+
+.popart .password_rule,
+.popart .sns_notice {
+    border: 3px solid var(--pop-black);
+    border-radius: 0;
+    background: var(--pop-cyan);
+    box-shadow: 5px 5px 0 var(--pop-black);
+    color: var(--pop-black);
+}
+
+.popart .password_rule li,
+.popart .sns_notice p {
+    color: var(--pop-black);
+}
+
+.popart .password_rule li::before {
+    border: 2px solid var(--pop-black);
+    border-radius: 0;
+    background: var(--pop-yellow);
+    background-image: none;
+}
+
+.popart .password_rule li.valid::before {
+    color: var(--pop-black);
+    background: var(--pop-pink);
+    background-image: none;
+}
+
+.popart .password_notice {
+    border: 3px solid var(--pop-black);
+    border-radius: 0;
+    background: var(--pop-pink);
+    box-shadow: 4px 4px 0 var(--pop-black);
+    color: var(--pop-black);
+}
+
+.popart .sns_notice h2 {
+    border: 2px solid var(--pop-black);
+    border-radius: 0;
+    background: var(--pop-yellow);
+    color: var(--pop-black);
+}
+
+.popart .password_error {
+    color: var(--pop-red);
+    font-weight: 900;
+}
+
+.popart a:focus-visible,
+.popart button:focus-visible,
+.popart input:focus-visible {
+    outline: 3px solid var(--pop-cyan);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .popart .login_btn:hover,
+    .popart .complete_btn:hover,
+    .popart .prev_btn:hover,
+    .popart .close_btn:hover,
+    .popart .pw_btn:hover,
+    .popart .sns_list > a:hover {
+        transform: translate(-2px, -2px);
+    }
+}
+
+@media (max-width: 480px) {
+    #wrap.popart {
+        min-width: 0;
+    }
+
+    .popart main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .popart .title {
+        padding: 14px;
+    }
+}
