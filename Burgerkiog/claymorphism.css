@@ -1,0 +1,338 @@
+/* Claymorphism - Burger King pages */
+:root {
+    --clay-bg: #F6E8D8;
+    --clay-card: #FFF9F1;
+    --clay-pink: #F6B8A8;
+    --clay-orange: #F28B62;
+    --clay-yellow: #F8D982;
+    --clay-mint: #BFE3D0;
+    --clay-text: #56372D;
+    --clay-muted: #92766B;
+    --clay-shadow: #D8C2B2;
+}
+
+body {
+    background: var(--clay-bg);
+    color: var(--clay-text);
+}
+
+.claymorphism {
+    min-height: 100dvh;
+    color: var(--clay-text);
+    background: var(--clay-bg) !important;
+    border-radius: 0 0 30px 30px;
+    overflow: hidden;
+}
+
+/* 상단 바 */
+.claymorphism header {
+    background: var(--clay-pink);
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 7px 14px rgba(151, 105, 83, .16),
+                inset 0 3px 5px rgba(255,255,255,.55);
+}
+
+.claymorphism header h1 {
+    color: var(--clay-text);
+    font-weight: 800;
+}
+
+.claymorphism .prev_btn,
+.claymorphism .close_btn {
+    border: 0;
+    border-radius: 14px;
+    background-color: var(--clay-yellow);
+    box-shadow: 4px 4px 9px rgba(151, 105, 83, .22),
+                inset 2px 2px 5px rgba(255,255,255,.8),
+                inset -2px -2px 5px rgba(191,145,111,.18);
+}
+
+.claymorphism .prev_btn {
+    inset: 5px auto auto 5px;
+    width: 38px;
+    height: 38px;
+}
+
+.claymorphism .prev_btn::before {
+    content: "←";
+    display: block;
+    color: var(--clay-text);
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.claymorphism .close_btn {
+    top: 5px;
+    right: 8px;
+    width: 38px;
+    height: 38px;
+    background-size: 24px;
+}
+
+/* 제목 영역 */
+.claymorphism .title {
+    padding: 20px;
+    border-radius: 28px;
+    background: var(--clay-card);
+    box-shadow: 9px 9px 18px rgba(170, 135, 113, .22),
+                -7px -7px 16px rgba(255,255,255,.8),
+                inset 2px 2px 5px rgba(255,255,255,.9);
+    color: var(--clay-text);
+}
+
+.claymorphism .title h2,
+.claymorphism .title > span {
+    color: var(--clay-text);
+    font-weight: 800;
+    text-shadow: none;
+}
+
+.claymorphism .title > span:last-child {
+    color: var(--clay-orange);
+}
+
+.claymorphism .title p {
+    color: var(--clay-muted);
+}
+
+/* 입력창 */
+.claymorphism input[type="email"],
+.claymorphism input[type="password"] {
+    width: 100%;
+    border: 0 !important;
+    border-radius: 16px !important;
+    background: var(--clay-card) !important;
+    color: var(--clay-text);
+    box-shadow: inset 4px 4px 8px rgba(185, 151, 130, .2),
+                inset -4px -4px 8px rgba(255,255,255,.95);
+}
+
+.claymorphism input[type="email"]:focus,
+.claymorphism input[type="password"]:focus {
+    outline: 2px solid var(--clay-orange);
+    outline-offset: 3px;
+}
+
+.claymorphism input::placeholder {
+    color: #B49B8F !important;
+}
+
+.claymorphism .email,
+.claymorphism .password_group legend {
+    color: var(--clay-text);
+    font-weight: 800;
+}
+
+.claymorphism .pw_btn {
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--clay-yellow);
+    box-shadow: 3px 3px 7px rgba(151,105,83,.18),
+                inset 2px 2px 4px rgba(255,255,255,.8);
+}
+
+/* 로그인 옵션 */
+.claymorphism .login_option label {
+    cursor: pointer;
+}
+
+.claymorphism .login_option span {
+    color: var(--clay-text);
+}
+
+.claymorphism .login_option .check + span::before {
+    width: 25px;
+    height: 25px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--clay-card);
+    box-shadow: inset 3px 3px 6px rgba(185,151,130,.2),
+                inset -3px -3px 6px rgba(255,255,255,.95);
+}
+
+.claymorphism .login_option .check:checked + span::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: var(--clay-orange);
+    background-image: none;
+}
+
+/* 주요 버튼 */
+.claymorphism .login_btn,
+.claymorphism .complete_btn {
+    min-height: 48px;
+    border: 0 !important;
+    border-radius: 18px !important;
+    background: var(--clay-orange) !important;
+    color: #fff !important;
+    font-weight: 800;
+    box-shadow: 7px 7px 14px rgba(170, 112, 85, .25),
+                -4px -4px 10px rgba(255,255,255,.75),
+                inset 2px 2px 5px rgba(255,255,255,.3),
+                inset -2px -2px 5px rgba(160,85,59,.15);
+    opacity: 1;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.claymorphism .login_btn:active,
+.claymorphism .complete_btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: inset 4px 4px 8px rgba(160,85,59,.2),
+                inset -3px -3px 7px rgba(255,255,255,.25);
+}
+
+.claymorphism .complete_btn.active {
+    background: var(--clay-orange) !important;
+    color: #fff !important;
+}
+
+.claymorphism .login_link a {
+    color: var(--clay-text);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--clay-pink);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+/* SNS 영역 */
+.claymorphism .sns_login > p {
+    color: var(--clay-muted) !important;
+    font-weight: 700;
+}
+
+.claymorphism .sns_login > p::before,
+.claymorphism .sns_login > p::after {
+    height: 2px;
+    background: var(--clay-pink);
+    opacity: 1;
+}
+
+.claymorphism .sns_list > a {
+    border: 0;
+    border-radius: 16px;
+    background-color: var(--clay-card);
+    box-shadow: 5px 5px 10px rgba(170,135,113,.2),
+                -4px -4px 9px rgba(255,255,255,.8),
+                inset 2px 2px 4px rgba(255,255,255,.8);
+}
+
+/* 안내 카드 */
+.claymorphism .password_rule {
+    padding: 16px;
+    border: 0;
+    border-radius: 20px;
+    background: var(--clay-card);
+    box-shadow: 7px 7px 14px rgba(170,135,113,.2),
+                -5px -5px 12px rgba(255,255,255,.8);
+    color: var(--clay-text);
+}
+
+.claymorphism .password_rule li {
+    color: var(--clay-text);
+}
+
+.claymorphism .password_rule li::before {
+    flex-basis: 18px;
+    width: 18px;
+    height: 18px;
+    margin-top: 0;
+    border: 0;
+    border-radius: 7px;
+    background: var(--clay-mint);
+    box-shadow: inset 1px 1px 3px rgba(255,255,255,.8);
+    background-image: none;
+}
+
+.claymorphism .password_rule li.valid::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #426B56;
+    font-size: 1.2rem;
+    font-weight: 800;
+    background-image: none;
+}
+
+.claymorphism .password_notice {
+    padding: 14px;
+    border: 0;
+    border-radius: 18px;
+    background: var(--clay-yellow);
+    box-shadow: 5px 5px 11px rgba(170,135,113,.18),
+                -4px -4px 9px rgba(255,255,255,.7);
+    color: var(--clay-text);
+}
+
+.claymorphism .sns_notice {
+    padding: 16px;
+    border: 0;
+    border-radius: 22px;
+    background: var(--clay-card);
+    box-shadow: 7px 7px 14px rgba(170,135,113,.2),
+                -5px -5px 12px rgba(255,255,255,.8);
+}
+
+.claymorphism .sns_notice h2 {
+    display: inline-block;
+    padding: 6px 9px;
+    border-radius: 12px;
+    background: var(--clay-mint);
+    color: var(--clay-text);
+    font-weight: 800;
+}
+
+.claymorphism .sns_notice p,
+.claymorphism .password_error {
+    color: var(--clay-muted);
+}
+
+.claymorphism .password_error {
+    font-weight: 700;
+}
+
+.claymorphism .success_message {
+    color: #47785A;
+}
+
+/* 키보드 접근성 및 모바일 */
+.claymorphism a:focus-visible,
+.claymorphism button:focus-visible,
+.claymorphism input:focus-visible {
+    outline: 2px solid var(--clay-orange);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .claymorphism .login_btn:hover,
+    .claymorphism .complete_btn:hover,
+    .claymorphism .prev_btn:hover,
+    .claymorphism .close_btn:hover,
+    .claymorphism .pw_btn:hover,
+    .claymorphism .sns_list > a:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 480px) {
+    .claymorphism {
+        min-width: 0;
+    }
+
+    .claymorphism main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .claymorphism .title {
+        padding: 16px;
+        border-radius: 24px;
+    }
+}
