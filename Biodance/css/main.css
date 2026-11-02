@@ -4682,7 +4682,7 @@ body {
         position: absolute;
         z-index: 2;
         display: flex !important;
-        top: 7%;
+        top: 9%;
         left: 6%;
         right: 6%;
         flex-direction: column;
