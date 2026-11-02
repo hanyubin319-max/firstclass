@@ -2,141 +2,312 @@
 :root {
     --neo-yellow: #FFD43B;
     --neo-red: #E3261B;
+    --neo-blue: #477BDB;
     --neo-ink: #17130F;
     --neo-paper: #FFF8E8;
+    --neo-green: #C9F27C;
 }
 
-/* 페이지 바탕과 상단 영역 */
-#wrap {
-    background-color: var(--neo-yellow) !important;
-    border-left: 3px solid var(--neo-ink);
-    border-right: 3px solid var(--neo-ink);
+body {
+    background-color: var(--neo-yellow);
 }
-header {
+
+/* 페이지 프레임과 상단 */
+.neo-brutalism {
+    color: var(--neo-ink);
+    background-color: var(--neo-yellow) !important;
+    border-right: 3px solid var(--neo-ink);
+    border-left: 3px solid var(--neo-ink);
+}
+
+.neo-brutalism header {
+    position: relative;
     background-color: var(--neo-red);
     border-bottom: 3px solid var(--neo-ink);
 }
-header h1 {
+
+.neo-brutalism header h1 {
     color: var(--neo-paper);
     font-weight: 900;
     letter-spacing: -0.04em;
 }
-.prev_btn, .close_btn {
+
+.neo-brutalism .prev_btn,
+.neo-brutalism .close_btn {
     border: 2px solid var(--neo-ink);
     background-color: var(--neo-yellow);
     box-shadow: 3px 3px 0 var(--neo-ink);
 }
 
-/* 제목과 정보 */
-.title {
+.neo-brutalism .prev_btn {
+    inset: 5px auto auto 5px;
+    width: 38px;
+    height: 38px;
+}
+
+.neo-brutalism .prev_btn::before {
+    content: "←";
+    display: block;
     color: var(--neo-ink);
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1;
 }
-.title h2,
-.title > span {
-    text-shadow: 2px 2px 0 var(--neo-paper);
+
+.neo-brutalism .close_btn {
+    top: 5px;
+    right: 8px;
+    width: 38px;
+    height: 38px;
+    background-size: 26px;
 }
-.title p,
-.password_rule,
-.password_notice,
-.sns_notice p {
+
+/* 메인 제목 카드 */
+.neo-brutalism .title {
+    padding: 18px;
+    border: 3px solid var(--neo-ink);
+    background-color: var(--neo-paper);
+    box-shadow: 6px 6px 0 var(--neo-ink);
     color: var(--neo-ink);
 }
 
-/* 입력 요소: 두꺼운 외곽선과 단단한 그림자 */
-input[type="email"],
-input[type="password"] {
+.neo-brutalism .title h2,
+.neo-brutalism .title > span {
+    color: var(--neo-ink);
+    font-weight: 900;
+    text-shadow: 2px 2px 0 var(--neo-yellow);
+}
+
+.neo-brutalism .title > span:last-child {
+    color: var(--neo-red);
+}
+
+.neo-brutalism .title p {
+    color: var(--neo-ink);
+    font-weight: 500;
+}
+
+/* 입력창 */
+.neo-brutalism input[type="email"],
+.neo-brutalism input[type="password"] {
+    width: 100%;
     border: 3px solid var(--neo-ink) !important;
     border-radius: 0 !important;
     background: var(--neo-paper) !important;
     color: var(--neo-ink);
     box-shadow: 4px 4px 0 var(--neo-ink);
 }
-input[type="email"]:focus,
-input[type="password"]:focus {
+
+.neo-brutalism input[type="email"]:focus,
+.neo-brutalism input[type="password"]:focus {
     outline: 3px solid var(--neo-red);
-    outline-offset: 2px;
-}
-input::placeholder {
-    color: #887C69 !important;
-}
-.email,
-.password_group legend {
-    color: var(--neo-ink);
-    font-weight: 800;
+    outline-offset: 3px;
 }
 
-/* 버튼 */
-.login_btn,
-.complete_btn {
+.neo-brutalism input::placeholder {
+    color: #887C69 !important;
+}
+
+.neo-brutalism .email,
+.neo-brutalism .password_group legend {
+    color: var(--neo-ink);
+    font-weight: 900;
+}
+
+.neo-brutalism .pw_btn {
+    border: 2px solid var(--neo-ink);
+    background-color: var(--neo-yellow);
+    box-shadow: 2px 2px 0 var(--neo-ink);
+}
+
+/* 로그인 옵션과 체크박스 */
+.neo-brutalism .login_option label {
+    cursor: pointer;
+}
+
+.neo-brutalism .login_option span {
+    color: var(--neo-ink);
+    font-weight: 700;
+}
+
+.neo-brutalism .login_option .check + span::before {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--neo-ink);
+    background: var(--neo-paper);
+    box-shadow: 2px 2px 0 var(--neo-ink);
+    background-image: none;
+}
+
+.neo-brutalism .login_option .check:checked + span::before {
+    content: "✓";
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--neo-ink);
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: var(--neo-yellow);
+    background-image: none;
+}
+
+/* 주요 버튼 */
+.neo-brutalism .login_btn,
+.neo-brutalism .complete_btn {
     min-height: 48px;
     border: 3px solid var(--neo-ink) !important;
     border-radius: 0 !important;
     background: var(--neo-red) !important;
-    color: #fff !important;
+    color: var(--neo-paper) !important;
     font-weight: 900;
     box-shadow: 5px 5px 0 var(--neo-ink);
     opacity: 1;
     transition: transform .12s ease, box-shadow .12s ease;
 }
-.login_btn:active,
-.complete_btn:active {
+
+.neo-brutalism .login_btn:active,
+.neo-brutalism .complete_btn:active {
     transform: translate(4px, 4px);
     box-shadow: 1px 1px 0 var(--neo-ink);
 }
-.complete_btn.active {
+
+.neo-brutalism .complete_btn.active {
     background: var(--neo-red) !important;
-    color: #fff;
-}
-.pw_btn {
-    border: 2px solid var(--neo-ink);
-    background-color: var(--neo-yellow);
-}
-.login_link a {
-    font-weight: 800;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    color: var(--neo-paper) !important;
 }
 
-/* 안내 영역도 카드처럼 명확하게 구분 */
-.password_rule {
-    padding: 14px;
+.neo-brutalism .login_link a {
+    color: var(--neo-ink);
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+/* SNS 로그인 버튼 */
+.neo-brutalism .sns_login > p {
+    color: var(--neo-ink) !important;
+    font-weight: 900;
+}
+
+.neo-brutalism .sns_login > p::before,
+.neo-brutalism .sns_login > p::after {
+    height: 2px;
+    background: var(--neo-ink);
+    opacity: 1;
+}
+
+.neo-brutalism .sns_list > a {
     border: 2px solid var(--neo-ink);
+    background-color: var(--neo-paper);
+    box-shadow: 3px 3px 0 var(--neo-ink);
+}
+
+/* 비밀번호 안내 카드 */
+.neo-brutalism .password_rule {
+    padding: 14px;
+    border: 3px solid var(--neo-ink);
     background: var(--neo-paper);
     box-shadow: 4px 4px 0 var(--neo-ink);
+    color: var(--neo-ink);
 }
-.password_notice {
+
+.neo-brutalism .password_rule li {
+    color: var(--neo-ink);
+    font-weight: 600;
+}
+
+.neo-brutalism .password_rule li::before {
+    flex-basis: 18px;
+    width: 18px;
+    height: 18px;
+    margin-top: 0;
+    border: 2px solid var(--neo-ink);
+    background: var(--neo-yellow);
+    background-image: none;
+}
+
+.neo-brutalism .password_rule li.valid::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neo-ink);
+    font-size: 1.2rem;
+    font-weight: 900;
+    background-image: none;
+}
+
+.neo-brutalism .password_notice {
     padding: 12px;
-    border: 2px dashed var(--neo-ink);
-    background: #FFE98A;
+    border: 3px solid var(--neo-ink);
+    background: var(--neo-yellow);
+    box-shadow: 4px 4px 0 var(--neo-ink);
+    color: var(--neo-ink);
 }
-.sns_notice {
+
+.neo-brutalism .sns_notice {
     padding: 14px;
     border: 3px solid var(--neo-ink);
     background: var(--neo-paper);
     box-shadow: 4px 4px 0 var(--neo-ink);
 }
-.sns_login > p {
-    color: var(--neo-ink) !important;
-    font-weight: 800;
-}
-.sns_login > p::before,
-.sns_login > p::after {
-    height: 2px;
-    background: var(--neo-ink);
-    opacity: 1;
-}
-.password_error {
-    font-weight: 800;
+
+.neo-brutalism .sns_notice h2 {
+    display: inline-block;
+    padding: 4px 6px;
+    border: 2px solid var(--neo-ink);
+    background: var(--neo-yellow);
+    color: var(--neo-ink);
+    font-weight: 900;
 }
 
-/* 작은 화면에서도 가로 넘침 방지 */
+.neo-brutalism .sns_notice p,
+.neo-brutalism .password_error {
+    color: var(--neo-ink);
+}
+
+.neo-brutalism .password_error {
+    font-weight: 900;
+}
+
+.neo-brutalism .success_message {
+    color: #245B19;
+}
+
+/* 키보드 접근성과 작은 화면 */
+.neo-brutalism a:focus-visible,
+.neo-brutalism button:focus-visible,
+.neo-brutalism input:focus-visible {
+    outline: 3px solid var(--neo-blue);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .neo-brutalism .login_btn:hover,
+    .neo-brutalism .complete_btn:hover,
+    .neo-brutalism .prev_btn:hover,
+    .neo-brutalism .close_btn:hover,
+    .neo-brutalism .pw_btn:hover,
+    .neo-brutalism .sns_list > a:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 var(--neo-ink);
+    }
+}
+
 @media (max-width: 480px) {
-    #wrap {
+    .neo-brutalism {
         min-width: 0;
         border-width: 2px;
     }
-    main {
+
+    .neo-brutalism main {
         padding-left: 18px;
         padding-right: 18px;
+    }
+
+    .neo-brutalism .title {
+        padding: 15px;
+        box-shadow: 5px 5px 0 var(--neo-ink);
     }
 }
