@@ -1,0 +1,361 @@
+/* Maximalism theme - Burger King pages */
+:root {
+    --max-red: #F04438;
+    --max-orange: #FF8A24;
+    --max-yellow: #FFE34D;
+    --max-pink: #FF65B5;
+    --max-blue: #365BFF;
+    --max-purple: #7137D8;
+    --max-ink: #21152D;
+    --max-paper: #FFF5E8;
+}
+
+html, body {
+    min-height: 100%;
+    background: var(--max-purple);
+    color: var(--max-ink);
+}
+
+body {
+    background:
+        radial-gradient(circle at 15% 20%, var(--max-yellow) 0 7%, transparent 7.5%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.12) 0 3px, transparent 3px 13px),
+        linear-gradient(135deg, var(--max-purple), var(--max-pink) 48%, var(--max-orange));
+}
+
+#wrap.maximalism {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 1024px;
+    min-width: 0;
+    min-height: 100dvh;
+    margin: 0 auto;
+    overflow: hidden;
+    color: var(--max-ink);
+    background:
+        radial-gradient(circle at 95% 18%, var(--max-blue) 0 9%, transparent 9.5%),
+        radial-gradient(circle at 4% 42%, var(--max-pink) 0 10%, transparent 10.5%),
+        repeating-linear-gradient(45deg, rgba(33,21,45,.055) 0 2px, transparent 2px 12px),
+        linear-gradient(145deg, #FFF1D9 0%, #FFE7A5 45%, #FFD0B5 100%);
+}
+
+/* Decorative overlapping shapes */
+.maximalism::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 110px;
+    right: -58px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: var(--max-pink);
+    border: 5px solid var(--max-ink);
+    box-shadow: -18px 15px 0 var(--max-yellow), -34px 28px 0 var(--max-blue);
+    transform: rotate(-12deg);
+    pointer-events: none;
+}
+
+.maximalism::after {
+    content: "WOW!";
+    position: absolute;
+    z-index: -1;
+    top: 360px;
+    left: -24px;
+    padding: 8px 18px;
+    color: var(--max-paper);
+    background: var(--max-red);
+    border: 4px solid var(--max-ink);
+    font-size: 3.2rem;
+    font-weight: 1000;
+    letter-spacing: .08em;
+    transform: rotate(-13deg);
+    text-shadow: 2px 2px 0 var(--max-ink);
+    box-shadow: 7px 7px 0 var(--max-ink);
+    pointer-events: none;
+}
+
+.maximalism header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    color: var(--max-paper);
+    background: var(--max-blue);
+    border-bottom: 5px solid var(--max-ink);
+    box-shadow: 0 7px 0 var(--max-yellow);
+}
+
+.maximalism header h1 {
+    color: var(--max-paper);
+    font-size: 2.2rem;
+    font-weight: 1000;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 var(--max-ink), 5px 5px 0 var(--max-pink);
+}
+
+.maximalism .prev_btn,
+.maximalism .close_btn {
+    z-index: 2;
+    border: 3px solid var(--max-ink);
+    border-radius: 50%;
+    background: var(--max-yellow);
+    box-shadow: 4px 4px 0 var(--max-ink);
+}
+
+.maximalism .prev_btn::before {
+    color: var(--max-ink);
+}
+
+.maximalism main {
+    position: relative;
+    z-index: 1;
+    padding: 54px 22px 90px;
+}
+
+.maximalism .title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 22px 18px;
+    margin-bottom: 42px;
+    color: var(--max-ink);
+    background:
+        repeating-linear-gradient(-8deg, rgba(255,255,255,.16) 0 4px, transparent 4px 10px),
+        var(--max-yellow);
+    border: 4px solid var(--max-ink);
+    border-radius: 4px 28px 4px 28px;
+    box-shadow: 9px 9px 0 var(--max-red), 17px 17px 0 var(--max-blue);
+    transform: rotate(-1deg);
+}
+
+.maximalism .title > span,
+.maximalism .title h2,
+.maximalism .title > span:last-child {
+    color: var(--max-ink);
+    font-weight: 1000;
+    text-shadow: 2px 2px 0 var(--max-pink);
+}
+
+.maximalism .title > span:last-child {
+    font-size: 4rem;
+}
+
+.maximalism .title p {
+    color: var(--max-ink);
+    font-weight: 700;
+}
+
+.maximalism .email,
+.maximalism .password_group legend {
+    color: var(--max-ink);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.maximalism input[type="email"],
+.maximalism input[type="password"] {
+    width: 100%;
+    min-width: 0;
+    border: 3px solid var(--max-ink) !important;
+    border-radius: 5px 18px 5px 18px !important;
+    background: var(--max-paper) !important;
+    color: var(--max-ink);
+    box-shadow: 5px 5px 0 var(--max-blue);
+}
+
+.maximalism input::placeholder {
+    color: #8D6D75 !important;
+}
+
+.maximalism input[type="email"]:focus,
+.maximalism input[type="password"]:focus {
+    outline: 3px solid var(--max-pink);
+    outline-offset: 3px;
+}
+
+.maximalism .pw_btn {
+    border: 2px solid var(--max-ink);
+    border-radius: 50%;
+    background-color: var(--max-orange);
+    box-shadow: 3px 3px 0 var(--max-ink);
+}
+
+.maximalism .login_option span {
+    color: var(--max-ink);
+    font-weight: 800;
+}
+
+.maximalism .login_option .check + span::before {
+    border: 3px solid var(--max-ink);
+    border-radius: 5px;
+    background: var(--max-paper);
+    box-shadow: 3px 3px 0 var(--max-pink);
+}
+
+.maximalism .login_option .check:checked + span::before {
+    color: var(--max-ink);
+    background: var(--max-yellow);
+    background-image: none;
+}
+
+.maximalism .login_btn,
+.maximalism .complete_btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 54px;
+    border: 3px solid var(--max-ink) !important;
+    border-radius: 5px 22px 5px 22px !important;
+    background: linear-gradient(100deg, var(--max-red), var(--max-orange), var(--max-pink)) !important;
+    color: #fff !important;
+    font-weight: 1000;
+    letter-spacing: .1em;
+    text-shadow: 2px 2px 0 var(--max-ink);
+    box-shadow: 6px 6px 0 var(--max-ink), 10px 10px 0 var(--max-yellow);
+    opacity: 1;
+    transition: transform .14s ease, box-shadow .14s ease;
+}
+
+.maximalism .login_btn:active,
+.maximalism .complete_btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0 var(--max-ink);
+}
+
+.maximalism .complete_btn.active {
+    background: linear-gradient(100deg, var(--max-red), var(--max-orange), var(--max-pink)) !important;
+    color: #fff !important;
+}
+
+.maximalism .login_link {
+    color: var(--max-ink);
+    font-weight: 900;
+}
+
+.maximalism .login_link a {
+    text-decoration: underline;
+    text-decoration-color: var(--max-red);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+}
+
+.maximalism .login_link a::after {
+    background: var(--max-ink);
+}
+
+.maximalism .sns_login > p {
+    color: var(--max-ink);
+    font-weight: 1000;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 var(--max-yellow);
+}
+
+.maximalism .sns_login > p::before,
+.maximalism .sns_login > p::after {
+    height: 3px;
+    background: var(--max-ink);
+    opacity: 1;
+}
+
+.maximalism .sns_list > a {
+    border: 3px solid var(--max-ink);
+    border-radius: 50%;
+    background-color: var(--max-paper);
+    box-shadow: 4px 4px 0 var(--max-pink);
+}
+
+.maximalism .password_rule,
+.maximalism .sns_notice {
+    border: 3px solid var(--max-ink);
+    border-radius: 5px 22px 5px 22px;
+    background: var(--max-blue);
+    box-shadow: 7px 7px 0 var(--max-ink);
+    color: #fff;
+}
+
+.maximalism .password_rule li,
+.maximalism .sns_notice p {
+    color: #fff;
+}
+
+.maximalism .password_rule li::before {
+    border: 2px solid var(--max-ink);
+    border-radius: 50%;
+    background: var(--max-yellow);
+    background-image: none;
+}
+
+.maximalism .password_rule li.valid::before {
+    color: var(--max-ink);
+    background: var(--max-pink);
+    background-image: none;
+}
+
+.maximalism .password_notice {
+    border: 3px solid var(--max-ink);
+    border-radius: 4px 18px 4px 18px;
+    background: var(--max-pink);
+    box-shadow: 5px 5px 0 var(--max-ink);
+    color: var(--max-ink);
+    font-weight: 700;
+}
+
+.maximalism .sns_notice h2 {
+    display: inline-block;
+    padding: 7px 11px;
+    border: 2px solid var(--max-ink);
+    border-radius: 18px 4px 18px 4px;
+    background: var(--max-yellow);
+    color: var(--max-ink);
+    font-weight: 1000;
+}
+
+.maximalism .password_error {
+    color: var(--max-red);
+    font-weight: 900;
+}
+
+.maximalism a:focus-visible,
+.maximalism button:focus-visible,
+.maximalism input:focus-visible {
+    outline: 3px solid var(--max-blue);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .maximalism .login_btn:hover,
+    .maximalism .complete_btn:hover {
+        transform: translate(-2px, -2px) rotate(-.5deg);
+    }
+}
+
+@media (max-width: 480px) {
+    #wrap.maximalism {
+        min-width: 0;
+    }
+
+    .maximalism main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .maximalism .title {
+        padding: 16px;
+    }
+
+    .maximalism::before {
+        width: 130px;
+        height: 130px;
+        right: -62px;
+    }
+
+    .maximalism::after {
+        top: 330px;
+        font-size: 2.4rem;
+    }
+}
