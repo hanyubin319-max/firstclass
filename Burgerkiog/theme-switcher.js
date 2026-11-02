@@ -9,6 +9,7 @@
     maximalism: { label: "맥시멀리즘", file: "maximalism.css" },
     propaganda: { label: "프로파간다 포스터", file: "propaganda.css" },
     glassmorphism: { label: "글래스모피즘", file: "glassmorphism.css" },
+    minimalism: { label: "미니멀리즘", file: "minimalism.css" },
   };
   const selector = document.querySelector("#theme-select");
   const wrap = document.querySelector("#wrap");
