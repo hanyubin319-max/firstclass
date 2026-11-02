@@ -1,0 +1,32 @@
+/* Seoul Light digital subculture / neon palace theme */
+:root{--sl-black:#050817;--sl-blue:#428BFF;--sl-cyan:#42F4F2;--sl-pink:#FF55D9;--sl-violet:#8D6BFF;--sl-white:#EAF5FF}
+html,body{min-height:100%;background:var(--sl-black);color:var(--sl-white)}
+body{background:radial-gradient(ellipse at 50% 0%,#3454B8 0%,#10152F 48%,#050817 100%)}
+#wrap.seoullight{position:relative;isolation:isolate;width:100%;max-width:1024px;min-width:0;min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--sl-white);background:linear-gradient(180deg,rgba(61,130,255,.18),transparent 25%),repeating-linear-gradient(90deg,rgba(63,220,255,.08) 0 2px,transparent 2px 13px),#070B1D}
+.seoullight:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 13px,rgba(255,63,219,.12) 14px 17px,transparent 18px 27px);mask-image:linear-gradient(180deg,#000,transparent 45%,#000)}
+.seoullight:after{content:"";position:absolute;z-index:-1;left:-10%;right:-10%;top:48%;height:28%;border-radius:50%;background:radial-gradient(ellipse,rgba(63,119,255,.8),rgba(63,119,255,.08) 65%,transparent 70%);filter:blur(10px)}
+.seoullight header{height:62px;background:linear-gradient(90deg,#397EFF,#D65DFF 48%,#43E7F0);border-bottom:2px solid var(--sl-cyan)}
+.seoullight header h1{color:#050817;font-family:Arial,sans-serif;font-size:2.1rem;font-weight:1000;letter-spacing:.08em;text-shadow:1px 1px 0 white}
+.seoullight .prev_btn,.seoullight .close_btn{border:1px solid var(--sl-cyan);border-radius:0;background:rgba(5,8,23,.75);box-shadow:0 0 12px var(--sl-cyan)}
+.seoullight main{position:relative;z-index:1;padding:42px 22px 58px}
+.seoullight .title{padding:20px 14px;margin-bottom:38px;border:1px solid var(--sl-cyan);border-radius:0;background:linear-gradient(115deg,rgba(68,133,255,.45),rgba(255,71,220,.22),rgba(49,235,236,.25));box-shadow:0 0 18px rgba(68,168,255,.5),inset 0 0 20px rgba(255,255,255,.08);transform:none}
+.seoullight .title>span:first-child{color:var(--sl-cyan);font-size:2rem;font-weight:900;letter-spacing:.14em;text-shadow:0 0 10px var(--sl-cyan)}
+.seoullight .title>span:last-child,.seoullight .title h2{color:#fff;font-family:Arial,sans-serif;font-size:clamp(3.7rem,10vw,6.4rem);font-weight:300;line-height:.98;letter-spacing:-.06em;text-shadow:0 0 12px var(--sl-blue),0 0 25px var(--sl-pink)}
+.seoullight .title p{color:#D9E8FF;font-weight:600}
+.seoullight .email,.seoullight .password_group legend{color:var(--sl-cyan);font-weight:900;letter-spacing:.08em}
+.seoullight input[type=email],.seoullight input[type=password]{width:100%;min-width:0;border:1px solid var(--sl-cyan)!important;border-radius:0!important;background:rgba(9,17,43,.9)!important;color:#fff;box-shadow:0 0 12px rgba(66,244,242,.28),inset 0 0 8px rgba(66,244,242,.08)}
+.seoullight input::placeholder{color:#9CB5DB!important}
+.seoullight .pw_btn{border:1px solid var(--sl-pink);border-radius:0;background-color:#111A3A;box-shadow:0 0 9px var(--sl-pink)}
+.seoullight .login_option span,.seoullight .login_link{color:#EAF5FF;font-weight:700}
+.seoullight .login_btn,.seoullight .complete_btn{width:100%;min-width:0;min-height:52px;border:1px solid var(--sl-cyan)!important;border-radius:0!important;background:linear-gradient(90deg,#397EFF,#A35BFF,#F04FD0)!important;color:#fff!important;font-weight:1000;letter-spacing:.15em;text-shadow:0 0 8px white;box-shadow:0 0 14px rgba(66,244,242,.35);opacity:1}
+.seoullight .complete_btn.active{color:white!important}
+.seoullight .sns_login>p{color:var(--sl-cyan);font-weight:900;letter-spacing:.08em}
+.seoullight .sns_login>p:before,.seoullight .sns_login>p:after{height:1px;background:linear-gradient(90deg,var(--sl-cyan),var(--sl-pink));opacity:1}
+.seoullight .sns_list>a{border:1px solid var(--sl-cyan);border-radius:0;background-color:#101A3C;box-shadow:0 0 10px rgba(66,244,242,.35)}
+.seoullight .password_rule,.seoullight .sns_notice{border:1px solid var(--sl-blue);border-radius:0;background:rgba(18,30,75,.86);box-shadow:0 0 14px rgba(66,139,255,.25);color:#EAF5FF}
+.seoullight .password_rule li,.seoullight .sns_notice p{color:#EAF5FF}
+.seoullight .password_rule li:before{border:1px solid var(--sl-cyan);border-radius:0;background:var(--sl-pink)}
+.seoullight .password_notice{border-top:1px solid var(--sl-pink);color:#C9D8FF}
+.seoullight .sns_notice h2{color:var(--sl-cyan);font-weight:1000;text-shadow:0 0 8px var(--sl-blue)}
+.seoullight .password_error{color:#FF8DE6;font-weight:900}
+@media(max-width:480px){#wrap.seoullight{min-width:0}.seoullight main{padding-left:18px;padding-right:18px}}
