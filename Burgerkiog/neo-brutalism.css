@@ -1,0 +1,142 @@
+/* Neo Brutalism - Burger King pages */
+:root {
+    --neo-yellow: #FFD43B;
+    --neo-red: #E3261B;
+    --neo-ink: #17130F;
+    --neo-paper: #FFF8E8;
+}
+
+/* 페이지 바탕과 상단 영역 */
+#wrap {
+    background-color: var(--neo-yellow) !important;
+    border-left: 3px solid var(--neo-ink);
+    border-right: 3px solid var(--neo-ink);
+}
+header {
+    background-color: var(--neo-red);
+    border-bottom: 3px solid var(--neo-ink);
+}
+header h1 {
+    color: var(--neo-paper);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+.prev_btn, .close_btn {
+    border: 2px solid var(--neo-ink);
+    background-color: var(--neo-yellow);
+    box-shadow: 3px 3px 0 var(--neo-ink);
+}
+
+/* 제목과 정보 */
+.title {
+    color: var(--neo-ink);
+}
+.title h2,
+.title > span {
+    text-shadow: 2px 2px 0 var(--neo-paper);
+}
+.title p,
+.password_rule,
+.password_notice,
+.sns_notice p {
+    color: var(--neo-ink);
+}
+
+/* 입력 요소: 두꺼운 외곽선과 단단한 그림자 */
+input[type="email"],
+input[type="password"] {
+    border: 3px solid var(--neo-ink) !important;
+    border-radius: 0 !important;
+    background: var(--neo-paper) !important;
+    color: var(--neo-ink);
+    box-shadow: 4px 4px 0 var(--neo-ink);
+}
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: 3px solid var(--neo-red);
+    outline-offset: 2px;
+}
+input::placeholder {
+    color: #887C69 !important;
+}
+.email,
+.password_group legend {
+    color: var(--neo-ink);
+    font-weight: 800;
+}
+
+/* 버튼 */
+.login_btn,
+.complete_btn {
+    min-height: 48px;
+    border: 3px solid var(--neo-ink) !important;
+    border-radius: 0 !important;
+    background: var(--neo-red) !important;
+    color: #fff !important;
+    font-weight: 900;
+    box-shadow: 5px 5px 0 var(--neo-ink);
+    opacity: 1;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+.login_btn:active,
+.complete_btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0 var(--neo-ink);
+}
+.complete_btn.active {
+    background: var(--neo-red) !important;
+    color: #fff;
+}
+.pw_btn {
+    border: 2px solid var(--neo-ink);
+    background-color: var(--neo-yellow);
+}
+.login_link a {
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* 안내 영역도 카드처럼 명확하게 구분 */
+.password_rule {
+    padding: 14px;
+    border: 2px solid var(--neo-ink);
+    background: var(--neo-paper);
+    box-shadow: 4px 4px 0 var(--neo-ink);
+}
+.password_notice {
+    padding: 12px;
+    border: 2px dashed var(--neo-ink);
+    background: #FFE98A;
+}
+.sns_notice {
+    padding: 14px;
+    border: 3px solid var(--neo-ink);
+    background: var(--neo-paper);
+    box-shadow: 4px 4px 0 var(--neo-ink);
+}
+.sns_login > p {
+    color: var(--neo-ink) !important;
+    font-weight: 800;
+}
+.sns_login > p::before,
+.sns_login > p::after {
+    height: 2px;
+    background: var(--neo-ink);
+    opacity: 1;
+}
+.password_error {
+    font-weight: 800;
+}
+
+/* 작은 화면에서도 가로 넘침 방지 */
+@media (max-width: 480px) {
+    #wrap {
+        min-width: 0;
+        border-width: 2px;
+    }
+    main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
