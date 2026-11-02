@@ -1,0 +1,40 @@
+/* Collage theme: layered paper, cut-out shapes and playful editorial accents */
+:root{
+  --collage-ink:#24201d;
+  --collage-paper:#fff8e9;
+  --collage-yellow:#ffd84d;
+  --collage-pink:#ff8e9e;
+  --collage-blue:#8ed8e8;
+  --collage-red:#e94b35;
+}
+html,body{min-height:100%;background:#e8dfcf;color:var(--collage-ink)}
+body{background-color:#e8dfcf;background-image:radial-gradient(#b8aa96 0.7px,transparent 0.7px);background-size:9px 9px}
+#wrap.collage{position:relative;width:100%;max-width:1024px;min-width:0;min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--collage-ink);background:var(--collage-paper);box-shadow:10px 10px 0 rgba(36,32,29,.16)}
+.collage header{height:60px;background:var(--collage-yellow);border-bottom:3px solid var(--collage-ink)}
+.collage header h1{color:var(--collage-ink);font-size:1.45rem;font-weight:900;letter-spacing:-.04em}
+.collage .prev_btn,.collage .close_btn{border:2px solid var(--collage-ink);border-radius:50%;background:var(--collage-pink);box-shadow:3px 3px 0 var(--collage-ink)}
+.collage main{padding:56px 24px 72px}
+.collage .title{position:relative;padding:20px 18px 24px;margin:0 0 42px;border:3px solid var(--collage-ink);border-radius:2px;background:var(--collage-blue);box-shadow:7px 7px 0 var(--collage-ink);transform:rotate(-1deg)}
+.collage .title>span:first-child{display:inline-block;padding:5px 9px;background:var(--collage-pink);color:var(--collage-ink);font-size:.9rem;font-weight:900;letter-spacing:.04em;transform:rotate(2deg)}
+.collage .title>span:last-child,.collage .title h2{display:block;margin-top:12px;color:var(--collage-ink);font-size:clamp(2.4rem,7vw,4.2rem);font-weight:900;line-height:1.08;letter-spacing:-.07em;text-shadow:2px 2px 0 #fff}
+.collage .title p{max-width:440px;color:#423832;font-size:.95rem;line-height:1.7;font-weight:600}
+.collage .email,.collage .password_group legend{color:var(--collage-ink);font-size:.95rem;font-weight:900}
+.collage input[type=email],.collage input[type=password]{width:100%;min-width:0;border:2px solid var(--collage-ink)!important;border-radius:3px!important;background:#fff!important;color:var(--collage-ink);box-shadow:4px 4px 0 var(--collage-ink);padding-left:14px}
+.collage input::placeholder{color:#93877a!important}
+.collage input:focus{outline:3px solid var(--collage-pink);outline-offset:2px}
+.collage .pw_btn{border:2px solid var(--collage-ink);border-radius:50%;background-color:var(--collage-yellow)}
+.collage .login_option span,.collage .login_link{color:#51463e;font-size:.88rem;font-weight:700}
+.collage .login_btn,.collage .complete_btn{width:100%;min-width:0;min-height:52px;border:2px solid var(--collage-ink)!important;border-radius:3px!important;background:var(--collage-red)!important;color:#fff!important;font-size:1rem;font-weight:900;letter-spacing:.03em;box-shadow:5px 5px 0 var(--collage-ink);opacity:1}
+.collage .complete_btn.active{color:#fff!important}
+.collage .sns_login>p{color:#51463e;font-size:.85rem;font-weight:900;letter-spacing:.02em}
+.collage .sns_login>p:before,.collage .sns_login>p:after{height:2px;background:var(--collage-ink);opacity:1}
+.collage .sns_list>a{border:2px solid var(--collage-ink);border-radius:50%;background-color:#fff;box-shadow:3px 3px 0 var(--collage-ink)}
+.collage .password_rule,.collage .sns_notice{border:2px solid var(--collage-ink);border-radius:2px;background:#fff;box-shadow:5px 5px 0 var(--collage-yellow);color:#51463e}
+.collage .password_rule li,.collage .sns_notice p{color:#51463e}
+.collage .password_rule li:before{border:2px solid var(--collage-ink);border-radius:50%;background:var(--collage-pink)}
+.collage .password_notice{border-top:2px dashed #8f7d68;color:#65564a}
+.collage .sns_notice h2{color:var(--collage-ink);font-size:1rem;font-weight:900}
+.collage .password_error{color:#c52e24;font-size:.85rem;font-weight:700}
+.collage a{text-decoration-thickness:2px;text-underline-offset:3px}
+.collage a:focus-visible,.collage button:focus-visible{outline:3px solid var(--collage-red);outline-offset:3px}
+@media(max-width:480px){#wrap.collage{min-width:0}.collage main{padding:48px 20px 56px}.collage .title{margin-bottom:34px}}
