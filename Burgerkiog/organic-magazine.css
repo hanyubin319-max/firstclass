@@ -1,0 +1,31 @@
+/* Organic Botanical Magazine inspired theme */
+:root{--organic-cream:#FFF5DF;--organic-pink:#F4D0C9;--organic-sage:#AFC4C1;--organic-brown:#69402B;--organic-ink:#342820}
+html,body{min-height:100%;background:var(--organic-cream);color:var(--organic-ink)}
+body{background:radial-gradient(ellipse at 8% 12%,#F2C9C2 0 13%,transparent 13.2%),radial-gradient(ellipse at 95% 58%,#AFC4C1 0 18%,transparent 18.2%),#FFF5DF}
+#wrap.organic{position:relative;isolation:isolate;width:100%;max-width:1024px;min-width:0;min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--organic-ink);background:radial-gradient(ellipse at 8% 15%,rgba(241,198,190,.8) 0 13%,transparent 13.2%),radial-gradient(ellipse at 100% 65%,rgba(165,192,188,.85) 0 21%,transparent 21.2%),linear-gradient(120deg,transparent 0 45%,rgba(241,203,195,.7) 45% 70%,transparent 70%),var(--organic-cream)}
+.organic:before{content:"";position:absolute;z-index:-1;top:30%;left:-12%;width:48%;height:22%;border-radius:50%;background:rgba(174,196,193,.55);transform:rotate(-25deg)}
+.organic header{height:58px;background:transparent;border-bottom:1px solid rgba(105,64,43,.18)}
+.organic header h1{color:var(--organic-brown);font-family:Georgia,serif;font-style:italic;font-weight:500}
+.organic .prev_btn,.organic .close_btn{border:1px solid var(--organic-brown);border-radius:50%;background:rgba(255,255,255,.3)}
+.organic main{padding:44px 22px 58px}
+.organic .title{padding:25px 20px;margin-bottom:38px;border:1px solid rgba(105,64,43,.25);border-radius:48% 8% 42% 10% / 12% 25% 12% 24%;background:rgba(255,255,255,.42);box-shadow:0 10px 24px rgba(105,64,43,.08);transform:none}
+.organic .title>span:first-child{color:#8D6550;font-family:Georgia,serif;font-size:2.3rem;font-style:italic}
+.organic .title>span:last-child,.organic .title h2{color:var(--organic-brown);font-family:Georgia,serif;font-size:3.7rem;font-weight:500;line-height:1.08}
+.organic .title p{color:#756456;line-height:1.6}
+.organic .email,.organic .password_group legend{color:var(--organic-brown);font-family:Georgia,serif;font-weight:700}
+.organic input[type=email],.organic input[type=password]{width:100%;min-width:0;border:1px solid #CDB8A6!important;border-radius:2px 16px 2px 16px!important;background:rgba(255,255,255,.7)!important;color:var(--organic-ink);box-shadow:4px 4px 0 rgba(175,196,193,.55)}
+.organic input::placeholder{color:#A18A7B!important}
+.organic .pw_btn{border:1px solid #CDB8A6;border-radius:50%;background-color:#F9E9E0}
+.organic .login_option span,.organic .login_link{color:#71513D}
+.organic .login_btn,.organic .complete_btn{width:100%;min-width:0;min-height:50px;border:1px solid var(--organic-brown)!important;border-radius:2px 20px 2px 20px!important;background:var(--organic-brown)!important;color:#FFF5DF!important;font-family:Georgia,serif;font-size:1.7rem;letter-spacing:.08em;box-shadow:5px 5px 0 var(--organic-sage);opacity:1}
+.organic .complete_btn.active{color:#FFF5DF!important}
+.organic .sns_login>p{color:#795B48;font-family:Georgia,serif;font-style:italic}
+.organic .sns_login>p:before,.organic .sns_login>p:after{background:#BCA99A}
+.organic .sns_list>a{border:1px solid #C7B1A1;border-radius:50%;background-color:#FFFDF7;box-shadow:3px 3px 0 #B3C7C3}
+.organic .password_rule,.organic .sns_notice{border:1px solid #C8B7A9;border-radius:4px 28px 4px 28px;background:rgba(255,255,255,.55);box-shadow:5px 5px 0 rgba(175,196,193,.6);color:#6D5141}
+.organic .password_rule li,.organic .sns_notice p{color:#6D5141}
+.organic .password_rule li:before{border:1px solid #AFC4C1;border-radius:50%;background:#AFC4C1}
+.organic .password_notice{border-top:1px solid #CDB8A6;color:#765D4D}
+.organic .sns_notice h2{color:var(--organic-brown);font-family:Georgia,serif;font-style:italic}
+.organic .password_error{color:#A24E48}
+@media(max-width:480px){#wrap.organic{min-width:0}.organic main{padding-left:18px;padding-right:18px}.organic .title>span:last-child,.organic .title h2{font-size:3.2rem}}
