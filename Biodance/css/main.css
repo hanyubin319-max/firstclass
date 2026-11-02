@@ -4564,6 +4564,35 @@ body {
     }
 }
 
+
+
+/* Header: scale logo and action icons with the navigation at tablet widths */
+@media (min-width: 701px) and (max-width: 1024px) {
+    .site-header .brand-logo {
+        flex: 0 0 clamp(110px, 15.43vw, 158px) !important;
+        width: clamp(110px, 15.43vw, 158px) !important;
+    }
+
+    .site-header .brand-logo img {
+        width: clamp(100px, 13.2vw, 135px) !important;
+        height: auto !important;
+    }
+
+    .site-header .header-actions {
+        gap: clamp(7px, 1.17vw, 12px) !important;
+    }
+
+    .site-header .header-actions .icon-link {
+        width: clamp(20px, 2.54vw, 26px) !important;
+        height: clamp(20px, 2.74vw, 28px) !important;
+    }
+
+    .site-header .header-actions .icon-link img {
+        width: clamp(17px, 2.15vw, 22px) !important;
+        height: clamp(17px, 2.15vw, 22px) !important;
+    }
+}
+
 /* Mobile only: keep the initial navigation white and suppress desktop mega panels */
 @media (max-width: 700px) {
     .site-header .main-nav,
