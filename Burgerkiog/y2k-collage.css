@@ -1,0 +1,32 @@
+/* Y2K underground hip-hop collage theme */
+:root{--y2k-blue:#1715E8;--y2k-yellow:#F5E500;--y2k-black:#08080D;--y2k-white:#F5F3EF;--y2k-pink:#F23DAA}
+html,body{min-height:100%;background:var(--y2k-black);color:var(--y2k-white)}
+body{background:radial-gradient(circle at 80% 12%,#2525FF,transparent 28%),#07070B}
+#wrap.y2kcollage{position:relative;isolation:isolate;width:100%;max-width:1024px;min-width:0;min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--y2k-white);background:linear-gradient(135deg,#08080D 0 35%,#1414D8 35% 72%,#08080D 72%)}
+.y2kcollage:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 5px,rgba(255,255,255,.07) 6px 7px,transparent 8px 13px),radial-gradient(circle at 12% 20%,var(--y2k-yellow) 0 5%,transparent 5.2%),radial-gradient(circle at 88% 75%,var(--y2k-pink) 0 7%,transparent 7.2%)}
+.y2kcollage:after{content:"CUT / MIX / REPEAT";position:absolute;z-index:-1;right:-22px;top:38%;font:900 clamp(2.4rem,8vw,5.5rem)/.9 Impact,"Arial Black",sans-serif;color:rgba(255,255,255,.12);transform:rotate(-90deg);transform-origin:right top;letter-spacing:.08em}
+.y2kcollage header{height:60px;background:var(--y2k-black);border-bottom:3px solid var(--y2k-yellow)}
+.y2kcollage header h1{color:var(--y2k-yellow);font-family:Impact,"Arial Black",sans-serif;font-size:2.2rem;letter-spacing:.1em;text-shadow:2px 2px 0 var(--y2k-blue)}
+.y2kcollage .prev_btn,.y2kcollage .close_btn{border:2px solid var(--y2k-yellow);border-radius:0;background:var(--y2k-blue);box-shadow:3px 3px 0 var(--y2k-pink)}
+.y2kcollage main{position:relative;z-index:1;padding:40px 22px 58px}
+.y2kcollage .title{padding:18px 14px;margin-bottom:36px;border:2px solid var(--y2k-yellow);border-radius:0;background:linear-gradient(120deg,rgba(16,16,210,.95),rgba(8,8,13,.95));box-shadow:7px 7px 0 var(--y2k-pink);transform:rotate(-1deg)}
+.y2kcollage .title>span:first-child{color:var(--y2k-yellow);font:900 2rem Impact,"Arial Black",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.y2kcollage .title>span:last-child,.y2kcollage .title h2{color:#fff;font:900 clamp(3.5rem,10vw,6.2rem)/.9 Impact,"Arial Black",sans-serif;letter-spacing:-.04em;text-transform:uppercase;text-shadow:3px 3px 0 var(--y2k-blue),-2px -2px 0 var(--y2k-pink)}
+.y2kcollage .title p{color:#fff;font-weight:700}
+.y2kcollage .email,.y2kcollage .password_group legend{color:var(--y2k-yellow);font-weight:900;text-transform:uppercase}
+.y2kcollage input[type=email],.y2kcollage input[type=password]{width:100%;min-width:0;border:2px solid var(--y2k-yellow)!important;border-radius:0!important;background:#F4F1E9!important;color:#08080D;box-shadow:5px 5px 0 var(--y2k-blue)}
+.y2kcollage input::placeholder{color:#777!important}
+.y2kcollage .pw_btn{border:2px solid var(--y2k-black);border-radius:0;background:var(--y2k-yellow)}
+.y2kcollage .login_option span,.y2kcollage .login_link{color:#fff;font-weight:800}
+.y2kcollage .login_btn,.y2kcollage .complete_btn{width:100%;min-width:0;min-height:54px;border:2px solid var(--y2k-yellow)!important;border-radius:0!important;background:var(--y2k-blue)!important;color:#fff!important;font:900 1.8rem Impact,"Arial Black",sans-serif;letter-spacing:.12em;box-shadow:6px 6px 0 var(--y2k-pink);opacity:1}
+.y2kcollage .complete_btn.active{color:#fff!important}
+.y2kcollage .sns_login>p{color:var(--y2k-yellow);font-weight:900;text-transform:uppercase}
+.y2kcollage .sns_login>p:before,.y2kcollage .sns_login>p:after{height:2px;background:var(--y2k-pink);opacity:1}
+.y2kcollage .sns_list>a{border:2px solid var(--y2k-yellow);border-radius:0;background-color:#fff;box-shadow:4px 4px 0 var(--y2k-pink)}
+.y2kcollage .password_rule,.y2kcollage .sns_notice{border:2px solid var(--y2k-yellow);border-radius:0;background:#1010B8;box-shadow:6px 6px 0 var(--y2k-pink);color:#fff}
+.y2kcollage .password_rule li,.y2kcollage .sns_notice p{color:#fff}
+.y2kcollage .password_rule li:before{border:1px solid var(--y2k-yellow);border-radius:0;background:var(--y2k-pink)}
+.y2kcollage .password_notice{border-top:2px solid var(--y2k-pink);color:#fff}
+.y2kcollage .sns_notice h2{color:var(--y2k-yellow);font-weight:1000;text-transform:uppercase}
+.y2kcollage .password_error{color:var(--y2k-yellow);font-weight:900}
+@media(max-width:480px){#wrap.y2kcollage{min-width:0}.y2kcollage main{padding-left:18px;padding-right:18px}}
