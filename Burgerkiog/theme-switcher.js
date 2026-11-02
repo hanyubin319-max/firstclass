@@ -11,7 +11,9 @@
     glassmorphism: { label: "글래스모피즘", file: "glassmorphism.css" },
     nature3d: { label: "3D 네이처 어드벤처", file: "nature-adventure.css" },
     organic: { label: "오가닉 매거진", file: "organic-magazine.css" },
-    yellowposter: { label: "옐로우 일러스트 포스터", file: "yellow-poster.css" }
+    yellowposter: { label: "옐로우 일러스트 포스터", file: "yellow-poster.css" },
+    geometric: { label: "블루 지오메트릭", file: "blue-geometric.css" },
+    seoullight: { label: "서울라이트 디지털 서브컬처", file: "seoul-light.css" }
   };
   const selector = document.querySelector("#theme-select");
   const wrap = document.querySelector("#wrap");
