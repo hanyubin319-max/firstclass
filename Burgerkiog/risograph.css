@@ -1,0 +1,338 @@
+/* Risograph theme - Burger King pages */
+:root {
+    --riso-paper: #F6F0DF;
+    --riso-ink: #25211D;
+    --riso-red: #E94B35;
+    --riso-blue: #287A9B;
+    --riso-yellow: #F2C84B;
+    --riso-pink: #E98CA3;
+    --riso-muted: #74685B;
+}
+
+html, body {
+    background: var(--riso-paper);
+    color: var(--riso-ink);
+}
+
+body {
+    background-image:
+        radial-gradient(rgba(37,33,29,.10) .65px, transparent .8px),
+        radial-gradient(rgba(40,122,155,.07) .6px, transparent .8px);
+    background-position: 0 0, 4px 5px;
+    background-size: 5px 5px, 7px 7px;
+}
+
+#wrap.risograph {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 1024px;
+    min-width: 0;
+    min-height: 100dvh;
+    margin: 0 auto;
+    overflow: hidden;
+    color: var(--riso-ink);
+    background-color: var(--riso-paper);
+    background-image:
+        radial-gradient(rgba(37,33,29,.12) .65px, transparent .85px),
+        linear-gradient(rgba(233,75,53,.035), rgba(233,75,53,.035));
+    background-size: 5px 5px, auto;
+    border-left: 1px solid rgba(37,33,29,.55);
+    border-right: 1px solid rgba(37,33,29,.55);
+}
+
+/* Offset ink circles: characteristic Riso print registration */
+.risograph::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 86px;
+    right: -45px;
+    width: 185px;
+    height: 185px;
+    border-radius: 50%;
+    background: var(--riso-yellow);
+    opacity: .78;
+    box-shadow: -7px 5px 0 rgba(233,75,53,.55);
+    pointer-events: none;
+}
+
+.risograph::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 285px;
+    right: 0;
+    width: 13px;
+    height: 128px;
+    background: var(--riso-blue);
+    opacity: .85;
+    box-shadow: -4px 3px 0 rgba(233,75,53,.55);
+    pointer-events: none;
+}
+
+.risograph header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    color: var(--riso-paper);
+    background: var(--riso-blue);
+    border-bottom: 2px solid var(--riso-ink);
+    box-shadow: 0 4px 0 rgba(233,75,53,.75);
+}
+
+.risograph header h1 {
+    color: var(--riso-paper);
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-shadow: 2px 1px 0 rgba(233,75,53,.9);
+}
+
+.risograph .prev_btn,
+.risograph .close_btn {
+    z-index: 2;
+    border: 2px solid var(--riso-ink);
+    border-radius: 2px;
+    background-color: var(--riso-yellow);
+    box-shadow: 3px 3px 0 rgba(233,75,53,.8);
+}
+
+.risograph .prev_btn::before {
+    color: var(--riso-ink);
+}
+
+.risograph main {
+    position: relative;
+    z-index: 1;
+    padding: 50px 22px 90px;
+}
+
+.risograph .title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 17px 18px;
+    margin-bottom: 42px;
+    color: var(--riso-ink);
+    background: var(--riso-yellow);
+    border: 1px solid var(--riso-ink);
+    border-radius: 2px;
+    box-shadow: 5px 4px 0 rgba(233,75,53,.65);
+    transform: rotate(-.35deg);
+}
+
+.risograph .title > span,
+.risograph .title h2,
+.risograph .title > span:last-child {
+    color: var(--riso-ink);
+    font-weight: 900;
+    text-shadow: 1px 1px 0 rgba(233,75,53,.45);
+}
+
+.risograph .title p {
+    color: var(--riso-muted);
+}
+
+.risograph .email,
+.risograph .password_group legend {
+    color: var(--riso-ink);
+    font-weight: 800;
+}
+
+.risograph input[type="email"],
+.risograph input[type="password"] {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--riso-ink) !important;
+    border-radius: 2px !important;
+    background: #FFFCF3 !important;
+    color: var(--riso-ink);
+    box-shadow: 3px 3px 0 rgba(40,122,155,.48);
+}
+
+.risograph input::placeholder {
+    color: #9A8B7A !important;
+}
+
+.risograph input[type="email"]:focus,
+.risograph input[type="password"]:focus {
+    outline: 2px solid var(--riso-red);
+    outline-offset: 3px;
+}
+
+.risograph .pw_btn {
+    border: 1px solid var(--riso-ink);
+    border-radius: 2px;
+    background-color: var(--riso-pink);
+    box-shadow: 2px 2px 0 rgba(40,122,155,.55);
+}
+
+.risograph .login_option span {
+    color: var(--riso-ink);
+    font-weight: 700;
+}
+
+.risograph .login_option .check + span::before {
+    border: 1px solid var(--riso-ink);
+    border-radius: 2px;
+    background: #FFFCF3;
+    box-shadow: 2px 2px 0 rgba(40,122,155,.4);
+}
+
+.risograph .login_option .check:checked + span::before {
+    color: #fff;
+    background: var(--riso-red);
+    background-image: none;
+}
+
+.risograph .login_btn,
+.risograph .complete_btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    border: 1px solid var(--riso-ink) !important;
+    border-radius: 2px !important;
+    background: var(--riso-red) !important;
+    color: #fff !important;
+    font-weight: 900;
+    letter-spacing: .06em;
+    text-shadow: 1px 1px 0 rgba(37,33,29,.45);
+    box-shadow: 4px 4px 0 rgba(40,122,155,.65);
+    opacity: 1;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.risograph .login_btn:active,
+.risograph .complete_btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 rgba(40,122,155,.65);
+}
+
+.risograph .complete_btn.active {
+    background: var(--riso-red) !important;
+    color: #fff !important;
+}
+
+.risograph .login_link {
+    color: var(--riso-ink);
+    font-weight: 700;
+}
+
+.risograph .login_link a {
+    text-decoration: underline;
+    text-decoration-color: var(--riso-red);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.risograph .login_link a::after {
+    background: var(--riso-ink);
+}
+
+.risograph .sns_login > p {
+    color: var(--riso-ink);
+    font-weight: 800;
+}
+
+.risograph .sns_login > p::before,
+.risograph .sns_login > p::after {
+    height: 1px;
+    background: var(--riso-ink);
+    opacity: .8;
+}
+
+.risograph .sns_list > a {
+    border: 1px solid var(--riso-ink);
+    border-radius: 50%;
+    box-shadow: 3px 3px 0 rgba(233,75,53,.65);
+}
+
+.risograph .password_rule,
+.risograph .sns_notice {
+    border: 1px solid var(--riso-ink);
+    border-radius: 2px;
+    background: #FFFCF3;
+    box-shadow: 4px 4px 0 rgba(40,122,155,.45);
+    color: var(--riso-ink);
+}
+
+.risograph .password_rule li,
+.risograph .sns_notice p {
+    color: var(--riso-ink);
+}
+
+.risograph .password_rule li::before {
+    border: 1px solid var(--riso-ink);
+    border-radius: 2px;
+    background: var(--riso-yellow);
+    background-image: none;
+}
+
+.risograph .password_rule li.valid::before {
+    color: #fff;
+    background: var(--riso-blue);
+    background-image: none;
+}
+
+.risograph .password_notice {
+    border: 1px solid var(--riso-ink);
+    border-radius: 2px;
+    background: var(--riso-pink);
+    box-shadow: 3px 3px 0 rgba(233,75,53,.5);
+    color: var(--riso-ink);
+}
+
+.risograph .sns_notice h2 {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 2px;
+    background: var(--riso-yellow);
+    color: var(--riso-ink);
+    border: 1px solid var(--riso-ink);
+    font-weight: 900;
+}
+
+.risograph .password_error {
+    color: var(--riso-red);
+    font-weight: 800;
+}
+
+.risograph a:focus-visible,
+.risograph button:focus-visible,
+.risograph input:focus-visible {
+    outline: 2px solid var(--riso-blue);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .risograph .login_btn:hover,
+    .risograph .complete_btn:hover {
+        transform: translate(-1px, -1px);
+    }
+}
+
+@media (max-width: 480px) {
+    #wrap.risograph {
+        min-width: 0;
+    }
+
+    .risograph main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .risograph .title {
+        padding: 14px;
+    }
+
+    .risograph::before {
+        width: 115px;
+        height: 115px;
+        right: -42px;
+    }
+}
