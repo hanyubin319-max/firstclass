@@ -1,0 +1,32 @@
+/* Expressive painterly floral art theme */
+:root{--paint-olive:#7D9147;--paint-yellow:#D6B84D;--paint-coral:#E46F50;--paint-cream:#F3E6C5;--paint-green:#536F4B;--paint-ink:#354332}
+html,body{min-height:100%;background:var(--paint-olive);color:var(--paint-ink)}
+body{background:linear-gradient(145deg,#7F9657,#D5B94D 48%,#6F8248)}
+#wrap.painterly{position:relative;isolation:isolate;width:100%;max-width:1024px;min-width:0;min-height:100dvh;margin:0 auto;overflow:hidden;color:var(--paint-ink);background:radial-gradient(ellipse at 12% 18%,rgba(226,177,63,.9),transparent 34%),radial-gradient(ellipse at 90% 28%,rgba(225,104,77,.8),transparent 28%),linear-gradient(145deg,#A5A45A,#D2B34F 50%,#6F8950)}
+.painterly:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.65;background:repeating-linear-gradient(125deg,transparent 0 12px,rgba(255,255,255,.12) 13px 15px,transparent 16px 27px),radial-gradient(ellipse at 24% 70%,rgba(233,110,70,.8) 0 12%,transparent 12.5%),radial-gradient(ellipse at 78% 75%,rgba(82,112,72,.9) 0 17%,transparent 17.5%)}
+.painterly:after{content:"";position:absolute;z-index:-1;top:15%;right:-10%;width:50%;height:34%;background:radial-gradient(ellipse at 50% 50%,rgba(239,115,82,.8) 0 18%,transparent 19%),radial-gradient(ellipse at 22% 65%,rgba(255,206,91,.9) 0 20%,transparent 21%),radial-gradient(ellipse at 70% 22%,rgba(239,223,171,.8) 0 16%,transparent 17%);filter:blur(3px);transform:rotate(-18deg)}
+.painterly header{height:60px;background:rgba(52,67,50,.82);border-bottom:3px solid #D6B84D}
+.painterly header h1{color:#F3E6C5;font-family:Georgia,serif;font-style:italic;font-weight:700;letter-spacing:.04em}
+.painterly .prev_btn,.painterly .close_btn{border:1px solid #F3E6C5;border-radius:50%;background:#6F8248;box-shadow:3px 3px 0 #354332}
+.painterly main{position:relative;z-index:1;padding:42px 22px 58px}
+.painterly .title{padding:22px 16px;margin-bottom:38px;border:2px solid rgba(53,67,50,.55);border-radius:45% 12% 36% 8% / 12% 30% 10% 28%;background:rgba(245,232,195,.82);box-shadow:8px 8px 0 rgba(83,111,75,.7);transform:rotate(-1deg)}
+.painterly .title>span:first-child{color:#9A563C;font-family:Georgia,serif;font-size:2.1rem;font-style:italic;font-weight:700}
+.painterly .title>span:last-child,.painterly .title h2{color:#354332;font-family:Georgia,serif;font-size:clamp(3.6rem,10vw,6rem);font-weight:700;line-height:1;letter-spacing:-.04em}
+.painterly .title p{color:#5E6745;font-weight:600}
+.painterly .email,.painterly .password_group legend{color:#F8EBCB;font-family:Georgia,serif;font-weight:700}
+.painterly input[type=email],.painterly input[type=password]{width:100%;min-width:0;border:2px solid #536F4B!important;border-radius:12px 3px 12px 3px!important;background:#F4E8C8!important;color:#354332;box-shadow:4px 4px 0 #D6B84D}
+.painterly input::placeholder{color:#9D9270!important}
+.painterly .pw_btn{border:1px solid #536F4B;border-radius:50%;background:#E6D8AD}
+.painterly .login_option span,.painterly .login_link{color:#F7EBCB;font-weight:700}
+.painterly .login_btn,.painterly .complete_btn{width:100%;min-width:0;min-height:52px;border:2px solid #354332!important;border-radius:18px 4px 18px 4px!important;background:#E46F50!important;color:#FFF4D7!important;font-family:Georgia,serif;font-size:1.8rem;font-weight:800;box-shadow:5px 5px 0 #354332;opacity:1}
+.painterly .complete_btn.active{color:#FFF4D7!important}
+.painterly .sns_login>p{color:#F3E6C5;font-family:Georgia,serif;font-style:italic;font-weight:700}
+.painterly .sns_login>p:before,.painterly .sns_login>p:after{height:2px;background:#D6B84D;opacity:1}
+.painterly .sns_list>a{border:2px solid #536F4B;border-radius:50%;background:#F3E6C5;box-shadow:3px 3px 0 #D6B84D}
+.painterly .password_rule,.painterly .sns_notice{border:2px solid #536F4B;border-radius:20px 4px 20px 4px;background:rgba(243,230,197,.9);box-shadow:5px 5px 0 #D6B84D;color:#354332}
+.painterly .password_rule li,.painterly .sns_notice p{color:#354332}
+.painterly .password_rule li:before{border:1px solid #536F4B;border-radius:50%;background:#E46F50}
+.painterly .password_notice{border-top:2px solid #D6B84D;color:#F3E6C5}
+.painterly .sns_notice h2{color:#9A563C;font-family:Georgia,serif;font-style:italic;font-weight:800}
+.painterly .password_error{color:#FFE6A3;font-weight:900}
+@media(max-width:480px){#wrap.painterly{min-width:0}.painterly main{padding-left:18px;padding-right:18px}}
