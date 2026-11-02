@@ -3,13 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>찐망 클래스</title>
+    <title>찐망 클래스 | 버거킹 UI 디자인</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 48px 20px; background: #f5f5f5; color: #222; font-family: Arial, sans-serif; }
+        main { width: 100%; max-width: 760px; margin: 0 auto; }
+        h1 { margin: 0 0 10px; font-size: clamp(28px, 5vw, 42px); }
+        .intro { margin: 0 0 32px; color: #666; line-height: 1.6; }
+        section { margin: 24px 0; padding: 24px; border: 1px solid #e5e5e5; background: #fff; }
+        h2 { margin: 0 0 16px; font-size: 19px; }
+        ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+        a { display: block; padding: 14px 16px; border: 1px solid #ddd; color: #222; text-decoration: none; transition: background .2s, border-color .2s; }
+        a:hover, a:focus-visible { border-color: #222; background: #f7f7f7; }
+        .external { color: #555; }
+    </style>
 </head>
 <body>
-    <h1>hello Githubl</h1>
-    <p><a href="https://hanyubin319-max.github.io/firstclass/Biodance/css/index.html">바이오던스 홈페이지 바로가기</a></p>
-    <a href="Burgerkiog/login.html">버거킹 로그인 UI</a>
-    <a href="Burgerkiog/password_reset.html">버거킹 비밀번호 재설정 UI - 1</a>
-    <a href="Burgerkiog/password_reset_2.html">버거킹 비밀번호 재설정 UI - 2</a>
+    <main>
+        <h1>찐망 클래스</h1>
+        <p class="intro">웹 콘텐츠 실습 프로젝트 모음입니다. 아래에서 작업한 페이지를 확인할 수 있습니다.</p>
+
+        <section>
+            <h2>버거킹 UI 디자인</h2>
+            <ul>
+                <li><a href="Burgerkiog/login.html">버거킹 로그인 UI</a></li>
+                <li><a href="Burgerkiog/password_reset.html">버거킹 비밀번호 재설정 UI - 1</a></li>
+                <li><a href="Burgerkiog/password_reset_2.html">버거킹 비밀번호 재설정 완료 UI - 2</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>바이오던스</h2>
+            <a class="external" href="Biodance/css/index.html">바이오던스 홈페이지 바로가기</a>
+        </section>
+    </main>
 </body>
 </html>
