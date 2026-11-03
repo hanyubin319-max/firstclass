@@ -24,7 +24,7 @@
   color: var(--neutral-gray); font: inherit; font-size: 20px; cursor: pointer; white-space: nowrap;
   text-align: center;
 }
-.category-tab::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: var(--neutral-border-gray); }
+.category-tab::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: transparent; }
 .category-tab:not(:last-child)::before {
   content: "";
   position: absolute;
