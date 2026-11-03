@@ -4786,3 +4786,26 @@ body {
         filter: brightness(0) invert(1) !important;
     }
 }
+
+/* Mobile product badges: use the same compact size across the main page and product cards */
+@media (max-width: 600px) {
+    .best-product-image .product-label {
+        top: 9px;
+        width: auto;
+        min-width: 43px;
+        height: 18px;
+        padding: 0 5px;
+        border-radius: 2px;
+        font-size: 10px;
+    }
+
+    .best-product-image .label-best,
+    .best-product-image .label-best-second,
+    .best-product-image .label-only {
+        right: 6px;
+    }
+
+    .best-product-image:has(.label-only):has(.label-best) .label-only {
+        right: 55px;
+    }
+}
