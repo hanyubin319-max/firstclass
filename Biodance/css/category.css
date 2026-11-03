@@ -86,8 +86,12 @@
   padding: 12px 24px;
   border: 1px solid var(--neutral-gray);
   border-radius: 0;
-  background: var(--neutral-gray);
-  color: var(--neutral-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--neutral-white);
+  color: var(--neutral-charcoal);
   font: inherit;
   font-size: 16px;
   cursor: pointer;
