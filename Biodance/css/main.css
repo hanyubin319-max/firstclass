@@ -4778,3 +4778,11 @@ body {
     border-bottom: 1px solid var(--neutral-border-gray);
     box-sizing: border-box;
 }
+
+
+/* Mobile benefit bar: keep both arrow icons white */
+@media (max-width: 700px) {
+    .site-header .promo-bar .promo-arrow img {
+        filter: brightness(0) invert(1) !important;
+    }
+}
