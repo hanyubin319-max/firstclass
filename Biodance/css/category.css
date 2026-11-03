@@ -282,3 +282,31 @@
   background: var(--teal-mint);
   color: var(--neutral-charcoal);
 }
+
+
+/* Match Best Sellers content width, grid width and responsive gutters */
+.product-catalog {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  padding-right: 3.8%;
+  padding-left: 3.8%;
+}
+.product-grid {
+  width: 100%;
+  max-width: 1500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 1024px) {
+  .product-catalog {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .product-catalog {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
