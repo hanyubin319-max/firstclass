@@ -139,8 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     currentPage = 1;
     pagination.querySelector('[data-page="1"]').textContent = '1';
     pagination.querySelector('[data-page="1"]').classList.add('is-active');
-    pagination.querySelector('[data-page="prev"]').disabled = true;
-    pagination.querySelector('[data-page="next"]').disabled = true;
   }
 
   function selectTopCategory(tab) {
@@ -176,12 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setFilter.addEventListener('change', renderProducts);
   sort.addEventListener('change', renderProducts);
 
-  pagination.addEventListener('click', event => {
-    const pageButton = event.target.closest('button');
-    if (!pageButton || pageButton.disabled) return;
-    // Page size is not configured yet, so page navigation remains on page 1.
-    currentPage = 1;
-  });
 
   const categoryParams = new URLSearchParams(window.location.search);
   const requestedCategory = categoryParams.get('category');
