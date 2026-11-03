@@ -2301,12 +2301,12 @@ body {
 }
 
 
-/* Best Sellers — Figma variable-based BEST / ONLY badges */
+/* Best Sellers — Figma variable-based product badges */
 .best-product-image .product-label {
     top: 9px;
     display: flex;
-    width: 50px;
-    min-width: 50px;
+    width: 70px;
+    min-width: 70px;
     height: 22px;
     box-sizing: border-box;
     align-items: center;
@@ -2333,15 +2333,20 @@ body {
     right: 9px;
     background: var(--brand-rose);
 }
-/* When both badges are present, keep a 6px gap between their 50px boxes. */
+.best-product-image .label-woni-pick {
+    right: 9px;
+    top: 37px;
+    background: var(--brand-rose);
+}
+/* When both badges are present, keep a 6px gap between their 70px boxes. */
 .best-product-image:has(.label-only):has(.label-best) .label-only {
-    right: 65px;
+    right: 85px;
 }
 @media (max-width: 600px) {
     .best-product-image .product-label {
         top: 6px;
-        width: 50px;
-        min-width: 50px;
+        width: 70px;
+        min-width: 70px;
         height: 22px;
         font-size: 14px;
     }
@@ -2353,8 +2358,12 @@ body {
     .best-product-image .label-only {
         right: 6px;
     }
+    .best-product-image .label-woni-pick {
+        right: 6px;
+        top: 34px;
+    }
     .best-product-image:has(.label-only):has(.label-best) .label-only {
-        right: 62px;
+        right: 82px;
     }
 }
 
@@ -4791,8 +4800,8 @@ body {
 @media (max-width: 600px) {
     .best-product-image .product-label {
         top: 9px;
-        width: auto;
-        min-width: 43px;
+        width: 70px;
+        min-width: 70px;
         height: 18px;
         padding: 0 5px;
         border-radius: 2px;
@@ -4801,11 +4810,16 @@ body {
 
     .best-product-image .label-best,
     .best-product-image .label-best-second,
-    .best-product-image .label-only {
+    .best-product-image .label-only,
+    .best-product-image .label-woni-pick {
         right: 6px;
     }
 
+    .best-product-image .label-woni-pick {
+        top: 31px;
+    }
+
     .best-product-image:has(.label-only):has(.label-best) .label-only {
-        right: 55px;
+        right: 82px;
     }
 }
