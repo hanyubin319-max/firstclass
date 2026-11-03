@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (activeTitle === 'Best') return card.querySelector('.product-labels')?.textContent.includes('BEST');
     if (activeTitle === 'New') return card.querySelector('.product-labels')?.textContent.includes('NEW');
     if (activeTitle === '단품/세트') {
-      const matchesProductType = card.dataset.productType === setFilter.value;
+      const matchesProductType = setFilter.value === 'all' || card.dataset.productType === setFilter.value;
       const matchesSubcategory = !activeSubcategory || card.dataset.subcategory === activeSubcategory;
       return matchesProductType && matchesSubcategory;
     }
