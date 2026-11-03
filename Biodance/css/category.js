@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('#product-grid');
   const cards = [...document.querySelectorAll('.category-product')];
   const count = document.querySelector('#product-count');
+  const categoryTitle = document.querySelector('#category-title');
   const empty = document.querySelector('#empty-products');
   const sort = document.querySelector('#product-sort');
   let activeCategory = 'all';
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     empty.hidden = visibleCards.length !== 0;
     grid.hidden = visibleCards.length === 0;
     const activeTab = tabs.find(tab => tab.dataset.category === activeCategory);
+    categoryTitle.textContent = activeTab.textContent.trim();
     grid.setAttribute('aria-labelledby', activeTab.id);
   }
 
