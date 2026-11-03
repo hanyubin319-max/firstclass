@@ -82,13 +82,25 @@
       </div>
 
       <div class="product-list-heading">
-        <p>PRODUCT <strong id="product-count">8</strong></p>
-        <label class="sort-control">정렬
-          <select id="product-sort" aria-label="상품 정렬">
-            <option value="default">추천순</option>
-            <option value="name">상품명순</option>
-          </select>
-        </label>
+        <p class="product-total" id="product-total">총 <strong id="product-count">8</strong>개의 제품이 있습니다.</p>
+        <div class="product-list-controls">
+          <label class="set-filter-control" id="set-filter-wrap" hidden>
+            <select id="set-filter" aria-label="단품 또는 세트 선택">
+              <option value="all">전체</option>
+              <option value="single">단품</option>
+              <option value="set">세트</option>
+            </select>
+          </label>
+          <label class="sort-control">
+            <select id="product-sort" aria-label="상품 정렬">
+              <option value="recommended">추천순</option>
+              <option value="newest">신상품</option>
+              <option value="popular">인기상품</option>
+              <option value="price-low">낮은가격</option>
+              <option value="price-high">높은가격</option>
+            </select>
+          </label>
+        </div>
       </div>
 
       <div class="product-grid" id="product-grid" role="tabpanel" aria-labelledby="tab-best">
@@ -120,12 +132,17 @@
           <a class="category-product-image" href="#product-7" aria-label="세라놀 크림 상품 상세"><span>PRODUCT IMAGE</span><small>이미지 삽입 영역</small></a>
           <div class="category-product-info"><p class="product-labels"></p><h2>세라놀 크림</h2><p class="product-description">상품 설명을 입력해 주세요.</p><p class="category-product-price">상품 가격 입력</p></div>
         </article>
-        <article class="category-product" data-category="skincare" data-name="스킨케어 기획 세트">
+        <article class="category-product" data-category="skincare" data-name="스킨케어 기획 세트" data-product-type="set">
           <a class="category-product-image" href="#product-8" aria-label="스킨케어 기획 세트 상품 상세"><span>PRODUCT IMAGE</span><small>이미지 삽입 영역</small></a>
           <div class="category-product-info"><p class="product-labels"><span>SET</span></p><h2>스킨케어 기획 세트</h2><p class="product-description">상품 설명을 입력해 주세요.</p><p class="category-product-price">상품 가격 입력</p></div>
         </article>
       </div>
       <p class="empty-products" id="empty-products" hidden>해당 카테고리의 상품이 없습니다.</p>
+      <nav class="product-pagination" id="product-pagination" aria-label="상품 페이지 이동">
+        <button type="button" class="pagination-arrow" data-page="prev" aria-label="이전 페이지" disabled>‹</button>
+        <button type="button" class="pagination-number is-active" data-page="1" aria-current="page">1</button>
+        <button type="button" class="pagination-arrow" data-page="next" aria-label="다음 페이지" disabled>›</button>
+      </nav>
     </section>
   </main>
 
