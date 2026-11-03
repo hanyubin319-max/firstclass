@@ -413,6 +413,9 @@
         });
 
         menuLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                if (link.dataset.noNavigation === 'true') event.preventDefault();
+            });
             link.addEventListener('mouseenter', () => {
                 if (window.matchMedia('(min-width: 768px)').matches) {
                     openMegaMenu(link.dataset.menu, link);
@@ -442,7 +445,15 @@
             });
         }
 
-        megaMenu.querySelectorAll('[data-no-navigation=\"true\"]').forEach(link => {\n            link.addEventListener('click', event => event.preventDefault());\n        });\n\n        submenuLinks.forEach(link => {
+        megaMenu.querySelectorAll('[data-no-navigation="true"]').forEach(link => {
+            link.addEventListener('click', event => event.preventDefault());
+        });
+
+        megaMenu.querySelectorAll('[data-no-navigation="true"]').forEach(link => {
+            link.addEventListener('click', event => event.preventDefault());
+        });
+
+        submenuLinks.forEach(link => {
             const arrow = link.querySelector('span');
             if (arrow) {
                 arrow.setAttribute('role', 'button');
