@@ -20,7 +20,7 @@
 .category-tabs-wrap { border-bottom: 1px solid var(--neutral-border-gray); }
 .category-tabs { display: flex; align-items: center; justify-content: center; gap: 0; }
 .category-tab {
-  position: relative; padding: 18px 4px 17px; border: 0; background: transparent;
+  position: relative; padding: 18px 8px 17px; border: 0; background: transparent;
   color: var(--neutral-gray); font: inherit; font-size: 16px; cursor: pointer; white-space: nowrap;
 }
 .category-tab::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: transparent; }
@@ -75,7 +75,7 @@
   .category-intro > p:last-child { font-size: 13px; }
   .product-catalog { width: calc(100% - 32px); margin-bottom: 72px; }
   .category-tabs { gap: 0; }
-  .category-tab { padding: 15px 4px 14px; font-size: 14px; }
+  .category-tab { padding: 15px 8px 14px; font-size: 14px; }
   .product-list-heading { padding: 22px 0 15px; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 10px; }
   .category-product-info { padding-top: 12px; }
