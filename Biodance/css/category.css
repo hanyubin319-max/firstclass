@@ -165,3 +165,5 @@
   .product-total { font-size: 11px; }
   .product-pagination { margin-top: 48px; }
 }
+
+.product-pagination[hidden] { display: none; }
