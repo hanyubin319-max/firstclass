@@ -475,6 +475,21 @@
 }
 
 
+/* Prevent empty badge placeholders from pushing product names out of alignment */
+.category-product-info .product-labels:empty {
+  display: none;
+}
+
+/* Keep the image placeholder label and helper text on separate lines */
+.category-product-image.best-product-image > span:not(.product-label),
+.category-product-image.best-product-image > small {
+  display: block;
+  text-align: center;
+}
+.category-product-image.best-product-image > small {
+  margin-top: 7px;
+}
+
 /* Final: match the live Best Sellers product-info spacing and typography */
 .category-product-image.best-product-image {
   border-radius: 12px;
