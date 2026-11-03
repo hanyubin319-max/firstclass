@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (activeTitle === 'Best') return card.querySelector('.product-labels')?.textContent.includes('BEST');
     if (activeTitle === 'New') return card.querySelector('.product-labels')?.textContent.includes('NEW');
     if (activeTitle === '단품/세트') {
-      if (setFilter.value === 'single') return card.dataset.productType === 'single';
-      if (setFilter.value === 'set') return card.dataset.productType === 'set';
-      return true;
+      const matchesProductType = card.dataset.productType === setFilter.value;
+      const matchesSubcategory = !activeSubcategory || card.dataset.subcategory === activeSubcategory;
+      return matchesProductType && matchesSubcategory;
     }
     if (activeTitle === '유형별' && activeSubcategory) return card.dataset.subcategory === activeSubcategory;
     if (activeTitle === '고민별' && activeSubcategory) return (card.dataset.concerns || '').split('|').includes(activeSubcategory);
@@ -71,14 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.toggle('is-active', selected);
       item.setAttribute('aria-selected', String(selected));
     });
-    typeSubcategories.hidden = activeTitle !== '유형별';
+    typeSubcategories.hidden = activeTitle !== '유형별' && activeTitle !== '단품/세트';
     concernSubcategories.hidden = activeTitle !== '고민별';
     skinSubcategories.hidden = activeTitle !== '피부타입별';
     document.querySelector('#tab-type').setAttribute('aria-expanded', String(!typeSubcategories.hidden));
     document.querySelector('#tab-concern').setAttribute('aria-expanded', String(!concernSubcategories.hidden));
     document.querySelector('#tab-skin').setAttribute('aria-expanded', String(!skinSubcategories.hidden));
     subTabs.forEach(item => item.classList.remove('is-active'));
-    setFilter.value = 'all';
+    setFilter.value = 'single';
     renderProducts();
   }
 
