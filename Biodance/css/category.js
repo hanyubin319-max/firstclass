@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryTitle = document.querySelector('#category-title');
   const empty = document.querySelector('#empty-products');
   const sort = document.querySelector('#product-sort');
-  let activeCategory = 'all';
+  let activeCategory = 'all';\n  let activeTitle = 'Best';\n  const typeSubcategories = document.querySelector('#type-subcategories');\n  const concernSubcategories = document.querySelector('#concern-subcategories');\n  const topTabs = [...document.querySelectorAll('.category-tab')];\n  const subTabs = [...document.querySelectorAll('.category-subtab')];
 
   function renderProducts() {
     const visibleCards = cards.filter(card => activeCategory === 'all' || card.dataset.category === activeCategory);
@@ -25,29 +25,49 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.setAttribute('aria-labelledby', activeTab.id);
   }
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-      activeCategory = tab.dataset.category;
-      tabs.forEach(item => {
-        const selected = item === tab;
-        item.classList.toggle('is-active', selected);
-        item.setAttribute('aria-selected', String(selected));
-        item.tabIndex = selected ? 0 : -1;
-      });
-      renderProducts();
+  function selectTopCategory(tab, title = tab.dataset.category) {
+    activeTitle = title;
+    topTabs.forEach(item => {
+      const selected = item === tab;
+      item.classList.toggle('is-active', selected);
+      item.setAttribute('aria-selected', String(selected));
     });
-    tab.addEventListener('keydown', event => {
-      if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
-      event.preventDefault();
-      let next = index;
-      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-      if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
-      if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = tabs.length - 1;
-      tabs[next].focus();
-      tabs[next].click();
+    typeSubcategories.hidden = tab.dataset.category !== '유형별';
+    concernSubcategories.hidden = tab.dataset.category !== '고민별';
+    document.querySelector('#tab-type').setAttribute('aria-expanded', String(!typeSubcategories.hidden));
+    document.querySelector('#tab-concern').setAttribute('aria-expanded', String(!concernSubcategories.hidden));
+    subTabs.forEach(item => item.classList.remove('is-active'));
+    renderProducts();
+  }
+
+  topTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      activeCategory = 'all';
+      selectTopCategory(tab);
     });
   });
+
+  subTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      activeCategory = 'all';
+      subTabs.forEach(item => item.classList.toggle('is-active', item === tab));
+      activeTitle = tab.dataset.subcategory;
+      categoryTitle.textContent = activeTitle;
+      renderProducts();
+    });
+  });
+
+  const categoryParams = new URLSearchParams(window.location.search);
+  const requestedCategory = categoryParams.get('category');
+  const matchingTopTab = topTabs.find(tab => tab.dataset.category === requestedCategory);
+  const matchingSubTab = subTabs.find(tab => tab.dataset.subcategory === requestedCategory);
+  if (matchingTopTab) {
+    selectTopCategory(matchingTopTab);
+  } else if (matchingSubTab) {
+    const parentTab = matchingSubTab.closest('#type-subcategories') ? document.querySelector('#tab-type') : document.querySelector('#tab-concern');
+    selectTopCategory(parentTab);
+    matchingSubTab.click();
+  }
   sort.addEventListener('change', renderProducts);
 
   const menuToggle = document.querySelector('.menu-toggle');
