@@ -232,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   resetPromoTimer();
 
+  const siteHeader = document.querySelector('.site-header');
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('#main-nav');
   const megaMenu = document.querySelector('#header-mega-menu');
@@ -322,6 +323,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', event => {
     if (!event.target.closest('.site-header')) closeMegaMenu();
   });
+
+  // Close the expanded mega menu when the pointer leaves the entire header area.
+  siteHeader?.addEventListener('mouseleave', closeMegaMenu);
 
   menuToggle?.addEventListener('click', () => {
     const isOpen = mainNav.classList.toggle('is-open');
