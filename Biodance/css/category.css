@@ -409,11 +409,11 @@
 .category-product-image.best-product-image .label-best,
 .category-product-image.best-product-image .label-best-second {
   right: 9px;
-  background: #00b9ee;
+  background: var(--teal-mint);
 }
 .category-product-image.best-product-image .label-only {
   right: 9px;
-  background: #00b9ee;
+  background: var(--brand-rose);
 }
 .category-product-info {
   padding: 19px 7px 0;
