@@ -39,18 +39,38 @@
 
   <main class="category-page">
     <section class="category-intro" aria-labelledby="category-title">
-      <h1 id="category-title">전체</h1>
+      <h1 id="category-title">Best</h1>
     </section>
 
     <section class="product-catalog" aria-label="제품 목록">
       <div class="category-tabs-wrap">
-        <div class="category-tabs" role="tablist" aria-label="제품 카테고리">
-          <button class="category-tab is-active" id="tab-all" type="button" role="tab" aria-selected="true" aria-controls="product-grid" data-category="all">전체</button>
-          <button class="category-tab" id="tab-mask" type="button" role="tab" aria-selected="false" aria-controls="product-grid" data-category="mask">마스크팩</button>
-          <button class="category-tab" id="tab-serum" type="button" role="tab" aria-selected="false" aria-controls="product-grid" data-category="serum">세럼/토너</button>
-          <button class="category-tab" id="tab-cream" type="button" role="tab" aria-selected="false" aria-controls="product-grid" data-category="cream">크림</button>
-          <button class="category-tab" id="tab-cleanser" type="button" role="tab" aria-selected="false" aria-controls="product-grid" data-category="cleanser">클렌징</button>
-          <button class="category-tab" id="tab-skincare" type="button" role="tab" aria-selected="false" aria-controls="product-grid" data-category="skincare">스킨케어</button>
+        <div class="category-tabs" role="tablist" aria-label="제품 상위 카테고리">
+          <button class="category-tab is-active" id="tab-best" type="button" role="tab" aria-selected="true" data-category="Best">Best</button>
+          <button class="category-tab" id="tab-new" type="button" role="tab" aria-selected="false" data-category="New">New</button>
+          <button class="category-tab" id="tab-type" type="button" role="tab" aria-selected="false" aria-expanded="false" aria-controls="type-subcategories" data-category="유형별">유형별</button>
+          <button class="category-tab" id="tab-concern" type="button" role="tab" aria-selected="false" aria-expanded="false" aria-controls="concern-subcategories" data-category="고민별">고민별</button>
+          <button class="category-tab" id="tab-skin" type="button" role="tab" aria-selected="false" data-category="피부타입별">피부타입별</button>
+          <button class="category-tab" id="tab-set" type="button" role="tab" aria-selected="false" data-category="단품/세트">단품/세트</button>
+          <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="공식몰 단독기획">공식몰 단독기획</button>
+          <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="Promotion">Promotion</button>
+        </div>
+        <div class="category-subtabs" id="type-subcategories" hidden aria-label="유형별 하위 카테고리">
+          <button type="button" class="category-subtab" data-subcategory="마스크">마스크</button>
+          <button type="button" class="category-subtab" data-subcategory="토너/패드">토너/패드</button>
+          <button type="button" class="category-subtab" data-subcategory="세럼/앰플">세럼/앰플</button>
+          <button type="button" class="category-subtab" data-subcategory="크림">크림</button>
+          <button type="button" class="category-subtab" data-subcategory="클렌징">클렌징</button>
+          <button type="button" class="category-subtab" data-subcategory="선/메이크업">선/메이크업</button>
+          <button type="button" class="category-subtab" data-subcategory="툴">툴</button>
+          <button type="button" class="category-subtab" data-subcategory="미스트">미스트</button>
+        </div>
+        <div class="category-subtabs" id="concern-subcategories" hidden aria-label="고민별 하위 카테고리">
+          <button type="button" class="category-subtab" data-subcategory="모공/탄력">모공/탄력</button>
+          <button type="button" class="category-subtab" data-subcategory="수분/보습">수분/보습</button>
+          <button type="button" class="category-subtab" data-subcategory="잡티/흔적">잡티/흔적</button>
+          <button type="button" class="category-subtab" data-subcategory="영양/안티에이징">영양/안티에이징</button>
+          <button type="button" class="category-subtab" data-subcategory="트러블/진정">트러블/진정</button>
+          <button type="button" class="category-subtab" data-subcategory="각질케어">각질케어</button>
         </div>
       </div>
 
@@ -64,7 +84,7 @@
         </label>
       </div>
 
-      <div class="product-grid" id="product-grid" role="tabpanel" aria-labelledby="tab-all">
+      <div class="product-grid" id="product-grid" role="tabpanel" aria-labelledby="tab-best">
         <article class="category-product" data-category="mask" data-name="리얼 딥 마스크">
           <a class="category-product-image" href="#product-1" aria-label="리얼 딥 마스크 상품 상세"><span>PRODUCT IMAGE</span><small>이미지 삽입 영역</small></a>
           <div class="category-product-info"><p class="product-labels"><span>BEST</span></p><h2>리얼 딥 마스크</h2><p class="product-description">상품 설명을 입력해 주세요.</p><p class="category-product-price">상품 가격 입력</p></div>
