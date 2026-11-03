@@ -171,11 +171,11 @@
   opacity: .45;
   cursor: default;
 }
-.product-pagination .pagination-arrow:not(:disabled):hover {
+.product-pagination .pagination-arrow:hover {
   border-color: var(--neutral-gray);
   background: var(--neutral-gray);
 }
-.product-pagination .pagination-arrow:not(:disabled):hover::before {
+.product-pagination .pagination-arrow:hover::before {
   filter: brightness(0) invert(1);
 }
 @media (max-width: 700px) {
