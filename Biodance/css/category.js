@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     count.textContent = String(visibleCards.length);
     empty.hidden = visibleCards.length !== 0;
     grid.hidden = visibleCards.length === 0;
-    categoryTitle.textContent = activeSubcategory || activeTitle;
+    categoryTitle.textContent = activeTitle;
     setFilterWrap.hidden = activeTitle !== '단품/세트';
     pagination.hidden = visibleCards.length === 0;
     // Until a page-size setting is chosen, all available products remain on one page.
