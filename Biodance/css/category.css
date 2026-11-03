@@ -166,7 +166,7 @@
   background: var(--neutral-white);
   color: var(--neutral-gray);
 }
-.product-pagination .pagination-number:hover {
+.product-pagination .pagination-number:not(.is-active):hover {
   border-color: var(--neutral-charcoal);
   background: var(--neutral-white);
   color: var(--neutral-charcoal);
