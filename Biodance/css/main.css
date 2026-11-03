@@ -4771,3 +4771,10 @@ body {
         overflow-wrap: break-word;
     }
 }
+
+
+/* Shared header: keep a gray bottom divider visible in the default state */
+.site-header .header-main {
+    border-bottom: 1px solid var(--neutral-border-gray);
+    box-sizing: border-box;
+}
