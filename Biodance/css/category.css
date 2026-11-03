@@ -475,19 +475,19 @@
 }
 
 
-/* Final: align product information, card corners and list controls to Best Sellers */
+/* Final: match the live Best Sellers product-info spacing and typography */
 .category-product-image.best-product-image {
   border-radius: 12px;
 }
 .category-product-info {
-  padding: 15px 7px 0;
+  padding: 19px 7px 0;
 }
 .category-product-info h2 {
   min-height: 25px;
   margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.45;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 .category-product-price {
   gap: 0 9px;
@@ -528,12 +528,13 @@
     border-radius: 12px;
   }
   .category-product-info {
-    padding: 15px 2px 0;
+    padding: 12px 2px 0;
   }
   .category-product-info h2 {
     min-height: 0;
-    font-size: 13px;
-    line-height: 1.45;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
   }
   .category-product-price {
     gap: 0 5px;
