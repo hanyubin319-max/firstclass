@@ -6,7 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const categoryTitle = document.querySelector('#category-title');
   const empty = document.querySelector('#empty-products');
   const sort = document.querySelector('#product-sort');
-  let activeCategory = 'all';\n  let activeTitle = 'Best';\n  const typeSubcategories = document.querySelector('#type-subcategories');\n  const concernSubcategories = document.querySelector('#concern-subcategories');\n  const topTabs = [...document.querySelectorAll('.category-tab')];\n  const subTabs = [...document.querySelectorAll('.category-subtab')];
+  let activeCategory = 'all';
+  let activeTitle = 'Best';
+  const typeSubcategories = document.querySelector('#type-subcategories');
+  const concernSubcategories = document.querySelector('#concern-subcategories');
+  const topTabs = [...document.querySelectorAll('.category-tab')];
+  const subTabs = [...document.querySelectorAll('.category-subtab')];
 
   function renderProducts() {
     const visibleCards = cards.filter(card => activeCategory === 'all' || card.dataset.category === activeCategory);
@@ -20,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     count.textContent = String(visibleCards.length);
     empty.hidden = visibleCards.length !== 0;
     grid.hidden = visibleCards.length === 0;
-    const activeTab = tabs.find(tab => tab.dataset.category === activeCategory);
-    categoryTitle.textContent = activeTab.textContent.trim();
-    grid.setAttribute('aria-labelledby', activeTab.id);
+    categoryTitle.textContent = activeTitle;
+    const activeTab = topTabs.find(tab => tab.dataset.category === activeTitle);
+    if (activeTab) grid.setAttribute('aria-labelledby', activeTab.id);
   }
 
   function selectTopCategory(tab, title = tab.dataset.category) {
@@ -77,5 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     menuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
   });
+  if (!requestedCategory || (!matchingTopTab && !matchingSubTab)) {
+    selectTopCategory(document.querySelector('#tab-best'));
+  }
   renderProducts();
 });
