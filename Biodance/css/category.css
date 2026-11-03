@@ -616,3 +616,33 @@
 .product-pagination .pagination-arrow[data-page="next"]::before {
   background-image: url("../img/chevron-right.svg?v=2");
 }
+
+/* Mobile category tabs: keep labels vertically steady while scrolling sideways */
+@media (max-width: 700px) {
+  .category-tabs-wrap {
+    overflow: hidden;
+  }
+
+  .category-tabs {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-tab {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1;
+    transform: none;
+  }
+}
