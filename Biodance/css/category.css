@@ -31,7 +31,7 @@
   right: clamp(-32px, -2vw, -10px);
   width: 1px;
   height: 17px;
-  background: #d9d9d9;
+  background: var(--neutral-border-gray);
   transform: translateY(-50%);
   pointer-events: none;
 }
