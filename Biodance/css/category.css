@@ -259,3 +259,26 @@
   }
   .category-product-price { margin: 8px 0 4px; }
 }
+
+
+/* Sort and set-filter dropdown styling */
+.sort-control select {
+  border: 0;
+  border-bottom: 1px solid var(--neutral-border-gray);
+  border-radius: 0;
+  outline: none;
+  accent-color: var(--teal-mint);
+}
+.sort-control select:focus,
+.sort-control select:focus-visible,
+.set-filter-control select:focus,
+.set-filter-control select:focus-visible {
+  border-color: var(--teal-mint);
+  outline: 1px solid var(--teal-mint);
+  outline-offset: 2px;
+}
+.sort-control select option:checked,
+.set-filter-control select option:checked {
+  background: var(--teal-mint);
+  color: var(--neutral-charcoal);
+}
