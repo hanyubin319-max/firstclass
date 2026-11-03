@@ -161,6 +161,16 @@
   font-size: 13px;
   cursor: pointer;
 }
+.product-pagination .pagination-number {
+  border-color: var(--neutral-gray);
+  background: var(--neutral-white);
+  color: var(--neutral-gray);
+}
+.product-pagination .pagination-number:hover {
+  border-color: var(--neutral-charcoal);
+  background: var(--neutral-white);
+  color: var(--neutral-charcoal);
+}
 .product-pagination .is-active {
   border-color: var(--neutral-charcoal);
   background: var(--neutral-charcoal);
