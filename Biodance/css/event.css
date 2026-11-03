@@ -16,6 +16,8 @@
 }
 .event-title-group {
   display: flex;
+  width: max-content;
+  height: fit-content;
   flex-direction: column;
   align-items: center;
   gap: 16px;
@@ -153,7 +155,7 @@
   .event-title-frame h1 { font-size: 42px; }
   .event-subtitle-frame p { font-size: 16px; }
   .event-content { width: calc(100% - 32px); margin-bottom: 72px; }
-  .event-list-heading { gap: 8px; padding: 22px 0 48px; }
+  .event-list-heading { align-items: flex-start; gap: 8px; padding: 22px 0 15px; }
   .event-total { font-size: 11px; white-space: normal; }
   .event-filter-control .custom-select { min-width: 0; max-width: 118px; }
   .event-filter-control .custom-select-trigger { min-height: 31px; padding: 7px; gap: 8px; font-size: 11px; }
