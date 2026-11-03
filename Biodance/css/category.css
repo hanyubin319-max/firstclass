@@ -80,10 +80,10 @@
 /* Category hierarchy */
 .category-tabs-wrap { border-bottom: 0; }
 .category-tabs { gap: clamp(16px, 2.4vw, 36px); border-bottom: 1px solid var(--neutral-border-gray); }
-.category-subtabs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.category-subtabs { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 20px; }
 .category-subtabs[hidden] { display: none; }
 .category-subtab {
-  padding: 12px 24px;
+  padding: 9px 24px;
   border: 1px solid var(--neutral-gray);
   border-radius: 0;
   display: flex;
@@ -105,5 +105,5 @@
 @media (max-width: 700px) {
   .category-tabs { gap: 24px; }
   .category-subtabs { gap: 8px; }
-  .category-subtab { padding: 10px 24px; font-size: 14px; }
+  .category-subtab { padding: 7px 24px; font-size: 14px; }
 }
