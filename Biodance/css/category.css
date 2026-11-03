@@ -310,3 +310,13 @@
     padding-left: 16px;
   }
 }
+
+
+/* Match Best Sellers product-info spacing and price scale on mobile */
+@media (max-width: 600px) {
+  .category-product-info { padding: 12px 2px 0; }
+  .category-product-price { gap: 0 5px; }
+  .category-product-price .discount,
+  .category-product-price strong { font-size: 14px; }
+  .category-product-price del { font-size: 10px; }
+}
