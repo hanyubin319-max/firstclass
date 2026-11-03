@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeTitle = 'Best';
   const typeSubcategories = document.querySelector('#type-subcategories');
   const concernSubcategories = document.querySelector('#concern-subcategories');
+  const skinSubcategories = document.querySelector('#skin-subcategories');
   const topTabs = [...document.querySelectorAll('.category-tab')];
   const subTabs = [...document.querySelectorAll('.category-subtab')];
 
@@ -39,8 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     typeSubcategories.hidden = tab.dataset.category !== '유형별';
     concernSubcategories.hidden = tab.dataset.category !== '고민별';
+    skinSubcategories.hidden = tab.dataset.category !== '피부타입별';
     document.querySelector('#tab-type').setAttribute('aria-expanded', String(!typeSubcategories.hidden));
     document.querySelector('#tab-concern').setAttribute('aria-expanded', String(!concernSubcategories.hidden));
+    document.querySelector('#tab-skin').setAttribute('aria-expanded', String(!skinSubcategories.hidden));
     subTabs.forEach(item => item.classList.remove('is-active'));
     renderProducts();
   }
@@ -69,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (matchingTopTab) {
     selectTopCategory(matchingTopTab);
   } else if (matchingSubTab) {
-    const parentTab = matchingSubTab.closest('#type-subcategories') ? document.querySelector('#tab-type') : document.querySelector('#tab-concern');
+    const parentTab = matchingSubTab.closest('#type-subcategories') ? document.querySelector('#tab-type') : matchingSubTab.closest('#concern-subcategories') ? document.querySelector('#tab-concern') : document.querySelector('#tab-skin');
     selectTopCategory(parentTab);
     matchingSubTab.click();
   }
