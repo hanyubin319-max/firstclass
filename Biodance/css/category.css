@@ -574,3 +574,27 @@
     max-width: 118px;
   }
 }
+
+
+/* Pagination arrows: reuse the repository's Swiper arrow image assets */
+.product-pagination .pagination-arrow {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+}
+.product-pagination .pagination-arrow::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.product-pagination .pagination-arrow[data-page="prev"]::before {
+  background-image: url("../img/swiper_prev.png");
+}
+.product-pagination .pagination-arrow[data-page="next"]::before {
+  background-image: url("../img/swiper_next.png");
+}
