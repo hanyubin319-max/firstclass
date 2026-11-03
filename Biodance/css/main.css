@@ -2333,13 +2333,16 @@ body {
 }
 .best-product-image .label-woni-pick {
     right: 9px;
-    top: 37px;
+    top: 9px;
     width: 70px;
     min-width: 70px;
     background: var(--brand-rose);
 }
-/* When both badges are present, keep a 6px gap between their 70px boxes. */
+/* Multiple badges stay on one row with a 6px gap. */
 .best-product-image:has(.label-only):has(.label-best) .label-only {
+    right: 85px;
+}
+.best-product-image:has(.label-best):has(.label-woni-pick) .label-best {
     right: 85px;
 }
 @media (max-width: 600px) {
@@ -2362,9 +2365,15 @@ body {
     }
     .best-product-image .label-woni-pick {
         right: 6px;
-        top: 34px;
+        top: 6px;
+    }
+    .best-product-image:has(.label-best):has(.label-woni-pick) .label-best {
+        right: 82px;
     }
     .best-product-image:has(.label-only):has(.label-best) .label-only {
+        right: 82px;
+    }
+    .best-product-image:has(.label-best):has(.label-woni-pick) .label-best {
         right: 82px;
     }
 }
@@ -4814,7 +4823,7 @@ body {
     }
 
     .best-product-image .label-woni-pick {
-        top: 31px;
+        top: 9px;
         width: 70px;
         min-width: 70px;
     }
