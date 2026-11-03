@@ -1,0 +1,106 @@
+/* Biodance Event page */
+.event-page {
+  width: 100%;
+  color: var(--neutral-charcoal);
+  background: var(--neutral-white);
+  font-family: var(--font-primary);
+}
+.event-page * { box-sizing: border-box; }
+.event-intro {
+  display: flex;
+  width: 100%;
+  height: 220px;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 72px;
+}
+.event-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.event-title-frame {
+  display: flex;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+}
+.event-title-frame h1 {
+  margin: 0;
+  color: var(--neutral-charcoal);
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+.event-subtitle-frame {
+  display: flex;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+}
+.event-subtitle-frame p {
+  margin: 0;
+  color: var(--neutral-charcoal);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+}
+.event-content {
+  width: 92.4%;
+  max-width: 1500px;
+  min-height: 300px;
+  margin: 0 auto 120px;
+}
+.event-list-heading {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 auto;
+  padding: 28px 0 80px;
+}
+.event-total {
+  flex: 0 1 auto;
+  margin: 0;
+  color: var(--neutral-gray);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.event-total strong {
+  margin: 0;
+  color: var(--neutral-charcoal);
+  font-weight: 600;
+}
+.event-filter-control { display: flex; align-items: center; }
+.event-filter-control select {
+  min-width: 112px;
+  min-height: 34px;
+  padding: 7px 28px 7px 10px;
+  border: 1px solid var(--neutral-border-gray);
+  border-radius: 0;
+  color: var(--neutral-charcoal);
+  background: var(--neutral-white);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.event-empty {
+  margin: 0;
+  padding: 70px 0;
+  color: var(--neutral-gray);
+  text-align: center;
+}
+.event-list:empty { display: none; }
+@media (max-width: 700px) {
+  .event-intro { height: 220px; padding: 72px 16px 0; }
+  .event-title-frame h1 { font-size: 42px; }
+  .event-subtitle-frame p { font-size: 16px; }
+  .event-content { width: calc(100% - 32px); margin-bottom: 72px; }
+  .event-list-heading { gap: 8px; padding: 22px 0 48px; }
+  .event-total { font-size: 11px; white-space: normal; }
+  .event-filter-control select { min-width: 0; max-width: 118px; padding: 7px 20px 7px 7px; font-size: 11px; }
+}
