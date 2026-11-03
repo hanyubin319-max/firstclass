@@ -258,7 +258,7 @@
 @media (max-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 30px;
+    row-gap: 50px;
     column-gap: 22px;
   }
 }
@@ -376,7 +376,7 @@
   max-width: 1500px;
   margin: 0 auto;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  row-gap: 30px;
+  row-gap: 50px;
   column-gap: 22px;
 }
 .category-product-image.best-product-image {
@@ -447,7 +447,7 @@
 }
 @media (max-width: 600px) {
   .product-grid {
-    row-gap: 30px;
+    row-gap: 50px;
     column-gap: 12px;
   }
   .category-product-info {
