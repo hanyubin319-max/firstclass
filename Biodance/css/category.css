@@ -118,7 +118,7 @@
   .category-tabs { gap: 0; }
   .category-tab { text-align: center; }
   .category-subtabs { gap: 8px; }
-  .category-subtab { padding: 7px 24px; font-size: 14px; }
+  .category-subtab { padding: 5px 22px; font-size: 14px; }
 }
 
 /* Product list controls and pagination */
