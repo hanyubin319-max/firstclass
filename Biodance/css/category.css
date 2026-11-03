@@ -24,6 +24,17 @@
   color: var(--neutral-gray); font: inherit; font-size: 16px; cursor: pointer; white-space: nowrap;
 }
 .category-tab::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: transparent; }
+.category-tab:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: clamp(-32px, -2vw, -10px);
+  width: 1px;
+  height: 17px;
+  background: #d9d9d9;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
 .category-tab:hover, .category-tab:focus-visible { color: var(--neutral-charcoal); }
 .category-tab.is-active { color: var(--neutral-charcoal); font-weight: 600; }
 .category-tab.is-active::after { background: var(--teal-mint); }
