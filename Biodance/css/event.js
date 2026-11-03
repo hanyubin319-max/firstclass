@@ -95,6 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
       item.textContent = event.title;
       list.appendChild(item);
     });
+    if (visible.length === 0 && filter.value === 'all') {
+      for (let i = 0; i < 9; i++) {
+        const item = document.createElement('div');
+        item.className = 'event-card';
+        item.setAttribute('aria-hidden', 'true');
+        list.appendChild(item);
+      }
+    }
     empty.hidden = visible.length > 0;
     empty.textContent = filter.value === 'ended' ? '종료된 이벤트가 없습니다.' : '진행 중인 이벤트가 없습니다.';
   }
