@@ -96,7 +96,7 @@
 .category-subtabs[hidden] { display: none; }
 .category-subtab {
   padding: 9px 24px;
-  border: 1px solid var(--neutral-gray);
+  border: 1px solid var(--neutral-border-gray);
   border-radius: 0;
   display: flex;
   align-items: center;
