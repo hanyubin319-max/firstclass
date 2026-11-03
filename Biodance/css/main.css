@@ -4791,11 +4791,9 @@ body {
 }
 
 
-/* Mobile benefit bar: keep both arrow icons white */
-@media (max-width: 700px) {
-    .site-header .promo-bar .promo-arrow img {
-        filter: brightness(0) invert(1) !important;
-    }
+/* Benefit bar arrows: keep the original white color on desktop and mobile */
+.site-header .promo-bar .promo-arrow img {
+    filter: brightness(0) invert(1) !important;
 }
 
 /* Mobile product badges: use the same compact size across the main page and product cards */
