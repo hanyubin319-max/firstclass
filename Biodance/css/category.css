@@ -167,3 +167,95 @@
 }
 
 .product-pagination[hidden] { display: none; }
+
+
+/* Product cards: match the main page Best Sellers cards */
+.product-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+.category-product { min-width: 0; }
+.category-product-image {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  background: var(--neutral-product-gray);
+}
+.category-product-image::before { content: none; }
+.category-product-image span {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+}
+.category-product-info { padding: 19px 7px 0; }
+.category-product-info h2 {
+  display: block;
+  min-height: 25px;
+  margin: 0;
+  color: #111;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  word-break: keep-all;
+}
+.product-description { display: none; }
+.category-product-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 9px;
+  margin: 8px 0 4px;
+  color: #111;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+.category-product-price .discount {
+  color: #ff927d;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+.category-product-price strong {
+  color: #111;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+}
+.category-product-price del {
+  color: #aaa;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+}
+.category-product-rating {
+  margin: 0;
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+}
+.category-product-rating span {
+  color: #777;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 38px 22px;
+  }
+}
+@media (max-width: 600px) {
+  .product-grid { gap: 28px 12px; }
+  .category-product-info { padding: 19px 7px 0; }
+  .category-product-info h2 {
+    min-height: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .category-product-price { margin: 8px 0 4px; }
+}
