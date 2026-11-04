@@ -109,10 +109,14 @@
   }
 
   .best-product-image .label-woni-pick {
-    width: clamp(44px, 16cqi, 70px) !important;
+    width: clamp(64px, 22cqi, 80px) !important;
     min-width: 0 !important;
     padding-left: 2cqi !important;
     padding-right: 2cqi !important;
+    font-size: clamp(8px, 2.8cqi, 11px) !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
     box-sizing: border-box;
   }
 }
