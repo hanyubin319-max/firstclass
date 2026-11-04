@@ -124,16 +124,16 @@
   font-weight: 600;
   line-height: normal;
 }
- .new-product-copy > p {
-  margin: 0;
-  color: var(--neutral-gray);
-}
-.new-product-copy p {
+ .new-product-copy p {
   margin: 0;
   color: var(--neutral-charcoal);
   font-size: 25px;
   font-weight: 500;
   line-height: normal;
+}
+.new-product-copy > p {
+  margin: 0;
+  color: var(--neutral-gray);
 }
 .new-product-rating {
   display: flex;
