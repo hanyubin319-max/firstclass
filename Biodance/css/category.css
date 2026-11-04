@@ -57,7 +57,7 @@
 .product-list-heading > p { margin: 0; color: var(--neutral-gray); font-size: 13px; letter-spacing: .04em; }
 .product-list-heading strong { margin-left: 8px; color: var(--neutral-charcoal); font-weight: 600; }
 .sort-control { display: flex; align-items: center; gap: 10px; color: var(--neutral-gray); font-size: 13px; }
-.sort-control select { padding: 7px 26px 7px 10px; border: 1px solid var(--neutral-border-gray); border-radius: 0; color: var(--neutral-charcoal); background: var(--neutral-white); font: inherit; }
+.sort-control select { padding: 7px 26px 7px 10px; border: 1px solid var(--neutral-border-gray); border-radius: 9999px; color: var(--neutral-charcoal); background: var(--neutral-white); font: inherit; }
 .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 74px 20px; }
 .category-product { min-width: 0; }
 .category-product[hidden] { display: none; }
@@ -142,7 +142,7 @@
 .sort-control, .set-filter-control { display: flex; align-items: center; }
 .sort-control select, .set-filter-control select {
   min-width: 112px; padding: 7px 28px 7px 10px; border: 1px solid var(--neutral-border-gray);
-  border-radius: 0; color: var(--neutral-charcoal); background: var(--neutral-white); font: inherit; font-size: 13px; cursor: pointer;
+  border-radius: 9999px; color: var(--neutral-charcoal); background: var(--neutral-white); font: inherit; font-size: 13px; cursor: pointer;
 }
 .set-filter-control[hidden] { display: none; }
 @media (max-width: 700px) {
@@ -251,7 +251,7 @@
 .custom-select-trigger {
   display: flex; width: 100%; min-height: 34px; align-items: center; justify-content: space-between;
   gap: 14px; padding: 7px 10px; border: 1px solid var(--neutral-border-gray);
-  border-radius: 0; background: var(--neutral-white); color: var(--neutral-charcoal);
+  border-radius: 9999px; background: var(--neutral-white); color: var(--neutral-charcoal);
   font: inherit; font-size: 13px; text-align: left; cursor: pointer;
 }
 .custom-select-trigger::after { content: ""; width: 7px; height: 7px; flex: 0 0 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg) translateY(-2px); }
