@@ -544,20 +544,31 @@
 }
 
 
-/* Mobile category tabs: keep labels vertically steady while scrolling sideways */
+/* Mobile category tabs: allow horizontal touch scrolling without clipping the scroll area */
 @media (max-width: 700px) {
   .category-tabs-wrap {
-    overflow: hidden;
+    overflow: visible;
   }
 
   .category-tabs {
     display: flex;
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
+    margin: 0;
     align-items: stretch;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    touch-action: pan-x;
+  }
+
+  .category-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .category-tab {
@@ -641,4 +652,19 @@
 .category-product-image.best-product-image:has(.label-best):has(.label-new):not(:has(.label-only)) .label-woni-pick { right: calc(118px) !important; }
 .category-product-image.best-product-image:has(.label-only):has(.label-new):not(:has(.label-best)) .label-woni-pick { right: calc(118px) !important; }
 .category-product-image.best-product-image:has(.label-best):has(.label-only):has(.label-new) .label-woni-pick { right: calc(170px) !important; }
+}
+
+
+/* Lock mobile badge widths to the offsets used below, including 601–700px screens. */
+@media (max-width: 700px) {
+  .category-product-image.best-product-image .product-label {
+    width: 50px;
+    min-width: 50px;
+    box-sizing: border-box;
+  }
+
+  .category-product-image.best-product-image .label-woni-pick {
+    width: 70px;
+    min-width: 70px;
+  }
 }
