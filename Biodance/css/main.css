@@ -2351,10 +2351,6 @@ body {
         height: 22px;
         font-size: 14px;
     }
-    .best-product-image .label-woni-pick {
-        width: 70px;
-        min-width: 70px;
-    }
     .best-product-image .label-best,
     .best-product-image .label-best-second {
         right: 6px;
@@ -4824,8 +4820,6 @@ body {
 
     .best-product-image .label-woni-pick {
         top: 9px;
-        width: 70px;
-        min-width: 70px;
     }
 
     .best-product-image:has(.label-only):has(.label-best) .label-only {
@@ -4900,10 +4894,10 @@ body {
     }
 }
 
-/* Mobile badge corner radius and responsive Woni Pick width */
+/* Final mobile badge rules: one source of truth */
 @media (max-width: 600px) {
     .best-product-image .product-label {
-        border-radius: 6px;
+        border-radius: 6px !important;
     }
 
     .best-product-image .label-woni-pick {
