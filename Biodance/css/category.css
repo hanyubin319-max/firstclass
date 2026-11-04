@@ -695,3 +695,41 @@
     right: calc(9px + clamp(48px, 16vw, 64px) + 14px);
   }
 }
+
+
+/* Unified badge order: BEST > ONLY > NEW > WONI PICK; 14px edge / 6px gap */
+.category-product-image.best-product-image .label-best { right: 14px !important; }
+.category-product-image.best-product-image:not(:has(.label-best)) .label-only { right: 14px !important; }
+.category-product-image.best-product-image:has(.label-best) .label-only { right: 70px !important; }
+.category-product-image.best-product-image:not(:has(.label-best)):not(:has(.label-only)) .label-new { right: 14px !important; }
+.category-product-image.best-product-image:has(.label-best):not(:has(.label-only)) .label-new { right: 70px !important; }
+.category-product-image.best-product-image:has(.label-only):not(:has(.label-best)) .label-new { right: 70px !important; }
+.category-product-image.best-product-image:has(.label-best):has(.label-only) .label-new { right: 126px !important; }
+.category-product-image.best-product-image:not(:has(.label-best)):not(:has(.label-only)):not(:has(.label-new)) .label-woni-pick { right: 14px !important; }
+.category-product-image.best-product-image:has(.label-best):not(:has(.label-only)):not(:has(.label-new)) .label-woni-pick { right: 70px !important; }
+.category-product-image.best-product-image:has(.label-only):not(:has(.label-best)):not(:has(.label-new)) .label-woni-pick { right: 70px !important; }
+.category-product-image.best-product-image:has(.label-best):has(.label-only):not(:has(.label-new)) .label-woni-pick { right: 126px !important; }
+.category-product-image.best-product-image:has(.label-new):not(:has(.label-best)):not(:has(.label-only)) .label-woni-pick { right: 70px !important; }
+.category-product-image.best-product-image:has(.label-best):has(.label-new):not(:has(.label-only)) .label-woni-pick { right: 126px !important; }
+.category-product-image.best-product-image:has(.label-only):has(.label-new):not(:has(.label-best)) .label-woni-pick { right: 126px !important; }
+.category-product-image.best-product-image:has(.label-best):has(.label-only):has(.label-new) .label-woni-pick { right: 182px !important; }
+@media (max-width: 600px) {
+
+/* Unified badge order: BEST > ONLY > NEW > WONI PICK; 14px edge / 6px gap */
+.category-product-image.best-product-image .label-best { right: 14px !important; }
+.category-product-image.best-product-image:not(:has(.label-best)) .label-only { right: 14px !important; }
+.category-product-image.best-product-image:has(.label-best) .label-only { right: calc(70px) !important; }
+.category-product-image.best-product-image:not(:has(.label-best)):not(:has(.label-only)) .label-new { right: 14px !important; }
+.category-product-image.best-product-image:has(.label-best):not(:has(.label-only)) .label-new { right: calc(70px) !important; }
+.category-product-image.best-product-image:has(.label-only):not(:has(.label-best)) .label-new { right: calc(70px) !important; }
+.category-product-image.best-product-image:has(.label-best):has(.label-only) .label-new { right: calc(126px) !important; }
+.category-product-image.best-product-image:not(:has(.label-best)):not(:has(.label-only)):not(:has(.label-new)) .label-woni-pick { right: 14px !important; }
+.category-product-image.best-product-image:has(.label-best):not(:has(.label-only)):not(:has(.label-new)) .label-woni-pick { right: calc(70px) !important; }
+.category-product-image.best-product-image:has(.label-only):not(:has(.label-best)):not(:has(.label-new)) .label-woni-pick { right: calc(70px) !important; }
+.category-product-image.best-product-image:has(.label-best):has(.label-only):not(:has(.label-new)) .label-woni-pick { right: calc(126px) !important; }
+.category-product-image.best-product-image:has(.label-new):not(:has(.label-best)):not(:has(.label-only)) .label-woni-pick { right: calc(70px) !important; }
+.category-product-image.best-product-image:has(.label-best):has(.label-new):not(:has(.label-only)) .label-woni-pick { right: calc(126px) !important; }
+.category-product-image.best-product-image:has(.label-only):has(.label-new):not(:has(.label-best)) .label-woni-pick { right: calc(126px) !important; }
+.category-product-image.best-product-image:has(.label-best):has(.label-only):has(.label-new) .label-woni-pick { right: calc(182px) !important; }
+.category-product-image.best-product-image .label-woni-pick { width: clamp(48px, 16vw, 64px) !important; min-width: clamp(48px, 16vw, 64px) !important; flex: 0 1 clamp(48px, 16vw, 64px); box-sizing: border-box; white-space: nowrap; }
+}
