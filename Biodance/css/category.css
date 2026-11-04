@@ -92,7 +92,7 @@
 /* Category hierarchy */
 .category-tabs-wrap { border-bottom: 0; }
 .category-tabs { width: 100%; max-width: 1500px; margin: 0 auto; gap: 0; border-bottom: 1px solid var(--neutral-border-gray); }
-.category-subtabs { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 20px; }
+.category-subtabs { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; }
 .category-subtabs[hidden] { display: none; }
 .category-subtab {
   padding: 9px 24px;
