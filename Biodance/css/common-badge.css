@@ -101,3 +101,18 @@
     border-radius: 5px !important;
   }
 }
+
+/* Mobile badge sizing follows the actual product-image width. */
+@media (max-width: 700px) {
+  .best-product-image {
+    container-type: inline-size;
+  }
+
+  .best-product-image .label-woni-pick {
+    width: clamp(44px, 16cqi, 70px) !important;
+    min-width: 0 !important;
+    padding-left: 2cqi !important;
+    padding-right: 2cqi !important;
+    box-sizing: border-box;
+  }
+}
