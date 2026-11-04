@@ -192,6 +192,25 @@
   font-weight: 500;
   line-height: normal;
 }
+.new-product-thumbnails {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+.new-product-thumbnail {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  flex: 0 0 100px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--neutral-product-gray);
+  color: var(--neutral-gray);
+  font-size: 12px;
+}
 
 @media (max-width: 1512px) {
   .new-product-frame {
