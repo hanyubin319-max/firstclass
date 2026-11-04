@@ -4902,13 +4902,15 @@ body {
 
 /* Mobile badge corner radius and responsive Woni Pick width */
 @media (max-width: 600px) {
-    .product-label,
     .best-product-image .product-label {
         border-radius: 6px;
     }
 
     .best-product-image .label-woni-pick {
-        width: clamp(56px, 18vw, 70px);
-        min-width: clamp(56px, 18vw, 70px);
+        width: clamp(48px, 16vw, 64px) !important;
+        min-width: clamp(48px, 16vw, 64px) !important;
+        flex: 0 1 clamp(48px, 16vw, 64px);
+        box-sizing: border-box;
+        white-space: nowrap;
     }
 }
