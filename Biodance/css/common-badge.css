@@ -93,3 +93,11 @@
   box-sizing: border-box;
   white-space: nowrap;
 }
+
+/* Mobile badges: shared corner radius */
+@media (max-width: 700px) {
+  .best-product-image .product-label,
+  .product-labels span {
+    border-radius: 5px !important;
+  }
+}
