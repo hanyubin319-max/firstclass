@@ -623,7 +623,7 @@
 .category-product-image.best-product-image:has(.label-best):has(.label-new):not(:has(.label-only)) .label-woni-pick { right: 126px !important; }
 .category-product-image.best-product-image:has(.label-only):has(.label-new):not(:has(.label-best)) .label-woni-pick { right: 126px !important; }
 .category-product-image.best-product-image:has(.label-best):has(.label-only):has(.label-new) .label-woni-pick { right: 182px !important; }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
 /* Unified badge order: BEST > ONLY > NEW > WONI PICK; 14px edge / 2px gap */
 .category-product-image.best-product-image .label-best { right: 14px !important; }
