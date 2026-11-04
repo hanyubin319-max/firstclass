@@ -203,16 +203,16 @@
 @media (max-width: 700px) {
   .event-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .event-card-image { border-radius: 24px; }
-  .event-card-title { margin-top: 14px; font-size: 16px; }
+  .event-card-title { margin-top: 14px; font-size: clamp(13px, 3.8vw, 16px); }
   .event-intro { height: 220px; padding: 120px 16px 0; }
-  .event-title-frame h1 { font-size: 42px; }
-  .event-subtitle-frame p { font-size: 16px; }
+  .event-title-frame h1 { font-size: clamp(30px, 8vw, 36px); }
+  .event-subtitle-frame p { font-size: clamp(12px, 3.6vw, 14px); }
   .event-content { width: calc(100% - 32px); margin-bottom: 72px; }
   .event-list-heading { align-items: flex-start; gap: 8px; padding: 22px 0 60px; }
-  .event-total { font-size: 11px; white-space: normal; }
+  .event-total { font-size: clamp(10px, 2.9vw, 11px); white-space: normal; }
   .event-filter-control .custom-select { min-width: 0; max-width: 118px; }
-  .event-filter-control .custom-select-trigger { min-height: 31px; padding: 7px; gap: 8px; font-size: 11px; }
-  .event-filter-control .custom-select-option { font-size: 11px; }
+  .event-filter-control .custom-select-trigger { min-height: 31px; padding: 7px; gap: 8px; font-size: clamp(10px, 2.9vw, 11px); }
+  .event-filter-control .custom-select-option { font-size: clamp(10px, 2.9vw, 11px); }
 }
 
 /* Event pagination: match the product subpage */
