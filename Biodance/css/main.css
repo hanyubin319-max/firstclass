@@ -4890,3 +4890,12 @@ body {
         gap: 11px;
     }
 }
+
+/* Mobile hero: use the small viewport height so browser toolbar changes do not resize the banner */
+@media (max-width: 700px) {
+    .hero-sec .swiper {
+        height: calc(100svh - 90px) !important;
+        min-height: calc(100svh - 90px) !important;
+        max-height: calc(100svh - 90px) !important;
+    }
+}
