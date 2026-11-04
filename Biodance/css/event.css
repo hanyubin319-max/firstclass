@@ -12,7 +12,7 @@
   height: 220px;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 72px;
+  padding-top: 100px;
 }
 .event-title-group {
   display: flex;
@@ -157,7 +157,9 @@
   grid-template-columns: repeat(3, 450px);
   justify-content: space-between;
   align-content: start;
-  gap: 20px;
+  column-gap: 20px;
+  row-gap: 40px;
+  min-height: 1708px;
   margin: 0 auto;
 }
 .event-card {
@@ -212,7 +214,7 @@
   .event-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .event-card-image { border-radius: 24px; }
   .event-card-title { margin-top: 14px; font-size: 16px; }
-  .event-intro { height: 220px; padding: 72px 16px 0; }
+  .event-intro { height: 220px; padding: 100px 16px 0; }
   .event-title-frame h1 { font-size: 42px; }
   .event-subtitle-frame p { font-size: 16px; }
   .event-content { width: calc(100% - 32px); margin-bottom: 72px; }
