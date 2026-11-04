@@ -555,9 +555,10 @@
 
   .category-tabs {
     display: flex;
-    width: max-content;
-    min-width: 100%;
-    max-width: none;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
     margin: 0;
     align-items: stretch;
     justify-content: flex-start;
