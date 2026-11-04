@@ -4908,3 +4908,20 @@ body {
         white-space: nowrap;
     }
 }
+
+
+/* Main page product badges: enforce the intended right alignment and 14px gap */
+.best-product-image .label-woni-pick {
+    right: 9px !important;
+}
+.best-product-image:has(.label-best):has(.label-woni-pick) .label-best {
+    right: 93px !important;
+}
+@media (max-width: 600px) {
+    .best-product-image .label-woni-pick {
+        right: 6px !important;
+    }
+    .best-product-image:has(.label-best):has(.label-woni-pick) .label-best {
+        right: calc(6px + clamp(48px, 16vw, 64px) + 14px) !important;
+    }
+}
