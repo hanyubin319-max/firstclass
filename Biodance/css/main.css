@@ -4589,8 +4589,20 @@ body {
     }
 }
 
-/* Mobile only: keep the initial navigation white and suppress desktop mega panels */
+/* Mobile only: show the mobile menu toggle; keep desktop navigation hidden until opened */
 @media (max-width: 700px) {
+    .site-header .main-nav {
+        display: none !important;
+    }
+
+    .site-header .main-nav.is-open {
+        display: flex !important;
+    }
+
+    .site-header .menu-toggle {
+        display: block !important;
+    }
+
     .site-header .main-nav,
     .site-header .main-nav.is-open {
         background-color: var(--neutral-white) !important;
