@@ -171,12 +171,6 @@
   background: var(--neutral-product-gray);
   color: var(--neutral-gray);
 }
-.event-card-image::before {
-  position: absolute;
-  inset: 12px;
-  border: 1px dashed var(--neutral-border-gray);
-  content: "";
-}
 .event-card-image img {
   display: block;
   width: 100%;
