@@ -13,7 +13,7 @@
   height: 220px;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 120px;
+  padding: 120px 0 30px;
 }
 .new-title-frame {
   display: flex;
