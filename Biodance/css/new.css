@@ -10,7 +10,6 @@
 .new-intro {
   display: flex;
   width: 100%;
-  height: 220px;
   align-items: flex-start;
   justify-content: center;
   padding: 120px 0 60px;
@@ -21,6 +20,7 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
+  padding: 60px;
 }
 .new-title-frame p {
   margin: 0;
@@ -44,6 +44,7 @@
   align-items: center;
   gap: 50px;
   padding: 50px;
+  margin-bottom: 60px;
 }
 
 .new-product-frame {
@@ -256,7 +257,7 @@
   .new-product-copy p { font-size: clamp(17px, 3.2vw, 25px); }
 }
 @media (max-width: 700px) {
-  .new-intro { height: 220px; padding: 120px 16px 0; }
+  .new-intro { padding: 120px 16px 60px; }
   .new-title-frame h1 { font-size: clamp(30px, 8vw, 36px); }
   .new-product-frame { width: calc(100% - 32px); margin-bottom: 0; }
   .new-product-image { height: 105vw; max-height: 560px; }
