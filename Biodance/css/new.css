@@ -251,7 +251,12 @@
   .new-title-frame h1 { font-size: clamp(30px, 8vw, 36px); }
   .new-product-frame { width: calc(100% - 32px); margin-bottom: 72px; }
   .new-product-image { height: 105vw; max-height: 560px; }
-  .new-product-description { min-height: 340px; padding: 32px 24px; }
+  .new-product-description {
+    width: max-content;
+    min-width: 100%;
+    min-height: 340px;
+    padding: 106px 36px;
+  }
   .new-product-copy { gap: 28px; }
   .new-product-rating { margin-top: -14px; }
   .new-product-reviews,
