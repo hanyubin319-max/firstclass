@@ -1,5 +1,6 @@
 /* Shared badge styles: 모든 페이지와 화면 크기에서 Corner Radius 6px 통일 */
 .best-product-image .product-label,
+.category-product-image.best-product-image .product-label,
 .product-labels span {
   border-radius: 6px !important;
 }
