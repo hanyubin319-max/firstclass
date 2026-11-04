@@ -34,7 +34,11 @@
         </label>
       </div>
       <div class="event-list" id="event-list"></div>
-      <p class="event-empty" id="event-empty">진행 중인 이벤트가 없습니다.</p>
+      <nav class="product-pagination" id="event-pagination" aria-label="이벤트 페이지 이동">
+        <button type="button" class="pagination-arrow" data-page="prev" aria-label="이전 페이지"></button>
+        <button type="button" class="pagination-number is-active" data-page="1" aria-current="page">1</button>
+        <button type="button" class="pagination-arrow" data-page="next" aria-label="다음 페이지"></button>
+      </nav>
     </section>
   </main>
   <footer class="biodance-footer" aria-label="바이오던스 푸터">
