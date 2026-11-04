@@ -6,14 +6,10 @@
   font-family: var(--font-primary);
 }
 .category-page * { box-sizing: border-box; }
-.breadcrumb {
-  display: flex; align-items: center; gap: 10px;
-  width: min(92%, 1684px); margin: 0 auto; padding: 28px 0 18px;
-  color: var(--neutral-gray); font-size: 12px; letter-spacing: .04em;
-}
-.breadcrumb a { color: inherit; text-decoration: none; }
+
+
 .category-intro { text-align: center; padding: 120px 20px 30px; }
-.category-eyebrow { margin: 0 0 12px; color: var(--brand-rose); font-size: 12px; font-weight: 600; letter-spacing: .16em; }
+
 .category-intro h1 { margin: 0; color: var(--neutral-charcoal); font-size: clamp(34px, 4vw, 40px); line-height: 1.15; font-weight: 600; }
 .category-intro > p:last-child { margin: 16px 0 0; color: var(--neutral-gray); font-size: 15px; line-height: 1.6; }
 .product-catalog { width: min(92%, 1684px); margin: 0 auto 120px; }
@@ -57,10 +53,10 @@
 .category-product-image span { font-size: 12px; font-weight: 600; letter-spacing: .12em; }
 .category-product-image small { margin-top: 7px; font-size: 11px; }
 .category-product-info { padding-top: 16px; }
-.product-labels { display: flex; gap: 5px; min-height: 16px; margin: 0 0 8px; }
-.product-labels span { padding: 3px 7px; background: var(--brand-pink); color: var(--neutral-charcoal); font-size: 10px; line-height: 1; }
+
+
 .category-product-info h2 { margin: 0; color: var(--neutral-charcoal); font-size: 15px; line-height: 1.5; font-weight: 500; }
-.product-description { margin: 5px 0 10px; color: var(--neutral-gray); font-size: 12px; line-height: 1.5; }
+
 .category-product-price { margin: 0; color: var(--neutral-charcoal); font-size: 14px; font-weight: 600; }
 .empty-products { padding: 70px 0; text-align: center; color: var(--neutral-gray); }
 @media (max-width: 1024px) {
@@ -71,7 +67,7 @@
   .category-tab { font-size: 20px; }
 }
 @media (max-width: 700px) {
-  .breadcrumb { padding: 20px 0 10px; }
+
   .category-intro { padding: 120px 16px 30px; }
   .category-intro > p:last-child { font-size: 13px; }
   .product-catalog { width: calc(100% - 32px); margin-bottom: 72px; }
@@ -81,7 +77,7 @@
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 54px 10px; }
   .category-product-info { padding-top: 12px; }
   .category-product-info h2 { font-size: 13px; }
-  .product-description { font-size: 11px; }
+
   .category-product-price { font-size: 12px; }
   .category-product-image span { font-size: 10px; }
 }
@@ -168,7 +164,7 @@
   text-decoration: none;
   word-break: keep-all;
 }
-.product-description { display: none; }
+
 .category-product-price {
   display: flex;
   flex-wrap: wrap;
