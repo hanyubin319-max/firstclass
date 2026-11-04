@@ -4867,3 +4867,26 @@ body {
         display: block;
     }
 }
+
+/* Mobile brand video: vertical 9:16 frame, scaling with the available width */
+@media (max-width: 600px) {
+    .brand-video-section .brand-video.mo {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 16px;
+    }
+
+    .brand-video-section .brand-video.pc {
+        display: none;
+    }
+
+    .brand-video-content {
+        width: 100%;
+        gap: 11px;
+    }
+}
