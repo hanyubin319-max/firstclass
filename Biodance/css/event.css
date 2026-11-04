@@ -143,12 +143,7 @@
   background: var(--teal-mint);
   color: var(--neutral-white);
 }
-.event-empty {
-  margin: 0;
-  padding: 70px 0;
-  color: var(--neutral-gray);
-  text-align: center;
-}
+
 .event-list {
   display: grid;
   width: 100%;
