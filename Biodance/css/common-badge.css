@@ -1,9 +1,7 @@
-/* Shared badge styles: 모든 페이지에서 동일한 배지 공통값 사용 */
-@media (max-width: 600px) {
-  .best-product-image .product-label,
-  .product-labels span {
-    border-radius: 6px !important;
-  }
+/* Shared badge styles: 모든 페이지와 화면 크기에서 Corner Radius 6px 통일 */
+.best-product-image .product-label,
+.product-labels span {
+  border-radius: 6px !important;
 }
 
 /* Shared pagination: 모든 서브 페이지에서 동일한 크기와 간격 사용 */
