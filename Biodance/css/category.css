@@ -654,17 +654,3 @@
 .category-product-image.best-product-image:has(.label-best):has(.label-only):has(.label-new) .label-woni-pick { right: calc(170px) !important; }
 }
 
-
-/* Lock mobile badge widths to the offsets used below, including 601–700px screens. */
-@media (max-width: 700px) {
-  .category-product-image.best-product-image .product-label {
-    width: 50px;
-    min-width: 50px;
-    box-sizing: border-box;
-  }
-
-  .category-product-image.best-product-image .label-woni-pick {
-    width: 70px;
-    min-width: 70px;
-  }
-}
