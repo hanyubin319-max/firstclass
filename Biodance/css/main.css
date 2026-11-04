@@ -4909,68 +4909,63 @@ body {
     }
 }
 
-/* Main page product badges: right-to-left order BEST, ONLY, NEW, WONI PICK */
-.best-product-image .label-woni-pick { right: 9px !important; }
-.best-product-image .label-new { right: 9px !important; }
-.best-product-image .label-only { right: 9px !important; }
-.best-product-image .label-best { right: 9px !important; }
+/* Main page badges: 14px from image edge, 6px between badges */
+.best-product-image .label-woni-pick { right: 14px !important; }
+.best-product-image .label-new { right: 14px !important; }
+.best-product-image .label-only { right: 14px !important; }
+.best-product-image .label-best { right: 14px !important; }
 
-/* NEW sits 14px left of WONI PICK */
+/* Position each existing badge 6px after the badge to its right */
 .best-product-image:has(.label-woni-pick) .label-new {
-    right: 93px !important;
+    right: 90px !important; /* 14 + 70 + 6 */
 }
-
-/* ONLY sits 14px left of the rightmost badge group */
 .best-product-image:has(.label-woni-pick):has(.label-new) .label-only {
-    right: 157px !important;
+    right: 146px !important; /* 90 + 50 + 6 */
 }
 .best-product-image:has(.label-woni-pick):not(:has(.label-new)) .label-only {
-    right: 93px !important;
+    right: 90px !important;
 }
 .best-product-image:has(.label-new):not(:has(.label-woni-pick)) .label-only {
-    right: 73px !important;
+    right: 70px !important; /* 14 + 50 + 6 */
 }
-
-/* BEST is placed left of every badge that exists to its right */
 .best-product-image:has(.label-woni-pick):has(.label-new):has(.label-only) .label-best {
-    right: 221px !important;
+    right: 202px !important; /* 146 + 50 + 6 */
 }
 .best-product-image:has(.label-woni-pick):has(.label-new):not(:has(.label-only)) .label-best,
 .best-product-image:has(.label-woni-pick):has(.label-only):not(:has(.label-new)) .label-best {
-    right: 157px !important;
+    right: 146px !important;
 }
 .best-product-image:has(.label-woni-pick):not(:has(.label-new)):not(:has(.label-only)) .label-best,
 .best-product-image:has(.label-new):not(:has(.label-woni-pick)):not(:has(.label-only)) .label-best,
 .best-product-image:has(.label-only):not(:has(.label-woni-pick)):not(:has(.label-new)) .label-best {
-    right: 73px !important;
+    right: 70px !important;
 }
 
 @media (max-width: 600px) {
-    .best-product-image .label-woni-pick { right: 6px !important; }
-    .best-product-image .label-new { right: 6px !important; }
-    .best-product-image .label-only { right: 6px !important; }
-    .best-product-image .label-best { right: 6px !important; }
+    .best-product-image .label-woni-pick { right: 14px !important; }
+    .best-product-image .label-new { right: 14px !important; }
+    .best-product-image .label-only { right: 14px !important; }
+    .best-product-image .label-best { right: 14px !important; }
 
     .best-product-image:has(.label-woni-pick) .label-new {
-        right: calc(6px + clamp(48px, 16vw, 64px) + 14px) !important;
+        right: calc(14px + clamp(48px, 16vw, 64px) + 6px) !important;
     }
-
     .best-product-image:has(.label-woni-pick):has(.label-new) .label-only {
-        right: calc(6px + clamp(48px, 16vw, 64px) + 50px + 28px) !important;
+        right: calc(14px + clamp(48px, 16vw, 64px) + 50px + 12px) !important;
     }
     .best-product-image:has(.label-woni-pick):not(:has(.label-new)) .label-only {
-        right: calc(6px + clamp(48px, 16vw, 64px) + 14px) !important;
+        right: calc(14px + clamp(48px, 16vw, 64px) + 6px) !important;
     }
     .best-product-image:has(.label-new):not(:has(.label-woni-pick)) .label-only {
         right: 70px !important;
     }
 
     .best-product-image:has(.label-woni-pick):has(.label-new):has(.label-only) .label-best {
-        right: calc(6px + clamp(48px, 16vw, 64px) + 50px + 50px + 42px) !important;
+        right: calc(14px + clamp(48px, 16vw, 64px) + 50px + 50px + 18px) !important;
     }
     .best-product-image:has(.label-woni-pick):has(.label-new):not(:has(.label-only)) .label-best,
     .best-product-image:has(.label-woni-pick):has(.label-only):not(:has(.label-new)) .label-best {
-        right: calc(6px + clamp(48px, 16vw, 64px) + 50px + 28px) !important;
+        right: calc(14px + clamp(48px, 16vw, 64px) + 50px + 12px) !important;
     }
     .best-product-image:has(.label-woni-pick):not(:has(.label-new)):not(:has(.label-only)) .label-best,
     .best-product-image:has(.label-new):not(:has(.label-woni-pick)):not(:has(.label-only)) .label-best,
