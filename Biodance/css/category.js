@@ -152,12 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function matchesCategory(card) {
     if (card.dataset.topCategory !== activeTitle) return false;
     if (activeTitle === '단품/세트') {
-      const matchesProductType = setFilter.value === 'all' || card.dataset.productType === setFilter.value;
-      return matchesProductType && (!activeSubcategory || card.dataset.subcategory === activeSubcategory);
+      return setFilter.value === 'all' || card.dataset.productType === setFilter.value;
     }
-    if (activeTitle === '유형별' && activeSubcategory) return card.dataset.subcategory === activeSubcategory;
-    if (activeTitle === '고민별' && activeSubcategory) return (card.dataset.concerns || '').split('|').includes(activeSubcategory);
-    if (activeTitle === '피부타입별' && activeSubcategory) return (card.dataset.skinTypes || '').split('|').includes(activeSubcategory);
     return true;
   }
 
