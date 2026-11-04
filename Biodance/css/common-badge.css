@@ -1,7 +1,7 @@
 /* Shared badge styles: 모든 페이지와 화면 크기에서 Corner Radius 6px 통일 */
 .best-product-image .product-label,
 .product-labels span {
-  border-radius: 6px !important;
+  border-radius: 4px !important;
 }
 
 /* Shared pagination: 모든 서브 페이지에서 동일한 크기와 간격 사용 */
@@ -20,7 +20,7 @@
   height: 34px;
   padding: 0 8px;
   border: 1px solid var(--neutral-border-gray);
-  border-radius: 9999px;
+  border-radius: 4px;
   background: var(--neutral-white);
   color: var(--neutral-charcoal);
   font: inherit;
@@ -98,7 +98,7 @@
 @media (max-width: 700px) {
   .best-product-image .product-label,
   .product-labels span {
-    border-radius: 5px !important;
+    border-radius: 4px !important;
   }
 }
 
