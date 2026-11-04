@@ -49,11 +49,14 @@
 
 .new-product-frame {
   display: grid;
-  width: min(1476px, calc(100% - 32px));
+  width: min(1480px, calc(100% - 32px));
   grid-template-columns: 857px 623px;
   align-items: stretch;
   height: fit-content;
   margin: 0;
+}
+.new-product-frame:nth-child(even) {
+  grid-template-columns: 623px 857px;
 }
 .new-product-frame:nth-child(even) .new-product-image {
   grid-column: 2;
