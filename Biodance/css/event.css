@@ -153,13 +153,11 @@
   display: grid;
   width: 1477px;
   max-width: 100%;
-  min-height: 1668px;
   grid-template-columns: repeat(3, 450px);
   justify-content: space-between;
   align-content: start;
   column-gap: 20px;
   row-gap: 40px;
-  min-height: 1708px;
   margin: 0 auto;
 }
 .event-card {
@@ -231,7 +229,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin: 72px 0 0;
+  margin: 50px 0 0;
 }
 .event-page .product-pagination button {
   display: flex;
