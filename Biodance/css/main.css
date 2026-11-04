@@ -2169,7 +2169,7 @@ body {
         margin-bottom: 48px;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .best-section {
         padding: 0 16px 36px;
     }
@@ -2325,7 +2325,7 @@ body {
 .best-product-image:has(.label-best):has(.label-woni-pick) .label-best {
     right: 85px;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .best-product-image .product-label {
         top: 6px;
         height: 22px;
@@ -4782,7 +4782,7 @@ body {
 }
 
 /* Mobile product badges: use the same compact size across the main page and product cards */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .best-product-image .product-label {
         top: 9px;
         height: 18px;
@@ -4814,7 +4814,7 @@ body {
 .best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-woni-pick { right: 9px; }
 .best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-only { right: 93px; }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .best-product-image:has(.label-best):has(.label-woni-pick) .label-woni-pick { right: 6px; }
     .best-product-image:has(.label-best):has(.label-woni-pick) .label-best {
         right: calc(6px + 56px + 14px);
@@ -4875,7 +4875,7 @@ body {
 }
 
 /* Final mobile badge rules: one source of truth */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .best-product-image .product-label {
         border-radius: 6px !important;
     }
