@@ -9,6 +9,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const setFilter = document.querySelector('#set-filter');
   const pagination = document.querySelector('#product-pagination');
   const topTabs = [...document.querySelectorAll('.category-tab')];
+
+  // Allow desktop users to scroll the overflowing category row by dragging with the mouse.
+  const categoryTabs = document.querySelector('.category-tabs');
+  if (categoryTabs) {
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let dragged = false;
+
+    categoryTabs.addEventListener('mousedown', event => {
+      if (event.button !== 0 || categoryTabs.scrollWidth <= categoryTabs.clientWidth) return;
+      isDragging = true;
+      dragged = false;
+      startX = event.pageX;
+      startScrollLeft = categoryTabs.scrollLeft;
+      categoryTabs.classList.add('is-dragging');
+    });
+
+    window.addEventListener('mousemove', event => {
+      if (!isDragging) return;
+      const distance = event.pageX - startX;
+      if (Math.abs(distance) > 3) dragged = true;
+      categoryTabs.scrollLeft = startScrollLeft - distance;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      categoryTabs.classList.remove('is-dragging');
+    });
+
+    categoryTabs.addEventListener('click', event => {
+      if (!dragged) return;
+      event.preventDefault();
+      event.stopPropagation();
+      dragged = false;
+    }, true);
+  }
   const subTabs = [...document.querySelectorAll('.category-subtab')];
   const typeSubcategories = document.querySelector('#type-subcategories');
   const concernSubcategories = document.querySelector('#concern-subcategories');
