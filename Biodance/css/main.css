@@ -4899,3 +4899,16 @@ body {
         max-height: calc(100svh - 90px) !important;
     }
 }
+
+/* Mobile badge corner radius and responsive Woni Pick width */
+@media (max-width: 600px) {
+    .product-label,
+    .best-product-image .product-label {
+        border-radius: 6px;
+    }
+
+    .best-product-image .label-woni-pick {
+        width: clamp(56px, 18vw, 70px);
+        min-width: clamp(56px, 18vw, 70px);
+    }
+}
