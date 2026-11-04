@@ -4904,21 +4904,21 @@ body {
 .best-product-image:has(.label-best):has(.label-only):has(.label-new) .label-woni-pick { right: 182px !important; }
 @media (max-width: 600px) {
 
-/* Unified badge order: BEST > ONLY > NEW > WONI PICK; 14px edge / 6px gap */
+/* Unified badge order: BEST > ONLY > NEW > WONI PICK; 14px edge / 2px gap */
 .best-product-image .label-best { right: 14px !important; }
 .best-product-image:not(:has(.label-best)) .label-only { right: 14px !important; }
-.best-product-image:has(.label-best) .label-only { right: calc(70px) !important; }
+.best-product-image:has(.label-best) .label-only { right: calc(66px) !important; }
 .best-product-image:not(:has(.label-best)):not(:has(.label-only)) .label-new { right: 14px !important; }
-.best-product-image:has(.label-best):not(:has(.label-only)) .label-new { right: calc(70px) !important; }
-.best-product-image:has(.label-only):not(:has(.label-best)) .label-new { right: calc(70px) !important; }
-.best-product-image:has(.label-best):has(.label-only) .label-new { right: calc(126px) !important; }
+.best-product-image:has(.label-best):not(:has(.label-only)) .label-new { right: calc(66px) !important; }
+.best-product-image:has(.label-only):not(:has(.label-best)) .label-new { right: calc(66px) !important; }
+.best-product-image:has(.label-best):has(.label-only) .label-new { right: calc(118px) !important; }
 .best-product-image:not(:has(.label-best)):not(:has(.label-only)):not(:has(.label-new)) .label-woni-pick { right: 14px !important; }
-.best-product-image:has(.label-best):not(:has(.label-only)):not(:has(.label-new)) .label-woni-pick { right: calc(70px) !important; }
-.best-product-image:has(.label-only):not(:has(.label-best)):not(:has(.label-new)) .label-woni-pick { right: calc(70px) !important; }
-.best-product-image:has(.label-best):has(.label-only):not(:has(.label-new)) .label-woni-pick { right: calc(126px) !important; }
-.best-product-image:has(.label-new):not(:has(.label-best)):not(:has(.label-only)) .label-woni-pick { right: calc(70px) !important; }
-.best-product-image:has(.label-best):has(.label-new):not(:has(.label-only)) .label-woni-pick { right: calc(126px) !important; }
-.best-product-image:has(.label-only):has(.label-new):not(:has(.label-best)) .label-woni-pick { right: calc(126px) !important; }
-.best-product-image:has(.label-best):has(.label-only):has(.label-new) .label-woni-pick { right: calc(182px) !important; }
+.best-product-image:has(.label-best):not(:has(.label-only)):not(:has(.label-new)) .label-woni-pick { right: calc(66px) !important; }
+.best-product-image:has(.label-only):not(:has(.label-best)):not(:has(.label-new)) .label-woni-pick { right: calc(66px) !important; }
+.best-product-image:has(.label-best):has(.label-only):not(:has(.label-new)) .label-woni-pick { right: calc(118px) !important; }
+.best-product-image:has(.label-new):not(:has(.label-best)):not(:has(.label-only)) .label-woni-pick { right: calc(66px) !important; }
+.best-product-image:has(.label-best):has(.label-new):not(:has(.label-only)) .label-woni-pick { right: calc(118px) !important; }
+.best-product-image:has(.label-only):has(.label-new):not(:has(.label-best)) .label-woni-pick { right: calc(118px) !important; }
+.best-product-image:has(.label-best):has(.label-only):has(.label-new) .label-woni-pick { right: calc(170px) !important; }
 
 }
