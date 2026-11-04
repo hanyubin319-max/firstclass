@@ -257,7 +257,10 @@
     min-height: 340px;
     padding: 106px 36px;
   }
-  .new-product-copy { gap: 28px; }
+  .new-product-copy {
+    width: max-content;
+    gap: 28px;
+  }
   .new-product-rating { margin-top: -14px; }
   .new-product-reviews,
   .new-review-divider { width: 100%; }
