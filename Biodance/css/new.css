@@ -241,6 +241,8 @@
   .new-product-description {
     height: auto;
     min-height: 420px;
+    align-items: center;
+    justify-content: center;
     padding: 40px 32px;
   }
   .new-product-copy {
