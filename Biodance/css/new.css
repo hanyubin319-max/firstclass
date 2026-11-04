@@ -205,8 +205,10 @@
 .new-product-thumbnails {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
+  padding: 50px;
   margin-top: 18px;
 }
 .new-product-thumbnail {
