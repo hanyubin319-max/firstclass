@@ -120,9 +120,9 @@
 }
 .new-rating-arrow {
   display: block;
-  width: 24px;
-  height: 24px;
-  flex: 0 0 24px;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
   margin-left: 4px;
 }
 
