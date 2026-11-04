@@ -89,20 +89,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const visible = events.filter(event => filter.value === 'all' || event.status === filter.value);
     count.textContent = String(visible.length);
     list.replaceChildren();
-    visible.forEach(event => {
+    const placeholderTitles = [
+      '바이오던스 혜택',
+      '신상품 무료 체험단',
+      '선물 주기 이벤트',
+      '공식몰 단독 특별 혜택',
+      '바이오던스 리뷰 이벤트',
+      '봄맞이 스페셜 이벤트',
+      '신제품 출시 기념',
+      '회원 전용 할인 혜택',
+      '바이오던스와 함께하는 이벤트'
+    ];
+    const cards = visible.length ? visible : (filter.value === 'all' ? placeholderTitles.map(title => ({ title })) : []);
+    cards.forEach(event => {
       const item = document.createElement('article');
       item.className = 'event-card';
-      item.textContent = event.title;
+      const imageArea = document.createElement('div');
+      imageArea.className = 'event-card-image';
+      imageArea.setAttribute('aria-label', '이벤트 이미지 삽입 영역');
+      const imageLabel = document.createElement('span');
+      imageLabel.textContent = 'IMAGE';
+      const imageHelp = document.createElement('small');
+      imageHelp.textContent = '이미지 삽입 영역';
+      imageArea.append(imageLabel, imageHelp);
+      const title = document.createElement('p');
+      title.className = 'event-card-title';
+      title.textContent = event.title;
+      item.append(imageArea, title);
       list.appendChild(item);
     });
-    if (visible.length === 0 && filter.value === 'all') {
-      for (let i = 0; i < 9; i++) {
-        const item = document.createElement('div');
-        item.className = 'event-card';
-        item.setAttribute('aria-hidden', 'true');
-        list.appendChild(item);
-      }
-    }
     empty.hidden = visible.length > 0;
     empty.textContent = filter.value === 'ended' ? '종료된 이벤트가 없습니다.' : '진행 중인 이벤트가 없습니다.';
   }
