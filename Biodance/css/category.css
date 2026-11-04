@@ -660,3 +660,16 @@
     transform: none;
   }
 }
+
+/* Mobile: unify all product badge corner radii */
+@media (max-width: 600px) {
+  .product-labels span,
+  .category-product-image.best-product-image .product-label {
+    border-radius: 6px;
+  }
+
+  .category-product-image.best-product-image .label-woni-pick {
+    width: clamp(56px, 18vw, 70px);
+    min-width: clamp(56px, 18vw, 70px);
+  }
+}
