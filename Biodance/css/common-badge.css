@@ -1,0 +1,7 @@
+/* Shared badge styles: 모든 페이지에서 동일한 배지 공통값 사용 */
+@media (max-width: 600px) {
+  .best-product-image .product-label,
+  .product-labels span {
+    border-radius: 6px !important;
+  }
+}
