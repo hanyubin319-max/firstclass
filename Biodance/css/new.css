@@ -125,6 +125,40 @@
   flex: 0 0 18px;
   margin-left: 4px;
 }
+.new-product-price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0;
+  white-space: nowrap;
+}
+.new-discount-rate {
+  display: flex;
+  width: 85px;
+  height: 40px;
+  flex: 0 0 85px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--neutral-charcoal);
+  color: var(--neutral-white);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: normal;
+}
+.new-current-price {
+  color: var(--neutral-charcoal);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: normal;
+}
+.new-original-price {
+  color: var(--neutral-gray);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: line-through;
+}
 
 @media (max-width: 1512px) {
   .new-product-frame {
