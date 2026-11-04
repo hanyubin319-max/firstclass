@@ -77,7 +77,7 @@
   width: 623px;
   height: 900px;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 64px 48px;
   border-radius: 60px;
   background: var(--neutral-cream);
@@ -252,7 +252,6 @@
   .new-product-frame { width: calc(100% - 32px); margin-bottom: 72px; }
   .new-product-image { height: 105vw; max-height: 560px; }
   .new-product-description {
-    justify-content: center;
     width: max-content;
     min-width: 100%;
     min-height: 340px;
