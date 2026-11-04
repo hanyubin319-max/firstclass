@@ -89,7 +89,7 @@
   gap: 14px;
   padding: 7px 10px;
   border: 1px solid var(--neutral-border-gray);
-  border-radius: 0;
+  border-radius: 9999px;
   background: var(--neutral-white);
   color: var(--neutral-charcoal);
   font: inherit;
