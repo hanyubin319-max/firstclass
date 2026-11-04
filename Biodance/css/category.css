@@ -661,16 +661,16 @@
   }
 }
 
-/* Mobile: unify all product badge corner radii and size Woni Pick responsively */
+/* Final mobile badge rules: one source of truth */
 @media (max-width: 600px) {
   .product-labels span,
   .category-product-image.best-product-image .product-label {
-    border-radius: 6px;
+    border-radius: 6px !important;
   }
 
   .category-product-image.best-product-image .label-woni-pick {
-    width: clamp(48px, 16vw, 64px);
-    min-width: clamp(48px, 16vw, 64px);
+    width: clamp(48px, 16vw, 64px) !important;
+    min-width: clamp(48px, 16vw, 64px) !important;
     flex: 0 1 clamp(48px, 16vw, 64px);
     box-sizing: border-box;
     white-space: nowrap;
