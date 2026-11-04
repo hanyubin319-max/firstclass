@@ -639,8 +639,8 @@
     container-type: inline-size;
     --badge-edge: clamp(6px, 3cqi, 14px);
     --badge-gap: clamp(4px, 1cqi, 8px);
-    --badge-standard-width: clamp(40px, 16cqi, 52px);
-    --badge-woni-width: clamp(64px, 22cqi, 80px);
+    --badge-standard-width: clamp(32px, 12cqi, 50px);
+    --badge-woni-width: clamp(44px, 16cqi, 70px);
     --badge-step: calc(var(--badge-standard-width) + var(--badge-gap));
   }
 
@@ -648,11 +648,6 @@
     width: var(--badge-standard-width) !important;
     min-width: 0 !important;
     box-sizing: border-box;
-    padding: 0 clamp(3px, 1cqi, 5px) !important;
-    font-size: clamp(9px, 3cqi, 12px) !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
-    overflow: visible !important;
   }
 
   .category-product-image.best-product-image .label-woni-pick {
@@ -660,10 +655,6 @@
     min-width: 0 !important;
     padding-left: 2cqi !important;
     padding-right: 2cqi !important;
-    font-size: clamp(8px, 2.8cqi, 11px) !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
-    overflow: visible !important;
     box-sizing: border-box;
   }
 
