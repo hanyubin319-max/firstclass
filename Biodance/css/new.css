@@ -48,6 +48,12 @@
   background: var(--neutral-product-gray);
   color: var(--neutral-gray);
 }
+.new-product-image-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .new-product-image span {
   font-size: 13px;
   font-weight: 600;
