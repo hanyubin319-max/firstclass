@@ -661,18 +661,37 @@
   }
 }
 
-/* Final mobile badge rules: one source of truth */
+/* WONI PICK badge: align to the right and keep a 14px gap from a second badge */
+.category-product-image.best-product-image .label-woni-pick {
+  top: 9px;
+  right: 9px;
+  width: 70px;
+  min-width: 70px;
+  background: var(--brand-rose);
+}
+.category-product-image.best-product-image:has(.label-woni-pick):has(.label-best) .label-best,
+.category-product-image.best-product-image:has(.label-woni-pick):has(.label-only) .label-only {
+  right: 93px;
+}
+
 @media (max-width: 600px) {
   .product-labels span,
   .category-product-image.best-product-image .product-label {
-    border-radius: 6px !important;
+    border-radius: 5px !important;
   }
 
   .category-product-image.best-product-image .label-woni-pick {
+    top: 9px;
+    right: 9px;
     width: clamp(48px, 16vw, 64px) !important;
     min-width: clamp(48px, 16vw, 64px) !important;
     flex: 0 1 clamp(48px, 16vw, 64px);
     box-sizing: border-box;
     white-space: nowrap;
+  }
+
+  .category-product-image.best-product-image:has(.label-woni-pick):has(.label-best) .label-best,
+  .category-product-image.best-product-image:has(.label-woni-pick):has(.label-only) .label-only {
+    right: calc(9px + clamp(48px, 16vw, 64px) + 14px);
   }
 }
