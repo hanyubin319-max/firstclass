@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const filter = document.querySelector('#event-filter');
   const count = document.querySelector('#event-count');
   const list = document.querySelector('#event-list');
-  const empty = document.querySelector('#event-empty');
-  if (!filter || !count || !list || !empty) return;
+  if (!filter || !count || !list) return;
 
   // 상품 서브페이지와 동일한 커스텀 드롭다운 UI
   function enhanceSelect(select) {
@@ -126,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     next.setAttribute('aria-label', '다음 페이지');
     next.disabled = currentPage === totalPages;
     pagination.appendChild(next);
-    pagination.hidden = filtered.length === 0;
+    pagination.hidden = false;
   }
 
   function renderEvents() {
