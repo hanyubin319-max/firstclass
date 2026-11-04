@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     next.setAttribute('aria-label', '다음 페이지');
     next.disabled = currentPage === totalPages;
     pagination.appendChild(next);
-    pagination.hidden = totalPages <= 1;
+    pagination.hidden = filtered.length === 0;
   }
 
   function renderEvents() {
