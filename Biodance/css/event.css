@@ -154,7 +154,7 @@
   width: 100%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-content: start;
-  column-gap: 20px;
+  column-gap: 30px;
   row-gap: 40px;
   margin: 0 auto;
 }
