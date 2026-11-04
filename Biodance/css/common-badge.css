@@ -5,3 +5,93 @@
     border-radius: 6px !important;
   }
 }
+
+/* Shared pagination: 모든 서브 페이지에서 동일한 크기와 간격 사용 */
+.product-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 72px 0 0;
+}
+.product-pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid var(--neutral-border-gray);
+  border-radius: 9999px;
+  background: var(--neutral-white);
+  color: var(--neutral-charcoal);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.product-pagination .pagination-number {
+  border-color: var(--neutral-gray);
+  background: var(--neutral-white);
+  color: var(--neutral-gray);
+}
+.product-pagination .pagination-number:not(.is-active):hover {
+  border-color: var(--neutral-charcoal);
+  background: var(--neutral-white);
+  color: var(--neutral-charcoal);
+}
+.product-pagination .is-active {
+  border-color: var(--neutral-charcoal);
+  background: var(--neutral-charcoal);
+  color: var(--neutral-white);
+}
+.product-pagination button:disabled {
+  color: var(--neutral-gray);
+  opacity: .45;
+  cursor: default;
+}
+.product-pagination .pagination-arrow {
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  padding: 0;
+}
+.product-pagination .pagination-arrow::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.product-pagination .pagination-arrow[data-page="prev"]::before {
+  background-image: url("../img/chevron-left.svg?v=2");
+}
+.product-pagination .pagination-arrow[data-page="next"]::before {
+  background-image: url("../img/chevron-right.svg?v=2");
+}
+.product-pagination .pagination-arrow:hover {
+  border-color: var(--neutral-gray);
+  background: var(--neutral-gray);
+}
+.product-pagination .pagination-arrow:hover::before {
+  filter: brightness(0) invert(1);
+}
+.product-pagination[hidden] { display: none; }
+@media (max-width: 700px) {
+  .product-pagination { margin-top: 48px; }
+}
+
+/* WONI PICK badge uses content-sized flex layout with 7px horizontal padding */
+.best-product-image .label-woni-pick {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: auto !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  padding-left: 7px !important;
+  padding-right: 7px !important;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
