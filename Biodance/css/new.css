@@ -243,8 +243,28 @@
     min-height: 420px;
     padding: 40px 32px;
   }
+  .new-product-copy {
+    width: 100%;
+    align-items: center;
+  }
+  .new-product-copy h2,
+  .new-product-copy p {
+    text-align: center;
+  }
   .new-product-copy h2 { font-size: clamp(28px, 5vw, 40px); }
   .new-product-copy p { font-size: clamp(17px, 3.2vw, 25px); }
+  .new-product-rating,
+  .new-product-price {
+    justify-content: center;
+  }
+  .new-product-detail-group,
+  .new-product-reviews {
+    width: 100%;
+    align-items: center;
+  }
+  .new-product-reviews p {
+    text-align: center;
+  }
 }
 @media (max-width: 700px) {
   .new-intro { height: 220px; padding: 120px 16px 0; }
