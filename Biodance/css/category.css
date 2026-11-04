@@ -259,7 +259,7 @@
 .custom-select-menu {
   position: absolute; z-index: 30; top: calc(100% + 2px); left: 0; right: 0;
   display: none; max-height: 240px; overflow-y: auto; padding: 0;
-  border: 1px solid var(--neutral-border-gray); border-radius: 4px; background: var(--neutral-white);
+  border: 1px solid var(--neutral-border-gray); border-radius: 6px; background: var(--neutral-white);
   box-shadow: 0 4px 12px rgba(0,0,0,.10);
 }
 .custom-select.is-open .custom-select-menu { display: block; }
