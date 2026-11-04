@@ -2155,24 +2155,7 @@ body {
     font-size: 14px;
     font-weight: 400;
 }
-.best-more {
-    display: flex;
-    width: 144px;
-    height: 48px;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    margin: 76px auto 0;
-    padding: 0 7px;
-    border-bottom: 2px solid #222;
-    color: #111;
-    font-size: 12px;
-    text-decoration: none;
-}
-.best-more span {
-    font-size: 20px;
-    line-height: 1;
-}
+
 @media (max-width: 1024px) {
     .best-section {
         padding-right: 24px;
@@ -2241,9 +2224,6 @@ body {
         font-size: 11px;
     }
     .quantity-one { right: 52px; }
-    .best-more {
-        margin-top: 48px;
-    }
 }
 
 
