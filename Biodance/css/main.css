@@ -4850,3 +4850,20 @@ body {
     .best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-woni-pick { right: 62px; }
     .best-product-image:has(.label-best):has(.label-woni-pick):not(:has(.label-only)) .label-woni-pick { right: 62px; }
 }
+
+
+/* Show only the matching brand video for each screen size */
+.brand-video-section .brand-video.pc {
+    display: block;
+}
+.brand-video-section .brand-video.mo {
+    display: none;
+}
+@media (max-width: 600px) {
+    .brand-video-section .brand-video.pc {
+        display: none;
+    }
+    .brand-video-section .brand-video.mo {
+        display: block;
+    }
+}
