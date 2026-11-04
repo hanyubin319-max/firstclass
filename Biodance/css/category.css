@@ -590,7 +590,7 @@
 @media (max-width: 600px) {
   .product-labels span,
   .category-product-image.best-product-image .product-label {
-    border-radius: 5px !important;
+    border-radius: 6px !important;
   }
 
   .category-product-image.best-product-image .label-woni-pick {
