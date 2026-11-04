@@ -75,8 +75,9 @@
 .new-product-description {
   display: flex;
   width: 623px;
-  height: 900px;
-  align-items: flex-start;
+  height: fit-content;
+  align-self: start;
+  align-items: center;
   justify-content: center;
   padding: 64px 48px;
   border-radius: 60px;
@@ -254,8 +255,9 @@
   .new-product-description {
     width: max-content;
     min-width: 100%;
-    min-height: 340px;
-    padding: 106px 36px;
+    height: fit-content;
+    min-height: 0;
+    padding: 40px 36px;
   }
   .new-product-copy {
     width: max-content;
