@@ -84,13 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 임시 이벤트 9개를 진행중/종료로 임의 분류
   const events = [
-    { title: '바이오던스 공식몰 단독 혜택', status: 'ongoing' },
-    { title: '신제품 출시 기념 이벤트', status: 'ongoing' },
-    { title: '리뷰 작성 감사 이벤트', status: 'ongoing' },
-    { title: '첫 구매 고객 특별 혜택', status: 'ongoing' },
-    { title: '바이오던스 베스트 상품 이벤트', status: 'ongoing' },
-    { title: '멤버십 회원 전용 이벤트', status: 'ongoing' },
-    { title: '수분 케어 특별 프로모션', status: 'ongoing' },
+    { title: '바이오던스 공식몰 단독 혜택', status: 'ongoing', image: '../img/Event-1.jpg' },
+    { title: '신제품 출시 기념 이벤트', status: 'ongoing', image: '../img/Event-2.jpg' },
+    { title: '리뷰 작성 감사 이벤트', status: 'ongoing', image: '../img/Event-3.jpg' },
+    { title: '첫 구매 고객 특별 혜택', status: 'ongoing', image: '../img/Event-4.jpg' },
+    { title: '바이오던스 베스트 상품 이벤트', status: 'ongoing', image: '../img/Event-5.jpg' },
+    { title: '멤버십 회원 전용 이벤트', status: 'ongoing', image: '../img/Event-6.jpg' },
+    { title: '수분 케어 특별 프로모션', status: 'ongoing', image: '../img/Event-7.png' },
     { title: '공식몰 신규 가입 이벤트', status: 'ended' },
     { title: '바이오던스 스페셜 기프트', status: 'ended' },
     { title: '시즌 한정 특별 이벤트', status: 'ended' },
@@ -150,12 +150,19 @@ document.addEventListener('DOMContentLoaded', () => {
       item.className = 'event-card';
       const imageArea = document.createElement('div');
       imageArea.className = 'event-card-image';
-      imageArea.setAttribute('aria-label', '이벤트 이미지 삽입 영역');
-      const imageLabel = document.createElement('span');
-      imageLabel.textContent = 'IMAGE';
-      const imageHelp = document.createElement('small');
-      imageHelp.textContent = '이미지 삽입 영역';
-      imageArea.append(imageLabel, imageHelp);
+      imageArea.setAttribute('aria-label', '이벤트 이미지');
+      if (event.image) {
+        const image = document.createElement('img');
+        image.src = event.image;
+        image.alt = event.title;
+        imageArea.appendChild(image);
+      } else {
+        const imageLabel = document.createElement('span');
+        imageLabel.textContent = 'IMAGE';
+        const imageHelp = document.createElement('small');
+        imageHelp.textContent = '이미지 삽입 영역';
+        imageArea.append(imageLabel, imageHelp);
+      }
       const title = document.createElement('p');
       title.className = 'event-card-title';
       title.textContent = event.title;
