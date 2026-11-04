@@ -4828,21 +4828,21 @@ body {
 }
 
 
-/* Badge priority from right to left: BEST, ONLY, WONI PICK */
-.best-product-image:has(.label-best) .label-best { right: 9px; }
-.best-product-image:has(.label-best):has(.label-only) .label-only { right: 65px; }
+/* Badge alignment: WONI PICK on the right, other badges 14px to its left */
 .best-product-image:has(.label-best):has(.label-woni-pick) .label-woni-pick { right: 9px; }
-.best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-only { right: 9px; }
-.best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-woni-pick { right: 65px; }
-.best-product-image:has(.label-best):has(.label-woni-pick):not(:has(.label-only)) .label-woni-pick { right: 65px; }
+.best-product-image:has(.label-best):has(.label-woni-pick) .label-best { right: 93px; }
+.best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-woni-pick { right: 9px; }
+.best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-only { right: 93px; }
 
 @media (max-width: 600px) {
-    .best-product-image:has(.label-best) .label-best { right: 6px; }
-    .best-product-image:has(.label-best):has(.label-only) .label-only { right: 62px; }
     .best-product-image:has(.label-best):has(.label-woni-pick) .label-woni-pick { right: 6px; }
-    .best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-only { right: 6px; }
-    .best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-woni-pick { right: 62px; }
-    .best-product-image:has(.label-best):has(.label-woni-pick):not(:has(.label-only)) .label-woni-pick { right: 62px; }
+    .best-product-image:has(.label-best):has(.label-woni-pick) .label-best {
+        right: calc(6px + clamp(48px, 16vw, 64px) + 14px);
+    }
+    .best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-woni-pick { right: 6px; }
+    .best-product-image:has(.label-only):has(.label-woni-pick):not(:has(.label-best)) .label-only {
+        right: calc(6px + clamp(48px, 16vw, 64px) + 14px);
+    }
 }
 
 
