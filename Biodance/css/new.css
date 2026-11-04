@@ -155,6 +155,7 @@
   line-height: normal;
 }
 .new-rating-count {
+  color: var(--neutral-gray);
   margin-left: 8px;
   font-size: 20px;
   font-weight: 500;
