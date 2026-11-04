@@ -83,25 +83,62 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   enhanceSelect(filter);
 
-  // 이벤트 데이터를 추가할 때 status를 ongoing 또는 ended로 지정합니다.
-  const events = [];
+  // 임시 이벤트 9개를 진행중/종료로 임의 분류
+  const events = [
+    { title: '바이오던스 혜택', status: 'ongoing' },
+    { title: '신상품 무료 체험단', status: 'ongoing' },
+    { title: '선물 주기 이벤트', status: 'ended' },
+    { title: '공식몰 단독 특별 혜택', status: 'ongoing' },
+    { title: '바이오던스 리뷰 이벤트', status: 'ended' },
+    { title: '봄맞이 스페셜 이벤트', status: 'ongoing' },
+    { title: '신제품 출시 기념', status: 'ended' },
+    { title: '회원 전용 할인 혜택', status: 'ongoing' },
+    { title: '바이오던스와 함께하는 이벤트', status: 'ended' }
+  ];
+  const pagination = document.querySelector('#event-pagination');
+  const pageSize = 6;
+  let currentPage = 1;
+
+  function renderPagination(totalPages) {
+    pagination.replaceChildren();
+    const previous = document.createElement('button');
+    previous.type = 'button';
+    previous.className = 'pagination-arrow';
+    previous.dataset.page = 'prev';
+    previous.setAttribute('aria-label', '이전 페이지');
+    previous.disabled = currentPage === 1;
+    pagination.appendChild(previous);
+
+    for (let page = 1; page <= totalPages; page++) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'pagination-number' + (page === currentPage ? ' is-active' : '');
+      button.dataset.page = String(page);
+      button.textContent = String(page);
+      if (page === currentPage) button.setAttribute('aria-current', 'page');
+      pagination.appendChild(button);
+    }
+
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'pagination-arrow';
+    next.dataset.page = 'next';
+    next.setAttribute('aria-label', '다음 페이지');
+    next.disabled = currentPage === totalPages;
+    pagination.appendChild(next);
+    pagination.hidden = totalPages <= 1;
+  }
+
   function renderEvents() {
-    const visible = events.filter(event => filter.value === 'all' || event.status === filter.value);
-    count.textContent = String(visible.length);
+    const filtered = events.filter(event => filter.value === 'all' || event.status === filter.value);
+    const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+    currentPage = Math.min(currentPage, totalPages);
+    const start = (currentPage - 1) * pageSize;
+    const visible = filtered.slice(start, start + pageSize);
+    count.textContent = String(filtered.length);
     list.replaceChildren();
-    const placeholderTitles = [
-      '바이오던스 혜택',
-      '신상품 무료 체험단',
-      '선물 주기 이벤트',
-      '공식몰 단독 특별 혜택',
-      '바이오던스 리뷰 이벤트',
-      '봄맞이 스페셜 이벤트',
-      '신제품 출시 기념',
-      '회원 전용 할인 혜택',
-      '바이오던스와 함께하는 이벤트'
-    ];
-    const cards = visible.length ? visible : (filter.value === 'all' ? placeholderTitles.map(title => ({ title })) : []);
-    cards.forEach(event => {
+
+    visible.forEach(event => {
       const item = document.createElement('article');
       item.className = 'event-card';
       const imageArea = document.createElement('div');
@@ -118,9 +155,22 @@ document.addEventListener('DOMContentLoaded', () => {
       item.append(imageArea, title);
       list.appendChild(item);
     });
-    empty.hidden = visible.length > 0;
-    empty.textContent = filter.value === 'ended' ? '종료된 이벤트가 없습니다.' : '진행 중인 이벤트가 없습니다.';
+    renderPagination(totalPages);
   }
-  filter.addEventListener('change', renderEvents);
+
+  filter.addEventListener('change', () => {
+    currentPage = 1;
+    renderEvents();
+  });
+  pagination.addEventListener('click', event => {
+    const button = event.target.closest('button[data-page]');
+    if (!button || button.disabled) return;
+    const totalPages = Math.max(1, Math.ceil(events.filter(item => filter.value === 'all' || item.status === filter.value).length / pageSize));
+    if (button.dataset.page === 'prev') currentPage--;
+    else if (button.dataset.page === 'next') currentPage++;
+    else currentPage = Number(button.dataset.page);
+    currentPage = Math.max(1, Math.min(currentPage, totalPages));
+    renderEvents();
+  });
   renderEvents();
 });
