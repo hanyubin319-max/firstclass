@@ -568,13 +568,27 @@
   }
   .category-product-info h2 {
     min-height: 0;
-    font-size: 18px;
+    font-size: clamp(12px, 3.5vw, 14px);
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.35;
   }
   .category-product-price {
     gap: 0 5px;
     margin: 8px 0 4px;
+    font-size: clamp(13px, 3.7vw, 15px);
+  }
+  .category-product-price .discount {
+    font-size: clamp(12px, 3.4vw, 14px);
+  }
+  .category-product-price strong {
+    font-size: clamp(13px, 3.7vw, 15px);
+  }
+  .category-product-price del {
+    font-size: clamp(10px, 2.8vw, 11px);
+  }
+  .category-product-rating,
+  .category-product-rating span {
+    font-size: clamp(10px, 2.9vw, 11px);
   }
   .product-list-heading {
     width: 100%;
