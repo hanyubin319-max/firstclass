@@ -301,7 +301,7 @@
   right: 9px;
   background: var(--brand-rose);
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .category-product-image.best-product-image .product-label {
     top: 6px;
     width: 50px;
@@ -398,7 +398,7 @@
     width: calc(100% - 32px);
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .product-grid {
     row-gap: 50px;
     column-gap: 12px;
@@ -598,7 +598,7 @@
   right: 93px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .product-labels span,
   .category-product-image.best-product-image .product-label {
     border-radius: 6px !important;
