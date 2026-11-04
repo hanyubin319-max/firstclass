@@ -4915,27 +4915,29 @@ body {
 .best-product-image .label-only { right: 14px !important; }
 .best-product-image .label-best { right: 14px !important; }
 
-/* Position each existing badge 6px after the badge to its right */
+/* Place existing badges from right to left with a 6px gap */
 .best-product-image:has(.label-woni-pick) .label-new {
-    right: 90px !important; /* 14 + 70 + 6 */
+    right: 90px !important;
 }
 .best-product-image:has(.label-woni-pick):has(.label-new) .label-only {
-    right: 146px !important; /* 90 + 50 + 6 */
+    right: 146px !important;
 }
 .best-product-image:has(.label-woni-pick):not(:has(.label-new)) .label-only {
     right: 90px !important;
 }
 .best-product-image:has(.label-new):not(:has(.label-woni-pick)) .label-only {
-    right: 70px !important; /* 14 + 50 + 6 */
+    right: 70px !important;
 }
 .best-product-image:has(.label-woni-pick):has(.label-new):has(.label-only) .label-best {
-    right: 202px !important; /* 146 + 50 + 6 */
+    right: 202px !important;
 }
 .best-product-image:has(.label-woni-pick):has(.label-new):not(:has(.label-only)) .label-best,
 .best-product-image:has(.label-woni-pick):has(.label-only):not(:has(.label-new)) .label-best {
     right: 146px !important;
 }
-.best-product-image:has(.label-woni-pick):not(:has(.label-new)):not(:has(.label-only)) .label-best,
+.best-product-image:has(.label-woni-pick):not(:has(.label-new)):not(:has(.label-only)) .label-best {
+    right: 90px !important;
+}
 .best-product-image:has(.label-new):not(:has(.label-woni-pick)):not(:has(.label-only)) .label-best,
 .best-product-image:has(.label-only):not(:has(.label-woni-pick)):not(:has(.label-new)) .label-best {
     right: 70px !important;
@@ -4967,7 +4969,9 @@ body {
     .best-product-image:has(.label-woni-pick):has(.label-only):not(:has(.label-new)) .label-best {
         right: calc(14px + clamp(48px, 16vw, 64px) + 50px + 12px) !important;
     }
-    .best-product-image:has(.label-woni-pick):not(:has(.label-new)):not(:has(.label-only)) .label-best,
+    .best-product-image:has(.label-woni-pick):not(:has(.label-new)):not(:has(.label-only)) .label-best {
+        right: calc(14px + clamp(48px, 16vw, 64px) + 6px) !important;
+    }
     .best-product-image:has(.label-new):not(:has(.label-woni-pick)):not(:has(.label-only)) .label-best,
     .best-product-image:has(.label-only):not(:has(.label-woni-pick)):not(:has(.label-new)) .label-best {
         right: 70px !important;
