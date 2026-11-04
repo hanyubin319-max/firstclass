@@ -695,3 +695,8 @@
   .category-product-image.best-product-image:has(.label-only):has(.label-new):not(:has(.label-best)) .label-woni-pick { right: calc(var(--badge-edge) + 2 * var(--badge-step)) !important; }
   .category-product-image.best-product-image:has(.label-best):has(.label-only):has(.label-new) .label-woni-pick { right: calc(var(--badge-edge) + 3 * var(--badge-step)) !important; }
 }
+
+
+/* Center category tabs when they fit; align to the start when horizontal scrolling is needed */
+.category-tabs { justify-content: center; }
+.category-tabs.has-overflow { justify-content: flex-start; }
