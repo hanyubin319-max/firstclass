@@ -415,12 +415,10 @@
     margin: 12px 0 3px;
   }
   .category-product-image.best-product-image .product-label {
-    top: 9px;
-    min-width: 43px;
-    height: 18px;
-    padding: 0 5px;
-    border-radius: 2px;
-    font-size: 10px;
+    top: 6px;
+    height: 22px;
+    font-size: 14px;
+    font-weight: 500;
   }
   .category-product-image.best-product-image .label-best,
   .category-product-image.best-product-image .label-best-second,
