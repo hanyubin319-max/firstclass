@@ -84,15 +84,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 임시 이벤트 9개를 진행중/종료로 임의 분류
   const events = [
-    { title: '바이오던스 혜택', status: 'ongoing' },
-    { title: '신상품 무료 체험단', status: 'ongoing' },
-    { title: '선물 주기 이벤트', status: 'ended' },
-    { title: '공식몰 단독 특별 혜택', status: 'ongoing' },
-    { title: '바이오던스 리뷰 이벤트', status: 'ended' },
-    { title: '봄맞이 스페셜 이벤트', status: 'ongoing' },
-    { title: '신제품 출시 기념', status: 'ended' },
-    { title: '회원 전용 할인 혜택', status: 'ongoing' },
-    { title: '바이오던스와 함께하는 이벤트', status: 'ended' }
+    { title: '바이오던스 공식몰 단독 혜택', status: 'ongoing' },
+    { title: '신제품 출시 기념 이벤트', status: 'ongoing' },
+    { title: '리뷰 작성 감사 이벤트', status: 'ongoing' },
+    { title: '첫 구매 고객 특별 혜택', status: 'ongoing' },
+    { title: '바이오던스 베스트 상품 이벤트', status: 'ongoing' },
+    { title: '멤버십 회원 전용 이벤트', status: 'ongoing' },
+    { title: '수분 케어 특별 프로모션', status: 'ongoing' },
+    { title: '공식몰 신규 가입 이벤트', status: 'ongoing' },
+    { title: '바이오던스 스페셜 기프트', status: 'ongoing' },
+    { title: '시즌 한정 특별 이벤트', status: 'ended' },
+    { title: '친구 추천 감사 이벤트', status: 'ended' },
+    { title: '베스트 리뷰어 선정 이벤트', status: 'ended' },
+    { title: '봄맞이 스킨케어 프로모션', status: 'ended' },
+    { title: '브랜드 론칭 기념 이벤트', status: 'ended' },
+    { title: '멤버십 웰컴 혜택', status: 'ended' },
+    { title: '구매 고객 사은품 이벤트', status: 'ended' },
+    { title: '바이오던스 럭키 드로우', status: 'ended' }
   ];
   const pagination = document.querySelector('#event-pagination');
   const pageSize = 9;
