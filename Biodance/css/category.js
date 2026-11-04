@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderProducts() {
-    const visibleCards = sortCards(cards.filter(matchesCategory));
+    const visibleCards = sortCards(cards.filter(matchesCategory)).slice(0, activeSubcategory ? 5 : undefined);
     cards.forEach(card => { card.hidden = !visibleCards.includes(card); });
     visibleCards.forEach(card => grid.appendChild(card));
     count.textContent = String(visibleCards.length);
