@@ -13,6 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Allow desktop users to scroll the overflowing category row by dragging with the mouse.
   const categoryTabs = document.querySelector('.category-tabs');
   if (categoryTabs) {
+    const updateCategoryTabAlignment = () => {
+      categoryTabs.classList.toggle('has-overflow', categoryTabs.scrollWidth > categoryTabs.clientWidth + 1);
+    };
+    updateCategoryTabAlignment();
+    window.addEventListener('resize', updateCategoryTabAlignment);
+    if ('ResizeObserver' in window) {
+      const categoryTabsObserver = new ResizeObserver(updateCategoryTabAlignment);
+      categoryTabsObserver.observe(categoryTabs);
+      [...categoryTabs.children].forEach(tab => categoryTabsObserver.observe(tab));
+    }
+
     let isDragging = false;
     let startX = 0;
     let startScrollLeft = 0;
