@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: '바이오던스와 함께하는 이벤트', status: 'ended' }
   ];
   const pagination = document.querySelector('#event-pagination');
-  const pageSize = 6;
+  const pageSize = 9;
   let currentPage = 1;
 
   function renderPagination(totalPages) {
