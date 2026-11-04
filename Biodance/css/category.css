@@ -14,8 +14,22 @@
 .category-intro > p:last-child { margin: 16px 0 0; color: var(--neutral-gray); font-size: 15px; line-height: 1.6; }
 .product-catalog { width: min(92%, 1684px); margin: 0 auto 120px; }
 .category-tabs-wrap { border-bottom: 1px solid var(--neutral-border-gray); }
-.category-tabs { display: flex; align-items: center; justify-content: center; gap: 0; }
+.category-tabs {
+  display: flex;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 0;
+  scrollbar-width: none;
+}
+.category-tabs::-webkit-scrollbar { display: none; }
 .category-tabs { cursor: grab; }
+.category-tab { flex: 0 0 auto; }
 .category-tabs.is-dragging { cursor: grabbing; user-select: none; }
 .category-tabs.is-dragging .category-tab { user-select: none; }
 .category-tab {
