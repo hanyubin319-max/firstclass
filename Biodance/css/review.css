@@ -313,16 +313,6 @@
   font-size: 14px;
   font-weight: 500;
 }
-.review-searchbar input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  appearance: none;
-  display: none;
-}
-.review-searchbar input::-ms-clear {
-  display: none;
-  width: 0;
-  height: 0;
-}
 .review-searchbar input::placeholder {
   color: var(--neutral-gray);
   opacity: 1;
@@ -451,6 +441,7 @@
     margin-right: 4px;
   }
   .review-sort-divider {
+    height: 11px;
     margin-right: 4px;
   }
   .review-sort-label,
