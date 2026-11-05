@@ -316,7 +316,7 @@
     width: 100%;
     max-width: none;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-start;
     gap: 12px;
   }
@@ -330,6 +330,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+  }
+
+  .new-product-info-right {
+    justify-content: space-between;
   }
 
   .new-product-info-left h2 {
@@ -398,10 +402,11 @@
 
   .new-product-thumbnails {
     display: flex;
-    width: 100%;
-    justify-content: flex-start;
+    width: fit-content;
+    align-self: center;
+    justify-content: center;
     gap: clamp(4px, 1.2vw, 6px);
-    margin-top: clamp(2px, .8vw, 4px);
+    margin-top: auto;
   }
   .new-product-thumbnail {
     width: clamp(40px, 11.2vw, 56px);
