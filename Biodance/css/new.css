@@ -271,7 +271,7 @@
   font-size: 12px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .new-intro { padding: clamp(40px, 12vw, 60px) 16px 20px; }
   .new-title-frame { padding: clamp(24px, 7vw, 32px) 16px; }
   .new-title-frame h1 { font-size: clamp(30px, 8vw, 36px); }
