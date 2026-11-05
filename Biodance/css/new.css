@@ -286,6 +286,7 @@
     width: min(500px, 100%);
     max-width: 100%;
     height: auto;
+    flex-direction: column;
     margin-bottom: 0;
   }
 
