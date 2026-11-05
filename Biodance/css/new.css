@@ -299,7 +299,7 @@
   .new-title-frame h1 { font-size: clamp(30px, 8vw, 36px); }
   .new-product-list { padding-right: 16px; padding-left: 16px; }
   .new-product-frame {
-    width: min(360px, calc(100vw - 32px));
+    width: min(340px, calc(100vw - 32px));
     margin-bottom: 0;
   }
   .new-product-image {
