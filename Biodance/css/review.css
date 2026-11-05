@@ -55,7 +55,7 @@
 
 .review-content {
   width: min(1260px, calc(100% - 40px));
-  margin: 0 auto 120px;
+  margin: 66px auto 120px;
 }
 
 /* 1260 × 193 pink guide frame */
@@ -78,7 +78,7 @@
   align-items: center;
   justify-content: center;
   gap: 2px;
-  background: var(--neutral-white);
+  background: transparent;
 }
 .review-icon-frame {
   display: flex;
@@ -110,6 +110,7 @@
   width: 100%;
   height: 42px;
   align-items: center;
+  justify-content: center;
   margin-top: 50px;
 }
 .review-count-frame p {
