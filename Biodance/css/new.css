@@ -312,21 +312,22 @@
   }
 
   .new-product-copy {
-    display: grid;
+    display: flex;
     width: 100%;
-    max-width: 100%;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    max-width: 420px;
+    flex-direction: row;
     align-items: stretch;
-    column-gap: clamp(0px, 3.33vw, 30px);
-    margin-inline: auto;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto;
   }
 
   .new-product-info-left,
   .new-product-info-right {
     display: flex;
-    width: 100%;
+    width: auto;
     min-width: 0;
-    min-height: 100%;
+    flex: 1 1 0;
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
