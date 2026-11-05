@@ -248,7 +248,16 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-right: 50px;
+  margin-right: 24px;
+}
+.review-sort-divider {
+  display: block;
+  width: 2px;
+  height: 14px;
+  flex: 0 0 2px;
+  margin-right: 24px;
+  border-radius: 9999px;
+  background: var(--neutral-border-gray);
 }
 .review-sort-label,
 .review-direct-search span {
@@ -429,7 +438,10 @@
   }
   .review-sort-group {
     gap: 12px;
-    margin-right: 10px;
+    margin-right: 4px;
+  }
+  .review-sort-divider {
+    margin-right: 4px;
   }
   .review-sort-label,
   .review-direct-search span {
