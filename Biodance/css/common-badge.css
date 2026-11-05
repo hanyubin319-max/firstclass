@@ -1,6 +1,5 @@
 /* Shared badge styles: 모든 페이지와 화면 크기에서 Corner Radius 6px 통일 */
-.best-product-image .product-label,
-.product-labels span {
+.best-product-image .product-label {
   border-radius: 4px !important;
 }
 
@@ -96,8 +95,7 @@
 
 /* Mobile badges: shared corner radius */
 @media (max-width: 700px) {
-  .best-product-image .product-label,
-  .product-labels span {
+  .best-product-image .product-label {
     border-radius: 4px !important;
   }
 }
