@@ -116,6 +116,10 @@
   border-radius: 0 60px 60px 0;
   background: var(--neutral-cream);
 }
+.new-product-info-left,
+.new-product-info-right {
+  display: contents;
+}
 .new-product-copy {
   display: flex;
   width: fit-content;
