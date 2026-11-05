@@ -2,6 +2,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const filter = document.querySelector('#review-filter');
   const reviewList = document.querySelector('#review-list');
   const reviewCount = document.querySelector('#review-count');
+  const searchOpenButton = document.querySelector('#review-search-open');
+  const searchBar = document.querySelector('#review-searchbar');
+  const searchInput = document.querySelector('#review-search-input');
+  const searchCloseButton = document.querySelector('#review-search-close');
+
+  function openReviewSearch() {
+    if (!searchBar || !searchOpenButton || !searchInput) return;
+    searchBar.hidden = false;
+    searchOpenButton.hidden = true;
+    searchInput.focus();
+  }
+
+  function closeReviewSearch() {
+    if (!searchBar || !searchOpenButton || !searchInput) return;
+    searchInput.value = '';
+    searchBar.hidden = true;
+    searchOpenButton.hidden = false;
+    searchOpenButton.focus();
+  }
+
+  searchOpenButton?.addEventListener('click', openReviewSearch);
+  searchCloseButton?.addEventListener('click', closeReviewSearch);
+  searchInput?.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeReviewSearch();
+  });
+
 
   // Event 페이지의 커스텀 드롭다운 동작을 Review 전용으로 복제
   function enhanceSelect(select) {
