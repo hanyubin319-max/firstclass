@@ -90,12 +90,6 @@
   background: var(--neutral-product-gray);
   color: var(--neutral-gray);
 }
-.new-product-image-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 .new-product-image span {
   font-size: 13px;
   font-weight: 600;
@@ -187,13 +181,6 @@
   height: 18px;
   flex: 0 0 18px;
   margin-left: 4px;
-}
-.new-product-detail-group {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
 }
 .new-product-price {
   display: flex;
