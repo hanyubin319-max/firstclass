@@ -186,6 +186,7 @@
 }
 .new-product-detail-group {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 14px;
