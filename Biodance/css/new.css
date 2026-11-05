@@ -324,9 +324,9 @@
   .new-product-info-left,
   .new-product-info-right {
     display: flex;
-    width: calc((100% - clamp(12px, 6vw, 30px)) / 2);
+    width: calc((100% - 12px) / 2);
     min-width: 0;
-    flex: 0 1 calc((100% - clamp(12px, 6vw, 30px)) / 2);
+    flex: 0 1 calc((100% - 12px) / 2);
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
@@ -379,11 +379,10 @@
 
   .new-product-reviews {
     display: flex;
-    width: 100%;
+    width: fit-content;
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
-    width: fit-content;
     max-width: 100%;
     margin-top: 0;
   }
