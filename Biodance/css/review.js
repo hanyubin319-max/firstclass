@@ -20,15 +20,30 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.className = 'custom-select-menu';
     menu.setAttribute('role', 'listbox');
 
-    const options = [...select.options].map(option => {
+    const ratingOptions = [...select.options].filter(option => option.value !== '');
+    const options = ratingOptions.map(option => {
+      const rating = Number(option.value);
       const item = document.createElement('button');
       item.type = 'button';
       item.className = 'custom-select-option';
-      item.textContent = option.textContent;
       item.dataset.value = option.value;
       item.setAttribute('role', 'option');
-      item.setAttribute('aria-selected', String(option.selected));
+      item.setAttribute('aria-label', `별점 ${rating}점`);
+      item.setAttribute('aria-selected', 'false');
       item.tabIndex = -1;
+
+      for (let starIndex = 1; starIndex <= 5; starIndex++) {
+        const star = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        star.setAttribute('viewBox', '0 0 24 24');
+        star.setAttribute('aria-hidden', 'true');
+        star.classList.add('review-rating-star', starIndex <= rating ? 'is-filled' : 'is-empty');
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', 'M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9L12 2.5z');
+        path.setAttribute('fill', 'currentColor');
+        star.appendChild(path);
+        item.appendChild(star);
+      }
 
       item.addEventListener('click', () => {
         select.value = option.value;
@@ -42,8 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function syncOptions() {
-      const selected = select.selectedOptions[0];
-      trigger.textContent = selected ? selected.textContent : '';
+      trigger.textContent = '별점';
       options.forEach(item => {
         item.setAttribute('aria-selected', String(item.dataset.value === select.value));
       });
