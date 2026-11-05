@@ -31,24 +31,28 @@
             <img src="../img/review-1.svg" alt="">
           </div>
           <p>텍스트리뷰</p>
+          <p class="review-point-reward">500원 적립</p>
         </div>
         <div class="review-point-card">
           <div class="review-icon-frame">
             <img src="../img/review-2.svg" alt="">
           </div>
           <p>포토+텍스트 리뷰</p>
+          <p class="review-point-reward">1,500원 적립</p>
         </div>
         <div class="review-point-card">
           <div class="review-icon-frame">
             <img src="../img/review-3.svg" alt="">
           </div>
           <p>동영상+텍스트 리뷰</p>
+          <p class="review-point-reward">2,500원 적립</p>
         </div>
         <div class="review-point-card">
           <div class="review-icon-frame">
             <img src="../img/review-4.svg" alt="">
           </div>
           <p>동영상+포토+텍스트리뷰</p>
+          <p class="review-point-reward">3,500원 적립</p>
         </div>
       </div>
 
@@ -58,10 +62,13 @@
 
       <div class="review-toolbar" aria-label="리뷰 필터 및 정렬">
         <label class="review-filter-control" aria-label="리뷰 필터">
-          <select id="review-filter">
-            <option value="all" selected>전체</option>
-            <option value="ongoing">진행중</option>
-            <option value="ended">종료</option>
+          <select id="review-filter" aria-label="별점 필터">
+            <option value="" selected disabled>별점</option>
+            <option value="5">별점 5점</option>
+            <option value="4">별점 4점</option>
+            <option value="3">별점 3점</option>
+            <option value="2">별점 2점</option>
+            <option value="1">별점 1점</option>
           </select>
         </label>
 
