@@ -360,9 +360,6 @@
 }
 
 @media (max-width: 480px) {
-  .review-guide-frame {
-    grid-template-columns: 1fr;
-  }
   .review-point-card {
     width: 100%;
     flex-basis: 100%;
