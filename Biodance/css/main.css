@@ -5086,3 +5086,17 @@ body {
         display: none !important;
     }
 }
+
+/* Mobile header logo: fixed 110px width with proportional height */
+@media (max-width: 700px) {
+    .site-header .brand-logo {
+        flex: 0 0 110px;
+        width: 110px;
+    }
+
+    .site-header .brand-logo img {
+        width: 110px;
+        max-width: 110px;
+        height: auto;
+    }
+}
