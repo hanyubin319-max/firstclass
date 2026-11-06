@@ -58,7 +58,7 @@
   margin: 66px auto 120px;
 }
 
-/* 1260 × 193 pink guide frame */
+/* 1260 × 193 white guide frame */
 .review-guide-frame {
   display: flex;
   width: 100%;
@@ -68,7 +68,7 @@
   gap: 0;
   overflow: hidden;
   border-radius: 24px;
-  background: var(--brand-pink);
+  background: var(--neutral-white);
 }
 
 /* Four 285 × 124 point cards */
@@ -590,7 +590,7 @@
   justify-content: center;
   padding: 0;
   box-sizing: border-box;
-  background: var(--brand-pink);
+  background: var(--neutral-white);
 }
 .review-post-inner {
   display: flex;
@@ -1201,4 +1201,10 @@
 .product-pagination.review-pagination .pagination-number.is-active {
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+
+/* Text-only review: set the gap between More and detail categories to 40px */
+.review-post:not(:has(.review-post-media-grid)) .review-post-keywords {
+  margin-top: 40px;
 }
