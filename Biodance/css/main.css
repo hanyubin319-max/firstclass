@@ -5208,9 +5208,20 @@ body {
 
 
 
-/* Use the original line between 01 and 03 as the autoplay progress bar. */
+/* The existing line stays white; its black inner fill advances with autoplay. */
 .hero-sec .hero-controls .hero-pagination-line {
-    transform: scaleX(0);
+    position: relative;
+    overflow: hidden;
+    background: #fff !important;
+    transform: none;
+    will-change: auto;
+}
+.hero-sec .hero-controls .hero-pagination-line::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000;
+    transform: scaleX(var(--hero-progress, 0));
     transform-origin: left center;
     will-change: transform;
 }
