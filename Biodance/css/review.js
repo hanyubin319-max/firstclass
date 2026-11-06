@@ -159,6 +159,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.review-post').forEach(renderReviewPostMetadata);
 
+  // 게시물당 작성자가 선택한 세부 카테고리는 최대 5개까지만 표시
+  function enforceReviewKeywordLimit(root = document) {
+    root.querySelectorAll('.review-post-keywords').forEach(group => {
+      const limit = Number(group.dataset.maxSelections) || 5;
+      const keywords = [...group.querySelectorAll('.review-post-keyword')];
+      keywords.forEach((keyword, index) => {
+        keyword.hidden = index >= limit;
+      });
+    });
+  }
+
+  enforceReviewKeywordLimit(reviewList || document);
+
   function updateReviewMoreButtons(root = document) {
     root.querySelectorAll('.review-post-text-frame').forEach(frame => {
       const text = frame.querySelector('.review-post-body-text');
@@ -404,6 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new MutationObserver(() => {
       updateReviewCount();
       applyReviewControls();
+      enforceReviewKeywordLimit(reviewList);
     });
     observer.observe(reviewList, { childList: true, subtree: true });
   }
