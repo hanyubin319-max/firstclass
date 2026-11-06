@@ -4018,7 +4018,7 @@ body {
     .instagram-image-stack {
         width: calc(33% - 20px);
         height: auto;
-        flex: 0 0 calc(33% - 4px);
+        flex: 0 0 calc(33% - 20px);
         justify-content: flex-start;
         gap: 4px;
     }
