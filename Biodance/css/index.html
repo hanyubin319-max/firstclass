@@ -50,9 +50,6 @@
                     </div>
                     <div class="hero-controls">
                         <div class="swiper-pagination"></div>
-                        <div class="hero-autoplay-progress" role="progressbar" aria-label="다음 배너까지 진행 상태" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                            <span class="hero-autoplay-progress-fill"></span>
-                        </div>
                         <div class="hero-navigation">
                             <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
                             <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
@@ -363,8 +360,6 @@
             window.setInterval(rotateModelPick, 6000);
         }
 
-        const heroProgressFill = document.querySelector('.hero-autoplay-progress-fill');
-
         const swiperHero = new Swiper('.hero-sec .visual', {
             direction: 'horizontal',
             loop: true,
@@ -379,7 +374,7 @@
                 formatFractionTotal: number => String(number).padStart(2, '0'),
                 renderFraction: (currentClass, totalClass) =>
                     '<span class="' + currentClass + '"></span>' +
-                    '<span class="hero-pagination-line" aria-hidden="true"></span>' +
+                    '<span class="hero-pagination-line" role="progressbar" aria-label="다음 배너까지 진행 상태" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></span>' +
                     '<span class="' + totalClass + '"></span>',
             },
             navigation: {
@@ -387,17 +382,18 @@
                 prevEl: '.visual .swiper-button-prev',
             },
             on: {
-                slideChangeTransitionStart() {
-                    if (heroProgressFill) {
-                        heroProgressFill.style.transform = 'scaleX(0)';
-                        heroProgressFill.parentElement?.setAttribute('aria-valuenow', '0');
-                    }
+                slideChangeTransitionStart(swiper) {
+                    const progressLine = swiper.el.querySelector('.hero-pagination-line');
+                    if (!progressLine) return;
+                    progressLine.style.transform = 'scaleX(0)';
+                    progressLine.setAttribute('aria-valuenow', '0');
                 },
                 autoplayTimeLeft(swiper, timeLeft, percentage) {
-                    if (!heroProgressFill) return;
+                    const progressLine = swiper.el.querySelector('.hero-pagination-line');
+                    if (!progressLine) return;
                     const progress = Math.min(1, Math.max(0, 1 - percentage));
-                    heroProgressFill.style.transform = `scaleX(${progress})`;
-                    heroProgressFill.parentElement?.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
+                    progressLine.style.transform = `scaleX(${progress})`;
+                    progressLine.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
                 },
             },
         });
