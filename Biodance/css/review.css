@@ -1208,3 +1208,39 @@
 .review-post:not(:has(.review-post-media-grid)) .review-post-keywords {
   margin-top: 40px;
 }
+
+
+/* Remove unused vertical space from review cards while keeping the first card's content inset */
+@media (min-width: 701px) {
+  .review-post {
+    height: auto;
+    min-height: 0;
+    padding: 61px 0;
+  }
+
+  .review-post-inner,
+  .review-post-inner.is-reply-open {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    padding: 22px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .review-post {
+    min-height: 0;
+  }
+
+  .review-post-inner,
+  .review-post-inner.is-reply-open {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    padding: 0;
+  }
+}
