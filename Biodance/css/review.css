@@ -1474,3 +1474,65 @@ body.is-review-policy-open {
     max-width: 100%;
   }
 }
+
+
+/* Policy screenshot bullet-list formatting */
+.review-policy-bullet-list {
+  margin: 0;
+  padding: 0 0 0 20px;
+  color: var(--neutral-charcoal);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+}
+.review-policy-bullet-list li {
+  margin: 0;
+  padding: 0;
+}
+.review-policy-section .review-policy-bullet-list {
+  margin-top: 0;
+}
+.review-policy-section p + .review-policy-bullet-list {
+  margin-top: 0;
+}
+.review-guideline-bullet-list {
+  margin-top: 0;
+}
+
+/* Keep the mouse cursor unchanged over every custom scrollbar part */
+.review-policy-scroll-arrow,
+.review-policy-scroll-arrow:disabled,
+.review-policy-scroll-track,
+.review-policy-scroll-thumb,
+.review-policy-scroll-thumb:active {
+  cursor: default !important;
+}
+
+/* Restore the full review-card size while keeping the reduced top alignment */
+@media (min-width: 701px) {
+  .review-page .review-list .review-post {
+    height: auto;
+    min-height: 795px;
+    padding: 61px 0 0;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .review-page .review-list .review-post .review-post-inner,
+  .review-page .review-list .review-post .review-post-inner.is-reply-open {
+    height: auto;
+    min-height: 673px;
+    max-height: none;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    padding: 22px 0 0;
+    box-sizing: border-box;
+  }
+
+  .review-page .review-list .review-post .review-post-inner.is-reply-open {
+    min-height: 795px;
+  }
+}
