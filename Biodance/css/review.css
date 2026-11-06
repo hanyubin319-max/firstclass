@@ -650,6 +650,7 @@
   padding: 3px 4px;
   border: 1px solid currentColor;
   border-radius: 4px;
+  background: var(--neutral-white);
   box-sizing: border-box;
   font-size: 12px;
   font-weight: 500;
