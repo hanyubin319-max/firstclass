@@ -165,6 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const button = frame.querySelector('.review-post-more');
       if (!text || !button) return;
 
+      // 미리보기와 전체 글이 분리된 리뷰는 더보기 버튼을 항상 표시
+      if (text.querySelector('.review-post-preview') && text.querySelector('.review-post-full')) {
+        button.hidden = false;
+        return;
+      }
+
       const measure = text.cloneNode(true);
       measure.style.position = 'absolute';
       measure.style.visibility = 'hidden';
@@ -194,6 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!frame) return;
 
     const expanded = frame.classList.toggle('is-expanded');
+    const preview = frame.querySelector('.review-post-preview');
+    const full = frame.querySelector('.review-post-full');
+    if (preview && full) {
+      preview.hidden = expanded;
+      full.hidden = !expanded;
+    }
     button.textContent = expanded ? '접기' : '더보기';
     button.setAttribute('aria-expanded', String(expanded));
   });
