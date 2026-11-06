@@ -1046,8 +1046,15 @@
   }
   .review-post-inner {
     width: min(1032px, calc(100% - 48px));
+    height: 673px;
+    flex: 0 0 673px;
     margin: 0 auto;
     justify-content: center;
+    transition: height 0.2s ease;
+  }
+  .review-post-inner.is-reply-open {
+    height: 795px;
+    flex-basis: 795px;
   }
   .review-post-categories {
     margin-left: 10px;
@@ -1068,8 +1075,14 @@
   }
   .review-post-inner {
     width: 100%;
+    height: auto;
     min-height: calc(795px - 36px);
+    flex: 1 1 auto;
     justify-content: center;
+  }
+  .review-post-inner.is-reply-open {
+    height: auto;
+    flex-basis: auto;
   }
   .review-post-categories {
     margin-left: 10px;
