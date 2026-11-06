@@ -1576,7 +1576,8 @@ body.is-review-policy-open {
 
 @media (max-width: 309px) {
   .review-page .review-guide-frame {
-    grid-template-columns: minmax(123px, 1fr);
+    grid-template-columns: minmax(123px, min(160px, 100%));
+    justify-content: center;
   }
 }
 
