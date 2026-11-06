@@ -157,23 +157,33 @@
             </div>
           </div>
 
-          <div class="review-post-keywords" aria-label="리뷰 세부 카테고리">
+          <div class="review-post-keywords" aria-label="리뷰 세부 카테고리" data-max-selections="5">
+            <!-- 레이아웃 예시 게시물에서 선택된 카테고리는 최대 5개 -->
             <span class="review-post-keyword">✨비싼 만큼 가치있어요</span>
             <span class="review-post-keyword">😎효과가 좋아요</span>
             <span class="review-post-keyword">💫광채나요</span>
             <span class="review-post-keyword">💧보습력이 좋아요</span>
             <span class="review-post-keyword">💯피부결이 정돈돼요</span>
-            <span class="review-post-keyword">🕊️피부 진정에 효과적이에요</span>
-            <span class="review-post-keyword">🌿안전한 성분을 사용했어요</span>
-            <span class="review-post-keyword">🚀배송이 빨라요</span>
-            <span class="review-post-keyword">🎀포장이 꼼꼼해요</span>
-            <span class="review-post-keyword">🎁선물하기 좋아요</span>
-            <span class="review-post-keyword">✔️발림성이 좋아요</span>
-            <span class="review-post-keyword">🪄데일리로 사용하기 좋아요</span>
-            <span class="review-post-keyword">🤍흡수력이 좋아요</span>
-            <span class="review-post-keyword">🌱피부가 순해요</span>
-            <span class="review-post-keyword">❤속건조를 잡아줘요</span>
           </div>
+
+          <!-- 작성자가 선택할 수 있는 15개 카테고리 원본 목록 (게시물당 최대 5개 선택) -->
+          <template id="review-keyword-options">
+            <span class="review-post-keyword-option">✨비싼 만큼 가치있어요</span>
+            <span class="review-post-keyword-option">😎효과가 좋아요</span>
+            <span class="review-post-keyword-option">💫광채나요</span>
+            <span class="review-post-keyword-option">💧보습력이 좋아요</span>
+            <span class="review-post-keyword-option">💯피부결이 정돈돼요</span>
+            <span class="review-post-keyword-option">🕊️피부 진정에 효과적이에요</span>
+            <span class="review-post-keyword-option">🌿안전한 성분을 사용했어요</span>
+            <span class="review-post-keyword-option">🚀배송이 빨라요</span>
+            <span class="review-post-keyword-option">🎀포장이 꼼꼼해요</span>
+            <span class="review-post-keyword-option">🎁선물하기 좋아요</span>
+            <span class="review-post-keyword-option">✔️발림성이 좋아요</span>
+            <span class="review-post-keyword-option">🪄데일리로 사용하기 좋아요</span>
+            <span class="review-post-keyword-option">🤍흡수력이 좋아요</span>
+            <span class="review-post-keyword-option">🌱피부가 순해요</span>
+            <span class="review-post-keyword-option">❤속건조를 잡아줘요</span>
+          </template>
         </article>
       </div>
     </section>
