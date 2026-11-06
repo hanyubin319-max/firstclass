@@ -1150,60 +1150,6 @@
   object-fit: contain;
 }
 
-/* Review pagination: reuse the pagination structure used on other Biodance pages */
-.product-pagination.review-pagination {
-  display: flex;
-  width: min(1260px, calc(100vw - 40px));
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 40px 0;
-}
-.product-pagination.review-pagination .pagination-arrow {
-  display: inline-flex;
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  cursor: pointer;
-}
-.product-pagination.review-pagination .pagination-arrow[data-page="prev"] {
-  background-image: url("../img/chevron-left.svg");
-}
-.product-pagination.review-pagination .pagination-arrow[data-page="next"] {
-  background-image: url("../img/chevron-right.svg");
-}
-.product-pagination.review-pagination .pagination-number {
-  display: inline-flex;
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--neutral-charcoal);
-  font: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.product-pagination.review-pagination .pagination-number.is-active {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-
 /* Text-only review: set the gap between More and detail categories to 40px */
 .review-post:not(:has(.review-post-media-grid)) .review-post-keywords {
   margin-top: 40px;
