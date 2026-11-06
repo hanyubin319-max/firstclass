@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.querySelector('#review-searchbar');
   const searchInput = document.querySelector('#review-search-input');
   const searchCloseButton = document.querySelector('#review-search-close');
+  const pagination = document.querySelector('#review-pagination');
 
+  const pageSize = 9;
+  let currentPage = 1;
+  let totalPages = 1;
   let sortValue = 'latest';
   let hasInteracted = false;
   let isResetting = false;
@@ -59,6 +63,40 @@ document.addEventListener('DOMContentLoaded', () => {
     return Number.isFinite(score) ? score : 0;
   }
 
+  // Event 페이지와 동일하게 9개씩 나누고 필터/정렬 결과를 페이지에 표시
+  function renderPagination(pageCount) {
+    if (!pagination) return;
+
+    pagination.replaceChildren();
+
+    const previous = document.createElement('button');
+    previous.type = 'button';
+    previous.className = 'pagination-arrow';
+    previous.dataset.page = 'prev';
+    previous.setAttribute('aria-label', '이전 페이지');
+    previous.disabled = currentPage === 1;
+    pagination.appendChild(previous);
+
+    for (let page = 1; page <= pageCount; page++) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'pagination-number' + (page === currentPage ? ' is-active' : '');
+      button.dataset.page = String(page);
+      button.textContent = String(page);
+      if (page === currentPage) button.setAttribute('aria-current', 'page');
+      pagination.appendChild(button);
+    }
+
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'pagination-arrow';
+    next.dataset.page = 'next';
+    next.setAttribute('aria-label', '다음 페이지');
+    next.disabled = currentPage === pageCount;
+    pagination.appendChild(next);
+    pagination.hidden = false;
+  }
+
   function applyReviewControls() {
     if (!reviewList) return;
 
@@ -70,10 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!originalOrder.has(post)) {
         originalOrder.set(post, nextOriginalOrder++);
       }
-
-      const matchesRating = !selectedRating || getPostRating(post) === Number(selectedRating);
-      const matchesSearch = !searchQuery || post.textContent.toLocaleLowerCase('ko-KR').includes(searchQuery);
-      post.hidden = !(matchesRating && matchesSearch);
     });
 
     posts.sort((a, b) => {
@@ -93,7 +127,36 @@ document.addEventListener('DOMContentLoaded', () => {
     if (orderChanged) {
       posts.forEach(post => reviewList.appendChild(post));
     }
+
+    const filteredPosts = posts.filter(post => {
+      const matchesRating = !selectedRating || getPostRating(post) === Number(selectedRating);
+      const matchesSearch = !searchQuery || post.textContent.toLocaleLowerCase('ko-KR').includes(searchQuery);
+      return matchesRating && matchesSearch;
+    });
+
+    totalPages = Math.max(1, Math.ceil(filteredPosts.length / pageSize));
+    currentPage = Math.min(currentPage, totalPages);
+
+    const startIndex = (currentPage - 1) * pageSize;
+    const visiblePosts = new Set(filteredPosts.slice(startIndex, startIndex + pageSize));
+    posts.forEach(post => {
+      post.hidden = !visiblePosts.has(post);
+    });
+
+    renderPagination(totalPages);
   }
+
+  pagination?.addEventListener('click', event => {
+    const button = event.target.closest('button[data-page]');
+    if (!button || button.disabled) return;
+
+    if (button.dataset.page === 'prev') currentPage--;
+    else if (button.dataset.page === 'next') currentPage++;
+    else currentPage = Number(button.dataset.page);
+
+    currentPage = Math.max(1, Math.min(currentPage, totalPages));
+    applyReviewControls();
+  });
 
   function updateSortButtons() {
     sortButtons.forEach(button => {
@@ -343,6 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
     select.addEventListener('change', () => {
       syncOptions();
       if (select.value) markInteracted();
+      currentPage = 1;
       applyReviewControls();
     });
 
@@ -375,6 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.value = '';
     searchBar.hidden = true;
     searchOpenButton.hidden = false;
+    currentPage = 1;
     applyReviewControls();
     searchOpenButton.focus();
   }
@@ -383,6 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
   searchCloseButton?.addEventListener('click', closeReviewSearch);
   searchInput?.addEventListener('input', () => {
     if (searchInput.value.trim()) markInteracted();
+    currentPage = 1;
     applyReviewControls();
   });
   searchInput?.addEventListener('keydown', event => {
@@ -394,6 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sortValue = button.dataset.sort || 'recommended';
       updateSortButtons();
       markInteracted();
+      currentPage = 1;
       applyReviewControls();
     });
   });
@@ -409,6 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchOpenButton) searchOpenButton.hidden = false;
 
     sortValue = 'latest';
+    currentPage = 1;
     hasInteracted = false;
     updateSortButtons();
     customSelect?.syncOptions();
