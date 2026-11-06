@@ -88,7 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return difference || originalOrder.get(a) - originalOrder.get(b);
     });
 
-    posts.forEach(post => reviewList.appendChild(post));
+    const currentOrder = [...reviewList.querySelectorAll('.review-post')];
+    const orderChanged = posts.some((post, index) => post !== currentOrder[index]);
+    if (orderChanged) {
+      posts.forEach(post => reviewList.appendChild(post));
+    }
   }
 
   function updateSortButtons() {
