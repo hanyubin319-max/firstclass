@@ -196,7 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = event.target.closest('.review-post-more');
     if (!button) return;
 
-    const frame = button.closest('.review-post-text-frame');
+    const post = button.closest('.review-post');
+    const frame = post?.querySelector('.review-post-text-frame');
     if (!frame) return;
 
     const expanded = frame.classList.toggle('is-expanded');
@@ -206,8 +207,33 @@ document.addEventListener('DOMContentLoaded', () => {
       preview.hidden = expanded;
       full.hidden = !expanded;
     }
-    button.textContent = expanded ? '접기' : '더보기';
+    const label = button.querySelector('span');
+    if (label) label.textContent = expanded ? '접기' : '더보기';
     button.setAttribute('aria-expanded', String(expanded));
+  });
+
+  reviewList?.querySelectorAll('.review-post-media-video').forEach(video => {
+    const playButton = video.closest('.review-post-media-item')?.querySelector('.review-post-video-play');
+    if (!playButton) return;
+
+    playButton.addEventListener('click', async () => {
+      try {
+        await video.play();
+        playButton.hidden = true;
+      } catch (error) {
+        playButton.hidden = false;
+      }
+    });
+
+    video.addEventListener('click', () => {
+      if (!video.paused) {
+        video.pause();
+        playButton.hidden = false;
+      }
+    });
+    video.addEventListener('ended', () => {
+      playButton.hidden = false;
+    });
   });
 
   // Event 페이지와 같은 키보드 조작을 지원하는 별점 커스텀 드롭다운
