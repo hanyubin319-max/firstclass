@@ -1033,10 +1033,13 @@
   line-height: 1.6;
   text-align: left;
 }
+/* Keep each post's bottom divider at the same baseline, even when its content is shorter */
 .review-post-bottom-divider {
   width: min(1032px, 100%);
   height: 1px;
-  margin-top: 50px;
+  min-height: 1px;
+  flex: 0 0 1px;
+  margin-top: auto;
   background: var(--neutral-border-gray);
 }
 
