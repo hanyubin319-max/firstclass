@@ -569,19 +569,30 @@
 
 /* Review post card layout */
 .review-list {
-  width: min(2060px, calc(100vw - 40px));
+  width: min(1260px, calc(100vw - 40px));
   min-height: 0;
   margin-left: 50%;
   transform: translateX(-50%);
 }
 .review-post {
-  width: 100%;
-  height: auto;
-  min-height: 673px;
+  display: flex;
+  width: 1260px;
+  max-width: 100%;
+  height: 795px;
   min-width: 0;
-  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   box-sizing: border-box;
   background: var(--brand-pink);
+}
+.review-post-inner {
+  display: flex;
+  width: min(1032px, calc(100% - 48px));
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin: 0 auto;
 }
 .review-post-header {
   display: flex;
@@ -639,7 +650,7 @@
   flex: 0 0 auto;
   align-items: center;
   gap: 5px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .review-post-tag {
   display: inline-flex;
@@ -844,14 +855,6 @@
   line-height: 1;
   white-space: nowrap;
 }
-.review-post-demo-label {
-  margin-left: auto;
-  color: var(--neutral-charcoal);
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 1.4;
-  white-space: nowrap;
-}
 @media (max-width: 700px) {
   .review-list {
     width: calc(100vw - 32px);
@@ -886,10 +889,6 @@
   .review-post-categories {
     gap: 10px;
     margin-left: 10px;
-  }
-  .review-post-demo-label {
-    width: 100%;
-    margin-left: 0;
   }
   .review-post-media-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -995,4 +994,51 @@
   height: 1px;
   margin-top: 50px;
   background: var(--neutral-gray);
+}
+
+
+/* Final Review card size and unified inner-frame alignment */
+@media (min-width: 701px) {
+  .review-list {
+    width: min(1260px, calc(100vw - 40px));
+  }
+  .review-post {
+    width: 1260px;
+    height: 795px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .review-post-inner {
+    width: min(1032px, calc(100% - 48px));
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .review-post-categories {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 700px) {
+  .review-list {
+    width: calc(100vw - 32px);
+  }
+  .review-post {
+    width: 100%;
+    height: auto;
+    min-height: 795px;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 18px 14px;
+  }
+  .review-post-inner {
+    width: 100%;
+    min-height: calc(795px - 36px);
+    justify-content: center;
+  }
+  .review-post-categories {
+    margin-left: 10px;
+  }
 }
