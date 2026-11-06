@@ -1037,7 +1037,7 @@
   width: min(1032px, 100%);
   height: 1px;
   margin-top: 50px;
-  background: var(--neutral-gray);
+  background: var(--neutral-border-gray);
 }
 
 
