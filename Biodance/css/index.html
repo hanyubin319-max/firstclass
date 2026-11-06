@@ -50,7 +50,9 @@
                     </div>
                     <div class="hero-controls">
                         <div class="swiper-pagination"></div>
-                        <div class="swiper-scrollbar" aria-hidden="true"></div>
+                        <div class="hero-autoplay-progress" role="progressbar" aria-label="다음 배너까지 진행 상태" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <span class="hero-autoplay-progress-fill"></span>
+                        </div>
                         <div class="hero-navigation">
                             <button type="button" class="swiper-button-prev" aria-label="이전 배너"></button>
                             <button type="button" class="swiper-button-next" aria-label="다음 배너"></button>
@@ -361,6 +363,8 @@
             window.setInterval(rotateModelPick, 6000);
         }
 
+        const heroProgressFill = document.querySelector('.hero-autoplay-progress-fill');
+
         const swiperHero = new Swiper('.hero-sec .visual', {
             direction: 'horizontal',
             loop: true,
@@ -382,9 +386,19 @@
                 nextEl: '.visual .swiper-button-next',
                 prevEl: '.visual .swiper-button-prev',
             },
-            scrollbar: {
-                el: '.visual .swiper-scrollbar',
-                draggable: true,
+            on: {
+                slideChangeTransitionStart() {
+                    if (heroProgressFill) {
+                        heroProgressFill.style.transform = 'scaleX(0)';
+                        heroProgressFill.parentElement?.setAttribute('aria-valuenow', '0');
+                    }
+                },
+                autoplayTimeLeft(swiper, timeLeft, percentage) {
+                    if (!heroProgressFill) return;
+                    const progress = Math.min(1, Math.max(0, 1 - percentage));
+                    heroProgressFill.style.transform = `scaleX(${progress})`;
+                    heroProgressFill.parentElement?.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
+                },
             },
         });
     </script>
