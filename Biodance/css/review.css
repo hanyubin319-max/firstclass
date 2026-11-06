@@ -184,7 +184,10 @@
   display: inline-flex;
   width: 112px;
   height: 34px;
+  min-height: 34px;
   flex: 0 0 112px;
+  align-self: center;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
   gap: 4px;
@@ -515,7 +518,10 @@
   .review-page .review-filter-reset {
     width: 112px;
     height: 34px;
+    min-height: 34px;
     flex: 0 0 112px;
+    align-self: center;
+    box-sizing: border-box;
     padding: 7px 8px;
     font-size: 13px;
   }
