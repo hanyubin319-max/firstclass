@@ -1075,3 +1075,17 @@
     margin-left: 10px;
   }
 }
+
+
+/* Force the Review rating dropdown and reset button to the exact same height */
+.review-page .review-filter-control .custom-select-trigger,
+.review-page .review-filter-reset {
+  height: 34px !important;
+  min-height: 34px !important;
+  max-height: 34px !important;
+  box-sizing: border-box !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1 !important;
+  align-self: center;
+}
