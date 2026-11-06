@@ -794,41 +794,20 @@
   margin-top: 25px;
 }
 .review-post-media-item {
-  position: relative;
+  display: flex;
   width: 100%;
   aspect-ratio: 1 / 1;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   border-radius: 24px;
   background: var(--neutral-light-gray);
 }
-.review-post-media-item > img,
-.review-post-media-video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.review-post-video-play {
-  position: absolute;
-  left: 15px;
-  bottom: 15px;
-  display: flex;
-  width: 24px;
-  height: 22px;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-}
-.review-post-video-play img {
-  display: block;
-  width: 24px;
-  height: 22px;
-}
-.review-post-video-play[hidden] {
-  display: none;
+.review-post-media-item span {
+  color: var(--neutral-gray);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
 }
 .review-post-keywords {
   display: flex;
