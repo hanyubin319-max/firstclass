@@ -1704,3 +1704,113 @@ body.is-review-policy-open {
     padding-inline: 4px;
   }
 }
+
+
+/* Align operation-policy bullet text to a clean hanging indent */
+.review-policy-bullet-list {
+  display: grid;
+  width: 100%;
+  grid-auto-flow: row;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  color: var(--neutral-charcoal);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+}
+.review-policy-bullet-list li {
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr);
+  column-gap: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  word-break: keep-all;
+}
+.review-policy-bullet-list li::before {
+  content: "•";
+  display: block;
+  color: var(--neutral-charcoal);
+  text-align: left;
+}
+.review-policy-section p {
+  width: 100%;
+  text-align: left;
+}
+.review-policy-section .review-policy-bullet-list,
+.review-policy-section p + .review-policy-bullet-list {
+  margin-top: 0;
+}
+
+/* The guideline uses hyphens instead of round bullets and keeps each item aligned */
+.review-guideline-bullet-list {
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+.review-guideline-bullet-list li::before {
+  content: "-";
+}
+
+/* Operation and guideline dialogs shrink to content; only Review policy keeps scrolling */
+.review-policy-dialog.is-compact-policy {
+  display: block;
+  width: 350px;
+  height: auto;
+  min-height: 0;
+  max-height: calc(100vh - 24px);
+  padding: 25px;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.review-policy-dialog.is-compact-policy .review-policy-text-frame {
+  display: block;
+  width: 300px;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  overflow: visible;
+  grid-column: auto;
+  grid-row: auto;
+  overscroll-behavior: auto;
+}
+
+.review-policy-dialog.is-compact-policy .review-policy-panel {
+  width: 100%;
+  text-align: left;
+}
+
+.review-policy-dialog.is-compact-policy .review-policy-scroll-arrow,
+.review-policy-dialog.is-compact-policy .review-policy-scroll-track {
+  display: none !important;
+}
+
+.review-policy-dialog.is-compact-policy .review-policy-close {
+  margin: 30px auto 0;
+}
+
+@media (max-width: 390px) {
+  .review-policy-dialog.is-compact-policy {
+    width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+    height: auto;
+    max-height: calc(100dvh - 24px);
+    padding: 20px 12px;
+  }
+
+  .review-policy-dialog.is-compact-policy .review-policy-text-frame {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .review-policy-dialog.is-compact-policy .review-policy-close {
+    max-width: 100%;
+  }
+}
