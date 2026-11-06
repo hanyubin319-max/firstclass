@@ -212,30 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
     button.setAttribute('aria-expanded', String(expanded));
   });
 
-  reviewList?.querySelectorAll('.review-post-media-video').forEach(video => {
-    const playButton = video.closest('.review-post-media-item')?.querySelector('.review-post-video-play');
-    if (!playButton) return;
-
-    playButton.addEventListener('click', async () => {
-      try {
-        await video.play();
-        playButton.hidden = true;
-      } catch (error) {
-        playButton.hidden = false;
-      }
-    });
-
-    video.addEventListener('click', () => {
-      if (!video.paused) {
-        video.pause();
-        playButton.hidden = false;
-      }
-    });
-    video.addEventListener('ended', () => {
-      playButton.hidden = false;
-    });
-  });
-
   // Event 페이지와 같은 키보드 조작을 지원하는 별점 커스텀 드롭다운
   function enhanceSelect(select) {
     if (!select) return;
