@@ -159,6 +159,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.review-post').forEach(renderReviewPostMetadata);
 
+  function updateReviewMoreButtons(root = document) {
+    root.querySelectorAll('.review-post-text-frame').forEach(frame => {
+      const text = frame.querySelector('.review-post-body-text');
+      const button = frame.querySelector('.review-post-more');
+      if (!text || !button) return;
+
+      const measure = text.cloneNode(true);
+      measure.style.position = 'absolute';
+      measure.style.visibility = 'hidden';
+      measure.style.display = 'block';
+      measure.style.width = `${text.clientWidth}px`;
+      measure.style.height = 'auto';
+      measure.style.maxHeight = 'none';
+      measure.style.overflow = 'visible';
+      measure.style.webkitLineClamp = 'unset';
+      measure.style.margin = '0';
+      frame.appendChild(measure);
+      const fullHeight = measure.getBoundingClientRect().height;
+      measure.remove();
+
+      button.hidden = fullHeight <= 44;
+    });
+  }
+
+  updateReviewMoreButtons(reviewList || document);
+  window.addEventListener('resize', () => updateReviewMoreButtons(reviewList || document));
+
+  reviewList?.addEventListener('click', event => {
+    const button = event.target.closest('.review-post-more');
+    if (!button) return;
+
+    const frame = button.closest('.review-post-text-frame');
+    if (!frame) return;
+
+    const expanded = frame.classList.toggle('is-expanded');
+    button.textContent = expanded ? '접기' : '더보기';
+    button.setAttribute('aria-expanded', String(expanded));
+  });
+
   // Event 페이지와 같은 키보드 조작을 지원하는 별점 커스텀 드롭다운
   function enhanceSelect(select) {
     if (!select) return;
