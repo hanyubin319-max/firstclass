@@ -526,11 +526,114 @@
                   </article>
 
       </div>
-      <nav class="product-pagination" id="review-pagination" aria-label="리뷰 페이지 이동">
-        <button type="button" class="pagination-arrow" data-page="prev" aria-label="이전 페이지"></button>
-        <button type="button" class="pagination-number is-active" data-page="1" aria-current="page">1</button>
-        <button type="button" class="pagination-arrow" data-page="next" aria-label="다음 페이지"></button>
-      </nav>
+      <div class="review-pagination-row">
+        <div class="review-policy-links" aria-label="리뷰 정책 안내">
+          <button type="button" class="review-policy-link" data-policy-open="operation">운영정책</button>
+          <button type="button" class="review-policy-link review-policy-link-with-icon" data-policy-open="review">
+            <span>리뷰정책</span>
+            <svg class="review-policy-info-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+              <circle cx="8" cy="4.8" r="0.9" fill="currentColor"/>
+              <path d="M8 7v4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="product-pagination" id="review-pagination" aria-label="리뷰 페이지 이동">
+          <button type="button" class="pagination-arrow" data-page="prev" aria-label="이전 페이지"></button>
+          <button type="button" class="pagination-number is-active" data-page="1" aria-current="page">1</button>
+          <button type="button" class="pagination-arrow" data-page="next" aria-label="다음 페이지"></button>
+        </nav>
+
+        <div class="review-guideline-link-wrap">
+          <button type="button" class="review-guideline-link" data-policy-open="guideline">리뷰 삭제 및 적립금 차감 기준</button>
+        </div>
+      </div>
+
+      <div class="review-policy-modal" id="review-policy-modal" hidden>
+        <div class="review-policy-dialog" role="dialog" aria-modal="true" aria-labelledby="policy-title-review">
+          <div class="review-policy-scroll-layout">
+            <div class="review-policy-text-frame" id="review-policy-text-frame" tabindex="0">
+              <div class="review-policy-content" id="review-policy-content">
+                <section class="review-policy-panel" data-policy-panel="operation" hidden>
+                  <h2 id="policy-title-operation">리뷰 운영정책 안내</h2>
+                  <section class="review-policy-section">
+                    <h3>운영 목적</h3>
+                    <p>리뷰는 상품을 구매한 고객의 사용 경험을 공유하고, 다른 이용자가 상품을 선택하는 데 필요한 정보를 제공하기 위해 운영됩니다. 작성자는 실제 경험을 바탕으로 정확하고 구체적인 내용을 작성해 주세요.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>게시물 관리</h3>
+                    <p>리뷰는 쇼핑몰 운영 기준에 따라 확인 및 관리될 수 있습니다. 게시물의 내용이 운영정책이나 관계 법령에 어긋나는 경우에는 노출이 제한되거나 삭제될 수 있습니다.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>이용자 유의사항</h3>
+                    <p>타인의 권리를 침해하거나 상품과 무관한 내용을 작성하지 말아 주세요. 리뷰에 포함된 개인정보와 타인의 초상·저작물 등 권리 보호에도 유의해 주세요.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>정책 문의</h3>
+                    <p>리뷰 운영과 관련한 문의나 이의가 있는 경우 공식몰 고객센터의 1:1 문의를 통해 접수해 주시면 확인 후 안내해 드립니다.</p>
+                  </section>
+                </section>
+
+                <section class="review-policy-panel" data-policy-panel="review" hidden>
+                  <h2 id="policy-title-review">리뷰 수집 · 표시 관련 안내</h2>
+                  <section class="review-policy-section">
+                    <h3>게시 기준</h3>
+                    <p>본 상품의 후기는 실제 구매를 완료한 고객(회원 및 비회원)이 작성하는 것을 원칙으로 하며, 쇼핑몰 운영자도 리뷰를 작성할 수 있습니다. 외부 연동 패널을 통해 수집된 리뷰는 별도의 표시와 함께 노출될 수 있습니다.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>게시 기간</h3>
+                    <p>작성된 리뷰는 상품 판매 종료 또는 회원 탈퇴 시까지 노출 및 보존됩니다. 다만, 관계 법령에 따라 보존이 필요한 경우에는 해당 기간 동안 보관됩니다.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>정렬 및 평가</h3>
+                    <p>전체 평점은 누적 별점의 산술평균으로 계산됩니다. 리뷰의 노출 순서는 별점, 리뷰 내용의 충실도(글자 수, 사진 포함 여부 등), 등록일, 다른 이용자의 '도움돼요' 수 등을 종합적으로 고려하여 시스템 알고리즘에 의해 결정됩니다.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>제한 및 삭제</h3>
+                    <p>욕설, 비방, 광고성 게시물, 상품과 무관한 내용, 음란성 콘텐츠, 허위·부정 리뷰 등 관련 법령이나 운영정책에 위반되는 리뷰는 노출이 제한되거나 삭제될 수 있습니다.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>이의제기</h3>
+                    <p>본인이 작성한 리뷰와 노출 제한 또는 삭제 조치에 이의가 있는 경우, 쇼핑몰 고객센터(1:1 문의 등)를 통해 접수해 주시면 검토 후 처리 결과를 안내해 드립니다.</p>
+                  </section>
+                </section>
+
+                <section class="review-policy-panel" data-policy-panel="guideline" hidden>
+                  <h2 id="policy-title-guideline">리뷰 삭제 및 적립금 차감 기준</h2>
+                  <section class="review-policy-section">
+                    <h3>삭제 또는 노출 제한 대상</h3>
+                    <p>욕설·비방, 반복적인 광고 및 홍보, 상품과 무관한 내용, 음란성 콘텐츠, 타인의 권리 침해, 허위 또는 조작된 리뷰 등 운영정책에 위반되는 게시물은 삭제되거나 노출이 제한될 수 있습니다.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>적립금 지급 제외</h3>
+                    <p>리뷰 작성 조건을 충족하지 못하거나 중복 작성, 비정상적인 참여 등 적립 기준에 부합하지 않는 경우에는 리뷰 적립금이 지급되지 않을 수 있습니다.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>적립금 차감 및 회수</h3>
+                    <p>적립금이 지급된 리뷰가 추후 허위·부정 작성 또는 운영정책 위반으로 확인되어 삭제되는 경우, 해당 리뷰로 지급된 적립금은 취소되거나 회수될 수 있습니다.</p>
+                  </section>
+                  <section class="review-policy-section">
+                    <h3>확인 및 문의</h3>
+                    <p>리뷰 삭제나 적립금 차감에 대한 확인이 필요한 경우 고객센터의 1:1 문의를 통해 접수해 주세요. 구체적인 적용 여부는 게시물 내용과 운영 기준을 확인한 후 안내해 드립니다.</p>
+                  </section>
+                </section>
+
+                <div class="review-policy-close-spacer" aria-hidden="true"></div>
+                <button type="button" class="review-policy-close" id="review-policy-close">닫기</button>
+              </div>
+            </div>
+
+            <div class="review-policy-scrollbar" aria-label="정책 내용 스크롤">
+              <button type="button" class="review-policy-scroll-arrow is-up" id="review-policy-scroll-up" aria-label="위로 스크롤"></button>
+              <div class="review-policy-scroll-track" id="review-policy-scroll-track">
+                <div class="review-policy-scroll-thumb" id="review-policy-scroll-thumb"></div>
+              </div>
+              <button type="button" class="review-policy-scroll-arrow is-down" id="review-policy-scroll-down" aria-label="아래로 스크롤"></button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
