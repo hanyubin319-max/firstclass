@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.querySelector('#review-search-input');
   const searchCloseButton = document.querySelector('#review-search-close');
 
-  let sortValue = 'recommended';
+  let sortValue = 'latest';
   let hasInteracted = false;
   let isResetting = false;
   let nextOriginalOrder = 0;
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchBar) searchBar.hidden = true;
     if (searchOpenButton) searchOpenButton.hidden = false;
 
-    sortValue = 'recommended';
+    sortValue = 'latest';
     hasInteracted = false;
     updateSortButtons();
     customSelect?.syncOptions();
