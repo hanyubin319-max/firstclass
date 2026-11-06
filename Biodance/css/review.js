@@ -2,34 +2,104 @@ document.addEventListener('DOMContentLoaded', () => {
   const filter = document.querySelector('#review-filter');
   const reviewList = document.querySelector('#review-list');
   const reviewCount = document.querySelector('#review-count');
+  const resetButton = document.querySelector('#review-filter-reset');
+  const sortButtons = [...document.querySelectorAll('.review-sort-label[data-sort]')];
   const searchOpenButton = document.querySelector('#review-search-open');
   const searchBar = document.querySelector('#review-searchbar');
   const searchInput = document.querySelector('#review-search-input');
   const searchCloseButton = document.querySelector('#review-search-close');
 
-  function openReviewSearch() {
-    if (!searchBar || !searchOpenButton || !searchInput) return;
-    searchBar.hidden = false;
-    searchOpenButton.hidden = true;
-    searchInput.focus();
+  let sortValue = 'recommended';
+  let hasInteracted = false;
+  let isResetting = false;
+  let nextOriginalOrder = 0;
+  const originalOrder = new WeakMap();
+
+  function updateResetButton() {
+    if (resetButton) resetButton.hidden = !hasInteracted;
   }
 
-  function closeReviewSearch() {
-    if (!searchBar || !searchOpenButton || !searchInput) return;
-    searchInput.value = '';
-    searchBar.hidden = true;
-    searchOpenButton.hidden = false;
-    searchOpenButton.focus();
+  function markInteracted() {
+    if (isResetting) return;
+    hasInteracted = true;
+    updateResetButton();
   }
 
-  searchOpenButton?.addEventListener('click', openReviewSearch);
-  searchCloseButton?.addEventListener('click', closeReviewSearch);
-  searchInput?.addEventListener('keydown', event => {
-    if (event.key === 'Escape') closeReviewSearch();
-  });
+  function createStar(filled, className = 'review-rating-star') {
+    const star = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    star.setAttribute('viewBox', '0 0 24 24');
+    star.setAttribute('aria-hidden', 'true');
+    star.classList.add(className, filled ? 'is-filled' : 'is-empty');
 
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9L12 2.5z');
+    path.setAttribute('fill', 'currentColor');
+    star.appendChild(path);
+    return star;
+  }
 
-  // Event 페이지의 커스텀 드롭다운 동작을 Review 전용으로 복제
+  function getPostRating(post) {
+    const dataRating = Number(post.dataset.rating);
+    if (Number.isFinite(dataRating) && dataRating > 0) return dataRating;
+
+    const ratingText = post.querySelector('[data-rating], .review-rating, .review-post-rating')?.textContent || '';
+    const matchedRating = ratingText.match(/[1-5](?:\.\d+)?/);
+    return matchedRating ? Number(matchedRating[0]) : 0;
+  }
+
+  function getPostDate(post) {
+    const dateValue = post.dataset.date || post.dataset.createdAt || '';
+    const timestamp = Date.parse(dateValue);
+    return Number.isNaN(timestamp) ? 0 : timestamp;
+  }
+
+  function getPostRecommendation(post) {
+    const value = post.dataset.recommendation || post.dataset.recommend || post.dataset.helpfulCount || '0';
+    const score = Number(value);
+    return Number.isFinite(score) ? score : 0;
+  }
+
+  function applyReviewControls() {
+    if (!reviewList) return;
+
+    const selectedRating = filter?.value || '';
+    const searchQuery = searchInput?.value.trim().toLocaleLowerCase('ko-KR') || '';
+    const posts = [...reviewList.querySelectorAll('.review-post')];
+
+    posts.forEach(post => {
+      if (!originalOrder.has(post)) {
+        originalOrder.set(post, nextOriginalOrder++);
+      }
+
+      const matchesRating = !selectedRating || getPostRating(post) === Number(selectedRating);
+      const matchesSearch = !searchQuery || post.textContent.toLocaleLowerCase('ko-KR').includes(searchQuery);
+      post.hidden = !(matchesRating && matchesSearch);
+    });
+
+    posts.sort((a, b) => {
+      let difference = 0;
+      if (sortValue === 'latest') {
+        difference = getPostDate(b) - getPostDate(a);
+      } else if (sortValue === 'rating') {
+        difference = getPostRating(b) - getPostRating(a);
+      } else {
+        difference = getPostRecommendation(b) - getPostRecommendation(a);
+      }
+      return difference || originalOrder.get(a) - originalOrder.get(b);
+    });
+
+    posts.forEach(post => reviewList.appendChild(post));
+  }
+
+  function updateSortButtons() {
+    sortButtons.forEach(button => {
+      const active = button.dataset.sort === sortValue;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+  }
+
+  // Event 페이지와 같은 키보드 조작을 지원하는 별점 커스텀 드롭다운
   function enhanceSelect(select) {
     if (!select) return;
 
@@ -59,16 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
       item.tabIndex = -1;
 
       for (let starIndex = 1; starIndex <= 5; starIndex++) {
-        const star = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        star.setAttribute('viewBox', '0 0 24 24');
-        star.setAttribute('aria-hidden', 'true');
-        star.classList.add('review-rating-star', starIndex <= rating ? 'is-filled' : 'is-empty');
-
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', 'M12 2.5l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-.9L12 2.5z');
-        path.setAttribute('fill', 'currentColor');
-        star.appendChild(path);
-        item.appendChild(star);
+        item.appendChild(createStar(starIndex <= rating));
       }
 
       item.addEventListener('click', () => {
@@ -83,10 +144,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function syncOptions() {
-      trigger.textContent = '별점';
       options.forEach(item => {
         item.setAttribute('aria-selected', String(item.dataset.value === select.value));
       });
+
+      const rating = Number(select.value);
+      trigger.replaceChildren();
+
+      if (!select.value || !Number.isFinite(rating)) {
+        trigger.textContent = '별점';
+        trigger.setAttribute('aria-label', '별점 필터');
+        return;
+      }
+
+      const stars = document.createElement('span');
+      stars.className = 'review-trigger-stars';
+      for (let starIndex = 1; starIndex <= 5; starIndex++) {
+        stars.appendChild(createStar(starIndex <= rating, 'review-trigger-star'));
+      }
+
+      const ratingLabel = document.createElement('span');
+      ratingLabel.className = 'review-trigger-rating';
+      ratingLabel.textContent = `${rating}점`;
+      trigger.append(stars, ratingLabel);
+      trigger.setAttribute('aria-label', `별점 ${rating}점 필터`);
     }
 
     function openMenu() {
@@ -127,7 +208,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    select.addEventListener('change', syncOptions);
+    select.addEventListener('change', () => {
+      syncOptions();
+      if (select.value) markInteracted();
+      applyReviewControls();
+    });
+
     select.classList.add('custom-select-native');
     select.parentNode.insertBefore(wrapper, select);
     wrapper.appendChild(trigger);
@@ -138,9 +224,66 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', event => {
       if (!wrapper.contains(event.target)) closeMenu();
     });
+
+    return { syncOptions };
   }
 
-  enhanceSelect(filter);
+  const customSelect = enhanceSelect(filter);
+
+  function openReviewSearch() {
+    if (!searchBar || !searchOpenButton || !searchInput) return;
+    searchBar.hidden = false;
+    searchOpenButton.hidden = true;
+    markInteracted();
+    searchInput.focus();
+  }
+
+  function closeReviewSearch() {
+    if (!searchBar || !searchOpenButton || !searchInput) return;
+    searchInput.value = '';
+    searchBar.hidden = true;
+    searchOpenButton.hidden = false;
+    applyReviewControls();
+    searchOpenButton.focus();
+  }
+
+  searchOpenButton?.addEventListener('click', openReviewSearch);
+  searchCloseButton?.addEventListener('click', closeReviewSearch);
+  searchInput?.addEventListener('input', () => {
+    if (searchInput.value.trim()) markInteracted();
+    applyReviewControls();
+  });
+  searchInput?.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeReviewSearch();
+  });
+
+  sortButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      sortValue = button.dataset.sort || 'recommended';
+      updateSortButtons();
+      markInteracted();
+      applyReviewControls();
+    });
+  });
+
+  resetButton?.addEventListener('click', () => {
+    isResetting = true;
+    if (filter) {
+      filter.value = '';
+      filter.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    if (searchInput) searchInput.value = '';
+    if (searchBar) searchBar.hidden = true;
+    if (searchOpenButton) searchOpenButton.hidden = false;
+
+    sortValue = 'recommended';
+    hasInteracted = false;
+    updateSortButtons();
+    customSelect?.syncOptions();
+    applyReviewControls();
+    updateResetButton();
+    isResetting = false;
+  });
 
   // 리뷰 게시물(.review-post)의 개수를 자동으로 표시
   function updateReviewCount() {
@@ -148,10 +291,16 @@ document.addEventListener('DOMContentLoaded', () => {
     reviewCount.textContent = String(reviewList.querySelectorAll('.review-post').length);
   }
 
+  updateSortButtons();
+  updateResetButton();
+  applyReviewControls();
   updateReviewCount();
 
   if (reviewList && reviewCount) {
-    const observer = new MutationObserver(updateReviewCount);
+    const observer = new MutationObserver(() => {
+      updateReviewCount();
+      applyReviewControls();
+    });
     observer.observe(reviewList, { childList: true, subtree: true });
   }
 });
