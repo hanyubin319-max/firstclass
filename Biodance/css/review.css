@@ -938,10 +938,10 @@
   outline-offset: 4px;
   border-radius: 2px;
 }
-.review-post-action.is-reply[aria-expanded="true"] .review-post-action-arrow {
+.review-post-action.is-reply[aria-expanded="true"] .review-post-action-arrow::before {
   transform: rotate(225deg);
 }
-.review-post-action.is-reply[aria-expanded="false"] .review-post-action-arrow {
+.review-post-action.is-reply[aria-expanded="false"] .review-post-action-arrow::before {
   transform: rotate(45deg);
 }
 .review-post-reply-frame[hidden],
@@ -971,16 +971,27 @@
   white-space: nowrap;
 }
 .review-post-action-arrow {
-  display: block;
-  width: 7px;
-  height: 7px;
-  flex: 0 0 7px;
+  display: inline-flex;
+  width: 10px;
+  height: 12px;
+  flex: 0 0 10px;
+  align-items: center;
+  justify-content: center;
   align-self: center;
+  overflow: hidden;
   margin: 0;
+  color: var(--neutral-gray);
+  line-height: 1;
+}
+.review-post-action-arrow::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
   box-sizing: border-box;
   border-right: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
-  color: var(--neutral-gray);
   transform: rotate(45deg);
   transform-origin: center;
 }
@@ -1040,21 +1051,32 @@
     height: 795px;
     max-width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0;
   }
   .review-post-inner {
+    display: flex;
     width: min(1032px, calc(100% - 48px));
     height: 673px;
+    min-height: 673px;
+    max-height: 673px;
     flex: 0 0 673px;
+    flex-shrink: 0;
+    box-sizing: border-box;
     margin: 0 auto;
     justify-content: center;
-    transition: height 0.2s ease;
+    transition: height 0.2s ease, min-height 0.2s ease, max-height 0.2s ease, flex-basis 0.2s ease;
   }
   .review-post-inner.is-reply-open {
     height: 795px;
+    min-height: 795px;
+    max-height: 795px;
     flex-basis: 795px;
+  }
+  .review-post-inner > * {
+    flex: 0 0 auto;
   }
   .review-post-categories {
     margin-left: 10px;
@@ -1069,20 +1091,30 @@
     height: auto;
     min-height: 795px;
     display: flex;
+    flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
     padding: 18px 14px;
   }
   .review-post-inner {
+    display: flex;
     width: 100%;
     height: auto;
     min-height: calc(795px - 36px);
+    max-height: none;
     flex: 1 1 auto;
+    flex-shrink: 0;
+    box-sizing: border-box;
     justify-content: center;
   }
   .review-post-inner.is-reply-open {
     height: auto;
+    min-height: calc(795px - 36px);
+    max-height: none;
     flex-basis: auto;
+  }
+  .review-post-inner > * {
+    flex: 0 0 auto;
   }
   .review-post-categories {
     margin-left: 10px;
