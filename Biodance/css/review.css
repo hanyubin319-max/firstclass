@@ -1286,7 +1286,7 @@
   }
 }
 
-/* Dimmed policy overlay and fixed-size dialog */
+/* Policy modal: only the outer dialog, text viewport, and close button are framed */
 .review-policy-modal {
   position: fixed;
   z-index: 10000;
@@ -1302,32 +1302,31 @@
   display: none !important;
 }
 .review-policy-dialog {
-  display: flex;
+  display: grid;
   width: 350px;
   height: 650px;
   max-width: calc(100vw - 24px);
-  flex: 0 0 auto;
-  align-items: center;
+  grid-template-columns: 300px 15px;
+  grid-template-rows: 10px minmax(0, 1fr) 10px;
+  column-gap: 4px;
+  row-gap: 4px;
+  align-content: stretch;
   justify-content: center;
+  align-items: stretch;
   overflow: hidden;
   padding: 25px 14px;
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: 24px;
   background: var(--neutral-white);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
 }
-.review-policy-scroll-layout {
-  display: flex;
-  width: 321px;
-  height: 600px;
-  flex: 0 0 auto;
-  align-items: flex-start;
-  gap: 6px;
-}
 .review-policy-text-frame {
+  grid-column: 1;
+  grid-row: 1 / 4;
   width: 300px;
   height: 600px;
-  flex: 0 0 300px;
+  min-width: 0;
+  min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -1336,14 +1335,6 @@
 }
 .review-policy-text-frame::-webkit-scrollbar {
   display: none;
-}
-.review-policy-content {
-  display: flex;
-  width: 300px;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0;
-  box-sizing: border-box;
 }
 .review-policy-panel {
   display: block;
@@ -1397,6 +1388,7 @@
   align-items: center;
   justify-content: center;
   align-self: center;
+  margin: 0 auto;
   padding: 0;
   border: 2px solid var(--neutral-border-gray);
   border-radius: 9999px;
@@ -1409,32 +1401,51 @@
   cursor: pointer;
 }
 
-/* Custom scrollbar: 13 x 300 with 15 x 10 arrow controls */
-.review-policy-scrollbar {
-  position: relative;
+/* Scrollbar track fills the text height; arrow-to-track gaps stay fixed at 4px */
+.review-policy-scroll-arrow {
+  display: flex;
   width: 15px;
-  height: 600px;
-  flex: 0 0 15px;
+  height: 10px;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.review-policy-scroll-arrow.is-up {
+  grid-column: 2;
+  grid-row: 1;
+}
+.review-policy-scroll-arrow.is-down {
+  grid-column: 2;
+  grid-row: 3;
+}
+.review-policy-scroll-arrow img {
+  display: block;
+  width: 15px;
+  height: 10px;
+  object-fit: fill;
 }
 .review-policy-scroll-track {
-  position: absolute;
-  top: 50%;
-  left: 1px;
+  position: relative;
+  grid-column: 2;
+  grid-row: 2;
   width: 13px;
-  height: 300px;
+  height: 100%;
+  min-height: 0;
+  justify-self: center;
   overflow: hidden;
-  border: 1px solid var(--neutral-border-gray);
   border-radius: 9999px;
   background: transparent;
-  box-sizing: border-box;
-  transform: translateY(-50%);
   cursor: pointer;
 }
 .review-policy-scroll-thumb {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 13px;
   min-height: 24px;
   border-radius: 9999px;
   background: var(--neutral-border-gray);
@@ -1443,27 +1454,6 @@
 }
 .review-policy-scroll-thumb:active {
   cursor: grabbing;
-}
-.review-policy-scroll-arrow {
-  position: absolute;
-  left: 0;
-  display: block;
-  width: 15px;
-  height: 10px;
-  padding: 0;
-  border: 0;
-  background-color: var(--neutral-border-gray);
-  cursor: pointer;
-}
-.review-policy-scroll-arrow.is-up {
-  top: 0;
-  -webkit-mask: url("../img/chevron-up.svg") center / 15px 10px no-repeat;
-  mask: url("../img/chevron-up.svg") center / 15px 10px no-repeat;
-}
-.review-policy-scroll-arrow.is-down {
-  bottom: 0;
-  -webkit-mask: url("../img/chevron-down.svg") center / 15px 10px no-repeat;
-  mask: url("../img/chevron-down.svg") center / 15px 10px no-repeat;
 }
 .review-policy-scroll-arrow:disabled {
   opacity: 0.4;
@@ -1477,22 +1467,15 @@ body.is-review-policy-open {
   .review-policy-dialog {
     width: calc(100vw - 24px);
     height: min(650px, calc(100dvh - 24px));
+    grid-template-columns: minmax(0, 1fr) 15px;
+    grid-template-rows: 10px minmax(0, 1fr) 10px;
     padding: 18px 12px;
   }
-  .review-policy-scroll-layout {
-    width: 100%;
-    height: 100%;
-    gap: 6px;
-  }
   .review-policy-text-frame {
-    width: calc(100% - 21px);
-    height: 100%;
-    flex: 1 1 auto;
-  }
-  .review-policy-content {
     width: 100%;
-  }
-  .review-policy-scrollbar {
     height: 100%;
+  }
+  .review-policy-close {
+    max-width: 100%;
   }
 }
