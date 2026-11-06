@@ -97,23 +97,25 @@ body {
     
     color: var(--text-secondary);
 }
-.hero-sec .hero-controls .swiper-scrollbar {
+.hero-sec .hero-controls .hero-autoplay-progress {
     position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
     width: auto;
     height: 2px;
     flex: 1 1 auto;
     min-width: 30px;
-    border-radius: 0;
+    overflow: hidden;
+    border-radius: 9999px;
     background: color-mix(in srgb, var(--text-secondary) 20%, transparent);
 }
-.hero-sec .hero-controls .swiper-scrollbar-drag {
-    height: 2px;
-    border-radius: 0;
+.hero-sec .hero-controls .hero-autoplay-progress-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
     background: var(--text-secondary);
+    transform: scaleX(0);
+    transform-origin: left center;
+    will-change: transform;
 }
 .hero-sec .hero-controls .swiper-pagination {
     position: static;
@@ -5098,5 +5100,65 @@ body {
         width: 110px;
         max-width: 110px;
         height: auto;
+    }
+}
+
+/* Woni's Pick: equal columns with content-driven height on desktop and tablet */
+@media (min-width: 701px) {
+    .model-pick-frame {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        justify-content: stretch;
+        gap: 24px;
+        height: auto;
+    }
+
+    .model-pick-model-wrap {
+        flex: none;
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        aspect-ratio: auto;
+    }
+
+    .model-pick-model-wrap .model-pick-model {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .model-pick-grid {
+        display: grid;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        align-content: stretch;
+        justify-content: stretch;
+        column-gap: 24px;
+        row-gap: 110px;
+    }
+
+    .model-pick-item {
+        display: flex;
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        flex-direction: column;
+    }
+
+    .model-pick-grid .model-pick-item .model-pick-image-frame {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .model-pick-info {
+        position: static;
+        width: 100%;
+        margin-top: 12px;
     }
 }
