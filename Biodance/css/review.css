@@ -720,7 +720,7 @@
   overflow: hidden;
 }
 .review-post-body-text {
-  display: -webkit-box;
+  display: block;
   margin: 0;
   overflow: hidden;
   padding-right: 52px;
@@ -729,8 +729,10 @@
   font-weight: 400;
   line-height: 1.6;
   text-align: left;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+}
+.review-post-preview[hidden],
+.review-post-full[hidden] {
+  display: none;
 }
 .review-post-more {
   position: absolute;
