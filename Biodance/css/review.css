@@ -1388,7 +1388,7 @@
   align-items: center;
   justify-content: center;
   align-self: center;
-  margin: 0 auto;
+  margin: 430px auto 0;
   padding: 0;
   border: 2px solid var(--neutral-border-gray);
   border-radius: 9999px;
