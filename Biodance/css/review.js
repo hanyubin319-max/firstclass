@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function formatReviewDate(dateValue) {
     if (!dateValue) return '';
-    const matched = String(dateValue).match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);
+    const matched = String(dateValue).match(/^(\d{4})-(\d{2})-(\d{2})$/);
     const date = matched
       ? new Date(Number(matched[1]), Number(matched[2]) - 1, Number(matched[3]))
       : new Date(dateValue);
