@@ -217,16 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const stars = document.createElement('span');
-      stars.className = 'review-trigger-stars';
-      for (let starIndex = 1; starIndex <= 5; starIndex++) {
-        stars.appendChild(createStar(starIndex <= rating, 'review-trigger-star'));
-      }
-
-      const ratingLabel = document.createElement('span');
-      ratingLabel.className = 'review-trigger-rating';
-      ratingLabel.textContent = `${rating}점`;
-      trigger.append(stars, ratingLabel);
+      trigger.textContent = `${rating}점`;
       trigger.setAttribute('aria-label', `별점 ${rating}점 필터`);
     }
 
