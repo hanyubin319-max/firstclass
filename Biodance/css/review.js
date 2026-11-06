@@ -9,6 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.querySelector('#review-search-input');
   const searchCloseButton = document.querySelector('#review-search-close');
   const pagination = document.querySelector('#review-pagination');
+  const policyModal = document.querySelector('#review-policy-modal');
+  const policyDialog = policyModal?.querySelector('.review-policy-dialog');
+  const policyPanels = [...(policyModal?.querySelectorAll('[data-policy-panel]') || [])];
+  const policyTextFrame = document.querySelector('#review-policy-text-frame');
+  const policyScrollTrack = document.querySelector('#review-policy-scroll-track');
+  const policyScrollThumb = document.querySelector('#review-policy-scroll-thumb');
+  const policyScrollUp = document.querySelector('#review-policy-scroll-up');
+  const policyScrollDown = document.querySelector('#review-policy-scroll-down');
+  const policyCloseButton = document.querySelector('#review-policy-close');
+  let policyPreviousFocus = null;
+  let policyThumbDrag = null;
 
   const pageSize = 9;
   let currentPage = 1;
@@ -157,6 +168,120 @@ document.addEventListener('DOMContentLoaded', () => {
     currentPage = Math.max(1, Math.min(currentPage, totalPages));
     applyReviewControls();
   });
+
+  // Policy dialogs: each link opens its matching message in the shared modal.
+  function updatePolicyScrollbar() {
+    if (!policyTextFrame || !policyScrollTrack || !policyScrollThumb) return;
+
+    const viewportHeight = policyTextFrame.clientHeight;
+    const contentHeight = policyTextFrame.scrollHeight;
+    const maxScroll = Math.max(0, contentHeight - viewportHeight);
+    const trackHeight = policyScrollTrack.clientHeight;
+    const thumbHeight = maxScroll > 0
+      ? Math.max(24, trackHeight * viewportHeight / contentHeight)
+      : trackHeight;
+    const maxThumbTop = Math.max(0, trackHeight - thumbHeight);
+    const thumbTop = maxScroll > 0 ? (policyTextFrame.scrollTop / maxScroll) * maxThumbTop : 0;
+
+    policyScrollThumb.style.height = `${thumbHeight}px`;
+    policyScrollThumb.style.transform = `translateY(${thumbTop}px)`;
+    if (policyScrollUp) policyScrollUp.disabled = maxScroll <= 0 || policyTextFrame.scrollTop <= 0;
+    if (policyScrollDown) policyScrollDown.disabled = maxScroll <= 0 || policyTextFrame.scrollTop >= maxScroll - 1;
+  }
+
+  function openPolicyModal(policyName, trigger) {
+    if (!policyModal || !policyTextFrame) return;
+
+    const activePanel = policyPanels.find(panel => panel.dataset.policyPanel === policyName);
+    if (!activePanel) return;
+
+    policyPreviousFocus = trigger || document.activeElement;
+    policyPanels.forEach(panel => {
+      panel.hidden = panel !== activePanel;
+    });
+
+    const heading = activePanel.querySelector('h2');
+    if (heading && policyDialog) {
+      policyDialog.setAttribute('aria-labelledby', heading.id);
+    }
+
+    policyModal.hidden = false;
+    document.body.classList.add('is-review-policy-open');
+    policyTextFrame.scrollTop = 0;
+    window.requestAnimationFrame(() => {
+      updatePolicyScrollbar();
+      policyTextFrame.focus({ preventScroll: true });
+    });
+  }
+
+  function closePolicyModal() {
+    if (!policyModal || policyModal.hidden) return;
+    policyModal.hidden = true;
+    document.body.classList.remove('is-review-policy-open');
+    policyThumbDrag = null;
+    if (policyPreviousFocus && typeof policyPreviousFocus.focus === 'function') {
+      policyPreviousFocus.focus();
+    }
+  }
+
+  document.querySelectorAll('[data-policy-open]').forEach(button => {
+    button.addEventListener('click', () => openPolicyModal(button.dataset.policyOpen, button));
+  });
+
+  policyCloseButton?.addEventListener('click', closePolicyModal);
+  policyModal?.addEventListener('click', event => {
+    if (event.target === policyModal) closePolicyModal();
+  });
+  document.addEventListener('keydown', event => {
+    if (!policyModal || policyModal.hidden) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closePolicyModal();
+    }
+  });
+
+  policyTextFrame?.addEventListener('scroll', updatePolicyScrollbar, { passive: true });
+  window.addEventListener('resize', updatePolicyScrollbar);
+
+  policyScrollUp?.addEventListener('click', () => {
+    policyTextFrame?.scrollBy({ top: -100, behavior: 'smooth' });
+  });
+  policyScrollDown?.addEventListener('click', () => {
+    policyTextFrame?.scrollBy({ top: 100, behavior: 'smooth' });
+  });
+
+  policyScrollTrack?.addEventListener('click', event => {
+    if (!policyTextFrame) return;
+    if (event.target === policyScrollThumb) return;
+    const rect = policyScrollTrack.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
+    policyTextFrame.scrollTop = ratio * (policyTextFrame.scrollHeight - policyTextFrame.clientHeight);
+  });
+
+  policyScrollThumb?.addEventListener('pointerdown', event => {
+    if (!policyScrollTrack || !policyTextFrame) return;
+    event.preventDefault();
+    const thumbRect = policyScrollThumb.getBoundingClientRect();
+    policyThumbDrag = {
+      pointerId: event.pointerId,
+      offsetY: event.clientY - thumbRect.top
+    };
+    policyScrollThumb.setPointerCapture(event.pointerId);
+  });
+  policyScrollThumb?.addEventListener('pointermove', event => {
+    if (!policyThumbDrag || event.pointerId !== policyThumbDrag.pointerId) return;
+    const trackRect = policyScrollTrack.getBoundingClientRect();
+    const thumbHeight = policyScrollThumb.getBoundingClientRect().height;
+    const maxThumbTop = Math.max(0, trackRect.height - thumbHeight);
+    const nextTop = Math.max(0, Math.min(maxThumbTop, event.clientY - trackRect.top - policyThumbDrag.offsetY));
+    const ratio = maxThumbTop > 0 ? nextTop / maxThumbTop : 0;
+    policyTextFrame.scrollTop = ratio * (policyTextFrame.scrollHeight - policyTextFrame.clientHeight);
+  });
+  const stopPolicyThumbDrag = event => {
+    if (policyThumbDrag && event.pointerId === policyThumbDrag.pointerId) policyThumbDrag = null;
+  };
+  policyScrollThumb?.addEventListener('pointerup', stopPolicyThumbDrag);
+  policyScrollThumb?.addEventListener('pointercancel', stopPolicyThumbDrag);
 
   function updateSortButtons() {
     sortButtons.forEach(button => {
