@@ -2707,43 +2707,38 @@ body {
 }
 
 .model-pick-frame {
-    
-    height: 911px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    gap: 24px;
+    height: auto;
     box-sizing: border-box;
-    
-    display: flex;
-    flex-direction: row;
-    
-    justify-content: space-between;
 }
 
 .model-pick-model {
     display: block;
-    flex: 0 0 752px;
-    width: 752px;
-    height: 911px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
 .model-pick-grid {
-    width: 724px;
-    
     display: grid;
-    grid-template-columns: repeat(2, 350px);
-    grid-template-rows: repeat(2, 350px);
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     column-gap: 24px;
     row-gap: 110px;
-    
-    
 }
 
 .model-pick-item {
-    width: 350px;
-    
+    width: 100%;
+    min-width: 0;
     box-sizing: border-box;
     background: var(--neutral-light-gray);
-    
 }
 
 .model-pick-item img {
@@ -2773,8 +2768,8 @@ body {
         flex: 0 1 48.2667%;
         width: 48.2667%;
         height: auto;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         column-gap: 24px;
         row-gap: clamp(24px, 7.333vw, 110px);
     }
@@ -2814,21 +2809,21 @@ body {
 }
 
 .model-pick-grid {
-    height: 810px;
-    align-content: start;
-    justify-content: end;
+    height: auto;
+    align-content: stretch;
+    justify-content: stretch;
 }
 
 .model-pick-item {
     position: relative;
-    height: 350px;
+    height: auto;
     overflow: visible;
 }
 
 .model-pick-item > img {
     display: block;
     width: 100%;
-    height: 350px;
+    height: auto;
     object-fit: contain;
     object-position: center;
     background: var(--neutral-light-gray);
@@ -3117,14 +3112,20 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    gap: 5px;
+    gap: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    transform: scale(0.970246);
+    transform-origin: top left;
 }
 
 .instagram-image-group {
     display: flex;
     flex: 0 0 auto;
     align-items: flex-end;
-    gap: 5px;
+    gap: 20px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .instagram-image-large {
@@ -3160,7 +3161,7 @@ body {
     }
 
     .instagram-image-row {
-        transform: scale(min(1, 100vw / 1501));
+        transform: scale(min(1, (100vw - 32px) / 1546px));
         transform-origin: top left;
     }
 
@@ -3430,7 +3431,7 @@ body {
     display: block;
     flex: 0 0 752px;
     width: 752px;
-    height: 911px;
+    height: auto;
 }
 
 .model-pick-model-wrap .model-pick-model {
@@ -3759,7 +3760,7 @@ body {
         width: 100%;
         max-width: none;
         height: auto;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, auto);
         align-content: start;
         justify-content: stretch;
@@ -3994,7 +3995,7 @@ body {
         flex-direction: column;
         align-items: stretch;
         width: 100%;
-        gap: 12px;
+        gap: 20px;
         transform: none;
     }
 
@@ -4003,7 +4004,7 @@ body {
         flex: 0 0 auto;
         width: 100%;
         min-width: 0;
-        gap: 4px;
+        gap: 20px;
     }
 
     .instagram-image-large {
@@ -4015,7 +4016,7 @@ body {
     }
 
     .instagram-image-stack {
-        width: calc(33% - 4px);
+        width: calc(33% - 20px);
         height: auto;
         flex: 0 0 calc(33% - 4px);
         justify-content: flex-start;
@@ -5107,7 +5108,7 @@ body {
 @media (min-width: 701px) {
     .model-pick-frame {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         align-items: stretch;
         justify-content: stretch;
         gap: 24px;
@@ -5167,7 +5168,7 @@ body {
 @media (min-width: 701px) {
     .model-pick-frame {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         align-items: stretch;
         height: auto;
     }
@@ -5192,7 +5193,7 @@ body {
         width: 100%;
         height: auto;
         min-width: 0;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         align-content: stretch;
         align-items: stretch;
