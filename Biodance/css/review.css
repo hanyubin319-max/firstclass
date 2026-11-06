@@ -1195,7 +1195,7 @@
 /* Policy links sit directly below the final review-post divider */
 .review-policy-links-row {
   display: flex;
-  width: 100%;
+  width: min(1032px, calc(100vw - 88px));
   align-items: center;
   justify-content: space-between;
   gap: 12px;
@@ -1264,6 +1264,7 @@
 
 @media (max-width: 700px) {
   .review-policy-links-row {
+    width: calc(100vw - 60px);
     align-items: flex-start;
     flex-wrap: wrap;
     row-gap: 10px;
