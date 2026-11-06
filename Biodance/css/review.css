@@ -1680,12 +1680,6 @@ body.is-review-policy-open {
     margin-left: 6px;
   }
 
-  .review-post-rating-group .review-post-tag {
-    font-size: clamp(9px, 2.8vw, 11px);
-    padding-left: 3px;
-    padding-right: 3px;
-  }
-
   /* Rating filter and reset buttons shrink with the viewport */
   .review-toolbar-left {
     width: calc(100% - 16px);
