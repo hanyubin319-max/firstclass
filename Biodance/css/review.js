@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const selectedRating = filter?.value || '';
     const searchQuery = searchInput?.value.trim().toLocaleLowerCase('ko-KR') || '';
-    const posts = [...reviewList.querySelectorAll('.review-post')];
+    const posts = [...reviewList.querySelectorAll('.review-post:not(.review-post-demo)')];
 
     posts.forEach(post => {
       if (!originalOrder.has(post)) {
@@ -102,6 +102,60 @@ document.addEventListener('DOMContentLoaded', () => {
       button.setAttribute('aria-pressed', String(active));
     });
   }
+
+  function maskReviewAuthor(name) {
+    const value = String(name || '').trim();
+    if (!value) return '익명';
+    if (value.includes('*')) return value;
+    const characters = Array.from(value);
+    return characters.length > 1 ? characters[0] + '*'.repeat(characters.length - 1) : '*';
+  }
+
+  function formatReviewDate(dateValue) {
+    if (!dateValue) return '';
+    const matched = String(dateValue).match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);
+    const date = matched
+      ? new Date(Number(matched[1]), Number(matched[2]) - 1, Number(matched[3]))
+      : new Date(dateValue);
+    if (Number.isNaN(date.getTime())) return '';
+
+    const today = new Date();
+    const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const targetStart = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    const days = Math.max(0, Math.floor((todayStart - targetStart) / 86400000));
+
+    if (days === 0) return '오늘 작성';
+    if (days < 30) return `${days}일 전 작성`;
+
+    const months = Math.floor(days / 30);
+    if (months < 12) return `${months}개월 전 작성`;
+
+    return `${Math.floor(months / 12)}년 전 작성`;
+  }
+
+  function renderReviewPostMetadata(post) {
+    const author = post.dataset.author;
+    const authorElement = post.querySelector('.review-post-author');
+    if (authorElement && author) authorElement.textContent = maskReviewAuthor(author);
+
+    const dateElement = post.querySelector('[data-review-date]');
+    if (dateElement) {
+      const relativeDate = formatReviewDate(dateElement.getAttribute('datetime') || post.dataset.date);
+      if (relativeDate) dateElement.textContent = relativeDate;
+    }
+
+    const rating = Math.max(0, Math.min(5, Number(post.dataset.rating) || 0));
+    const starContainer = post.querySelector('[data-review-stars]');
+    if (starContainer) {
+      starContainer.replaceChildren();
+      starContainer.setAttribute('aria-label', `별점 ${rating}점`);
+      for (let index = 1; index <= 5; index++) {
+        starContainer.appendChild(createStar(index <= rating, 'review-post-star'));
+      }
+    }
+  }
+
+  document.querySelectorAll('.review-post').forEach(renderReviewPostMetadata);
 
   // Event 페이지와 같은 키보드 조작을 지원하는 별점 커스텀 드롭다운
   function enhanceSelect(select) {
@@ -292,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 리뷰 게시물(.review-post)의 개수를 자동으로 표시
   function updateReviewCount() {
     if (!reviewList || !reviewCount) return;
-    reviewCount.textContent = String(reviewList.querySelectorAll('.review-post').length);
+    reviewCount.textContent = String(reviewList.querySelectorAll('.review-post:not(.review-post-demo)').length);
   }
 
   updateSortButtons();
