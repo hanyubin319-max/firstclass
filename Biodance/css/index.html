@@ -385,14 +385,14 @@
                 slideChangeTransitionStart(swiper) {
                     const progressLine = swiper.el.querySelector('.hero-pagination-line');
                     if (!progressLine) return;
-                    progressLine.style.transform = 'scaleX(0)';
+                    progressLine.style.setProperty('--hero-progress', '0');
                     progressLine.setAttribute('aria-valuenow', '0');
                 },
                 autoplayTimeLeft(swiper, timeLeft, percentage) {
                     const progressLine = swiper.el.querySelector('.hero-pagination-line');
                     if (!progressLine) return;
                     const progress = Math.min(1, Math.max(0, 1 - percentage));
-                    progressLine.style.transform = `scaleX(${progress})`;
+                    progressLine.style.setProperty('--hero-progress', String(progress));
                     progressLine.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
                 },
             },
