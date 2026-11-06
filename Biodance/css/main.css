@@ -97,26 +97,6 @@ body {
     
     color: var(--text-secondary);
 }
-.hero-sec .hero-controls .hero-autoplay-progress {
-    position: relative;
-    width: auto;
-    height: 2px;
-    flex: 1 1 auto;
-    min-width: 30px;
-    overflow: hidden;
-    border-radius: 9999px;
-    background: color-mix(in srgb, var(--text-secondary) 20%, transparent);
-}
-.hero-sec .hero-controls .hero-autoplay-progress-fill {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    background: var(--text-secondary);
-    transform: scaleX(0);
-    transform-origin: left center;
-    will-change: transform;
-}
 .hero-sec .hero-controls .swiper-pagination {
     position: static;
     
@@ -5226,3 +5206,11 @@ body {
     }
 }
 
+
+
+/* Use the original line between 01 and 03 as the autoplay progress bar. */
+.hero-sec .hero-controls .hero-pagination-line {
+    transform: scaleX(0);
+    transform-origin: left center;
+    will-change: transform;
+}
