@@ -1513,7 +1513,7 @@ body.is-review-policy-open {
 /* Restore the full review-card size while keeping the reduced top alignment */
 @media (min-width: 701px) {
   .review-page .review-list .review-post {
-    height: auto;
+    height: 795px;
     min-height: 795px;
     padding: 61px 0 0;
     align-items: center;
@@ -1530,6 +1530,11 @@ body.is-review-policy-open {
     justify-content: flex-start;
     padding: 22px 0 0;
     box-sizing: border-box;
+  }
+
+  .review-page .review-list .review-post:has(.review-post-inner.is-reply-open) {
+    height: auto;
+    min-height: 856px;
   }
 
   .review-page .review-list .review-post .review-post-inner.is-reply-open {
