@@ -610,7 +610,7 @@
   width: 1px;
   height: 12px;
   flex: 0 0 1px;
-  background: var(--neutral-border-gray);
+  background: var(--neutral-gray);
 }
 .review-post-author {
   color: var(--neutral-charcoal);
@@ -917,6 +917,30 @@
   justify-content: flex-start;
   gap: 4px;
   color: var(--neutral-gray);
+}
+.review-post-action.is-reply {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.review-post-action.is-reply:focus-visible {
+  outline: 2px solid var(--neutral-gray);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.review-post-action.is-reply[aria-expanded="true"] .review-post-action-arrow {
+  transform: rotate(225deg);
+}
+.review-post-action.is-reply[aria-expanded="false"] .review-post-action-arrow {
+  transform: rotate(45deg);
+}
+.review-post-reply-frame[hidden],
+.review-post-writer-frame[hidden] {
+  display: none !important;
 }
 .review-post-action-icon {
   display: block;
