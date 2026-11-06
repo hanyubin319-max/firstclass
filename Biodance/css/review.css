@@ -576,7 +576,8 @@
 }
 .review-post {
   width: 100%;
-  height: 673px;
+  height: auto;
+  min-height: 673px;
   min-width: 0;
   padding: 30px;
   box-sizing: border-box;
@@ -687,7 +688,8 @@
   width: 40px;
   height: 40px;
   flex: 0 0 40px;
-  margin-left: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   object-fit: contain;
 }
 .review-post-product-text {
@@ -696,7 +698,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  margin-left: 5px;
+  margin-left: 0;
 }
 .review-post-product-name {
   overflow: hidden;
@@ -855,7 +857,8 @@
     width: calc(100vw - 32px);
   }
   .review-post {
-    height: 673px;
+    height: auto;
+    min-height: 673px;
     padding: 18px 14px;
   }
   .review-post-header {
@@ -953,4 +956,43 @@
   .review-post-actions {
     gap: 20px;
   }
+}
+
+
+/* Review reply and author details */
+.review-post-reply-frame {
+  display: flex;
+  width: min(1032px, 100%);
+  height: 57px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 25px;
+}
+.review-post-reply-frame p {
+  margin: 0;
+  color: var(--neutral-charcoal);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: left;
+}
+.review-post-writer-frame {
+  display: flex;
+  width: min(1032px, 100%);
+  height: 30px;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.review-post-writer-frame span {
+  color: var(--neutral-charcoal);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: left;
+}
+.review-post-bottom-divider {
+  width: min(1032px, 100%);
+  height: 1px;
+  margin-top: 50px;
+  background: var(--neutral-gray);
 }
