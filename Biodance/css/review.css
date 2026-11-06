@@ -637,7 +637,7 @@
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   margin-left: 20px;
 }
 .review-post-tag {
@@ -708,7 +708,7 @@
   white-space: nowrap;
 }
 .review-post-product-option {
-  color: var(--neutral-border-gray);
+  color: var(--neutral-gray);
   font-size: 12px;
   font-weight: 500;
   line-height: 1;
@@ -796,7 +796,7 @@
 }
 .review-post-media-item {
   display: flex;
-  width: 100%;
+  width: calc(100% - 5px);
   aspect-ratio: 1 / 1;
   align-items: center;
   justify-content: center;
