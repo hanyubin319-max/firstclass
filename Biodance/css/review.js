@@ -205,6 +205,17 @@ document.addEventListener('DOMContentLoaded', () => {
   updateReviewMoreButtons(reviewList || document);
   window.addEventListener('resize', () => updateReviewMoreButtons(reviewList || document));
 
+  const replyToggle = reviewList?.querySelector('.review-post-action.is-reply');
+  const replyFrame = reviewList?.querySelector('#review-post-reply-frame');
+  const replyWriterFrame = reviewList?.querySelector('#review-post-writer-frame');
+
+  replyToggle?.addEventListener('click', () => {
+    const expanded = replyToggle.getAttribute('aria-expanded') !== 'true';
+    replyToggle.setAttribute('aria-expanded', String(expanded));
+    if (replyFrame) replyFrame.hidden = !expanded;
+    if (replyWriterFrame) replyWriterFrame.hidden = !expanded;
+  });
+
   reviewList?.addEventListener('click', event => {
     const button = event.target.closest('.review-post-more');
     if (!button) return;
