@@ -74,7 +74,7 @@
           </label>
           <button type="button" class="review-filter-reset" id="review-filter-reset" hidden>
             <span>필터 초기화</span>
-            <svg class="review-filter-reset-icon" viewBox="0 0 16 16" width="8" height="8" aria-hidden="true">
+            <svg class="review-filter-reset-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true">
               <path d="M13.5 5.5A6 6 0 0 0 2 7M2 7V3M2 7h4M2.5 10.5A6 6 0 0 0 14 9m0 0v4m0-4h-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
@@ -108,6 +108,7 @@
           <div class="review-post-header">
             <div class="review-post-author-group">
               <span class="review-post-author">김**</span>
+              <span class="review-post-meta-divider" aria-hidden="true"></span>
               <time class="review-post-date" datetime="2026-11-05" data-review-date>1일 전 작성</time>
             </div>
             <div class="review-post-rating" data-review-stars aria-label="별점 5점"></div>
@@ -116,6 +117,20 @@
               <span class="review-post-tag is-rose">한달사용</span>
             </div>
             <span class="review-post-demo-label">레이아웃 예시</span>
+          </div>
+
+          <div class="review-post-product" aria-label="구매 상품 예시">
+            <span class="review-post-product-accent" aria-hidden="true"></span>
+            <img class="review-post-product-image" src="../img/Best%20product-2.png" alt="바이오 콜라겐 리얼 딥 마스크">
+            <div class="review-post-product-text">
+              <span class="review-post-product-name">바이오 콜라겐 리얼 딥 마스크</span>
+              <span class="review-post-product-option">16매</span>
+            </div>
+          </div>
+
+          <div class="review-post-text-frame" aria-label="리뷰 작성글 예시">
+            <p class="review-post-body-text">이 영역은 고객이 작성한 리뷰 내용이 표시되는 위치를 보여주는 레이아웃 예시입니다. 실제 서비스에서는 고객이 입력한 제품 사용 경험과 만족도 등의 내용이 그대로 표시됩니다. 작성글이 두 줄보다 길어지면 더보기를 눌러 전체 내용을 확인할 수 있으며, 접기를 누르면 처음 상태로 돌아옵니다. 화면 너비가 달라지면 글줄 수에 맞춰 내용 영역도 자연스럽게 조정됩니다.</p>
+            <button type="button" class="review-post-more" aria-expanded="false">더보기</button>
           </div>
         </article>
       </div>
