@@ -61,22 +61,25 @@
       </div>
 
       <div class="review-toolbar" aria-label="리뷰 필터 및 정렬">
-        <label class="review-filter-control" aria-label="리뷰 필터">
-          <select id="review-filter" aria-label="별점 필터">
-            <option value="" selected disabled>별점</option>
-            <option value="5">별점 5점</option>
-            <option value="4">별점 4점</option>
-            <option value="3">별점 3점</option>
-            <option value="2">별점 2점</option>
-            <option value="1">별점 1점</option>
-          </select>
-        </label>
+        <div class="review-toolbar-left">
+          <label class="review-filter-control" aria-label="리뷰 별점 필터">
+            <select id="review-filter" aria-label="별점 필터">
+              <option value="" selected disabled>별점</option>
+              <option value="5">별점 5점</option>
+              <option value="4">별점 4점</option>
+              <option value="3">별점 3점</option>
+              <option value="2">별점 2점</option>
+              <option value="1">별점 1점</option>
+            </select>
+          </label>
+          <button type="button" class="review-filter-reset" id="review-filter-reset" hidden>필터 초기화</button>
+        </div>
 
         <div class="review-toolbar-right">
           <div class="review-sort-group" aria-label="리뷰 정렬 기준">
-            <span class="review-sort-label">추천순</span>
-            <span class="review-sort-label">회신순</span>
-            <span class="review-sort-label">별점 높은순</span>
+            <button type="button" class="review-sort-label is-active" data-sort="recommended" aria-pressed="true">추천순</button>
+            <button type="button" class="review-sort-label" data-sort="latest" aria-pressed="false">최신순</button>
+            <button type="button" class="review-sort-label" data-sort="rating" aria-pressed="false">별점 높은순</button>
           </div>
           <span class="review-sort-divider" aria-hidden="true"></span>
           <button type="button" class="review-direct-search" id="review-search-open" aria-label="직접검색 열기">
