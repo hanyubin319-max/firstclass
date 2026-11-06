@@ -208,12 +208,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const replyToggle = reviewList?.querySelector('.review-post-action.is-reply');
   const replyFrame = reviewList?.querySelector('#review-post-reply-frame');
   const replyWriterFrame = reviewList?.querySelector('#review-post-writer-frame');
+  const postInnerFrame = replyToggle?.closest('.review-post')?.querySelector('.review-post-inner');
 
   replyToggle?.addEventListener('click', () => {
     const expanded = replyToggle.getAttribute('aria-expanded') !== 'true';
     replyToggle.setAttribute('aria-expanded', String(expanded));
     if (replyFrame) replyFrame.hidden = !expanded;
     if (replyWriterFrame) replyWriterFrame.hidden = !expanded;
+    postInnerFrame?.classList.toggle('is-reply-open', expanded);
   });
 
   reviewList?.addEventListener('click', event => {
