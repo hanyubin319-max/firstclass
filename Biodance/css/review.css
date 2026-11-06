@@ -502,7 +502,7 @@
   }
   .review-toolbar-left {
     width: calc(100% - 16px);
-    flex: 1 0 100%;
+    flex: 1 0 calc(100% - 16px);
     gap: 15px;
     margin: 0 8px;
   }
@@ -540,7 +540,8 @@
     font-size: clamp(10px, 2.9vw, 11px);
   }
   .review-toolbar-right {
-    height: 34px;
+    height: auto;
+    min-height: 34px;
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 12px;
@@ -578,8 +579,9 @@
     flex-basis: 100%;
   }
   .review-toolbar-right {
-    width: 100%;
+    width: calc(100% - 16px);
     justify-content: flex-end;
+    margin: 0 8px;
   }
 }
 
