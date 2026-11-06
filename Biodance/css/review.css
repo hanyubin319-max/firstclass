@@ -1541,3 +1541,165 @@ body.is-review-policy-open {
     min-height: 795px;
   }
 }
+
+
+/* Mobile review guide: four square reward cards, minimum 123 x 123 */
+@media (max-width: 700px) {
+  .review-page .review-guide-frame {
+    display: grid;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    grid-template-columns: repeat(2, minmax(123px, 160px));
+    grid-auto-rows: 1fr;
+    align-content: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .review-page .review-point-card {
+    display: flex;
+    width: 100%;
+    min-width: 123px;
+    height: auto;
+    min-height: 123px;
+    aspect-ratio: 1 / 1;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 309px) {
+  .review-page .review-guide-frame {
+    grid-template-columns: minmax(123px, 1fr);
+  }
+}
+
+/* Keep purchase categories attached to the star rating on one line */
+.review-post-rating-group {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+  flex: 0 0 auto;
+  align-items: center;
+  white-space: nowrap;
+}
+.review-post-rating-group .review-post-rating {
+  flex: 0 0 auto;
+}
+.review-post-rating-group .review-post-categories {
+  display: inline-flex;
+  min-width: 0;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  white-space: nowrap;
+}
+.review-post-rating-group .review-post-tag {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .review-post-header {
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .review-post-rating-group {
+    max-width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .review-post-rating-group .review-post-rating {
+    gap: 2px;
+    margin-left: 0;
+  }
+
+  .review-post-rating-group .review-post-star {
+    width: clamp(16px, 4.5vw, 18px);
+    height: clamp(16px, 4.5vw, 18px);
+    flex-basis: clamp(16px, 4.5vw, 18px);
+  }
+
+  .review-post-rating-group .review-post-categories {
+    gap: 5px;
+    margin-left: 8px;
+  }
+
+  .review-post-rating-group .review-post-tag {
+    font-size: clamp(10px, 3vw, 12px);
+  }
+
+  /* Rating filter and reset buttons shrink with the viewport */
+  .review-toolbar-left {
+    width: calc(100% - 16px);
+    min-width: 0;
+    flex: 1 1 100%;
+    gap: clamp(6px, 2vw, 12px);
+    margin: 0 8px;
+  }
+
+  .review-filter-control {
+    width: clamp(88px, 30vw, 112px);
+    min-width: 0;
+    flex: 0 1 clamp(88px, 30vw, 112px);
+  }
+
+  .review-filter-control .custom-select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .review-filter-control .custom-select-trigger {
+    width: 100%;
+    min-width: 0 !important;
+    height: clamp(30px, 8.5vw, 34px) !important;
+    min-height: clamp(30px, 8.5vw, 34px) !important;
+    max-height: clamp(30px, 8.5vw, 34px) !important;
+    gap: clamp(5px, 1.8vw, 10px);
+    padding: 0 clamp(6px, 2vw, 10px);
+    font-size: clamp(10px, 3vw, 13px);
+  }
+
+  .review-filter-control .custom-select-trigger::after {
+    width: 6px;
+    height: 6px;
+    flex-basis: 6px;
+  }
+
+  .review-page .review-filter-reset {
+    width: clamp(88px, 30vw, 112px);
+    min-width: 0;
+    height: clamp(30px, 8.5vw, 34px) !important;
+    min-height: clamp(30px, 8.5vw, 34px) !important;
+    max-height: clamp(30px, 8.5vw, 34px) !important;
+    flex: 0 1 clamp(88px, 30vw, 112px);
+    gap: 3px;
+    padding: 0 clamp(5px, 1.8vw, 8px) !important;
+    font-size: clamp(10px, 3vw, 13px);
+  }
+
+  .review-filter-reset-icon {
+    width: clamp(12px, 3.7vw, 15px);
+    height: clamp(12px, 3.7vw, 15px);
+    flex-basis: clamp(12px, 3.7vw, 15px);
+  }
+
+  .review-filter-control .review-rating-star {
+    width: clamp(12px, 3.8vw, 14px);
+    height: clamp(12px, 3.8vw, 14px);
+    flex-basis: clamp(12px, 3.8vw, 14px);
+  }
+
+  .review-filter-control .custom-select-option {
+    gap: 1px;
+    padding-inline: 4px;
+  }
+}
