@@ -585,3 +585,141 @@
   }
 }
 
+
+
+/* Review post card layout */
+.review-list {
+  width: min(2060px, calc(100vw - 40px));
+  min-height: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.review-post {
+  width: 100%;
+  height: 673px;
+  min-width: 0;
+  padding: 30px;
+  box-sizing: border-box;
+  background: var(--brand-pink);
+}
+.review-post-header {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.review-post-author-group {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+}
+.review-post-author {
+  color: var(--neutral-charcoal);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.review-post-date {
+  color: var(--neutral-charcoal);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.review-post-rating {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  margin-left: 10px;
+}
+.review-post-star {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+.review-post-star.is-filled {
+  color: var(--neutral-charcoal);
+}
+.review-post-star.is-empty {
+  color: var(--neutral-border-gray);
+}
+.review-post-categories {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+.review-post-tag {
+  display: inline-flex;
+  width: fit-content;
+  height: 20px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 4px;
+  border: 1px solid currentColor;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+.review-post-tag.is-mint {
+  border-color: var(--teal-mint);
+  color: var(--teal-mint);
+}
+.review-post-tag.is-rose {
+  border-color: var(--brand-rose);
+  color: var(--brand-rose);
+}
+.review-post-demo-label {
+  margin-left: auto;
+  color: var(--neutral-charcoal);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+@media (max-width: 700px) {
+  .review-list {
+    width: calc(100vw - 32px);
+  }
+  .review-post {
+    height: 673px;
+    padding: 18px 14px;
+  }
+  .review-post-header {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .review-post-author-group {
+    gap: 7px;
+  }
+  .review-post-author {
+    font-size: 16px;
+  }
+  .review-post-date {
+    font-size: 14px;
+  }
+  .review-post-rating {
+    gap: 4px;
+    margin-left: 10px;
+  }
+  .review-post-star {
+    width: 20px;
+    height: 20px;
+    flex-basis: 20px;
+  }
+  .review-post-categories {
+    gap: 10px;
+    margin-left: 10px;
+  }
+  .review-post-demo-label {
+    width: 100%;
+    margin-left: 0;
+  }
+}
