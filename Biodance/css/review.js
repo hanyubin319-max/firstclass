@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const selectedRating = filter?.value || '';
     const searchQuery = searchInput?.value.trim().toLocaleLowerCase('ko-KR') || '';
-    const posts = [...reviewList.querySelectorAll('.review-post:not(.review-post-demo)')];
+    const posts = [...reviewList.querySelectorAll('.review-post')];
 
     posts.forEach(post => {
       if (!originalOrder.has(post)) {
@@ -205,17 +205,19 @@ document.addEventListener('DOMContentLoaded', () => {
   updateReviewMoreButtons(reviewList || document);
   window.addEventListener('resize', () => updateReviewMoreButtons(reviewList || document));
 
-  const replyToggle = reviewList?.querySelector('.review-post-action.is-reply');
-  const replyFrame = reviewList?.querySelector('#review-post-reply-frame');
-  const replyWriterFrame = reviewList?.querySelector('#review-post-writer-frame');
-  const postInnerFrame = replyToggle?.closest('.review-post')?.querySelector('.review-post-inner');
+  reviewList?.querySelectorAll('.review-post-action.is-reply').forEach(replyToggle => {
+    const post = replyToggle.closest('.review-post');
+    const replyFrame = post?.querySelector('.review-post-reply-frame');
+    const replyWriterFrame = post?.querySelector('.review-post-writer-frame');
+    const postInnerFrame = post?.querySelector('.review-post-inner');
 
-  replyToggle?.addEventListener('click', () => {
-    const expanded = replyToggle.getAttribute('aria-expanded') !== 'true';
-    replyToggle.setAttribute('aria-expanded', String(expanded));
-    if (replyFrame) replyFrame.hidden = !expanded;
-    if (replyWriterFrame) replyWriterFrame.hidden = !expanded;
-    postInnerFrame?.classList.toggle('is-reply-open', expanded);
+    replyToggle.addEventListener('click', () => {
+      const expanded = replyToggle.getAttribute('aria-expanded') !== 'true';
+      replyToggle.setAttribute('aria-expanded', String(expanded));
+      if (replyFrame) replyFrame.hidden = !expanded;
+      if (replyWriterFrame) replyWriterFrame.hidden = !expanded;
+      postInnerFrame?.classList.toggle('is-reply-open', expanded);
+    });
   });
 
   reviewList?.addEventListener('click', event => {
