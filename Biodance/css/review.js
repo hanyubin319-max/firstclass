@@ -125,12 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const days = Math.max(0, Math.floor((todayStart - targetStart) / 86400000));
 
     if (days === 0) return '오늘 작성';
-    if (days < 30) return `${days}일 전 작성`;
 
-    const months = Math.floor(days / 30);
-    if (months < 12) return `${months}개월 전 작성`;
+    let months = (today.getFullYear() - date.getFullYear()) * 12;
+    months += today.getMonth() - date.getMonth();
+    if (today.getDate() < date.getDate()) months -= 1;
 
-    return `${Math.floor(months / 12)}년 전 작성`;
+    if (months >= 12) return `${Math.floor(months / 12)}년 전 작성`;
+    if (months >= 1) return `${months}개월 전 작성`;
+    return `${days}일 전 작성`;
   }
 
   function renderReviewPostMetadata(post) {
