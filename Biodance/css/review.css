@@ -975,11 +975,14 @@
   width: 7px;
   height: 7px;
   flex: 0 0 7px;
-  margin: -3px 0 0 0;
+  align-self: center;
+  margin: 0;
+  box-sizing: border-box;
   border-right: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
   color: var(--neutral-gray);
   transform: rotate(45deg);
+  transform-origin: center;
 }
 @media (max-width: 700px) {
   .review-post-actions {
