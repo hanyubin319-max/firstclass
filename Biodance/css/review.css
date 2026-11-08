@@ -2063,3 +2063,11 @@ body.is-review-policy-open {
     flex: 0 0 673px !important;
   }
 }
+
+
+/* Prevent post content elements from shrinking inside the fixed-height frame. */
+@media screen {
+  .review-page .review-list > .review-post > .review-post-inner > * {
+    flex: 0 0 auto !important;
+  }
+}
