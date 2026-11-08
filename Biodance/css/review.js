@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Review media gallery: show the selected media large with selectable thumbnails.
+  // Review media gallery: supports both real media files and layout placeholder tiles.
   let mediaLightbox = null;
   function closeMediaLightbox() {
     if (!mediaLightbox) return;
@@ -419,22 +419,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getReviewMedia(item) {
-    return item?.querySelector('video, iframe, img:not(.review-post-media-play)');
+    return item?.querySelector('video, iframe, img:not(.review-post-media-play)') || null;
   }
 
-  function renderLightboxMedia(stage, source) {
+  function renderLightboxMedia(stage, item) {
     stage.replaceChildren();
-    if (!source) return;
-    const enlarged = source.cloneNode(true);
-    enlarged.removeAttribute('width');
-    enlarged.removeAttribute('height');
-    enlarged.removeAttribute('class');
-    if (enlarged.tagName === 'VIDEO') {
-      enlarged.controls = true;
-      enlarged.autoplay = true;
-      enlarged.playsInline = true;
+    const source = getReviewMedia(item);
+    if (source) {
+      const enlarged = source.cloneNode(true);
+      enlarged.removeAttribute('width');
+      enlarged.removeAttribute('height');
+      enlarged.removeAttribute('class');
+      if (enlarged.tagName === 'VIDEO') {
+        enlarged.controls = true;
+        enlarged.autoplay = true;
+        enlarged.playsInline = true;
+      }
+      stage.appendChild(enlarged);
+      return;
     }
-    stage.appendChild(enlarged);
+
+    // The current review demo contains placeholder tiles without image/video URLs.
+    // Keep the clicked tile visible rather than silently refusing to open the viewer.
+    const placeholder = item.cloneNode(true);
+    placeholder.classList.add('review-media-lightbox-placeholder');
+    placeholder.querySelector('.review-post-media-play')?.remove();
+    stage.appendChild(placeholder);
   }
 
   reviewList?.addEventListener('click', event => {
@@ -443,8 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
 
     const mediaGrid = mediaItem.closest('.review-post-media-grid');
-    const mediaItems = [...(mediaGrid?.querySelectorAll('.review-post-media-item') || [])]
-      .filter(item => getReviewMedia(item));
+    const mediaItems = [...(mediaGrid?.querySelectorAll('.review-post-media-item') || [])];
     if (!mediaItems.length) return;
 
     closeMediaLightbox();
@@ -476,15 +485,22 @@ document.addEventListener('DOMContentLoaded', () => {
       thumbnail.setAttribute('aria-label', `미디어 ${index + 1} 보기`);
       thumbnail.setAttribute('aria-pressed', 'false');
 
-      const preview = source.cloneNode(true);
-      preview.removeAttribute('class');
-      preview.removeAttribute('width');
-      preview.removeAttribute('height');
-      preview.removeAttribute('controls');
-      preview.removeAttribute('autoplay');
-      preview.muted = true;
-      preview.setAttribute('aria-hidden', 'true');
-      thumbnail.appendChild(preview);
+      if (source) {
+        const preview = source.cloneNode(true);
+        preview.removeAttribute('class');
+        preview.removeAttribute('width');
+        preview.removeAttribute('height');
+        preview.removeAttribute('controls');
+        preview.removeAttribute('autoplay');
+        preview.muted = true;
+        preview.setAttribute('aria-hidden', 'true');
+        thumbnail.appendChild(preview);
+      } else {
+        const preview = item.cloneNode(true);
+        preview.classList.add('review-media-lightbox-thumbnail-placeholder');
+        preview.querySelector('.review-post-media-play')?.remove();
+        thumbnail.appendChild(preview);
+      }
 
       thumbnail.addEventListener('click', () => {
         thumbnails.querySelectorAll('.review-media-lightbox-thumbnail').forEach(button => {
@@ -493,13 +509,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         thumbnail.classList.add('is-selected');
         thumbnail.setAttribute('aria-pressed', 'true');
-        renderLightboxMedia(stage, source);
+        renderLightboxMedia(stage, item);
       });
       thumbnails.appendChild(thumbnail);
       if (item === mediaItem) {
         thumbnail.classList.add('is-selected');
         thumbnail.setAttribute('aria-pressed', 'true');
-        renderLightboxMedia(stage, source);
+        renderLightboxMedia(stage, item);
       }
     });
 
