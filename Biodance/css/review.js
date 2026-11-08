@@ -409,6 +409,67 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Review media: click a photo/video tile to inspect it in a large overlay.
+  let mediaLightbox = null;
+  function closeMediaLightbox() {
+    if (!mediaLightbox) return;
+    mediaLightbox.remove();
+    mediaLightbox = null;
+    document.body.classList.remove('is-review-media-open');
+  }
+  reviewList?.addEventListener('click', event => {
+    const mediaItem = event.target.closest('.review-post-media-item');
+    if (!mediaItem || !reviewList.contains(mediaItem)) return;
+    event.preventDefault();
+
+    closeMediaLightbox();
+    mediaLightbox = document.createElement('div');
+    mediaLightbox.className = 'review-media-lightbox';
+    mediaLightbox.setAttribute('role', 'dialog');
+    mediaLightbox.setAttribute('aria-modal', 'true');
+    mediaLightbox.setAttribute('aria-label', '리뷰 사진 및 동영상 크게 보기');
+
+    const content = document.createElement('div');
+    content.className = 'review-media-lightbox-content';
+    const closeButton = document.createElement('button');
+    closeButton.type = 'button';
+    closeButton.className = 'review-media-lightbox-close';
+    closeButton.setAttribute('aria-label', '닫기');
+    closeButton.textContent = '×';
+
+    const media = mediaItem.querySelector('video, iframe, img:not(.review-post-media-play)');
+    if (media) {
+      const enlargedMedia = media.cloneNode(true);
+      enlargedMedia.removeAttribute('width');
+      enlargedMedia.removeAttribute('height');
+      if (enlargedMedia.tagName === 'VIDEO') {
+        enlargedMedia.controls = true;
+        enlargedMedia.autoplay = true;
+        enlargedMedia.playsInline = true;
+      }
+      content.appendChild(enlargedMedia);
+    } else {
+      const enlargedTile = mediaItem.cloneNode(true);
+      enlargedTile.removeAttribute('tabindex');
+      enlargedTile.style.cursor = 'default';
+      content.appendChild(enlargedTile);
+    }
+
+    content.appendChild(closeButton);
+    mediaLightbox.appendChild(content);
+    document.body.appendChild(mediaLightbox);
+    document.body.classList.add('is-review-media-open');
+    closeButton.addEventListener('click', closeMediaLightbox);
+    mediaLightbox.addEventListener('click', lightboxEvent => {
+      if (lightboxEvent.target === mediaLightbox) closeMediaLightbox();
+    });
+    closeButton.focus();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mediaLightbox) closeMediaLightbox();
+  });
+
   reviewList?.addEventListener('click', event => {
     const button = event.target.closest('.review-post-more');
     if (!button) return;
