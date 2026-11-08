@@ -512,48 +512,62 @@ document.addEventListener('DOMContentLoaded', () => {
     thumbnails.className = 'review-media-lightbox-thumbnails';
     thumbnails.setAttribute('aria-label', '미디어 썸네일');
 
-    mediaItems.forEach((item, index) => {
-      const source = getReviewMedia(item);
-      const thumbnail = document.createElement('button');
-      thumbnail.type = 'button';
-      thumbnail.className = 'review-media-lightbox-thumbnail';
-      thumbnail.setAttribute('aria-label', `미디어 ${index + 1} 보기`);
-      thumbnail.setAttribute('aria-pressed', 'false');
+    let thumbnailStart = 0;
+    let selectedIndex = Math.max(0, mediaItems.indexOf(mediaItem));
 
-      if (source) {
-        const preview = source.cloneNode(true);
-        preview.removeAttribute('class');
-        preview.removeAttribute('width');
-        preview.removeAttribute('height');
-        preview.removeAttribute('controls');
-        preview.removeAttribute('autoplay');
-        preview.muted = true;
-        preview.setAttribute('aria-hidden', 'true');
-        thumbnail.appendChild(preview);
-      } else {
-        const preview = item.cloneNode(true);
-        preview.classList.add('review-media-lightbox-thumbnail-placeholder');
-        preview.querySelector('.review-post-media-play')?.remove();
-        thumbnail.appendChild(preview);
-      }
-      if (isReviewVideo(item, source)) addVideoPlayIndicator(thumbnail);
+    function renderThumbnails() {
+      thumbnails.replaceChildren();
+      const visibleItems = mediaItems.slice(thumbnailStart, thumbnailStart + 3);
 
-      thumbnail.addEventListener('click', () => {
-        thumbnails.querySelectorAll('.review-media-lightbox-thumbnail').forEach(button => {
-          button.classList.remove('is-selected');
-          button.setAttribute('aria-pressed', 'false');
+      visibleItems.forEach((item, visibleIndex) => {
+        const index = thumbnailStart + visibleIndex;
+        const source = getReviewMedia(item);
+        const thumbnail = document.createElement('button');
+        thumbnail.type = 'button';
+        thumbnail.className = 'review-media-lightbox-thumbnail';
+        thumbnail.setAttribute('aria-label', `미디어 ${index + 1} 보기`);
+        thumbnail.setAttribute('aria-pressed', String(index === selectedIndex));
+
+        if (source) {
+          const preview = source.cloneNode(true);
+          preview.removeAttribute('class');
+          preview.removeAttribute('width');
+          preview.removeAttribute('height');
+          preview.removeAttribute('controls');
+          preview.removeAttribute('autoplay');
+          preview.muted = true;
+          preview.setAttribute('aria-hidden', 'true');
+          thumbnail.appendChild(preview);
+        } else {
+          const preview = item.cloneNode(true);
+          preview.classList.add('review-media-lightbox-thumbnail-placeholder');
+          preview.querySelector('.review-post-media-play')?.remove();
+          thumbnail.appendChild(preview);
+        }
+        if (isReviewVideo(item, source)) addVideoPlayIndicator(thumbnail);
+
+        if (index === selectedIndex) {
+          thumbnail.classList.add('is-selected');
+        }
+
+        thumbnail.addEventListener('click', () => {
+          selectedIndex = index;
+          renderLightboxMedia(stage, item);
+
+          // Keep exactly three thumbnails visible; selecting the third advances the window.
+          if (index === thumbnailStart + 2 && thumbnailStart + 3 < mediaItems.length) {
+            thumbnailStart = Math.min(index, mediaItems.length - 3);
+          } else if (index === thumbnailStart && thumbnailStart > 0) {
+            thumbnailStart = Math.max(0, index - 2);
+          }
+          renderThumbnails();
         });
-        thumbnail.classList.add('is-selected');
-        thumbnail.setAttribute('aria-pressed', 'true');
-        renderLightboxMedia(stage, item);
+        thumbnails.appendChild(thumbnail);
       });
-      thumbnails.appendChild(thumbnail);
-      if (item === mediaItem) {
-        thumbnail.classList.add('is-selected');
-        thumbnail.setAttribute('aria-pressed', 'true');
-        renderLightboxMedia(stage, item);
-      }
-    });
+    }
+
+    renderThumbnails();
+    renderLightboxMedia(stage, mediaItems[selectedIndex]);
 
     stage.appendChild(closeButton);
     gallery.append(stage, thumbnails);
