@@ -4438,3 +4438,42 @@ body.is-review-policy-open {
     padding-top: 14px !important;
   }
 }
+
+
+/* Mobile review media viewer: keep the X visible inside the enlarged media frame
+   at every phone width (including narrow devices), even after changing thumbnails. */
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-stage {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .review-media-lightbox-stage > .review-media-lightbox-close {
+    position: absolute !important;
+    display: flex !important;
+    top: 8px !important;
+    right: 8px !important;
+    z-index: 50 !important;
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .review-media-lightbox-stage > .review-media-lightbox-close img {
+    display: block !important;
+    width: 18px !important;
+    height: 18px !important;
+    object-fit: contain !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
