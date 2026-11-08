@@ -2142,7 +2142,7 @@ body.is-review-policy-open {
     align-items: stretch !important;
     justify-content: flex-start !important;
     margin: 0 !important;
-    padding: 61px 0 !important;
+    padding: 61px 0 0 !important;
     box-sizing: border-box !important;
     overflow: visible !important;
   }
@@ -2154,9 +2154,12 @@ body.is-review-policy-open {
   }
 
   .review-page .review-post-media-grid {
-    display: flex !important;
+    display: grid !important;
     width: 100% !important;
     max-width: none !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-auto-flow: column !important;
+    grid-auto-columns: calc((100% - 20px) / 4) !important;
     gap: 6.66px !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
@@ -2167,10 +2170,7 @@ body.is-review-policy-open {
   }
 
   .review-page .review-post-media-item {
-    width: calc((100% - 20px) / 4) !important;
-    min-width: calc((100% - 20px) / 4) !important;
-    max-width: calc((100% - 20px) / 4) !important;
-    flex: 0 0 calc((100% - 20px) / 4) !important;
+    width: calc(100% - 5px) !important;
     aspect-ratio: 1 / 1 !important;
   }
 
@@ -2187,10 +2187,13 @@ body.is-review-policy-open {
     padding-left: 14px !important;
   }
 
+  .review-page .review-post-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-columns: calc((100% - 8px) / 2) !important;
+    gap: 8px !important;
+  }
+
   .review-page .review-post-media-item {
-    width: calc((100% - 8px) / 2) !important;
-    min-width: calc((100% - 8px) / 2) !important;
-    max-width: calc((100% - 8px) / 2) !important;
-    flex-basis: calc((100% - 8px) / 2) !important;
+    width: calc(100% - 5px) !important;
   }
 }
