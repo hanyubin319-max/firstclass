@@ -3503,3 +3503,47 @@ body.is-review-policy-open {
     flex: 0 0 14px !important;
   }
 }
+
+/* Mobile detail popup: draw the close X directly inside the media frame. */
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-stage {
+    position: relative !important;
+  }
+
+  .review-media-lightbox-stage > .review-media-lightbox-close {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 34px !important;
+    min-width: 34px !important;
+    height: 34px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    color: #222 !important;
+    font-size: 26px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+  }
+
+  .review-media-lightbox-stage > .review-media-lightbox-close img {
+    display: none !important;
+  }
+
+  .review-media-lightbox-stage > .review-media-lightbox-close::before {
+    content: "×" !important;
+    display: block !important;
+    color: #222 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+  }
+}
