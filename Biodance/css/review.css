@@ -815,7 +815,7 @@
   display: grid;
   width: min(1032px, 100%);
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 6.66px;
+  gap: 11px;
   margin-top: 25px;
 }
 .review-post-media-item {
@@ -2122,8 +2122,8 @@ body.is-review-policy-open {
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     grid-template-rows: auto !important;
     grid-auto-flow: column !important;
-    grid-auto-columns: calc((100% - 19.98px) / 4) !important;
-    gap: 6.66px !important;
+    grid-auto-columns: calc((100% - 33px) / 4) !important;
+    gap: 11px !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     padding-bottom: 6px !important;
@@ -2150,7 +2150,7 @@ body.is-review-policy-open {
     grid-template-rows: auto !important;
     grid-auto-flow: column !important;
     grid-auto-columns: 248px !important;
-    gap: 6.66px !important;
+    gap: 11px !important;
   }
 }
 
@@ -2211,8 +2211,8 @@ body.is-review-policy-open {
   .review-page .review-post-media-grid {
     grid-template-columns: repeat(4, 248px) !important;
     grid-auto-columns: 248px !important;
-    column-gap: 6.66px !important;
-    row-gap: 6.66px !important;
+    column-gap: 11px !important;
+    row-gap: 11px !important;
   }
 
   .review-page .review-post-media-grid > .review-post-media-item {
@@ -2273,8 +2273,8 @@ body.is-review-policy-open {
   .review-page .review-post-media-grid {
     position: relative !important;
     overflow: hidden !important;
-    column-gap: 6.66px !important;
-    row-gap: 6.66px !important;
+    column-gap: 11px !important;
+    row-gap: 11px !important;
   }
 
   .review-page .review-post-media-grid > .review-post-media-item {
