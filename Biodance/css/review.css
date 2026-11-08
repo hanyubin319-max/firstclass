@@ -3364,9 +3364,14 @@ body.is-review-policy-open {
 }
 
 
-/* Desktop review detail: set spacing between enlarged media and thumbnails to 15px. */
+/* Desktop-only spacing; explicitly preserve the mobile thumbnail gap. */
 @media screen and (min-width: 701px) {
   .review-media-lightbox-gallery {
     gap: 15px !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-gallery {
+    gap: 5px !important;
   }
 }
