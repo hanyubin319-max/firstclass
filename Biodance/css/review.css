@@ -3670,23 +3670,24 @@ body.is-review-policy-open {
 }
 
 
-/* Match the supplied 412px reference image: near-edge-to-edge pill, 34px tall. */
+/* Match the reference pill width: 398px on a 412px mobile viewport. */
 @media screen and (max-width: 700px) {
   .review-toolbar > .review-toolbar-right {
     position: relative !important;
-    left: 50% !important;
-    width: calc(100vw - 4px) !important;
-    max-width: none !important;
-    margin: 0 !important;
-    transform: translateX(-50%) !important;
+    left: auto !important;
+    width: calc(100vw - 14px) !important;
+    max-width: 398px !important;
+    margin: 0 auto !important;
+    transform: none !important;
   }
 
   .review-toolbar > .review-toolbar-right > .review-searchbar,
   .review-toolbar > .review-toolbar-right > .review-searchbar[hidden] {
     width: 100% !important;
+    max-width: 398px !important;
     height: 34px !important;
     min-height: 34px !important;
-    flex: 0 0 100% !important;
+    flex: 0 1 398px !important;
     padding: 0 20px !important;
     border-radius: 9999px !important;
   }
