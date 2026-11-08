@@ -3346,3 +3346,19 @@ body.is-review-policy-open {
     height: 22px !important;
   }
 }
+
+
+/* Desktop review detail viewer: enlarge the main frame and thumbnail boxes by 20px. */
+@media screen and (min-width: 701px) {
+  .review-media-lightbox-gallery {
+    width: min(90vw, 580px) !important;
+  }
+  .review-media-lightbox-stage {
+    height: min(78vh, 580px) !important;
+  }
+  .review-media-lightbox-thumbnail {
+    width: 84px !important;
+    min-width: 84px !important;
+    height: 84px !important;
+  }
+}
