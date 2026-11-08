@@ -131,11 +131,11 @@
   font: inherit;
 }
 
-/* Toolbar: 1260 × 42 */
+/* Toolbar: 1260 × 45 */
 .review-toolbar {
   display: flex;
   width: 100%;
-  height: 42px;
+  height: 45px;
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
@@ -298,14 +298,14 @@
 
 .review-toolbar-right {
   display: flex;
-  height: 42px;
+  height: 45px;
   align-items: center;
   margin-right: 30px;
 }
 .review-sort-group {
   display: flex;
-  height: 48px;
-  min-height: 48px;
+  height: 45px;
+  min-height: 45px;
   box-sizing: border-box;
   align-items: center;
   gap: 30px;
@@ -314,7 +314,7 @@
 .review-sort-divider {
   display: block;
   width: 2px;
-  height: 48px;
+  height: 14px;
   flex: 0 0 2px;
   margin-right: 24px;
   border-radius: 9999px;
@@ -537,13 +537,13 @@
     margin-right: 8px;
   }
   .review-sort-group {
-    height: 48px;
-    min-height: 48px;
+    height: 45px;
+    min-height: 45px;
     gap: 12px;
     margin-right: 4px;
   }
   .review-sort-divider {
-    height: 48px;
+    height: 14px;
     margin-right: 4px;
   }
   .review-sort-label,
