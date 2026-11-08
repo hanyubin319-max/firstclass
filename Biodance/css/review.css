@@ -2609,3 +2609,220 @@ body.is-review-policy-open {
 .review-policy-dialog [data-policy-panel="guideline"] .review-policy-bullet-list li::before {
   color: var(--neutral-charcoal) !important;
 }
+
+/* Responsive layout: tablet and mobile only. Desktop (1025px and wider) is unchanged. */
+@media screen and (min-width: 701px) and (max-width: 1024px) {
+  .review-page .review-content {
+    width: calc(100% - 48px);
+    max-width: 100%;
+    margin: 52px auto 80px;
+  }
+
+  .review-page .review-guide-frame {
+    height: auto;
+    min-height: 193px;
+    padding: 24px 12px;
+    flex-wrap: wrap;
+    row-gap: 18px;
+  }
+
+  .review-page .review-point-card {
+    width: 50%;
+    min-width: 0;
+    flex: 0 0 50%;
+  }
+
+  .review-page .review-toolbar {
+    gap: 12px;
+  }
+
+  .review-page .review-toolbar-left {
+    min-width: 0;
+    margin-left: 12px;
+    gap: 10px;
+  }
+
+  .review-page .review-list > .review-post {
+    width: 100%;
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .review-page .review-post-product,
+  .review-page .review-post-text-frame,
+  .review-page .review-post-more-frame,
+  .review-page .review-post-keywords,
+  .review-page .review-post-actions,
+  .review-page .review-post-bottom-divider {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .review-page {
+    overflow-x: hidden;
+  }
+
+  .review-page .review-intro {
+    height: auto;
+    min-height: 170px;
+    padding: 72px 16px 24px;
+  }
+
+  .review-page .review-title-group {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .review-page .review-title-frame {
+    height: auto;
+  }
+
+  .review-page .review-title-frame h1 {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .review-page .review-subtitle-frame {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .review-page .review-subtitle-frame p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .review-page .review-content {
+    width: calc(100% - 28px);
+    max-width: 100%;
+    margin: 28px auto 64px;
+  }
+
+  .review-page .review-guide-frame {
+    height: auto;
+    min-height: 0;
+    padding: 20px 8px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    border-radius: 16px;
+  }
+
+  .review-page .review-point-card {
+    width: 50%;
+    height: auto;
+    min-width: 0;
+    flex: 0 0 50%;
+    gap: 6px;
+  }
+
+  .review-page .review-icon-frame,
+  .review-page .review-icon-frame img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .review-page .review-icon-frame {
+    flex-basis: 60px;
+  }
+
+  .review-page .review-point-card p {
+    font-size: 13px;
+    white-space: normal;
+  }
+
+  .review-page .review-point-card p.review-point-reward {
+    font-size: 12px;
+  }
+
+  .review-page .review-count-frame {
+    height: auto;
+    min-height: 36px;
+    margin-top: 28px;
+  }
+
+  .review-page .review-count-frame p {
+    font-size: 20px;
+  }
+
+  .review-page .review-toolbar {
+    height: auto;
+    min-height: 45px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 8px 0;
+    row-gap: 8px;
+  }
+
+  .review-page .review-toolbar-left {
+    min-width: 0;
+    margin-left: 0;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .review-page .review-list > .review-post {
+    width: 100%;
+    min-width: 0;
+    padding: 28px 14px !important;
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+    height: auto !important;
+    min-height: 0 !important;
+    flex: 0 0 auto !important;
+    overflow: visible !important;
+  }
+
+  .review-page .review-post-product,
+  .review-page .review-post-text-frame,
+  .review-page .review-post-more-frame,
+  .review-page .review-post-keywords,
+  .review-page .review-post-actions,
+  .review-page .review-post-bottom-divider {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+  }
+
+  .review-page .review-post-product {
+    height: auto;
+    min-height: 64px;
+  }
+
+  .review-page .review-post-media-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(4, 248px) !important;
+    grid-auto-columns: 248px !important;
+    column-gap: 8px !important;
+    row-gap: 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .review-page .review-post-media-grid > .review-post-media-item {
+    width: 248px !important;
+    height: 248px !important;
+    min-width: 248px !important;
+    max-width: 248px !important;
+    flex: 0 0 248px !important;
+  }
+
+  .review-page .review-post-writer-frame {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .review-page .review-policy-dialog.is-review-policy {
+    width: calc(100vw - 28px);
+    max-width: calc(100vw - 28px);
+  }
+}
+
