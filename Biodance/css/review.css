@@ -304,6 +304,9 @@
 }
 .review-sort-group {
   display: flex;
+  height: 48px;
+  min-height: 48px;
+  box-sizing: border-box;
   align-items: center;
   gap: 30px;
   margin-right: 24px;
@@ -311,7 +314,7 @@
 .review-sort-divider {
   display: block;
   width: 2px;
-  height: 14px;
+  height: 48px;
   flex: 0 0 2px;
   margin-right: 24px;
   border-radius: 9999px;
@@ -534,11 +537,13 @@
     margin-right: 8px;
   }
   .review-sort-group {
+    height: 48px;
+    min-height: 48px;
     gap: 12px;
     margin-right: 4px;
   }
   .review-sort-divider {
-    height: 11px;
+    height: 48px;
     margin-right: 4px;
   }
   .review-sort-label,
