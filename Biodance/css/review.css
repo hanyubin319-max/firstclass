@@ -3284,3 +3284,11 @@ body.is-review-policy-open {
     gap: 5px !important;
   }
 }
+
+
+/* Mobile review image/video tiles: reduce corner radius by 2px. */
+@media screen and (max-width: 700px) {
+  .review-page .review-post-media-grid > .review-post-media-item {
+    border-radius: 22px !important;
+  }
+}
