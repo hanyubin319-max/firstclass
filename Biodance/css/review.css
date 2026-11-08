@@ -3235,3 +3235,28 @@ body.is-review-policy-open {
     scroll-snap-align: none !important;
   }
 }
+
+
+/* Mobile gallery: render a fixed three-thumbnail window, with no scroll strip. */
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-thumbnails {
+    display: grid !important;
+    grid-template-columns: repeat(3, 64px) !important;
+    width: 208px !important;
+    min-width: 208px !important;
+    max-width: 208px !important;
+    flex: 0 0 208px !important;
+    gap: 8px !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+  .review-media-lightbox-thumbnail {
+    display: flex !important;
+    width: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+    height: 64px !important;
+    flex: none !important;
+  }
+}
