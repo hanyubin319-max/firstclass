@@ -2200,16 +2200,29 @@ body.is-review-policy-open {
 }
 
 
-/* Restore the original review media spacing from the existing layout rules. */
+/* Restore original media gaps while keeping every tile exactly 248 × 248px.
+   Fixed 248px grid tracks prevent the unused track width from enlarging the visible gap. */
 @media screen {
   .review-page .review-post-media-grid {
+    grid-template-columns: repeat(4, 248px) !important;
+    grid-auto-columns: 248px !important;
     column-gap: 6.66px !important;
     row-gap: 6.66px !important;
+  }
+
+  .review-page .review-post-media-grid > .review-post-media-item {
+    width: 248px !important;
+    height: 248px !important;
+    min-width: 248px !important;
+    max-width: 248px !important;
+    flex: 0 0 248px !important;
   }
 }
 
 @media screen and (max-width: 700px) {
   .review-page .review-post-media-grid {
+    grid-template-columns: repeat(4, 248px) !important;
+    grid-auto-columns: 248px !important;
     column-gap: 8px !important;
     row-gap: 8px !important;
   }
