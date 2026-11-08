@@ -2291,7 +2291,7 @@ body.is-review-policy-open {
   }
 }
 
-/* Enlarged review media viewer */
+/* Review media gallery viewer: white product-gallery layout with thumbnails. */
 .review-media-lightbox[hidden] { display: none !important; }
 .review-media-lightbox {
   position: fixed;
@@ -2300,50 +2300,92 @@ body.is-review-policy-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
-  background: rgba(0,0,0,.82);
+  padding: 24px;
+  background: rgba(255, 255, 255, .96);
 }
-.review-media-lightbox-content {
+.review-media-lightbox-gallery {
   position: relative;
   display: flex;
-  width: min(90vw, 900px);
-  height: min(86vh, 900px);
+  width: min(90vw, 560px);
+  max-height: 92vh;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 24px;
 }
-.review-media-lightbox-content > img,
-.review-media-lightbox-content > video,
-.review-media-lightbox-content > iframe {
+.review-media-lightbox-stage {
+  display: flex;
+  width: 100%;
+  height: min(78vh, 560px);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.review-media-lightbox-stage > img,
+.review-media-lightbox-stage > video,
+.review-media-lightbox-stage > iframe {
   display: block;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
-  width: auto;
-  height: auto;
   object-fit: contain;
   border: 0;
 }
+.review-media-lightbox-thumbnails {
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 4px 6px;
+}
+.review-media-lightbox-thumbnail {
+  display: flex;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #dedede;
+  background: #fff;
+  cursor: pointer;
+}
+.review-media-lightbox-thumbnail.is-selected {
+  border: 2px solid #777;
+}
+.review-media-lightbox-thumbnail > img,
+.review-media-lightbox-thumbnail > video,
+.review-media-lightbox-thumbnail > iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  pointer-events: none;
+}
 .review-media-lightbox-close {
   position: absolute;
-  top: -42px;
-  right: 0;
-  width: 36px;
-  height: 36px;
+  top: -36px;
+  right: -4px;
+  width: 32px;
+  height: 32px;
   border: 0;
-  border-radius: 50%;
-  background: rgba(255,255,255,.16);
-  color: #fff;
-  font-size: 26px;
+  background: transparent;
+  color: #333;
+  font-size: 28px;
   line-height: 1;
   cursor: pointer;
 }
-.review-media-lightbox-content .review-post-media-item {
-  width: min(80vw, 700px) !important;
-  height: min(80vw, 700px) !important;
-  max-width: 80vh !important;
-  max-height: 80vh !important;
-  cursor: default;
+.review-page .review-post-media-grid > .review-post-media-item {
+  cursor: pointer !important;
 }
-
+.review-page .review-post-media-grid > .review-post-media-item * {
+  cursor: pointer !important;
+}
 
 @media screen and (max-width: 700px) {
   .review-page .review-post-media-grid {
