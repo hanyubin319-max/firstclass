@@ -3548,77 +3548,84 @@ body.is-review-policy-open {
   }
 }
 
-/* Mobile toolbar: keep all sort labels on the left and direct search in a persistent active box. */
+/* Mobile search: match the supplied reference — one full-width pale-gray pill with a right-side X. */
 @media screen and (max-width: 700px) {
   .review-toolbar-right {
     display: flex !important;
-    width: calc(100% - 16px) !important;
+    width: calc(100% - 6px) !important;
     min-width: 0 !important;
+    height: 39px !important;
+    min-height: 39px !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 0 !important;
-    margin: 0 8px !important;
+    justify-content: stretch !important;
+    margin: 0 3px !important;
   }
 
-  .review-toolbar-right > .review-sort-group {
-    display: flex !important;
-    width: auto !important;
-    min-width: 0 !important;
-    flex: 0 1 auto !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: clamp(7px, 2.2vw, 12px) !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .review-toolbar-right > .review-sort-group > .review-sort-label {
-    display: inline-block !important;
-    flex: 0 0 auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: left !important;
-    font-size: clamp(10px, 2.9vw, 11px) !important;
-    white-space: nowrap !important;
-  }
-
-  .review-toolbar-right > .review-sort-divider {
+  .review-toolbar-right > .review-sort-group,
+  .review-toolbar-right > .review-sort-divider,
+  .review-toolbar-right > .review-direct-search {
     display: none !important;
   }
 
-  .review-toolbar-right > .review-direct-search {
-    display: inline-flex !important;
-    flex: 0 0 auto !important;
-    width: auto !important;
-    min-width: max-content !important;
+  .review-toolbar-right > .review-searchbar,
+  .review-toolbar-right > .review-searchbar[hidden] {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
     max-width: none !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    flex: 1 1 100% !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    border: 0 !important;
+    border-radius: 9999px !important;
+    background: #F1F2F3 !important;
+    box-shadow: none !important;
+  }
+
+  .review-toolbar-right > .review-searchbar input {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    padding: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    color: #777 !important;
+    font-family: var(--font-primary) !important;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+  }
+
+  .review-toolbar-right > .review-searchbar input::placeholder {
+    color: #888 !important;
+    opacity: 1 !important;
+  }
+
+  .review-toolbar-right > .review-searchbar > .review-search-close {
+    display: flex !important;
+    width: 18px !important;
+    min-width: 18px !important;
+    height: 18px !important;
+    flex: 0 0 18px !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 5px !important;
-    margin: 0 0 0 auto !important;
-    padding: 7px 9px !important;
-    border: 1px solid #9DB09F !important;
-    border-radius: 4px !important;
-    background: #FEFAF7 !important;
-    box-shadow: inset 0 0 0 1px rgba(157, 176, 159, 0.16) !important;
-    color: #333 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    white-space: nowrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #929292 !important;
   }
 
-  .review-toolbar-right > .review-direct-search span {
-    display: inline !important;
-    font-size: 11px !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
-  }
-
-  .review-toolbar-right > .review-direct-search img {
+  .review-toolbar-right > .review-searchbar > .review-search-close svg {
     display: block !important;
-    width: 14px !important;
-    height: 14px !important;
-    flex: 0 0 14px !important;
+    width: 18px !important;
+    height: 18px !important;
   }
 }
