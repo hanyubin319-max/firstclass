@@ -4233,3 +4233,100 @@ body.is-review-policy-open {
     margin-left: auto !important;
   }
 }
+
+
+/* Mobile responsive correction: preserve readable control sizes; let search fill the remaining row instead of shrinking the whole toolbar. */
+@media screen and (max-width: 700px) {
+  .review-page .review-toolbar {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .review-page .review-toolbar > .review-toolbar-left {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .review-page .review-toolbar-left .review-filter-control,
+  .review-page .review-toolbar-left .review-filter-control .custom-select {
+    flex: 0 0 96px !important;
+    width: 96px !important;
+    min-width: 96px !important;
+    max-width: 96px !important;
+  }
+
+  .review-page .review-toolbar-left .custom-select-trigger {
+    width: 96px !important;
+    min-width: 96px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+  }
+
+  .review-page .review-toolbar > .review-toolbar-right {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    overflow: visible !important;
+  }
+
+  .review-page .review-toolbar-right > .review-sort-group {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: max-content !important;
+    max-width: none !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  .review-page .review-toolbar-right > .review-sort-group > .review-sort-label {
+    flex: 0 0 auto !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .review-page .review-toolbar-right > .review-searchbar,
+  .review-page .review-toolbar-right > .review-searchbar[hidden] {
+    display: flex !important;
+    box-sizing: border-box !important;
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    gap: 8px !important;
+    border: 0 !important;
+    border-radius: 9999px !important;
+    background: #F1F2F3 !important;
+  }
+
+  .review-page .review-searchbar input {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    font-size: 14px !important;
+  }
+
+  .review-page .review-searchbar > .review-search-close {
+    flex: 0 0 20px !important;
+    width: 20px !important;
+    min-width: 20px !important;
+    height: 20px !important;
+  }
+
+  .review-page .review-searchbar > .review-search-close svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
