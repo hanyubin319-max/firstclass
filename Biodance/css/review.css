@@ -3195,3 +3195,19 @@ body.is-review-policy-open {
     height: 32px !important;
   }
 }
+
+
+/* Anchor the close control to the large media frame itself. */
+.review-media-lightbox-stage {
+  position: relative !important;
+}
+.review-media-lightbox-stage > .review-media-lightbox-close {
+  top: 8px !important;
+  right: 8px !important;
+}
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-stage > .review-media-lightbox-close {
+    top: 4px !important;
+    right: 4px !important;
+  }
+}
