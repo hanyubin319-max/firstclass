@@ -575,10 +575,10 @@
 
 /* Review post card layout */
 .review-list {
-  width: min(1260px, calc(100vw - 40px));
+  width: 100%;
   min-height: 0;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  margin-left: 0;
+  transform: none;
 }
 .review-post {
   display: flex;
@@ -2128,10 +2128,12 @@ body.is-review-policy-open {
   }
 
   .review-page .review-post-media-grid > .review-post-media-item {
-    width: calc(100% - 5px) !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    aspect-ratio: 1 / 1 !important;
+    width: 248px !important;
+    height: 248px !important;
+    min-width: 248px !important;
+    max-width: 248px !important;
+    flex: 0 0 248px !important;
+    aspect-ratio: auto !important;
   }
 }
 
@@ -2139,14 +2141,10 @@ body.is-review-policy-open {
   .review-page .review-post-media-grid {
     width: 100% !important;
     max-width: 100% !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(4, 248px) !important;
     grid-template-rows: auto !important;
     grid-auto-flow: column !important;
-    grid-auto-columns: calc((100% - 8px) / 2) !important;
-    gap: 8px !important;
-  }
-
-  .review-page .review-post-media-grid > .review-post-media-item {
-    width: calc(100% - 5px) !important;
+    grid-auto-columns: 248px !important;
+    gap: 6.66px !important;
   }
 }
