@@ -1244,7 +1244,7 @@
   justify-content: flex-end;
 }
 .review-guideline-link {
-  color: var(--neutral-charcoal);
+  color: var(--neutral-gray);
   text-align: right;
 }
 .review-policy-link:hover,
@@ -2578,9 +2578,9 @@ body.is-review-policy-open {
 
 /* Match the review-policy close button's bottom spacing to the compact operation-policy dialog. */
 .review-policy-dialog.is-review-policy .review-policy-text-frame {
-  padding-bottom: 0 !important;
+  padding-bottom: 25px !important;
   box-sizing: border-box !important;
-  scroll-padding-bottom: 0 !important;
+  scroll-padding-bottom: 25px !important;
 }
 .review-policy-dialog.is-review-policy .review-policy-close {
   margin: 30px auto 0 !important;
