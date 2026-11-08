@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Review media: click a photo/video tile to inspect it in a large overlay.
+  // Review media gallery: show the selected media large with selectable thumbnails.
   let mediaLightbox = null;
   function closeMediaLightbox() {
     if (!mediaLightbox) return;
@@ -417,46 +417,94 @@ document.addEventListener('DOMContentLoaded', () => {
     mediaLightbox = null;
     document.body.classList.remove('is-review-media-open');
   }
+
+  function getReviewMedia(item) {
+    return item?.querySelector('video, iframe, img:not(.review-post-media-play)');
+  }
+
+  function renderLightboxMedia(stage, source) {
+    stage.replaceChildren();
+    if (!source) return;
+    const enlarged = source.cloneNode(true);
+    enlarged.removeAttribute('width');
+    enlarged.removeAttribute('height');
+    enlarged.removeAttribute('class');
+    if (enlarged.tagName === 'VIDEO') {
+      enlarged.controls = true;
+      enlarged.autoplay = true;
+      enlarged.playsInline = true;
+    }
+    stage.appendChild(enlarged);
+  }
+
   reviewList?.addEventListener('click', event => {
     const mediaItem = event.target.closest('.review-post-media-item');
     if (!mediaItem || !reviewList.contains(mediaItem)) return;
     event.preventDefault();
+
+    const mediaGrid = mediaItem.closest('.review-post-media-grid');
+    const mediaItems = [...(mediaGrid?.querySelectorAll('.review-post-media-item') || [])]
+      .filter(item => getReviewMedia(item));
+    if (!mediaItems.length) return;
 
     closeMediaLightbox();
     mediaLightbox = document.createElement('div');
     mediaLightbox.className = 'review-media-lightbox';
     mediaLightbox.setAttribute('role', 'dialog');
     mediaLightbox.setAttribute('aria-modal', 'true');
-    mediaLightbox.setAttribute('aria-label', '리뷰 사진 및 동영상 크게 보기');
+    mediaLightbox.setAttribute('aria-label', '리뷰 사진 및 동영상 자세히 보기');
 
-    const content = document.createElement('div');
-    content.className = 'review-media-lightbox-content';
+    const gallery = document.createElement('div');
+    gallery.className = 'review-media-lightbox-gallery';
     const closeButton = document.createElement('button');
     closeButton.type = 'button';
     closeButton.className = 'review-media-lightbox-close';
     closeButton.setAttribute('aria-label', '닫기');
     closeButton.textContent = '×';
 
-    const media = mediaItem.querySelector('video, iframe, img:not(.review-post-media-play)');
-    if (media) {
-      const enlargedMedia = media.cloneNode(true);
-      enlargedMedia.removeAttribute('width');
-      enlargedMedia.removeAttribute('height');
-      if (enlargedMedia.tagName === 'VIDEO') {
-        enlargedMedia.controls = true;
-        enlargedMedia.autoplay = true;
-        enlargedMedia.playsInline = true;
-      }
-      content.appendChild(enlargedMedia);
-    } else {
-      const enlargedTile = mediaItem.cloneNode(true);
-      enlargedTile.removeAttribute('tabindex');
-      enlargedTile.style.cursor = 'default';
-      content.appendChild(enlargedTile);
-    }
+    const stage = document.createElement('div');
+    stage.className = 'review-media-lightbox-stage';
+    const thumbnails = document.createElement('div');
+    thumbnails.className = 'review-media-lightbox-thumbnails';
+    thumbnails.setAttribute('aria-label', '미디어 썸네일');
 
-    content.appendChild(closeButton);
-    mediaLightbox.appendChild(content);
+    mediaItems.forEach((item, index) => {
+      const source = getReviewMedia(item);
+      const thumbnail = document.createElement('button');
+      thumbnail.type = 'button';
+      thumbnail.className = 'review-media-lightbox-thumbnail';
+      thumbnail.setAttribute('aria-label', `미디어 ${index + 1} 보기`);
+      thumbnail.setAttribute('aria-pressed', 'false');
+
+      const preview = source.cloneNode(true);
+      preview.removeAttribute('class');
+      preview.removeAttribute('width');
+      preview.removeAttribute('height');
+      preview.removeAttribute('controls');
+      preview.removeAttribute('autoplay');
+      preview.muted = true;
+      preview.setAttribute('aria-hidden', 'true');
+      thumbnail.appendChild(preview);
+
+      thumbnail.addEventListener('click', () => {
+        thumbnails.querySelectorAll('.review-media-lightbox-thumbnail').forEach(button => {
+          button.classList.remove('is-selected');
+          button.setAttribute('aria-pressed', 'false');
+        });
+        thumbnail.classList.add('is-selected');
+        thumbnail.setAttribute('aria-pressed', 'true');
+        renderLightboxMedia(stage, source);
+      });
+      thumbnails.appendChild(thumbnail);
+      if (item === mediaItem) {
+        thumbnail.classList.add('is-selected');
+        thumbnail.setAttribute('aria-pressed', 'true');
+        renderLightboxMedia(stage, source);
+      }
+    });
+
+    gallery.append(stage, thumbnails, closeButton);
+    mediaLightbox.appendChild(gallery);
     document.body.appendChild(mediaLightbox);
     document.body.classList.add('is-review-media-open');
     closeButton.addEventListener('click', closeMediaLightbox);
