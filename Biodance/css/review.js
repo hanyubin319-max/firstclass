@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heading && policyDialog) {
       policyDialog.setAttribute('aria-labelledby', heading.id);
       policyDialog.classList.toggle('is-compact-policy', policyName !== 'review');
+      policyDialog.classList.toggle('is-review-policy', policyName === 'review');
     }
 
     policyModal.hidden = false;
