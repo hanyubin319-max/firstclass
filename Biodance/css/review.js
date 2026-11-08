@@ -1,6 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
   const filter = document.querySelector('#review-filter');
   const reviewList = document.querySelector('#review-list');
+
+  // Number media labels on mobile only; keep the original labels on desktop.
+  const mobileMediaLabels = window.matchMedia('(max-width: 700px)');
+  const updateReviewMediaLabels = () => {
+    document.querySelectorAll('.review-post-media-grid').forEach(grid => {
+      let imageIndex = 0;
+      let videoIndex = 0;
+      grid.querySelectorAll('.review-post-media-item').forEach(item => {
+        const label = item.querySelector('span');
+        if (!label) return;
+        if (mobileMediaLabels.matches) {
+          if (item.classList.contains('is-video')) {
+            label.textContent = `동영상${++videoIndex}`;
+          } else {
+            label.textContent = `이미지${++imageIndex}`;
+          }
+        } else {
+          label.textContent = item.classList.contains('is-video') ? '동영상' : '이미지';
+        }
+      });
+    });
+  };
+  updateReviewMediaLabels();
+  mobileMediaLabels.addEventListener('change', updateReviewMediaLabels);
   const reviewCount = document.querySelector('#review-count');
   const resetButton = document.querySelector('#review-filter-reset');
   const sortButtons = [...document.querySelectorAll('.review-sort-label[data-sort]')];
