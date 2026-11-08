@@ -779,6 +779,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const customSelect = enhanceSelect(filter);
 
+  // Mobile review page keeps the reference search pill visible at all times.
+  function syncMobileReviewSearch() {
+    if (window.matchMedia('(max-width: 700px)').matches && searchBar && searchOpenButton) {
+      searchBar.hidden = false;
+      searchOpenButton.hidden = true;
+    }
+  }
+
+  syncMobileReviewSearch();
+  window.addEventListener('resize', syncMobileReviewSearch);
+
   function openReviewSearch() {
     if (!searchBar || !searchOpenButton || !searchInput) return;
     searchBar.hidden = false;
