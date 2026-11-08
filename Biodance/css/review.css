@@ -4330,3 +4330,60 @@ body.is-review-policy-open {
     height: 20px !important;
   }
 }
+
+
+/* Mobile rating dropdown must sit above the second toolbar row without showing text through it. */
+@media screen and (max-width: 700px) {
+  .review-page .review-toolbar {
+    position: relative !important;
+    z-index: 20 !important;
+    overflow: visible !important;
+  }
+
+  .review-page .review-toolbar > .review-toolbar-left,
+  .review-page .review-toolbar-left .review-filter-control {
+    position: relative !important;
+    z-index: 21 !important;
+    overflow: visible !important;
+  }
+
+  .review-page .review-filter-control .custom-select {
+    position: relative !important;
+    z-index: 22 !important;
+    isolation: isolate !important;
+  }
+
+  .review-page .review-filter-control .custom-select.is-open {
+    z-index: 1000 !important;
+  }
+
+  .review-page .review-filter-control .custom-select-menu {
+    position: absolute !important;
+    z-index: 1001 !important;
+    top: calc(100% + 2px) !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 124px !important;
+    min-width: 124px !important;
+    max-width: 124px !important;
+    max-height: 220px !important;
+    overflow-y: auto !important;
+    background: #fff !important;
+    opacity: 1 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .16) !important;
+  }
+
+  .review-page .review-filter-control .custom-select-option {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    min-height: 34px !important;
+    background: #fff !important;
+    opacity: 1 !important;
+  }
+
+  .review-page .review-filter-control .custom-select-option:hover,
+  .review-page .review-filter-control .custom-select-option[aria-selected="true"] {
+    background: #f5f5f5 !important;
+  }
+}
