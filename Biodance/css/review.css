@@ -2148,3 +2148,33 @@ body.is-review-policy-open {
     gap: 6.66px !important;
   }
 }
+
+/* Final review-list width: match the review count and toolbar line exactly */
+.review-page .review-content > .review-list {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  transform: none !important;
+}
+
+/* Keep every review photo/video at the requested 248 × 248 media size */
+.review-page .review-post-media-grid > .review-post-media-item {
+  width: 248px !important;
+  height: 248px !important;
+  min-width: 248px !important;
+  max-width: 248px !important;
+  flex: 0 0 248px !important;
+  aspect-ratio: auto !important;
+}
+
+.review-page .review-post-media-item > img:not(.review-post-media-play),
+.review-page .review-post-media-item > video,
+.review-page .review-post-media-item > iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: cover;
+  border: 0;
+}
