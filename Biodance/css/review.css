@@ -3123,3 +3123,75 @@ body.is-review-policy-open {
   }
 }
 
+
+
+/* Mobile review media details: show three thumbnails at a time and keep the sequence 1–5. */
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-thumbnails {
+    width: 208px !important;
+    max-width: 100% !important;
+    flex: 0 0 208px !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .review-media-lightbox-thumbnail {
+    width: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+    height: 64px !important;
+    flex: 0 0 64px !important;
+    scroll-snap-align: start;
+  }
+
+  /* Center the play asset within the mobile preview tile. */
+  .review-page .review-post-media-item.is-video > .review-post-media-play {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 36px !important;
+    height: 33px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+/* Use the repository's own x.svg and keep its control inside the gallery on all screens. */
+.review-media-lightbox-gallery {
+  position: relative !important;
+}
+.review-media-lightbox-close {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  z-index: 5 !important;
+  display: flex !important;
+  width: 36px !important;
+  height: 36px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  cursor: pointer;
+}
+.review-media-lightbox-close img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-close {
+    top: 4px !important;
+    right: 4px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
