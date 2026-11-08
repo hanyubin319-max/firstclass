@@ -3211,3 +3211,27 @@ body.is-review-policy-open {
     right: 4px !important;
   }
 }
+
+
+/* Mobile gallery thumbnails are direct selectors, not a horizontally scrollable strip. */
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-thumbnails {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    overflow: hidden !important;
+    scroll-snap-type: none !important;
+    -webkit-overflow-scrolling: auto !important;
+  }
+
+  .review-media-lightbox-thumbnail {
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    height: 48px !important;
+    flex: 0 0 48px !important;
+    scroll-snap-align: none !important;
+  }
+}
