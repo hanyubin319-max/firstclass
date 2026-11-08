@@ -4192,3 +4192,44 @@ body.is-review-policy-open {
     height: 16px !important;
   }
 }
+
+
+/* Correct generated custom-select sizing in the mobile toolbar. */
+@media screen and (max-width: 700px) {
+  .review-page .review-toolbar-left .review-filter-control {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+  .review-page .review-toolbar-left .review-filter-control .custom-select {
+    display: block !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    flex: 0 0 76px !important;
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+  }
+  .review-page .review-toolbar-left .review-filter-control .custom-select-trigger {
+    display: flex !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    padding: 7px 8px !important;
+    font-size: 11px !important;
+  }
+  .review-page .review-toolbar-left .review-filter-control .custom-select-menu {
+    z-index: 30 !important;
+    width: 100% !important;
+  }
+  .review-page .review-toolbar-right > .review-sort-group {
+    flex: 0 1 auto !important;
+    gap: 8px !important;
+  }
+  .review-page .review-toolbar-right > .review-searchbar {
+    margin-left: auto !important;
+  }
+}
