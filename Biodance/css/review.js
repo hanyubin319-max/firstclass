@@ -598,6 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
         thumbnail.addEventListener('click', () => {
           selectedIndex = index;
           renderLightboxMedia(stage, item);
+          stage.appendChild(closeButton);
 
           // Advance the three-thumbnail window on mobile only.
           if (mobileGallery.matches) {
