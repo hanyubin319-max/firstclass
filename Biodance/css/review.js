@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function addVideoPlayIndicator(target) {
     const play = document.createElement('img');
     play.className = 'review-media-lightbox-video-play';
-    play.src = 'img/play%20button.svg';
+    play.src = '../img/play%20button.svg';
     play.alt = '';
     play.setAttribute('aria-hidden', 'true');
     target.appendChild(play);
