@@ -3375,3 +3375,58 @@ body.is-review-policy-open {
     gap: 10px !important;
   }
 }
+
+
+/* Normalize mobile detail-view thumbnail frames: fixed 64px outer boxes, including borders. */
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-thumbnails {
+    display: grid !important;
+    grid-template-columns: repeat(3, 64px) !important;
+    grid-auto-rows: 64px !important;
+    width: 208px !important;
+    min-width: 208px !important;
+    max-width: 208px !important;
+    flex: 0 0 208px !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+  .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail {
+    display: flex !important;
+    box-sizing: border-box !important;
+    width: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+    flex: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid #dedede !important;
+    border-radius: 6px !important;
+    background: #fff !important;
+  }
+  .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail.is-selected {
+    border: 2px solid #777 !important;
+  }
+  .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail > img,
+  .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail > video,
+  .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail > iframe,
+  .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail > .review-media-lightbox-thumbnail-placeholder {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover !important;
+    border-radius: 4px !important;
+  }
+}
