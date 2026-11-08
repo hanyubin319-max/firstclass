@@ -3621,7 +3621,7 @@ body.is-review-policy-open {
     flex: 1 1 auto !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 30px !important;
+    gap: 8px !important;
     margin: 0 !important;
     overflow: visible !important;
   }
