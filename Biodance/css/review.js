@@ -805,7 +805,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!searchBar || !searchOpenButton || !searchInput) return;
     searchBar.hidden = false;
     searchOpenButton.hidden = true;
-    markInteracted();
     searchInput.focus();
   }
 
@@ -822,7 +821,6 @@ document.addEventListener('DOMContentLoaded', () => {
   searchOpenButton?.addEventListener('click', openReviewSearch);
   searchCloseButton?.addEventListener('click', closeReviewSearch);
   searchInput?.addEventListener('input', () => {
-    if (searchInput.value.trim()) markInteracted();
     currentPage = 1;
     applyReviewControls();
   });
