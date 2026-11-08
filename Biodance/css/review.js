@@ -527,6 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
         thumbnail.classList.add('is-selected');
         thumbnail.setAttribute('aria-pressed', 'true');
         renderLightboxMedia(stage, item);
+        thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'end' });
       });
       thumbnails.appendChild(thumbnail);
       if (item === mediaItem) {
