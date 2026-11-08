@@ -2206,8 +2206,8 @@ body.is-review-policy-open {
   .review-page .review-post-media-grid {
     grid-template-columns: repeat(4, 248px) !important;
     grid-auto-columns: 248px !important;
-    column-gap: 11px !important;
-    row-gap: 11px !important;
+    column-gap: 6.66px !important;
+    row-gap: 6.66px !important;
   }
 
   .review-page .review-post-media-grid > .review-post-media-item {
@@ -2223,8 +2223,8 @@ body.is-review-policy-open {
   .review-page .review-post-media-grid {
     grid-template-columns: repeat(4, 248px) !important;
     grid-auto-columns: 248px !important;
-    column-gap: 11px !important;
-    row-gap: 11px !important;
+    column-gap: 8px !important;
+    row-gap: 8px !important;
   }
 }
 
