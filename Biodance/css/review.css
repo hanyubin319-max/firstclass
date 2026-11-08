@@ -3989,3 +3989,29 @@ body.is-review-policy-open {
     max-width: 100% !important;
   }
 }
+
+
+/* Mobile: pin the direct-search pill to the far right of the second toolbar row. */
+@media screen and (max-width: 700px) {
+  .review-page .review-toolbar > .review-toolbar-right {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+
+  .review-page .review-toolbar-right > .review-sort-group {
+    flex: 0 1 auto !important;
+    margin-right: auto !important;
+  }
+
+  .review-page .review-toolbar-right > .review-searchbar,
+  .review-page .review-toolbar-right > .review-searchbar[hidden] {
+    flex: 0 0 116px !important;
+    width: 116px !important;
+    min-width: 116px !important;
+    max-width: 116px !important;
+    margin-left: auto !important;
+  }
+}
