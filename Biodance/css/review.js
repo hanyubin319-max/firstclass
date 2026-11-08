@@ -506,11 +506,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   reviewList?.addEventListener('click', event => {
+    // Open the viewer only for an actual click inside a review media grid.
+    // Toolbar/search interactions must never activate the media lightbox.
+    const mediaGrid = event.target.closest('.review-post-media-grid');
+    if (!mediaGrid || !reviewList.contains(mediaGrid)) return;
     const mediaItem = event.target.closest('.review-post-media-item');
-    if (!mediaItem || !reviewList.contains(mediaItem)) return;
+    if (!mediaItem || !mediaGrid.contains(mediaItem)) return;
     event.preventDefault();
-
-    const mediaGrid = mediaItem.closest('.review-post-media-grid');
     const mediaItems = [...(mediaGrid?.querySelectorAll('.review-post-media-item') || [])];
     if (!mediaItems.length) return;
 
