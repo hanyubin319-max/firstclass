@@ -3260,3 +3260,14 @@ body.is-review-policy-open {
     flex: none !important;
   }
 }
+
+
+/* Spacing between the enlarged media frame and its thumbnail row. */
+.review-media-lightbox-gallery {
+  gap: 20px !important;
+}
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-gallery {
+    gap: 10px !important;
+  }
+}
