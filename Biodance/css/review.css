@@ -3362,3 +3362,11 @@ body.is-review-policy-open {
     height: 84px !important;
   }
 }
+
+
+/* Desktop review detail: set spacing between enlarged media and thumbnails to 15px. */
+@media screen and (min-width: 701px) {
+  .review-media-lightbox-gallery {
+    gap: 15px !important;
+  }
+}
