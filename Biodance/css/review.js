@@ -556,7 +556,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    gallery.append(stage, thumbnails, closeButton);
+    stage.appendChild(closeButton);
+    gallery.append(stage, thumbnails);
     mediaLightbox.appendChild(gallery);
     document.body.appendChild(mediaLightbox);
     document.body.classList.add('is-review-media-open');
