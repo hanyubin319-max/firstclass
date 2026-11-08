@@ -3431,3 +3431,11 @@ body.is-review-policy-open {
     border-radius: 4px !important;
   }
 }
+
+/* Mobile only: keep review video play icons at exactly 70% opacity. */
+@media screen and (max-width: 700px) {
+  .review-page .review-post-media-play,
+  .review-media-lightbox .review-media-lightbox-video-play {
+    opacity: 0.7 !important;
+  }
+}
