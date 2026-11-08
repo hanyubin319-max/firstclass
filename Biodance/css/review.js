@@ -445,11 +445,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Review media gallery: supports both real media files and layout placeholder tiles.
   let mediaLightbox = null;
+  let mediaLightboxScrollY = 0;
+
   function closeMediaLightbox() {
     if (!mediaLightbox) return;
     mediaLightbox.remove();
     mediaLightbox = null;
     document.body.classList.remove('is-review-media-open');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, mediaLightboxScrollY);
   }
 
   function getReviewMedia(item) {
@@ -506,6 +515,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!mediaItems.length) return;
 
     closeMediaLightbox();
+    mediaLightboxScrollY = window.scrollY || window.pageYOffset || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${mediaLightboxScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
     mediaLightbox = document.createElement('div');
     mediaLightbox.className = 'review-media-lightbox';
     mediaLightbox.setAttribute('role', 'dialog');
