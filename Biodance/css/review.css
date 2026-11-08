@@ -3414,7 +3414,7 @@ body.is-review-policy-open {
   .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail.is-selected {
     border: 2px solid #777 !important;
   }
-  .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail > img,
+  .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail > img:not(.review-media-lightbox-video-play),
   .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail > video,
   .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail > iframe,
   .review-media-lightbox-thumbnails > .review-media-lightbox-thumbnail > .review-media-lightbox-thumbnail-placeholder {
