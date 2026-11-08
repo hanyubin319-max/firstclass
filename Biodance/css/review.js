@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const policyCloseButton = document.querySelector('#review-policy-close');
   let policyPreviousFocus = null;
   let policyThumbDrag = null;
+  let policyScrollPosition = 0;
 
   const pageSize = 9;
   let currentPage = 1;
@@ -196,6 +197,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!activePanel) return;
 
     policyPreviousFocus = trigger || document.activeElement;
+    policyScrollPosition = window.scrollY || window.pageYOffset || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${policyScrollPosition}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
     policyPanels.forEach(panel => {
       panel.hidden = panel !== activePanel;
     });
@@ -220,6 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!policyModal || policyModal.hidden) return;
     policyModal.hidden = true;
     document.body.classList.remove('is-review-policy-open');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, policyScrollPosition);
     policyThumbDrag = null;
     if (policyPreviousFocus && typeof policyPreviousFocus.focus === 'function') {
       policyPreviousFocus.focus();
