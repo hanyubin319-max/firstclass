@@ -2071,3 +2071,38 @@ body.is-review-policy-open {
     flex: 0 0 auto !important;
   }
 }
+
+
+/* Review posts: keep the card frame aligned and allow vertical scrolling when content exceeds it. */
+@media screen {
+  .review-page .review-list > .review-post > .review-post-inner {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--neutral-gray) var(--neutral-light-gray);
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner::-webkit-scrollbar-track {
+    background: var(--neutral-light-gray);
+    border-radius: 999px;
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner::-webkit-scrollbar-thumb {
+    background: var(--neutral-gray);
+    border-radius: 999px;
+  }
+
+  .review-page .review-post-media-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .review-page .review-post-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
