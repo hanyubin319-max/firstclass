@@ -695,7 +695,7 @@
   align-items: center;
   margin-top: 8px;
   overflow: hidden;
-  border-radius: 4px 24px 24px 4px;
+  border-radius: 24px;
   background: var(--neutral-light-gray);
 }
 .review-post-product-accent {
