@@ -2826,3 +2826,107 @@ body.is-review-policy-open {
   }
 }
 
+/* Responsive media tiles and lightbox gallery controls. */
+@media screen and (max-width: 700px) {
+  .review-page .review-post-media-grid {
+    display: grid !important;
+    width: 100% !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-auto-columns: auto !important;
+    grid-auto-flow: row !important;
+    gap: 8px !important;
+    overflow: visible !important;
+    padding-bottom: 4px !important;
+  }
+
+  .review-page .review-post-media-grid > .review-post-media-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    flex: initial !important;
+  }
+
+  .review-page .review-post-media-item > img:not(.review-post-media-play),
+  .review-page .review-post-media-item > video,
+  .review-page .review-post-media-item > iframe {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .review-media-lightbox {
+    padding: 16px;
+  }
+
+  .review-media-lightbox-gallery {
+    width: min(100%, 520px);
+    max-width: calc(100vw - 32px);
+    max-height: calc(100dvh - 32px);
+    gap: 16px;
+    padding-top: 24px;
+  }
+
+  .review-media-lightbox-stage {
+    width: 100%;
+    height: auto;
+    max-height: min(62dvh, 520px);
+    aspect-ratio: 1 / 1;
+  }
+
+  .review-media-lightbox-stage > img,
+  .review-media-lightbox-stage > video,
+  .review-media-lightbox-stage > iframe,
+  .review-media-lightbox-stage > .review-media-lightbox-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .review-media-lightbox-thumbnails {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 0 4px;
+    scroll-padding-inline: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .review-media-lightbox-thumbnail {
+    width: calc((100% - 16px) / 3);
+    min-width: calc((100% - 16px) / 3);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    flex: 0 0 calc((100% - 16px) / 3);
+  }
+
+  .review-media-lightbox-close {
+    top: 0 !important;
+    right: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 30px !important;
+  }
+}
+
+/* Larger, consistently top-right close control on desktop. */
+@media screen and (min-width: 701px) {
+  .review-media-lightbox-gallery {
+    padding-top: 28px;
+  }
+
+  .review-media-lightbox-close {
+    top: 0 !important;
+    right: 0 !important;
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 40px !important;
+    line-height: 1 !important;
+  }
+}
+
