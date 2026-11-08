@@ -2108,62 +2108,17 @@ body.is-review-policy-open {
 }
 
 
-/* Review post layout: preserve the original media tile dimensions and expose tile five by horizontal scrolling. */
+/* Review post layout: keep all five media tiles in one horizontally scrollable row. */
 @media screen {
-  .review-page .review-list {
-    width: 100% !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    transform: none !important;
-  }
-
-  .review-page .review-list > .review-post {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    flex: 0 0 auto !important;
-    margin: 248px !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    box-sizing: border-box !important;
-  }
-
-  .review-page .review-list > .review-post > .review-post-inner,
-  .review-page .review-list > .review-post > .review-post-inner.is-reply-open {
-    display: flex !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    flex: 0 0 auto !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    justify-content: flex-start !important;
-    margin: 0 !important;
-    padding: 61px 0 0 !important;
-    box-sizing: border-box !important;
-    overflow: visible !important;
-  }
-
-  .review-page .review-post-product {
-    width: 100% !important;
-    max-width: none !important;
-    flex: 0 0 72px !important;
-  }
-
-  /* Keep the original grid width, four-column sizing, gap and item width.
-     The fifth tile becomes an additional column in the horizontal scroll area. */
   .review-page .review-post-media-grid {
     display: grid !important;
     width: min(1032px, 100%) !important;
     max-width: 1032px !important;
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-rows: auto !important;
     grid-auto-flow: column !important;
     grid-auto-columns: calc((100% - 19.98px) / 4) !important;
     gap: 6.66px !important;
-    margin-top: 25px !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     padding-bottom: 6px !important;
@@ -2172,37 +2127,26 @@ body.is-review-policy-open {
     scrollbar-color: var(--neutral-gray) var(--neutral-light-gray);
   }
 
-  .review-page .review-post-media-item {
+  .review-page .review-post-media-grid > .review-post-media-item {
     width: calc(100% - 5px) !important;
     min-width: 0 !important;
-    flex: initial !important;
+    max-width: none !important;
     aspect-ratio: 1 / 1 !important;
-  }
-
-  .review-page .review-post-bottom-divider {
-    width: 100% !important;
-    margin-top: 61px !important;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .review-page .review-list > .review-post > .review-post-inner,
-  .review-page .review-list > .review-post > .review-post-inner.is-reply-open {
-    padding-right: 14px !important;
-    padding-left: 14px !important;
-  }
-
   .review-page .review-post-media-grid {
     width: 100% !important;
     max-width: 100% !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: auto !important;
+    grid-auto-flow: column !important;
     grid-auto-columns: calc((100% - 8px) / 2) !important;
     gap: 8px !important;
   }
 
-  .review-page .review-post-media-item {
+  .review-page .review-post-media-grid > .review-post-media-item {
     width: calc(100% - 5px) !important;
-    min-width: 0 !important;
-    flex: initial !important;
   }
 }
