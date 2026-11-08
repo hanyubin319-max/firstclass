@@ -2108,8 +2108,8 @@ body.is-review-policy-open {
 }
 
 
-/* Review post layout: natural card height, 61px vertical inset, full-width product panel,
-   and horizontally scrollable media without resizing the original tiles. */
+/* Review post layout: natural card height, 248px outer spacing,
+   original four-column media tile sizing, and horizontal access to tile five. */
 @media screen {
   .review-page .review-list {
     width: 100% !important;
@@ -2125,6 +2125,7 @@ body.is-review-policy-open {
     min-height: 0 !important;
     max-height: none !important;
     flex: 0 0 auto !important;
+    margin: 248px !important;
     padding: 0 !important;
     overflow: visible !important;
     box-sizing: border-box !important;
@@ -2153,14 +2154,14 @@ body.is-review-policy-open {
     flex: 0 0 72px !important;
   }
 
+  /* Preserve the original 1032px maximum width and original tile dimensions.
+     Four columns remain visible; the fifth tile is reached by horizontal scroll. */
   .review-page .review-post-media-grid {
-    display: grid !important;
-    width: 100% !important;
-    max-width: none !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    grid-auto-flow: column !important;
-    grid-auto-columns: calc((100% - 20px) / 4) !important;
+    display: flex !important;
+    width: min(1032px, 100%) !important;
+    max-width: 1032px !important;
     gap: 6.66px !important;
+    margin-top: 25px !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     padding-bottom: 6px !important;
@@ -2170,7 +2171,10 @@ body.is-review-policy-open {
   }
 
   .review-page .review-post-media-item {
-    width: calc(100% - 5px) !important;
+    display: flex !important;
+    width: calc((100% - 19.98px) / 4 - 5px) !important;
+    min-width: calc((100% - 19.98px) / 4 - 5px) !important;
+    flex: 0 0 calc((100% - 19.98px) / 4 - 5px) !important;
     aspect-ratio: 1 / 1 !important;
   }
 
@@ -2188,17 +2192,14 @@ body.is-review-policy-open {
   }
 
   .review-page .review-post-media-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    grid-auto-columns: calc((100% - 8px) / 2) !important;
+    width: 100% !important;
+    max-width: 100% !important;
     gap: 8px !important;
   }
 
   .review-page .review-post-media-item {
-    width: calc(100% - 5px) !important;
+    width: calc((100% - 8px) / 2 - 5px) !important;
+    min-width: calc((100% - 8px) / 2 - 5px) !important;
+    flex-basis: calc((100% - 8px) / 2 - 5px) !important;
   }
-}
-
-/* Review post outer spacing: 248px on all four sides. */
-.review-page .review-list > .review-post {
-  margin: 248px !important;
 }
