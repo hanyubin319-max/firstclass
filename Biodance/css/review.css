@@ -4419,3 +4419,14 @@ body.is-review-policy-open {
     top: calc(100% + 4px) !important;
   }
 }
+
+
+/* Undo the mistaken reuse of the 8px sort-label gap as top padding. */
+@media screen and (max-width: 700px) {
+  .review-page .review-toolbar > .review-toolbar-left {
+    padding-top: 0 !important;
+  }
+  .review-page .review-filter-control .custom-select-menu {
+    top: calc(100% + 2px) !important;
+  }
+}
