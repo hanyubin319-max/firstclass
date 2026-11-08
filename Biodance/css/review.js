@@ -500,7 +500,11 @@ document.addEventListener('DOMContentLoaded', () => {
     closeButton.type = 'button';
     closeButton.className = 'review-media-lightbox-close';
     closeButton.setAttribute('aria-label', '닫기');
-    closeButton.textContent = '×';
+    const closeIcon = document.createElement('img');
+    closeIcon.src = '../img/x.svg';
+    closeIcon.alt = '';
+    closeIcon.setAttribute('aria-hidden', 'true');
+    closeButton.appendChild(closeIcon);
 
     const stage = document.createElement('div');
     stage.className = 'review-media-lightbox-stage';
