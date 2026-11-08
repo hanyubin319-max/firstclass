@@ -2200,5 +2200,5 @@ body.is-review-policy-open {
 
 /* Review post outer spacing: 248px on all four sides. */
 .review-page .review-list > .review-post {
-  margin: 248px auto !important;
+  margin: 248px !important;
 }
