@@ -3548,6 +3548,45 @@ body.is-review-policy-open {
   }
 }
 
+/* Mobile only: the reference search pill is the sole toolbar control; remove the surrounding toolbar frame. */
+@media screen and (max-width: 700px) {
+  .review-toolbar {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 20px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  .review-toolbar > .review-toolbar-left {
+    display: none !important;
+  }
+
+  .review-toolbar > .review-toolbar-right {
+    display: flex !important;
+    width: 100% !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .review-toolbar > .review-toolbar-right > .review-searchbar,
+  .review-toolbar > .review-toolbar-right > .review-searchbar[hidden] {
+    width: 100% !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 9999px !important;
+    background: #F1F2F3 !important;
+    box-shadow: none !important;
+  }
+}
+
 /* Mobile search: match the supplied reference — one full-width pale-gray pill with a right-side X. */
 @media screen and (max-width: 700px) {
   .review-toolbar-right {
