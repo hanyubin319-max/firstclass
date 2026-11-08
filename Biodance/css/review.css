@@ -4400,3 +4400,22 @@ body.is-review-policy-open {
     border: 0 !important;
   }
 }
+
+
+/* Keep clear vertical space between the toolbar's top rule and the rating dropdown. */
+@media screen and (max-width: 700px) {
+  .review-page .review-toolbar > .review-toolbar-left {
+    box-sizing: border-box !important;
+    padding-top: 8px !important;
+    margin-top: 0 !important;
+  }
+
+  .review-page .review-toolbar-left .review-filter-control {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .review-page .review-filter-control .custom-select-menu {
+    top: calc(100% + 4px) !important;
+  }
+}
