@@ -3271,3 +3271,16 @@ body.is-review-policy-open {
     gap: 10px !important;
   }
 }
+
+
+/* Exact spacing between the enlarged media and thumbnail row. */
+@media screen and (min-width: 701px) {
+  .review-media-lightbox-gallery {
+    gap: 10px !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-gallery {
+    gap: 5px !important;
+  }
+}
