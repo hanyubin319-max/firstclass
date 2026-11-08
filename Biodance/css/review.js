@@ -539,12 +539,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let thumbnailStart = 0;
     let selectedIndex = Math.max(0, mediaItems.indexOf(mediaItem));
 
+    const mobileGallery = window.matchMedia('(max-width: 700px)');
+
     function renderThumbnails() {
       thumbnails.replaceChildren();
-      const visibleItems = mediaItems.slice(thumbnailStart, thumbnailStart + 3);
+      // Desktop shows every thumbnail; only mobile uses a three-item window.
+      const visibleItems = mobileGallery.matches
+        ? mediaItems.slice(thumbnailStart, thumbnailStart + 3)
+        : mediaItems;
 
       visibleItems.forEach((item, visibleIndex) => {
-        const index = thumbnailStart + visibleIndex;
+        const index = mobileGallery.matches ? thumbnailStart + visibleIndex : visibleIndex;
         const source = getReviewMedia(item);
         const thumbnail = document.createElement('button');
         thumbnail.type = 'button';
@@ -578,11 +583,13 @@ document.addEventListener('DOMContentLoaded', () => {
           selectedIndex = index;
           renderLightboxMedia(stage, item);
 
-          // Keep exactly three thumbnails visible; selecting the third advances the window.
-          if (index === thumbnailStart + 2 && thumbnailStart + 3 < mediaItems.length) {
-            thumbnailStart = Math.min(index, mediaItems.length - 3);
-          } else if (index === thumbnailStart && thumbnailStart > 0) {
-            thumbnailStart = Math.max(0, index - 2);
+          // Advance the three-thumbnail window on mobile only.
+          if (mobileGallery.matches) {
+            if (index === thumbnailStart + 2 && thumbnailStart + 3 < mediaItems.length) {
+              thumbnailStart = Math.min(index, mediaItems.length - 3);
+            } else if (index === thumbnailStart && thumbnailStart > 0) {
+              thumbnailStart = Math.max(0, index - 2);
+            }
           }
           renderThumbnails();
         });
@@ -591,6 +598,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderThumbnails();
+    mobileGallery.addEventListener('change', () => {
+      thumbnailStart = 0;
+      renderThumbnails();
+    });
     renderLightboxMedia(stage, mediaItems[selectedIndex]);
 
     stage.appendChild(closeButton);
