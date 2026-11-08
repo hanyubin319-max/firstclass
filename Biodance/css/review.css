@@ -2526,21 +2526,21 @@ body.is-review-policy-open {
   }
 }
 
-/* Small review video tile: smaller play icon at the lower-left corner. */
+/* Keep the original review tile play icon at its original size and anchor it bottom-left. */
 .review-page .review-post-media-item.is-video {
   position: relative !important;
 }
 .review-page .review-post-media-item.is-video > .review-post-media-play {
   position: absolute !important;
-  left: 12px !important;
+  left: 15px !important;
   right: auto !important;
   top: auto !important;
-  bottom: 12px !important;
+  bottom: 15px !important;
   display: block !important;
-  width: 18px !important;
-  height: 16.5px !important;
-  min-width: 18px !important;
-  max-width: 18px !important;
+  width: 24px !important;
+  height: 22px !important;
+  min-width: 24px !important;
+  max-width: 24px !important;
   margin: 0 !important;
   object-fit: contain !important;
   transform: none !important;
@@ -2548,6 +2548,8 @@ body.is-review-policy-open {
   z-index: 3 !important;
   pointer-events: none !important;
 }
+
+/* Only the smaller gallery thumbnail gets the reduced play icon. */
 .review-media-lightbox-thumbnail .review-media-lightbox-video-play {
   left: 7px !important;
   right: auto !important;
@@ -2556,4 +2558,30 @@ body.is-review-policy-open {
   width: 14px !important;
   height: 13px !important;
   transform: none !important;
+}
+
+/* Place the unframed close control on the gallery's top-right corner. */
+.review-media-lightbox-close {
+  top: -16px !important;
+  right: -16px !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Keep clear space below the policy close button inside its scrollable content. */
+.review-policy-dialog.is-review-policy .review-policy-text-frame {
+  padding-bottom: 30px !important;
+  box-sizing: border-box !important;
+  scroll-padding-bottom: 30px !important;
+}
+.review-policy-dialog.is-review-policy .review-policy-close {
+  margin: 30px auto 30px !important;
 }
