@@ -429,10 +429,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function addVideoPlayIndicator(target) {
-    const play = document.createElement('span');
+    const play = document.createElement('img');
     play.className = 'review-media-lightbox-video-play';
+    play.src = 'img/play%20button.svg';
+    play.alt = '';
     play.setAttribute('aria-hidden', 'true');
-    play.textContent = '▶';
     target.appendChild(play);
   }
 
@@ -459,7 +460,6 @@ document.addEventListener('DOMContentLoaded', () => {
     placeholder.classList.add('review-media-lightbox-placeholder');
     placeholder.querySelector('.review-post-media-play')?.remove();
     stage.appendChild(placeholder);
-    if (isReviewVideo(item)) addVideoPlayIndicator(placeholder);
   }
 
   reviewList?.addEventListener('click', event => {
