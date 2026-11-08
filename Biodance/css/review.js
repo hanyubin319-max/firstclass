@@ -779,12 +779,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const customSelect = enhanceSelect(filter);
 
-  // Mobile review page keeps the reference search pill visible at all times.
+  // Mobile keeps the search pill open; returning to desktop restores the closed search state.
   function syncMobileReviewSearch() {
-    if (window.matchMedia('(max-width: 700px)').matches && searchBar && searchOpenButton) {
+    if (!searchBar || !searchOpenButton) return;
+
+    const isMobile = window.matchMedia('(max-width: 700px)').matches;
+    if (isMobile) {
       searchBar.hidden = false;
       searchOpenButton.hidden = true;
+      return;
     }
+
+    searchInput.value = '';
+    searchBar.hidden = true;
+    searchOpenButton.hidden = false;
   }
 
   syncMobileReviewSearch();
