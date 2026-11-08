@@ -614,7 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 리뷰 게시물(.review-post)의 개수를 자동으로 표시
   function updateReviewCount() {
     if (!reviewList || !reviewCount) return;
-    reviewCount.textContent = String(reviewList.querySelectorAll('.review-post:not(.review-post-demo)').length);
+    reviewCount.textContent = String(reviewList.querySelectorAll('.review-post').length);
   }
 
   updateSortButtons();
