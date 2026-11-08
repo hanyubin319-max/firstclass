@@ -2246,8 +2246,8 @@ body.is-review-policy-open {
   .review-page .review-post-media-grid {
     position: relative !important;
     overflow: hidden !important;
-    column-gap: 11px !important;
-    row-gap: 11px !important;
+    column-gap: 6.66px !important;
+    row-gap: 6.66px !important;
   }
 
   .review-page .review-post-media-grid > .review-post-media-item {
@@ -2320,4 +2320,12 @@ body.is-review-policy-open {
   max-width: 80vh !important;
   max-height: 80vh !important;
   cursor: default;
+}
+
+
+@media screen and (max-width: 700px) {
+  .review-page .review-post-media-grid {
+    column-gap: 8px !important;
+    row-gap: 8px !important;
+  }
 }
