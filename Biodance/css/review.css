@@ -3292,3 +3292,28 @@ body.is-review-policy-open {
     border-radius: 22px !important;
   }
 }
+
+
+/* Keep the review media viewer fixed in place and isolate it from page scrolling. */
+.review-media-lightbox {
+  overflow: hidden !important;
+  overscroll-behavior: contain !important;
+}
+.review-media-lightbox-gallery {
+  overscroll-behavior: contain !important;
+}
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-stage {
+    width: min(calc(100vw - 48px), 62svh, 520px) !important;
+    height: min(calc(100vw - 48px), 62svh, 520px) !important;
+    max-height: none !important;
+    aspect-ratio: 1 / 1 !important;
+    flex: 0 0 auto !important;
+  }
+}
+
+/* Set every review media play icon to 70% opacity on desktop and mobile. */
+.review-page .review-post-media-play,
+.review-page .review-media-lightbox-video-play {
+  opacity: 0.7 !important;
+}
