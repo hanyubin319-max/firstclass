@@ -3846,3 +3846,49 @@ body.is-review-policy-open {
     box-shadow: none !important;
   }
 }
+
+
+/* Mobile: group the three sort labels as one frame, then space that frame and the search pill with one parent gap. */
+@media screen and (max-width: 700px) {
+  .review-toolbar > .review-toolbar-right {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .review-toolbar-right > .review-sort-group {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: max-content !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .review-toolbar-right > .review-sort-group > .review-sort-label {
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .review-toolbar-right > .review-searchbar,
+  .review-toolbar-right > .review-searchbar[hidden] {
+    display: flex !important;
+    flex: 1 1 116px !important;
+    width: auto !important;
+    min-width: 92px !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+}
