@@ -2198,3 +2198,19 @@ body.is-review-policy-open {
     max-width: 100% !important;
   }
 }
+
+
+/* Restore the original review media spacing from the existing layout rules. */
+@media screen {
+  .review-page .review-post-media-grid {
+    column-gap: 6.66px !important;
+    row-gap: 6.66px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .review-page .review-post-media-grid {
+    column-gap: 8px !important;
+    row-gap: 8px !important;
+  }
+}
