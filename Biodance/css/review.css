@@ -3952,3 +3952,40 @@ body.is-review-policy-open {
     margin: 0 !important;
   }
 }
+
+
+/* Mobile: keep the toolbar separator lines inside the same outer width as each review post. */
+@media screen and (max-width: 700px) {
+  .review-page .review-toolbar {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-self: stretch !important;
+    overflow: hidden !important;
+    border-top: 1px solid var(--neutral-border-gray) !important;
+    border-bottom: 1px solid var(--neutral-border-gray) !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    padding: 8px 0 !important;
+    gap: 8px !important;
+  }
+
+  .review-page .review-toolbar > .review-toolbar-left,
+  .review-page .review-toolbar > .review-toolbar-right {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .review-page .review-toolbar > .review-toolbar-right {
+    overflow: hidden !important;
+  }
+
+  .review-page .review-toolbar-right > .review-sort-group {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
