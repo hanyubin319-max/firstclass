@@ -2474,9 +2474,21 @@ body.is-review-policy-open {
 /* Keep the reply signature 50px above the divider at the bottom of the frame. */
 .review-page .review-post-writer-frame {
   flex: 0 0 30px !important;
-  margin: 0 0 50px !important;
+  margin: auto 0 50px !important;
 }
 .review-page .review-post-bottom-divider {
   flex: 0 0 1px !important;
-  margin-top: auto !important;
+  margin-top: 0 !important;
+}
+
+/* The gallery's small video thumbnail is outside .review-page, so target it directly. */
+.review-media-lightbox-thumbnail .review-media-lightbox-video-play {
+  position: absolute !important;
+  left: 15px !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 15px !important;
+  width: 24px !important;
+  height: 22px !important;
+  transform: none !important;
 }
