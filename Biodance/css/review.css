@@ -1893,3 +1893,53 @@ body.is-review-policy-open {
     font-size: clamp(10px, 3vw, 13px);
   }
 }
+
+
+/* Equalize every desktop review card and keep 61px clear space above and below its content */
+@media (min-width: 701px) {
+  .review-page .review-list > .review-post {
+    display: flex;
+    width: 1260px;
+    height: 795px;
+    min-height: 795px;
+    max-height: 795px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 61px 0;
+    box-sizing: border-box;
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner,
+  .review-page .review-list > .review-post > .review-post-inner.is-reply-open {
+    display: flex;
+    width: min(1032px, calc(100% - 48px));
+    height: 673px;
+    min-height: 673px;
+    max-height: 673px;
+    flex: 0 0 673px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .review-page .review-list > .review-post .review-post-bottom-divider {
+    margin-top: auto;
+  }
+
+  .review-page .review-list > .review-post:has(.review-post-inner.is-reply-open) {
+    height: auto;
+    min-height: 917px;
+    max-height: none;
+  }
+
+  .review-page .review-list > .review-post .review-post-inner.is-reply-open {
+    height: 795px;
+    min-height: 795px;
+    max-height: 795px;
+    flex-basis: 795px;
+  }
+}
