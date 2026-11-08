@@ -4430,3 +4430,11 @@ body.is-review-policy-open {
     top: calc(100% + 2px) !important;
   }
 }
+
+
+/* Increase only the space below the toolbar's top border; leave the 8px control gaps unchanged. */
+@media screen and (max-width: 700px) {
+  .review-page .review-toolbar {
+    padding-top: 14px !important;
+  }
+}
