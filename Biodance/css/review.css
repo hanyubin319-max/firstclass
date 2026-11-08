@@ -2450,3 +2450,33 @@ body.is-review-policy-open {
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
+
+
+/* Review video play icon: use the existing asset and anchor it to the lower-left corner. */
+.review-page .review-post-media-item.is-video {
+  position: relative !important;
+}
+.review-page .review-post-media-item.is-video > .review-post-media-play,
+.review-page .review-media-lightbox-video-play {
+  position: absolute !important;
+  left: 15px !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 15px !important;
+  display: block !important;
+  width: 24px !important;
+  height: 22px !important;
+  object-fit: contain !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+/* Keep the reply signature 50px above the divider at the bottom of the frame. */
+.review-page .review-post-writer-frame {
+  flex: 0 0 30px !important;
+  margin: 0 0 50px !important;
+}
+.review-page .review-post-bottom-divider {
+  flex: 0 0 1px !important;
+  margin-top: auto !important;
+}
