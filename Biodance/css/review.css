@@ -369,9 +369,9 @@
   align-items: center;
   gap: 12px;
   padding: 0 25px;
-  border: 1px solid var(--neutral-border-gray);
+  border: 0;
   border-radius: 9999px;
-  background: var(--neutral-white);
+  background: var(--neutral-light-gray);
 }
 .review-searchbar[hidden] {
   display: none;
