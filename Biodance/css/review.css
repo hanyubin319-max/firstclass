@@ -3439,3 +3439,67 @@ body.is-review-policy-open {
     opacity: 0.7 !important;
   }
 }
+
+/* Mobile review toolbar: left-align sorting and keep direct search visibly active. */
+@media screen and (max-width: 700px) {
+  .review-toolbar-right {
+    display: flex !important;
+    width: calc(100% - 16px) !important;
+    min-width: 0 !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    margin: 0 8px !important;
+  }
+
+  .review-sort-group {
+    display: flex !important;
+    width: auto !important;
+    min-width: 0 !important;
+    flex: 0 1 auto !important;
+    justify-content: flex-start !important;
+    gap: clamp(7px, 2.2vw, 12px) !important;
+    margin: 0 auto 0 0 !important;
+  }
+
+  .review-sort-label {
+    flex: 0 0 auto !important;
+    font-size: clamp(10px, 2.9vw, 11px) !important;
+    white-space: nowrap !important;
+  }
+
+  .review-sort-divider {
+    display: none !important;
+  }
+
+  .review-direct-search {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 76px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    margin: 0 !important;
+    padding: 7px 8px !important;
+    border: 1px solid #9DB09F !important;
+    border-radius: 4px !important;
+    background: #FEFAF7 !important;
+    color: #333 !important;
+    white-space: nowrap !important;
+  }
+
+  .review-direct-search span {
+    font-size: 11px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  .review-direct-search img {
+    width: 14px !important;
+    height: 14px !important;
+    flex: 0 0 14px !important;
+  }
+}
