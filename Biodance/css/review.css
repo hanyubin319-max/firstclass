@@ -2576,12 +2576,20 @@ body.is-review-policy-open {
   justify-content: center !important;
 }
 
-/* Keep clear space below the policy close button inside its scrollable content. */
+/* Match the review-policy close button's bottom spacing to the compact operation-policy dialog. */
 .review-policy-dialog.is-review-policy .review-policy-text-frame {
-  padding-bottom: 30px !important;
+  padding-bottom: 0 !important;
   box-sizing: border-box !important;
-  scroll-padding-bottom: 30px !important;
+  scroll-padding-bottom: 0 !important;
 }
 .review-policy-dialog.is-review-policy .review-policy-close {
-  margin: 30px auto 30px !important;
+  margin: 30px auto 0 !important;
+}
+
+/* Keep guideline copy and its hyphen markers the same charcoal as operation-policy copy. */
+.review-policy-dialog [data-policy-panel="guideline"],
+.review-policy-dialog [data-policy-panel="guideline"] .review-policy-bullet-list,
+.review-policy-dialog [data-policy-panel="guideline"] .review-policy-bullet-list li,
+.review-policy-dialog [data-policy-panel="guideline"] .review-policy-bullet-list li::before {
+  color: var(--neutral-charcoal) !important;
 }
