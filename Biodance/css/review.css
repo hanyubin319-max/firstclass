@@ -4015,3 +4015,180 @@ body.is-review-policy-open {
     margin-left: auto !important;
   }
 }
+
+
+/* Final mobile toolbar layout: two responsive rows contained by the review content width. */
+@media screen and (max-width: 700px) {
+  .review-page .review-toolbar {
+    display: flex !important;
+    box-sizing: border-box !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 20px 0 0 !important;
+    padding: 8px 0 !important;
+    overflow: hidden !important;
+    border-top: 1px solid var(--neutral-border-gray) !important;
+    border-bottom: 1px solid var(--neutral-border-gray) !important;
+  }
+
+  /* First row: rating dropdown and reset only. */
+  .review-page .review-toolbar > .review-toolbar-left {
+    order: 1 !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .review-page .review-toolbar-left .review-filter-control,
+  .review-page .review-toolbar-left .review-filter-control .custom-select {
+    box-sizing: border-box !important;
+    width: 76px !important;
+    min-width: 76px !important;
+    flex: 0 0 76px !important;
+    margin: 0 !important;
+  }
+
+  .review-page .review-toolbar-left .custom-select-trigger {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-height: 34px !important;
+    padding: 7px 8px !important;
+    font-size: 11px !important;
+  }
+
+  .review-page .review-toolbar-left .review-filter-reset {
+    width: auto !important;
+    min-width: 0 !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 7px 8px !important;
+    font-size: 10px !important;
+  }
+
+  /* Second row: one sort-label frame + search pill, with a single parent gap. */
+  .review-page .review-toolbar > .review-toolbar-right {
+    order: 2 !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 34px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .review-page .review-toolbar-right > .review-sort-group {
+    order: 1 !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+    flex: 0 1 auto !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 auto 0 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+  }
+
+  .review-page .review-toolbar-right > .review-sort-group > .review-sort-label {
+    display: inline-flex !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(9px, 2.7vw, 11px) !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .review-page .review-toolbar-right > .review-sort-divider,
+  .review-page .review-toolbar-right > .review-direct-search {
+    display: none !important;
+  }
+
+  .review-page .review-toolbar-right > .review-searchbar,
+  .review-page .review-toolbar-right > .review-searchbar[hidden] {
+    order: 2 !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+    flex: 0 1 clamp(84px, 29vw, 116px) !important;
+    width: clamp(84px, 29vw, 116px) !important;
+    min-width: 84px !important;
+    max-width: 116px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 4px !important;
+    margin: 0 0 0 auto !important;
+    padding: 0 8px !important;
+    border: 0 !important;
+    border-radius: 9999px !important;
+    background: #F1F2F3 !important;
+    box-shadow: none !important;
+  }
+
+  .review-page .review-searchbar input {
+    display: block !important;
+    box-sizing: border-box !important;
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+    color: #777 !important;
+    -webkit-text-fill-color: #777 !important;
+    opacity: 1 !important;
+  }
+
+  .review-page .review-searchbar input::placeholder {
+    color: #888 !important;
+    -webkit-text-fill-color: #888 !important;
+    opacity: 1 !important;
+  }
+
+  .review-page .review-searchbar > .review-search-close {
+    display: flex !important;
+    box-sizing: border-box !important;
+    flex: 0 0 16px !important;
+    width: 16px !important;
+    min-width: 16px !important;
+    height: 16px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .review-page .review-searchbar > .review-search-close svg {
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
