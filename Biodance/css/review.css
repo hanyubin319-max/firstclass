@@ -364,7 +364,7 @@
 .review-searchbar {
   display: flex;
   width: 452px;
-  height: 42px;
+  height: 38px;
   flex: 0 0 452px;
   align-items: center;
   gap: 12px;
