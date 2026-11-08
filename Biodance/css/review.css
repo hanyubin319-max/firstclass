@@ -2178,3 +2178,23 @@ body.is-review-policy-open {
   object-fit: cover;
   border: 0;
 }
+
+
+/* Match the review post's inner content and bottom divider to the full review toolbar width. */
+@media screen {
+  .review-page .review-list > .review-post > .review-post-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner > .review-post-product,
+  .review-page .review-list > .review-post > .review-post-inner > .review-post-text-frame,
+  .review-page .review-list > .review-post > .review-post-inner > .review-post-more-frame,
+  .review-page .review-list > .review-post > .review-post-inner > .review-post-media-grid,
+  .review-page .review-list > .review-post > .review-post-inner > .review-post-keywords,
+  .review-page .review-list > .review-post > .review-post-inner > .review-post-actions,
+  .review-page .review-list > .review-post > .review-post-inner > .review-post-bottom-divider {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
