@@ -2206,8 +2206,8 @@ body.is-review-policy-open {
   .review-page .review-post-media-grid {
     grid-template-columns: repeat(4, 248px) !important;
     grid-auto-columns: 248px !important;
-    column-gap: 6.66px !important;
-    row-gap: 6.66px !important;
+    column-gap: 11px !important;
+    row-gap: 11px !important;
   }
 
   .review-page .review-post-media-grid > .review-post-media-item {
@@ -2223,7 +2223,29 @@ body.is-review-policy-open {
   .review-page .review-post-media-grid {
     grid-template-columns: repeat(4, 248px) !important;
     grid-auto-columns: 248px !important;
-    column-gap: 8px !important;
-    row-gap: 8px !important;
+    column-gap: 11px !important;
+    row-gap: 11px !important;
+  }
+}
+
+
+/* The fifth review media is intentionally cropped at the right edge with a fade. */
+@media screen {
+  .review-page .review-post-media-grid {
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .review-page .review-post-media-grid > .review-post-media-item:nth-child(5) {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .review-page .review-post-media-grid > .review-post-media-item:nth-child(5)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(255,255,255,0) 35%, rgba(255,255,255,.18) 58%, rgba(255,255,255,.72) 82%, rgba(255,255,255,1) 100%);
   }
 }
