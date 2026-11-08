@@ -3587,21 +3587,53 @@ body.is-review-policy-open {
   }
 }
 
-/* Mobile search: match the supplied reference — one full-width pale-gray pill with a right-side X. */
+/* Mobile toolbar: retain sort labels on the left and show the compact search pill on the right. */
 @media screen and (max-width: 700px) {
-  .review-toolbar-right {
-    display: flex !important;
-    width: calc(100% - 6px) !important;
-    min-width: 0 !important;
-    height: 39px !important;
-    min-height: 39px !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    justify-content: stretch !important;
-    margin: 0 3px !important;
+  .review-toolbar {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
   }
 
-  .review-toolbar-right > .review-sort-group,
+  .review-toolbar > .review-toolbar-left {
+    display: none !important;
+  }
+
+  .review-toolbar > .review-toolbar-right {
+    display: flex !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .review-toolbar-right > .review-sort-group {
+    display: flex !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  .review-toolbar-right > .review-sort-group > .review-sort-label {
+    display: inline-block !important;
+    flex: 0 0 auto !important;
+    color: #333 !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+  }
+
   .review-toolbar-right > .review-sort-divider,
   .review-toolbar-right > .review-direct-search {
     display: none !important;
@@ -3610,17 +3642,17 @@ body.is-review-policy-open {
   .review-toolbar-right > .review-searchbar,
   .review-toolbar-right > .review-searchbar[hidden] {
     display: flex !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
+    width: 116px !important;
+    min-width: 116px !important;
+    max-width: 116px !important;
     height: 34px !important;
     min-height: 34px !important;
-    flex: 1 1 100% !important;
+    flex: 0 0 116px !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 10px !important;
+    gap: 6px !important;
     margin: 0 !important;
-    padding: 0 20px !important;
+    padding: 0 10px !important;
     border: 0 !important;
     border-radius: 9999px !important;
     background: #F1F2F3 !important;
@@ -3629,33 +3661,28 @@ body.is-review-policy-open {
 
   .review-toolbar-right > .review-searchbar input {
     display: block !important;
-    width: 100% !important;
     min-width: 0 !important;
-    height: 100% !important;
-    padding: 0 !important;
-    border: 0 !important;
-    outline: 0 !important;
-    background: transparent !important;
-    color: #777 !important;
-    font-family: var(--font-primary) !important;
-    font-size: 11px !important;
-    font-weight: 400 !important;
+    width: 100% !important;
+    color: #888 !important;
+    -webkit-text-fill-color: #888 !important;
+    font-size: 10px !important;
+    opacity: 1 !important;
   }
 
   .review-toolbar-right > .review-searchbar input::placeholder {
     color: #888 !important;
+    -webkit-text-fill-color: #888 !important;
     opacity: 1 !important;
   }
 
   .review-toolbar-right > .review-searchbar > .review-search-close {
     display: flex !important;
-    width: 18px !important;
-    min-width: 18px !important;
-    height: 18px !important;
-    flex: 0 0 18px !important;
+    width: 16px !important;
+    min-width: 16px !important;
+    height: 16px !important;
+    flex: 0 0 16px !important;
     align-items: center !important;
     justify-content: center !important;
-    margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
     background: transparent !important;
@@ -3664,11 +3691,10 @@ body.is-review-policy-open {
 
   .review-toolbar-right > .review-searchbar > .review-search-close svg {
     display: block !important;
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 }
-
 
 /* Keep the reference label visible inside the compact mobile search pill. */
 @media screen and (max-width: 700px) {
