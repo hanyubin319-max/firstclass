@@ -3312,9 +3312,10 @@ body.is-review-policy-open {
   }
 }
 
-/* Set every review media play icon to 70% opacity on desktop and mobile. */
-.review-page .review-post-media-play,
-.review-page .review-media-lightbox-video-play {
+/* Set every review media play icon to 70% opacity on desktop and mobile.
+   The lightbox is appended directly to body, so do not scope its icon to .review-page. */
+.review-post-media-play,
+.review-media-lightbox-video-play {
   opacity: 0.7 !important;
 }
 
