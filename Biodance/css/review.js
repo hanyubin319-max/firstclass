@@ -422,6 +422,20 @@ document.addEventListener('DOMContentLoaded', () => {
     return item?.querySelector('video, iframe, img:not(.review-post-media-play)') || null;
   }
 
+  function isReviewVideo(item, source = getReviewMedia(item)) {
+    return source?.tagName === 'VIDEO' || source?.tagName === 'IFRAME'
+      || Boolean(item?.querySelector('.review-post-media-play'))
+      || /동영상|video/i.test(item?.textContent || '');
+  }
+
+  function addVideoPlayIndicator(target) {
+    const play = document.createElement('span');
+    play.className = 'review-media-lightbox-video-play';
+    play.setAttribute('aria-hidden', 'true');
+    play.textContent = '▶';
+    target.appendChild(play);
+  }
+
   function renderLightboxMedia(stage, item) {
     stage.replaceChildren();
     const source = getReviewMedia(item);
@@ -445,6 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
     placeholder.classList.add('review-media-lightbox-placeholder');
     placeholder.querySelector('.review-post-media-play')?.remove();
     stage.appendChild(placeholder);
+    if (isReviewVideo(item)) addVideoPlayIndicator(placeholder);
   }
 
   reviewList?.addEventListener('click', event => {
@@ -501,6 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
         preview.querySelector('.review-post-media-play')?.remove();
         thumbnail.appendChild(preview);
       }
+      if (isReviewVideo(item, source)) addVideoPlayIndicator(thumbnail);
 
       thumbnail.addEventListener('click', () => {
         thumbnails.querySelectorAll('.review-media-lightbox-thumbnail').forEach(button => {
