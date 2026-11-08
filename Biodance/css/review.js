@@ -528,6 +528,12 @@ document.addEventListener('DOMContentLoaded', () => {
     mediaLightbox.setAttribute('aria-modal', 'true');
     mediaLightbox.setAttribute('aria-label', '리뷰 사진 및 동영상 자세히 보기');
 
+    // iOS Safari can still scroll the page behind a fixed modal; cancel touch
+    // movement on the full-screen overlay while the viewer is open.
+    mediaLightbox.addEventListener('touchmove', touchEvent => {
+      touchEvent.preventDefault();
+    }, { passive: false });
+
     const gallery = document.createElement('div');
     gallery.className = 'review-media-lightbox-gallery';
     const closeButton = document.createElement('button');
