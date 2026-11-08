@@ -2108,8 +2108,7 @@ body.is-review-policy-open {
 }
 
 
-/* Review post layout: natural card height, 248px outer spacing,
-   original four-column media tile sizing, and horizontal access to tile five. */
+/* Review post layout: preserve the original media tile dimensions and expose tile five by horizontal scrolling. */
 @media screen {
   .review-page .review-list {
     width: 100% !important;
@@ -2154,12 +2153,15 @@ body.is-review-policy-open {
     flex: 0 0 72px !important;
   }
 
-  /* Preserve the original 1032px maximum width and original tile dimensions.
-     Four columns remain visible; the fifth tile is reached by horizontal scroll. */
+  /* Keep the original grid width, four-column sizing, gap and item width.
+     The fifth tile becomes an additional column in the horizontal scroll area. */
   .review-page .review-post-media-grid {
-    display: flex !important;
+    display: grid !important;
     width: min(1032px, 100%) !important;
     max-width: 1032px !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-auto-flow: column !important;
+    grid-auto-columns: calc((100% - 19.98px) / 4) !important;
     gap: 6.66px !important;
     margin-top: 25px !important;
     overflow-x: auto !important;
@@ -2171,10 +2173,9 @@ body.is-review-policy-open {
   }
 
   .review-page .review-post-media-item {
-    display: flex !important;
-    width: calc((100% - 19.98px) / 4 - 5px) !important;
-    min-width: calc((100% - 19.98px) / 4 - 5px) !important;
-    flex: 0 0 calc((100% - 19.98px) / 4 - 5px) !important;
+    width: calc(100% - 5px) !important;
+    min-width: 0 !important;
+    flex: initial !important;
     aspect-ratio: 1 / 1 !important;
   }
 
@@ -2194,12 +2195,14 @@ body.is-review-policy-open {
   .review-page .review-post-media-grid {
     width: 100% !important;
     max-width: 100% !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-columns: calc((100% - 8px) / 2) !important;
     gap: 8px !important;
   }
 
   .review-page .review-post-media-item {
-    width: calc((100% - 8px) / 2 - 5px) !important;
-    min-width: calc((100% - 8px) / 2 - 5px) !important;
-    flex-basis: calc((100% - 8px) / 2 - 5px) !important;
+    width: calc(100% - 5px) !important;
+    min-width: 0 !important;
+    flex: initial !important;
   }
 }
