@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heading = activePanel.querySelector('h2');
     if (heading && policyDialog) {
       policyDialog.setAttribute('aria-labelledby', heading.id);
-      policyDialog.classList.toggle('is-compact-policy', policyName === 'operation' || policyName === 'guideline');
+      policyDialog.classList.toggle('is-compact-policy', policyName !== 'review');
     }
 
     policyModal.hidden = false;
