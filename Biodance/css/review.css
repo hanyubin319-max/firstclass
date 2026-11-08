@@ -3892,3 +3892,63 @@ body.is-review-policy-open {
     margin: 0 !important;
   }
 }
+
+
+/* Mobile toolbar uses two separate rows: rating filter/reset above, sort/search below. */
+@media screen and (max-width: 700px) {
+  .review-toolbar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .review-toolbar > .review-toolbar-left {
+    order: 1 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-height: 34px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+
+  .review-toolbar > .review-toolbar-right {
+    order: 2 !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 38px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+
+  .review-toolbar-right > .review-sort-group {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: max-content !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+
+  .review-toolbar-right > .review-searchbar,
+  .review-toolbar-right > .review-searchbar[hidden] {
+    display: flex !important;
+    flex: 1 1 116px !important;
+    width: auto !important;
+    min-width: 92px !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+}
