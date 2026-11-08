@@ -2492,3 +2492,68 @@ body.is-review-policy-open {
   height: 22px !important;
   transform: none !important;
 }
+
+
+/* Review-policy dialog: size to content, capped by the viewport. */
+.review-policy-dialog.is-review-policy {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: calc(100dvh - 24px) !important;
+  grid-template-rows: 10px minmax(0, 1fr) 10px !important;
+}
+.review-policy-dialog.is-review-policy .review-policy-text-frame {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: calc(100dvh - 74px) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+.review-policy-dialog.is-review-policy .review-policy-close {
+  margin: 30px auto 0 !important;
+}
+@media (max-width: 390px) {
+  .review-policy-dialog.is-review-policy {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    height: auto !important;
+    max-height: calc(100dvh - 24px) !important;
+    padding: 18px 12px !important;
+  }
+  .review-policy-dialog.is-review-policy .review-policy-text-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: calc(100dvh - 60px) !important;
+  }
+}
+
+/* Small review video tile: smaller play icon at the lower-left corner. */
+.review-page .review-post-media-item.is-video {
+  position: relative !important;
+}
+.review-page .review-post-media-item.is-video > .review-post-media-play {
+  position: absolute !important;
+  left: 12px !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 12px !important;
+  display: block !important;
+  width: 18px !important;
+  height: 16.5px !important;
+  min-width: 18px !important;
+  max-width: 18px !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  transform: none !important;
+  align-self: auto !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+}
+.review-media-lightbox-thumbnail .review-media-lightbox-video-play {
+  left: 7px !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 7px !important;
+  width: 14px !important;
+  height: 13px !important;
+  transform: none !important;
+}
