@@ -2950,11 +2950,9 @@ body.is-review-policy-open {
     width: 100% !important;
     max-width: 100% !important;
     gap: 8px !important;
-    overflow-x: auto !important;
+    overflow-x: hidden !important;
     overflow-y: hidden !important;
     padding: 0 0 4px !important;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
   }
 
   .review-page .review-post-media-grid > .review-post-media-item {
