@@ -3670,6 +3670,23 @@ body.is-review-policy-open {
 }
 
 
+/* Keep the reference label visible inside the compact mobile search pill. */
+@media screen and (max-width: 700px) {
+  .review-toolbar-right > .review-searchbar input {
+    color: #777 !important;
+    -webkit-text-fill-color: #777 !important;
+    font-size: 11px !important;
+    opacity: 1 !important;
+  }
+
+  .review-toolbar-right > .review-searchbar input::placeholder {
+    color: #888 !important;
+    -webkit-text-fill-color: #888 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
 /* Match the reference pill width: 398px on a 412px mobile viewport. */
 @media screen and (max-width: 700px) {
   .review-toolbar > .review-toolbar-right {
