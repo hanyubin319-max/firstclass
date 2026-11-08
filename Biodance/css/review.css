@@ -3364,7 +3364,7 @@ body.is-review-policy-open {
 }
 
 
-/* Desktop-only spacing; explicitly preserve the mobile thumbnail gap. */
+/* Set detail-view spacing independently for desktop and mobile. */
 @media screen and (min-width: 701px) {
   .review-media-lightbox-gallery {
     gap: 15px !important;
@@ -3372,6 +3372,6 @@ body.is-review-policy-open {
 }
 @media screen and (max-width: 700px) {
   .review-media-lightbox-gallery {
-    gap: 5px !important;
+    gap: 10px !important;
   }
 }
