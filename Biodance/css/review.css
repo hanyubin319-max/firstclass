@@ -2151,3 +2151,62 @@ body.is-review-policy-open {
     min-width: 140px !important;
   }
 }
+
+
+/* Final card sizing: every review post has the same outer height and 61px insets. */
+@media screen {
+  .review-page .review-list > .review-post,
+  .review-page .review-list > .review-post:has(> .review-post-inner.is-reply-open) {
+    display: flex !important;
+    width: 100% !important;
+    height: 795px !important;
+    min-height: 795px !important;
+    max-height: 795px !important;
+    flex: 0 0 795px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 61px 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner,
+  .review-page .review-list > .review-post > .review-post-inner.is-reply-open {
+    display: flex !important;
+    width: 100% !important;
+    height: 673px !important;
+    min-height: 0 !important;
+    max-height: 673px !important;
+    flex: 0 0 673px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    margin: 0 !important;
+    padding: 0 0 61px !important;
+    box-sizing: border-box !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--neutral-gray) var(--neutral-light-gray);
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner > * {
+    flex: 0 0 auto !important;
+  }
+
+  .review-page .review-list > .review-post > .review-post-inner > .review-post-bottom-divider {
+    width: 100% !important;
+    height: 1px !important;
+    min-height: 1px !important;
+    flex: 0 0 1px !important;
+    margin-top: auto !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .review-page .review-list > .review-post {
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+  }
+}
