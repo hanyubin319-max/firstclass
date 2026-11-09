@@ -4487,3 +4487,35 @@ body.is-review-policy-open {
     display: none !important;
   }
 }
+
+
+/* Personal portfolio notice at the very bottom of the footer. */
+.biodance-footer {
+  position: relative;
+  padding-bottom: 64px;
+}
+.biodance-footer .portfolio-disclaimer {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  margin: 0;
+  color: var(--neutral-charcoal, #292929);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+@media screen and (max-width: 700px) {
+  .biodance-footer {
+    padding-bottom: 64px !important;
+  }
+  .biodance-footer .portfolio-disclaimer {
+    right: 16px;
+    bottom: 20px;
+    left: 16px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
