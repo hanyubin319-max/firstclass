@@ -99,8 +99,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     arrow.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); toggleSecondaryMenu(link); });
     arrow.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleSecondaryMenu(link); } });
   });
-  document.addEventListener('click', event => { if (!event.target.closest('.site-header')) closeMegaMenu(); });
-  siteHeader?.addEventListener('mouseleave', closeMegaMenu);
+  function closeMobileMenu() {
+    if (!mainNav || !menuToggle) return;
+    mainNav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', '메뉴 열기');
+    closeMegaMenu();
+  }
+
+  // On mobile, tapping anywhere outside the navigation and menu button closes it.
+  document.addEventListener('click', event => {
+    const clickedInsideNav = event.target.closest('#main-nav');
+    const clickedMenuButton = event.target.closest('.menu-toggle');
+    if (window.matchMedia('(max-width: 767px)').matches && !clickedInsideNav && !clickedMenuButton) {
+      closeMobileMenu();
+    }
+    if (!event.target.closest('.site-header')) closeMegaMenu();
+  });
+  siteHeader?.addEventListener('mouseleave', () => {
+    if (window.matchMedia('(min-width: 768px)').matches) closeMegaMenu();
+  });
   menuToggle?.addEventListener('click', () => {
     const isOpen = mainNav.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
