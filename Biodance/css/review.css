@@ -4489,29 +4489,36 @@ body.is-review-policy-open {
 }
 
 
-/* Portfolio notice: show only when the layout switches to mobile. */
+/* Portfolio notice: desktop and mobile typography. */
+.biodance-footer {
+  position: relative;
+  padding-bottom: 64px;
+}
 .biodance-footer .portfolio-disclaimer {
-  display: none;
+  position: absolute;
+  display: block;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  margin: 0;
+  color: var(--neutral-charcoal, #292929);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
 }
 @media screen and (max-width: 700px) {
   .biodance-footer {
-    position: relative;
     padding-bottom: 64px !important;
   }
   .biodance-footer .portfolio-disclaimer {
-    position: absolute;
-    display: block;
     right: 0;
     bottom: 0;
     left: 0;
     box-sizing: border-box;
-    margin: 0;
     padding: 12px 16px;
     background: #292929;
     color: #fff;
     font-size: 12px;
-    font-weight: 500;
-    line-height: 1.5;
-    text-align: center;
   }
 }
