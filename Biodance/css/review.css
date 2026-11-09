@@ -4592,3 +4592,13 @@ body.is-review-policy-open {
     margin-top: 32px;
   }
 }
+
+
+/* Review toolbar: remove both horizontal borders and the left-side offset. */
+.review-page .review-toolbar {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+.review-page .review-toolbar-left {
+  margin-left: 0 !important;
+}
