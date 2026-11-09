@@ -4477,3 +4477,13 @@ body.is-review-policy-open {
     visibility: visible !important;
   }
 }
+
+
+/* Mobile lightbox: use the x.svg image only; prevent a second CSS-drawn X. */
+@media screen and (max-width: 700px) {
+  .review-media-lightbox-stage > .review-media-lightbox-close::before,
+  .review-media-lightbox-stage > .review-media-lightbox-close::after {
+    content: none !important;
+    display: none !important;
+  }
+}
