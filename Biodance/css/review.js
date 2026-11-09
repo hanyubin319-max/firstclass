@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const reviewAuthors = ['윤**', '정**', '강**', '조**', '한**', '오**', '임**', '서**', '장**', '신**', '유**', '문**', '배**', '백**', '안**', '남**', '송**', '전**', '홍**', '노**'];
   const reviewDates = Array.from({ length: 20 }, (_, index) => {
     const date = new Date(2026, 10, 9 - index);
-    return date.toISOString().slice(0, 10);
+    return [date.getFullYear(), String(date.getMonth() + 1).padStart(2, '0'), String(date.getDate()).padStart(2, '0')].join('-');
   });
 
   if (reviewList && initialPosts.length) {
