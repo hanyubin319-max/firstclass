@@ -4602,3 +4602,9 @@ body.is-review-policy-open {
 .review-page .review-toolbar-left {
   margin-left: 0 !important;
 }
+
+
+/* Pagination: never display review posts outside the current five-item page. */
+.review-page .review-list > .review-post[hidden] {
+  display: none !important;
+}
