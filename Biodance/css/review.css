@@ -4489,33 +4489,29 @@ body.is-review-policy-open {
 }
 
 
-/* Personal portfolio notice at the very bottom of the footer. */
-.biodance-footer {
-  position: relative;
-  padding-bottom: 64px;
-}
+/* Portfolio notice: show only when the layout switches to mobile. */
 .biodance-footer .portfolio-disclaimer {
-  position: absolute;
-  right: 24px;
-  bottom: 24px;
-  left: 24px;
-  margin: 0;
-  color: var(--neutral-charcoal, #292929);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
+  display: none;
 }
 @media screen and (max-width: 700px) {
   .biodance-footer {
+    position: relative;
     padding-bottom: 64px !important;
   }
   .biodance-footer .portfolio-disclaimer {
-    right: 16px;
-    bottom: 20px;
-    left: 16px;
+    position: absolute;
+    display: block;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 12px 16px;
+    background: #292929;
     color: #fff;
     font-size: 12px;
     font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
   }
 }
