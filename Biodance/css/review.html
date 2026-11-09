@@ -541,7 +541,14 @@
                   </article>
 
       </div>
-      <div class="review-policy-links-row">
+      <nav class="product-pagination" id="review-pagination" aria-label="리뷰 페이지 이동">
+        <button type="button" class="pagination-arrow" data-page="prev" aria-label="이전 페이지"></button>
+        <button type="button" class="pagination-number is-active" data-page="1" aria-current="page">1</button>
+        <button type="button" class="pagination-arrow" data-page="next" aria-label="다음 페이지"></button>
+      </nav>
+
+      <div class="review-policy-links-row" aria-label="리뷰 이용 안내">
+        <span class="review-policy-heading">리뷰 이용 안내</span>
         <div class="review-policy-links" aria-label="리뷰 정책 안내">
           <button type="button" class="review-policy-link" data-policy-open="operation">운영정책</button>
           <span class="review-policy-divider" aria-hidden="true"></span>
@@ -551,19 +558,12 @@
               <circle cx="8" cy="4.8" r="0.9" fill="currentColor"/>
               <path d="M8 7v4.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
-            <span>리뷰정책</span>
+            <span>리뷰 작성 및 게시 기준</span>
           </button>
-        </div>
-        <div class="review-guideline-link-wrap">
+          <span class="review-policy-divider" aria-hidden="true"></span>
           <button type="button" class="review-guideline-link" data-policy-open="guideline">리뷰 삭제 및 적립금 차감 기준</button>
         </div>
       </div>
-
-      <nav class="product-pagination" id="review-pagination" aria-label="리뷰 페이지 이동">
-        <button type="button" class="pagination-arrow" data-page="prev" aria-label="이전 페이지"></button>
-        <button type="button" class="pagination-number is-active" data-page="1" aria-current="page">1</button>
-        <button type="button" class="pagination-arrow" data-page="next" aria-label="다음 페이지"></button>
-      </nav>
 
       <div class="review-policy-modal" id="review-policy-modal" hidden>
         <div class="review-policy-dialog" role="dialog" aria-modal="true" aria-labelledby="policy-title-review">
