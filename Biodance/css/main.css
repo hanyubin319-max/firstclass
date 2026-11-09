@@ -5227,7 +5227,7 @@ body {
 }
 
 /* Portfolio disclaimer shared by all Biodance pages. */
-.biodance-footer .portfolio-disclaimer {
+.biodance-footer .biodance-footer-text-frame > .portfolio-disclaimer {
   display: block;
   position: static;
   margin: 16px 0 0;
@@ -5239,7 +5239,7 @@ body {
   text-align: left;
 }
 @media screen and (max-width: 700px) {
-  .biodance-footer .portfolio-disclaimer {
+  .biodance-footer .biodance-footer-text-frame > .portfolio-disclaimer {
     margin-top: 16px;
     font-size: 12px;
   }
