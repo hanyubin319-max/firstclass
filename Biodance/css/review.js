@@ -40,7 +40,64 @@ document.addEventListener('DOMContentLoaded', () => {
   let policyThumbDrag = null;
   let policyScrollPosition = 0;
 
-  const pageSize = 9;
+  const pageSize = 5;
+
+  // 화면 예시용 리뷰를 25개로 확장해 페이지네이션 동작을 확인할 수 있도록 구성
+  const initialPosts = [...(reviewList?.querySelectorAll('.review-post') || [])];
+  const reviewSamples = [
+    ['피부에 부드럽게 발리고 촉촉함이 오래 남아요. 꾸준히 사용해 보려고 합니다.', '사용감이 순하고 발림성이 좋아요. 메이크업 전에 사용해도 밀리지 않아 만족합니다.'],
+    ['흡수가 빠르고 끈적임이 적어서 아침저녁으로 사용하기 편했어요.', '촉촉한 마무리감이 마음에 들어요. 다만 제 피부에는 양 조절이 조금 필요했어요.'],
+    ['한 달 동안 사용해 보니 피부결이 한결 매끄러워진 느낌이에요.', '자극 없이 편안하게 사용할 수 있었어요. 건조한 날에는 여러 번 덧발라 줍니다.'],
+    ['기대했던 것보다 보습감이 괜찮고 발림성도 부드러워요.', '사용하기 간편하고 피부에 잘 흡수돼요. 전체적으로 무난하게 만족합니다.'],
+    ['꾸준히 사용 중인데 피부가 편안하고 촉촉해서 재구매하려고 해요.', '처음에는 낯설었지만 며칠 사용하니 사용감이 마음에 들었어요.']
+  ];
+  const reviewAuthors = ['윤**', '정**', '강**', '조**', '한**', '오**', '임**', '서**', '장**', '신**', '유**', '문**', '배**', '백**', '안**', '남**', '송**', '전**', '홍**', '노**'];
+  const reviewDates = Array.from({ length: 20 }, (_, index) => {
+    const date = new Date(2026, 10, 9 - index);
+    return date.toISOString().slice(0, 10);
+  });
+
+  if (reviewList && initialPosts.length) {
+    for (let index = 0; index < 20; index++) {
+      const sampleIndex = index % initialPosts.length;
+      const clone = initialPosts[sampleIndex].cloneNode(true);
+      const uniqueSuffix = `generated-${index + 1}`;
+      const idMap = new Map();
+
+      clone.querySelectorAll('[id]').forEach(element => {
+        const nextId = `${element.id}-${uniqueSuffix}`;
+        idMap.set(element.id, nextId);
+        element.id = nextId;
+      });
+      clone.querySelectorAll('[aria-controls]').forEach(element => {
+        const controls = element.getAttribute('aria-controls').split(/\\s+/).map(id => idMap.get(id) || id);
+        element.setAttribute('aria-controls', controls.join(' '));
+      });
+
+      const rating = Number(clone.dataset.rating) || 5;
+      const date = reviewDates[index];
+      clone.dataset.date = date;
+      clone.dataset.author = reviewAuthors[index];
+      clone.dataset.recommendation = String((20 - index) % 12);
+      clone.setAttribute('aria-label', `별점 ${rating}점 리뷰 예시 ${index + 6}`);
+
+      const author = clone.querySelector('.review-post-author');
+      if (author) author.textContent = reviewAuthors[index];
+      const dateElement = clone.querySelector('[data-review-date]');
+      if (dateElement) {
+        dateElement.dateTime = date;
+        dateElement.textContent = date.replaceAll('-', '.');
+      }
+
+      const sampleText = reviewSamples[sampleIndex][index % 2];
+      const preview = clone.querySelector('.review-post-preview');
+      const full = clone.querySelector('.review-post-full');
+      if (preview) preview.textContent = sampleText.slice(0, 31) + '...';
+      if (full) full.textContent = sampleText;
+
+      reviewList.appendChild(clone);
+    }
+  }
   let currentPage = 1;
   let totalPages = 1;
   let sortValue = 'latest';
@@ -93,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return Number.isFinite(score) ? score : 0;
   }
 
-  // Event 페이지와 동일하게 9개씩 나누고 필터/정렬 결과를 페이지에 표시
+  // 리뷰는 한 페이지에 5개씩 표시하고 필터/정렬 결과에 따라 페이지를 다시 계산
   function renderPagination(pageCount) {
     if (!pagination) return;
 
