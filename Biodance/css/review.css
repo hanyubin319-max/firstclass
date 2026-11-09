@@ -4523,3 +4523,72 @@ body.is-review-policy-open {
     text-align: left;
   }
 }
+
+
+/* UX refinement: pagination is the primary next step; policy links are secondary help. */
+.review-page .review-policy-links-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin: 24px auto 0;
+  padding: 16px 20px;
+  border-top: 1px solid var(--neutral-border-gray);
+  box-sizing: border-box;
+}
+.review-page .review-policy-heading {
+  color: var(--neutral-charcoal);
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.review-page .review-policy-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+.review-page .review-policy-link,
+.review-page .review-guideline-link {
+  color: var(--neutral-gray);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.review-page .review-policy-divider {
+  width: 1px;
+  height: 12px;
+  flex-basis: 1px;
+}
+.review-page #review-pagination {
+  margin-top: 40px;
+}
+@media (max-width: 700px) {
+  .review-page .review-policy-links-row {
+    justify-content: flex-start;
+    gap: 8px 12px;
+    margin-top: 20px;
+    padding: 14px 4px;
+  }
+  .review-page .review-policy-heading {
+    width: 100%;
+    font-size: 11px;
+  }
+  .review-page .review-policy-links {
+    justify-content: flex-start;
+    gap: 8px 10px;
+  }
+  .review-page .review-policy-link,
+  .review-page .review-guideline-link {
+    font-size: 11px;
+    white-space: normal;
+    text-align: left;
+  }
+  .review-page #review-pagination {
+    margin-top: 32px;
+  }
+}
