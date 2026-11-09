@@ -5245,9 +5245,12 @@ body {
   }
 }
 
-/* Keep the shared header visible while scrolling on desktop and mobile */
+/* Shared header: fixed to the viewport on every page and screen size. */
 .site-header {
-    position: sticky !important;
-    top: 0;
-    z-index: 1000;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10000 !important;
 }
