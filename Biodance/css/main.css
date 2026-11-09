@@ -5244,3 +5244,10 @@ body {
     font-size: 12px;
   }
 }
+
+/* Keep the shared header visible while scrolling on desktop and mobile */
+.site-header {
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+}
