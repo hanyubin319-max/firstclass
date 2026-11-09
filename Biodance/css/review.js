@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         element.id = nextId;
       });
       clone.querySelectorAll('[aria-controls]').forEach(element => {
-        const controls = element.getAttribute('aria-controls').split(/\\s+/).map(id => idMap.get(id) || id);
+        const controls = element.getAttribute('aria-controls').split(/\s+/).map(id => idMap.get(id) || id);
         element.setAttribute('aria-controls', controls.join(' '));
       });
 
