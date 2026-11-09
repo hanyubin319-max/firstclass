@@ -8,6 +8,26 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (error) { console.error(error); return; }
 
   const siteHeader = document.querySelector('.site-header');
+
+  // A fixed header leaves normal document flow, so reserve its exact height.
+  if (siteHeader && !siteHeader.previousElementSibling?.classList.contains('site-header-spacer')) {
+    const spacer = document.createElement('div');
+    spacer.className = 'site-header-spacer';
+    spacer.setAttribute('aria-hidden', 'true');
+    spacer.style.width = '100%';
+    spacer.style.height = siteHeader.getBoundingClientRect().height + 'px';
+    siteHeader.parentNode.insertBefore(spacer, siteHeader);
+
+    const syncHeaderSpacer = () => {
+      spacer.style.height = siteHeader.getBoundingClientRect().height + 'px';
+    };
+    syncHeaderSpacer();
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(syncHeaderSpacer).observe(siteHeader);
+    } else {
+      window.addEventListener('resize', syncHeaderSpacer);
+    }
+  }
   const promoMessage = document.querySelector('#promo-message');
   const promoPrev = document.querySelector('.promo-prev');
   const promoNext = document.querySelector('.promo-next');
