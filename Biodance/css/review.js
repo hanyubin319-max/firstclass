@@ -455,16 +455,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateReviewMoreButtons(root = document) {
     root.querySelectorAll('.review-post-text-frame').forEach(frame => {
       const text = frame.querySelector('.review-post-body-text');
-      const button = frame.querySelector('.review-post-more');
-      if (!text || !button) return;
+      const preview = frame.querySelector('.review-post-preview');
+      const full = frame.querySelector('.review-post-full');
+      const button = frame.closest('.review-post')?.querySelector('.review-post-more');
+      if (!text || !preview || !full || !button) return;
 
-      // 미리보기와 전체 글이 분리된 리뷰는 더보기 버튼을 항상 표시
-      if (text.querySelector('.review-post-preview') && text.querySelector('.review-post-full')) {
-        button.hidden = false;
-        return;
-      }
-
-      const measure = text.cloneNode(true);
+      // Measure the complete text at the current responsive width.
+      const measure = full.cloneNode(true);
+      measure.hidden = false;
       measure.style.position = 'absolute';
       measure.style.visibility = 'hidden';
       measure.style.display = 'block';
@@ -475,10 +473,40 @@ document.addEventListener('DOMContentLoaded', () => {
       measure.style.webkitLineClamp = 'unset';
       measure.style.margin = '0';
       frame.appendChild(measure);
-      const fullHeight = measure.getBoundingClientRect().height;
+
+      const range = document.createRange();
+      const walker = document.createTreeWalker(measure, NodeFilter.SHOW_TEXT);
+      const lineTops = [];
+      while (walker.nextNode()) {
+        if (!walker.currentNode.textContent.trim()) continue;
+        range.selectNodeContents(walker.currentNode);
+        [...range.getClientRects()]
+          .filter(rect => rect.width > 0 && rect.height > 0)
+          .forEach(rect => lineTops.push(Math.round(rect.top)));
+      }
+      const lineCount = new Set(lineTops).size;
       measure.remove();
 
-      button.hidden = fullHeight <= 44;
+      const needsMore = lineCount > 2;
+      button.hidden = !needsMore;
+      if (!needsMore) {
+        frame.classList.remove('is-expanded');
+        preview.hidden = false;
+        full.hidden = true;
+        preview.textContent = full.textContent;
+        button.setAttribute('aria-expanded', 'false');
+        const label = button.querySelector('span');
+        if (label) label.textContent = '더보기';
+        return;
+      }
+
+      // Keep the first two rendered lines as preview and append an ellipsis.
+      const sourceLines = full.innerHTML.split(/<br\\s*\\/?\\s*>/i);
+      preview.innerHTML = sourceLines.slice(0, 2).join('<br>') + '...';
+      if (!frame.classList.contains('is-expanded')) {
+        preview.hidden = false;
+        full.hidden = true;
+      }
     });
   }
 
@@ -704,7 +732,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const frame = post?.querySelector('.review-post-text-frame');
     if (!frame) return;
 
-    const expanded = frame.classList.toggle('is-expanded');
+    const expanded = !frame.classList.contains('is-expanded');
+    frame.classList.toggle('is-expanded', expanded);
     const preview = frame.querySelector('.review-post-preview');
     const full = frame.querySelector('.review-post-full');
     if (preview && full) {
