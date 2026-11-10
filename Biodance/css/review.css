@@ -4608,3 +4608,14 @@ body.is-review-policy-open {
 .review-page .review-list > .review-post[hidden] {
   display: none !important;
 }
+
+
+/* Review policy dialog uses the same dimensions as the operation policy dialog. */
+.review-page .review-policy-dialog.is-review-policy {
+  width: 350px !important;
+  max-width: min(350px, calc(100vw - 48px)) !important;
+}
+.review-page .review-policy-dialog.is-review-policy .review-policy-text-frame {
+  width: 300px !important;
+  max-width: 100% !important;
+}
