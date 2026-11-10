@@ -160,15 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const groupStart = Math.floor((currentPage - 1) / pagesPerGroup) * pagesPerGroup + 1;
     const groupEnd = Math.min(groupStart + pagesPerGroup - 1, pageCount);
 
-    if (pageCount > pagesPerGroup) {
-      const previous = document.createElement('button');
-      previous.type = 'button';
-      previous.className = 'pagination-arrow';
-      previous.dataset.page = 'prev';
-      previous.setAttribute('aria-label', '이전 페이지 묶음');
-      previous.disabled = groupStart === 1;
-      pagination.appendChild(previous);
-    }
+    const previous = document.createElement('button');
+    previous.type = 'button';
+    previous.className = 'pagination-arrow';
+    previous.dataset.page = 'prev';
+    previous.setAttribute('aria-label', '이전 페이지');
+    previous.disabled = true;
+    previous.setAttribute('aria-disabled', 'true');
+    pagination.appendChild(previous);
 
     for (let page = groupStart; page <= groupEnd; page++) {
       const button = document.createElement('button');
@@ -180,15 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
       pagination.appendChild(button);
     }
 
-    if (pageCount > pagesPerGroup) {
-      const next = document.createElement('button');
-      next.type = 'button';
-      next.className = 'pagination-arrow';
-      next.dataset.page = 'next';
-      next.setAttribute('aria-label', '다음 페이지 묶음');
-      next.disabled = groupEnd === pageCount;
-      pagination.appendChild(next);
-    }
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'pagination-arrow';
+    next.dataset.page = 'next';
+    next.setAttribute('aria-label', '다음 페이지');
+    next.disabled = true;
+    next.setAttribute('aria-disabled', 'true');
+    pagination.appendChild(next);
 
     pagination.hidden = false;
   }
@@ -246,10 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = event.target.closest('button[data-page]');
     if (!button || button.disabled) return;
 
-    const pagesPerGroup = 5;
-    if (button.dataset.page === 'prev') currentPage -= pagesPerGroup;
-    else if (button.dataset.page === 'next') currentPage += pagesPerGroup;
-    else currentPage = Number(button.dataset.page);
+    if (button.dataset.page === 'prev' || button.dataset.page === 'next') return;
+    currentPage = Number(button.dataset.page);
 
     currentPage = Math.max(1, Math.min(currentPage, totalPages));
     applyReviewControls();
