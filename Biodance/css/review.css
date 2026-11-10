@@ -4610,14 +4610,18 @@ body.is-review-policy-open {
 }
 
 
-/* Review policy dialog uses the same dimensions as the operation policy dialog. */
+/* Review policy dialog matches the operation policy dialog's vertical dimensions. */
 .review-page .review-policy-dialog.is-review-policy {
   width: 350px !important;
+  height: 650px !important;
+  min-height: 650px !important;
+  max-height: calc(100dvh - 24px) !important;
   max-width: min(350px, calc(100vw - 48px)) !important;
 }
 .review-page .review-policy-dialog.is-review-policy .review-policy-text-frame {
   width: 300px !important;
-  max-width: 100% !important;
+  height: 600px !important;
+  max-height: calc(100dvh - 74px) !important;
 }
 
 
