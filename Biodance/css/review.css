@@ -2816,7 +2816,7 @@ body.is-review-policy-open {
   }
 
   .review-page .review-post-writer-frame {
-    margin-top: 24px !important;
+    margin-top: 10px !important;
     margin-bottom: 24px !important;
   }
 
@@ -4653,14 +4653,15 @@ body.is-review-policy-open {
   margin-top: 10px !important;
 }
 
-/* Match the review-policy dialog to the operation-policy dialog dimensions. */
+/* Match review-policy dialog width and content sizing to the operation-policy dialog.
+   The long review text scrolls inside the same 300px content frame. */
 .review-page .review-policy-dialog.is-review-policy {
   display: block !important;
   width: 350px !important;
   min-width: 350px !important;
-  max-width: min(350px, calc(100vw - 48px)) !important;
-  height: 450px !important;
-  min-height: 450px !important;
+  max-width: min(350px, calc(100vw - 24px)) !important;
+  height: auto !important;
+  min-height: 0 !important;
   max-height: calc(100dvh - 24px) !important;
   padding: 25px !important;
   overflow: hidden !important;
@@ -4670,21 +4671,39 @@ body.is-review-policy-open {
   display: block !important;
   width: 300px !important;
   min-width: 0 !important;
-  height: 400px !important;
+  height: auto !important;
   min-height: 0 !important;
   max-height: calc(100dvh - 74px) !important;
   overflow-x: hidden !important;
   overflow-y: auto !important;
   box-sizing: border-box !important;
 }
+.review-page .review-policy-dialog.is-review-policy .review-policy-close {
+  margin: 30px auto 0 !important;
+}
+@media (max-width: 390px) {
+  .review-page .review-policy-dialog.is-review-policy {
+    width: calc(100vw - 24px) !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 24px) !important;
+    max-height: calc(100dvh - 24px) !important;
+    padding: 20px 12px !important;
+  }
+  .review-page .review-policy-dialog.is-review-policy .review-policy-text-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: calc(100dvh - 64px) !important;
+  }
+}
 
-/* A one-line review uses only the height its text needs. */
-.review-page .review-post-text-frame:has(.review-post-preview:not(:has(br))) {
+/* A one-line review uses only the height its text needs. */ uses only the height its text needs. */
+/* Single-line review sizing is assigned after measuring rendered text in review.js. */
+.review-page .review-post-text-frame.is-single-line {
   height: auto !important;
   min-height: 0 !important;
   overflow: visible !important;
 }
-.review-page .review-post-text-frame:has(.review-post-preview:not(:has(br))) .review-post-body-text {
+.review-page .review-post-text-frame.is-single-line .review-post-body-text {
   height: auto !important;
   min-height: 0 !important;
   overflow: visible !important;
