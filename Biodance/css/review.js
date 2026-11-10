@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Keep the first two rendered lines as preview and append an ellipsis.
-      const sourceLines = full.innerHTML.split(/<br\\s*\\/?\\s*>/i);
+      const sourceLines = full.innerHTML.split(/<br\s*\/?\s*>/i);
       preview.innerHTML = sourceLines.slice(0, 2).join('<br>') + '...';
       if (!frame.classList.contains('is-expanded')) {
         preview.hidden = false;
