@@ -4648,7 +4648,61 @@ body.is-review-policy-open {
 }
 
 
-/* Set the spacing above the Biodance signature in every review reply to 20px. */
+/* Set the spacing above the Biodance signature in every review reply to 10px. */
 .review-page .review-post-writer-frame {
-  margin-top: 20px !important;
+  margin-top: 10px !important;
 }
+
+/* Match the review-policy dialog to the operation-policy dialog dimensions. */
+.review-page .review-policy-dialog.is-review-policy {
+  display: block !important;
+  width: 350px !important;
+  min-width: 350px !important;
+  max-width: min(350px, calc(100vw - 48px)) !important;
+  height: 450px !important;
+  min-height: 450px !important;
+  max-height: calc(100dvh - 24px) !important;
+  padding: 25px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+.review-page .review-policy-dialog.is-review-policy .review-policy-text-frame {
+  display: block !important;
+  width: 300px !important;
+  min-width: 0 !important;
+  height: 400px !important;
+  min-height: 0 !important;
+  max-height: calc(100dvh - 74px) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* A one-line review uses only the height its text needs. */
+.review-page .review-post-text-frame:has(.review-post-preview:not(:has(br))) {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+.review-page .review-post-text-frame:has(.review-post-preview:not(:has(br))) .review-post-body-text {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+@media screen and (max-width: 390px) {
+  .review-page .review-policy-dialog.is-review-policy {
+    width: calc(100vw - 24px) !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 24px) !important;
+    height: min(450px, calc(100dvh - 24px)) !important;
+    min-height: 0 !important;
+    padding: 18px 12px !important;
+  }
+  .review-page .review-policy-dialog.is-review-policy .review-policy-text-frame {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: calc(100dvh - 60px) !important;
+  }
+}
+
