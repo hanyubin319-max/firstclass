@@ -492,14 +492,14 @@ document.addEventListener('DOMContentLoaded', () => {
           .forEach(rect => lineTops.push(Math.round(rect.top)));
       }
       const lineCount = new Set(lineTops).size;
+      const measuredTextHeight = measure.getBoundingClientRect().height;
       measure.remove();
-
-      frame.classList.toggle('is-single-line', lineCount === 1);
 
       const needsMore = lineCount > 2;
       button.hidden = !needsMore;
       if (!needsMore) {
         frame.classList.remove('is-expanded');
+        frame.style.height = `${measuredTextHeight}px`;
         preview.hidden = false;
         full.hidden = true;
         preview.textContent = full.textContent;
@@ -508,6 +508,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (label) label.textContent = '더보기';
         return;
       }
+
+      // Long reviews retain the fixed two-line preview height.
+      frame.style.height = '';
 
       // Keep the first two rendered lines as preview and append an ellipsis.
       const sourceLines = full.innerHTML.split(/<br\s*\/?\s*>/i);
