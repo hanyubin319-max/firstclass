@@ -4631,3 +4631,14 @@ body.is-review-policy-open {
     margin-top: 20px !important;
   }
 }
+
+
+/* Hide the empty More row on reviews that do not need expansion.
+   Keep the media grid's own margin-top as the sole text-to-media spacing. */
+.review-page .review-post-more-frame:has(.review-post-more[hidden]) {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
