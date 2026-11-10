@@ -4642,3 +4642,9 @@ body.is-review-policy-open {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+
+/* Set the spacing above the Biodance signature in every review reply to 20px. */
+.review-page .review-post-writer-frame {
+  margin-top: 20px !important;
+}
