@@ -494,6 +494,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const lineCount = new Set(lineTops).size;
       measure.remove();
 
+      frame.classList.toggle('is-single-line', lineCount === 1);
+
       const needsMore = lineCount > 2;
       button.hidden = !needsMore;
       if (!needsMore) {
