@@ -4619,3 +4619,15 @@ body.is-review-policy-open {
   width: 300px !important;
   max-width: 100% !important;
 }
+
+
+/* Requested review-card spacing adjustments */
+@media screen {
+  .review-page .review-list > .review-post:not(:has(.review-post-media-grid)) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .review-page .review-list > .review-post .review-post-keywords {
+    margin-top: 20px !important;
+  }
+}
