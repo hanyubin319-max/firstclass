@@ -142,6 +142,9 @@
   margin: 0;
   color: var(--neutral-gray);
 }
+.new-product-brand-name {
+  margin-bottom: -4px;
+}
 .new-product-rating {
   display: flex;
   align-items: center;
@@ -192,7 +195,7 @@
 .new-discount-rate {
   display: flex;
   width: 68px;
-  height: 34px;
+  height: 28px;
   flex: 0 0 68px;
   align-items: center;
   justify-content: center;
@@ -324,6 +327,10 @@
     position: relative;
     justify-content: flex-start;
     padding-bottom: clamp(44px, 12vw, 60px);
+  }
+
+  .new-product-brand-name {
+    margin-bottom: 14px;
   }
 
   .new-product-info-left h2 {
