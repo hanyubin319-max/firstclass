@@ -33,6 +33,16 @@
 .membership-grade-baseline{width:1250px;max-width:100%;height:1px;background:var(--teal-mint)}
 .membership-grade-labels{display:flex;width:100%}
 .membership-grade-label{display:flex;width:250px;height:50px;flex:0 0 250px;align-items:center;justify-content:center;background:var(--neutral-white);color:var(--neutral-charcoal);font-size:16px;font-weight:600;line-height:normal;text-align:center}
+.membership-benefit-section{width:1295px;max-width:100%;margin:70px auto 0}
+.membership-benefit-divider{width:100%;height:2px;background:var(--neutral-charcoal)}
+.membership-benefit-list{display:flex;width:214px;flex-direction:column;align-items:center;gap:0;padding:0;margin:0}
+.membership-benefit-item{display:flex;width:214px;flex:0 0 auto;align-items:center;justify-content:center;padding:32px 8px}
+.membership-benefit-item span{display:flex;width:198px;align-items:center;justify-content:center;color:var(--neutral-charcoal);font-size:15px;font-weight:500;line-height:normal;text-align:center}
+.membership-benefit-item:nth-child(1) span,.membership-benefit-item:nth-child(3) span,.membership-benefit-item:nth-child(4) span{height:24px}
+.membership-benefit-item:nth-child(2) span{height:75px}
+.membership-benefit-item:nth-child(5) span{height:65px}
+.membership-benefit-item:nth-child(6) span{height:96px}
+@media(max-width:1300px){.membership-benefit-section{width:100%;overflow-x:auto}.membership-benefit-divider{width:1295px}}
 @media(max-width:1300px){.membership-grade-chart{width:100%;overflow-x:auto}.membership-grade-bars,.membership-grade-baseline,.membership-grade-labels{width:1250px}}
 @media(max-width:700px){.membership-grade-intro{margin-top:100px}.membership-grade-chart{margin-top:80px}}
 @media(max-width:1200px){.membership-grid{grid-template-columns:repeat(2,350px)}}
@@ -114,6 +124,17 @@
       <div class="membership-grade-label">Silver</div>
       <div class="membership-grade-label">Gold</div>
       <div class="membership-grade-label">Vip</div>
+    </div>
+  </div>
+  <div class="membership-benefit-section" aria-label="멤버십 혜택 항목">
+    <div class="membership-benefit-divider"></div>
+    <div class="membership-benefit-list">
+      <div class="membership-benefit-item"><span>회원등급</span></div>
+      <div class="membership-benefit-item"><span>자격 조건</span></div>
+      <div class="membership-benefit-item"><span>배송비 혜택</span></div>
+      <div class="membership-benefit-item"><span>적립금</span></div>
+      <div class="membership-benefit-item"><span>추가 혜택</span></div>
+      <div class="membership-benefit-item"><span>증정</span></div>
     </div>
   </div>
 </section></main><footer class="biodance-footer" aria-label="바이오던스 푸터">
