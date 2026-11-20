@@ -21,6 +21,19 @@
 .membership-grade-intro{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:120px;text-align:center}
 .membership-grade-intro h2{margin:0;color:var(--neutral-charcoal);font-size:32px;font-weight:600;line-height:normal}
 .membership-grade-intro p{margin:0;color:var(--neutral-gray);font-size:18px;font-weight:400;line-height:normal}
+.membership-grade-chart{width:1250px;max-width:100%;margin:80px auto 0}
+.membership-grade-bars{display:flex;width:100%;height:250px;align-items:flex-end}
+.membership-grade-bar{display:flex;width:250px;flex:0 0 250px;align-items:center;justify-content:center;padding:12px;background:var(--neutral-product-gray);color:var(--neutral-charcoal);font-size:16px;font-weight:400;line-height:normal;text-align:center;white-space:pre-line}
+.membership-grade-bar:nth-child(1){height:50px;border-radius:20px 0 0 0}
+.membership-grade-bar:nth-child(2){height:100px;border-radius:20px 0 0 0}
+.membership-grade-bar:nth-child(3){height:150px;border-radius:20px 0 0 0}
+.membership-grade-bar:nth-child(4){height:200px;border-radius:20px 0 0 0}
+.membership-grade-bar:nth-child(5){height:250px;border-radius:20px 20px 0 0}
+.membership-grade-baseline{width:1250px;max-width:100%;height:1px;background:var(--neutral-charcoal)}
+.membership-grade-labels{display:flex;width:100%}
+.membership-grade-label{display:flex;width:250px;height:50px;flex:0 0 250px;align-items:center;justify-content:center;background:var(--neutral-cream);color:var(--neutral-charcoal);font-size:16px;font-weight:600;line-height:normal;text-align:center}
+@media(max-width:1300px){.membership-grade-chart{width:100%;overflow-x:auto}.membership-grade-bars,.membership-grade-baseline,.membership-grade-labels{width:1250px}}
+@media(max-width:700px){.membership-grade-intro{margin-top:100px}.membership-grade-chart{margin-top:80px}}
 @media(max-width:1200px){.membership-grid{grid-template-columns:repeat(2,350px)}}
 @media(max-width:800px){.membership-grid{grid-template-columns:350px}}
 @media(max-width:700px){
@@ -84,6 +97,23 @@
   <div class="membership-grade-intro">
     <h2>등급별 혜택 안내</h2>
     <p>바이오던스 공식 멤버십 등급별 혜택 안내</p>
+  </div>
+  <div class="membership-grade-chart" aria-label="멤버십 등급 기준">
+    <div class="membership-grade-bars">
+      <div class="membership-grade-bar">회원가입 시</div>
+      <div class="membership-grade-bar">결제 금액<br>10만원 미만</div>
+      <div class="membership-grade-bar">결제 금액<br>30만원 미만<br>Or 구매횟수 2~6회</div>
+      <div class="membership-grade-bar">결제 금액<br>50만원 미만<br>Or 구매횟수 7~12회</div>
+      <div class="membership-grade-bar">결제 금액<br>50만원 이상<br>Or 구매횟수 13회 이상</div>
+    </div>
+    <div class="membership-grade-baseline"></div>
+    <div class="membership-grade-labels">
+      <div class="membership-grade-label">Green</div>
+      <div class="membership-grade-label">White</div>
+      <div class="membership-grade-label">Silver</div>
+      <div class="membership-grade-label">Gold</div>
+      <div class="membership-grade-label">Vip</div>
+    </div>
   </div>
 </section></main><footer class="biodance-footer" aria-label="바이오던스 푸터">
 <div class="biodance-footer-content"><img class="biodance-footer-logo" src="../img/logo-2.png" alt="바이오던스">
