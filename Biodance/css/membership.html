@@ -13,15 +13,23 @@
 .membership-title-group p{height:28px;margin:0;color:var(--neutral-charcoal);font-size:16px;font-weight:400;line-height:1;text-align:center}
 .membership-content{width:92.4%;max-width:1500px;margin:104px auto 120px}
 .membership-grid{display:grid;grid-template-columns:repeat(3,350px);justify-content:center;column-gap:50px;row-gap:50px}
-.membership-card{width:350px;height:350px;border-radius:40px;background:var(--neutral-product-gray)}
-@media(max-width:1200px){.membership-grid{grid-template-columns:repeat(2,minmax(0,350px))}}
+.membership-card{display:flex;width:350px;height:350px;flex-direction:column;align-items:center;padding:55px 20px 20px;border-radius:40px;background:var(--neutral-product-gray);text-align:center}
+.membership-card-image{display:block;width:120px;height:120px;flex:0 0 120px;object-fit:contain}
+.membership-card-title{margin:0;color:var(--neutral-charcoal);font-size:24px;font-weight:600;line-height:normal;text-align:center;white-space:pre-line}
+.membership-card-copy{display:flex;flex-direction:column;gap:0;margin:16px 0 0;color:var(--neutral-charcoal);font-size:18px;font-weight:400;line-height:normal;text-align:center}
+.membership-card-copy span{display:block}
+@media(max-width:1200px){.membership-grid{grid-template-columns:repeat(2,350px)}}
+@media(max-width:800px){.membership-grid{grid-template-columns:350px}}
 @media(max-width:700px){
 .membership-intro{height:220px;padding:120px 16px 0}
 .membership-title-group h1{font-size:clamp(30px,8vw,36px)}
 .membership-title-group p{font-size:clamp(12px,3.6vw,14px)}
 .membership-content{width:calc(100% - 32px);margin:70px auto 72px}
-.membership-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;row-gap:24px}
-.membership-card{width:100%;height:auto;aspect-ratio:1/1;border-radius:24px}
+.membership-grid{grid-template-columns:minmax(0,350px);justify-content:center;column-gap:0;row-gap:24px}
+.membership-card{width:100%;height:auto;min-height:350px;aspect-ratio:1/1;padding:55px 12px 18px;border-radius:24px}
+.membership-card-image{width:120px;height:120px;flex-basis:120px}
+.membership-card-title{font-size:24px}
+.membership-card-copy{font-size:18px}
 }
 </style>
 </head><body><div id="wrap"><div data-shared-header></div><main class="membership-page"><section class="membership-intro">
@@ -30,14 +38,45 @@
     <p>바이오던스 공식몰 회원이라면 누구나!</p>
   </div>
 </section>
-<section class="membership-content" aria-label="멤버십 콘텐츠">
+<section class="membership-content" aria-label="멤버십 혜택">
   <div class="membership-grid">
-    <div class="membership-card" aria-label="멤버십 이미지 영역 1"></div>
-    <div class="membership-card" aria-label="멤버십 이미지 영역 2"></div>
-    <div class="membership-card" aria-label="멤버십 이미지 영역 3"></div>
-    <div class="membership-card" aria-label="멤버십 이미지 영역 4"></div>
-    <div class="membership-card" aria-label="멤버십 이미지 영역 5"></div>
-    <div class="membership-card" aria-label="멤버십 이미지 영역 6"></div>
+    <article class="membership-card">
+      <img class="membership-card-image" src="../img/Membership-1.png" alt="">
+      <h2 class="membership-card-title">GOLD, VIP\n감사 키트 제공</h2>
+      <p class="membership-card-copy"><span>*최대 연 2회 감사키트 3종</span>
+        <span>*별도 안내</span></p>
+    </article>
+    <article class="membership-card">
+      <img class="membership-card-image" src="../img/Membership-2.png" alt="">
+      <h2 class="membership-card-title">회원가입 시\n5천원 할인쿠폰</h2>
+      <p class="membership-card-copy"><span>*5만원 이상 구매 시 사용가능</span>
+        <span>*발급일로부터 5일간 사용 가능</span></p>
+    </article>
+    <article class="membership-card">
+      <img class="membership-card-image" src="../img/Membership-3.png" alt="">
+      <h2 class="membership-card-title">월 2회 이상\n시크릿 쿠폰</h2>
+      <p class="membership-card-copy"><span>*발급 대상자에게 사용 조건 개별 안내</span></p>
+    </article>
+    <article class="membership-card">
+      <img class="membership-card-image" src="../img/Membership-4.png" alt="">
+      <h2 class="membership-card-title">카카오톡 채널 추가 시\n5천원 할인쿠폰</h2>
+      <p class="membership-card-copy"><span>*5만원 이상 구매 시 사용가능</span>
+        <span>*발급일로부터 30일간 사용 가능</span></p>
+    </article>
+    <article class="membership-card">
+      <img class="membership-card-image" src="../img/Membership-5.png" alt="">
+      <h2 class="membership-card-title">리뷰작성 시\n최대 3500원 적립</h2>
+      <p class="membership-card-copy"><span>텍스트 500원</span>
+        <span>포토+텍스트 1500원</span>
+        <span>동영상+텍스트 2500원</span>
+        <span>동영상+포토+텍스트 3500원</span></p>
+    </article>
+    <article class="membership-card">
+      <img class="membership-card-image" src="../img/Membership-6.png" alt="">
+      <h2 class="membership-card-title">매년 생일마다\n5천원 할인쿠폰</h2>
+      <p class="membership-card-copy"><span>*5만원 이상 구매 시 사용 가능</span>
+        <span>*발급일로부터 7일간 사용 가능</span></p>
+    </article>
   </div>
 </section></main><footer class="biodance-footer" aria-label="바이오던스 푸터">
 <div class="biodance-footer-content"><img class="biodance-footer-logo" src="../img/logo-2.png" alt="바이오던스">
