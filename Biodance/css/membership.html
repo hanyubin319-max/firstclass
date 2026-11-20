@@ -39,7 +39,9 @@
 .membership-benefit-item{display:flex;width:100%;min-width:0;min-height:88px;align-items:center;justify-content:center;padding:24px 8px;background:rgba(90,216,204,.4)}
 .membership-benefit-item span{display:flex;width:100%;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--neutral-charcoal);font-size:15px;font-weight:500;line-height:normal;text-align:center}
 .membership-benefit-item--wide{grid-column:span 2}
-.membership-benefit-item--first{grid-column:span 1}
+.membership-benefit-columns>.membership-benefit-item:nth-child(16),
+.membership-benefit-columns>.membership-benefit-item:nth-child(22),
+.membership-benefit-columns>.membership-benefit-item:nth-child(28){grid-column:1}
 .membership-benefit-item:nth-child(1) span,.membership-benefit-item:nth-child(3) span,.membership-benefit-item:nth-child(4) span{height:24px}
 .membership-benefit-item:nth-child(2) span{height:75px}
 .membership-benefit-item:nth-child(5) span{height:65px}
