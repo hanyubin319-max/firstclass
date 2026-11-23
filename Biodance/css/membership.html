@@ -272,6 +272,55 @@
 #wrap>.biodance-footer .biodance-footer-nav-list{display:flex!important;flex:1 1 0!important;width:0!important;min-width:0!important;align-items:flex-start!important;text-align:left!important}
 #wrap>.biodance-footer .biodance-footer-nav-list p{width:100%!important;text-align:left!important}
 }
+
+/* Mobile: remove all spacing between benefit-card image and text */
+@media(max-width:700px){
+.membership-card{grid-template-columns:90px minmax(0,1fr)!important;column-gap:0!important;row-gap:0!important;padding:20px!important}
+.membership-card-image{width:90px!important;height:90px!important;flex-basis:90px!important;object-fit:contain}
+.membership-card-title,.membership-card-copy{grid-column:2!important}
+}
+
+/* Mobile benefit table: show the selected grade column on initial load and after selection */
+@media(max-width:700px){
+.membership-benefit-columns{display:grid!important;grid-template-columns:minmax(0,35%) minmax(0,65%)!important;width:100%!important}
+.membership-benefit-columns>.membership-benefit-item{box-sizing:border-box;min-width:0;overflow-wrap:anywhere}
+.membership-benefit-columns[data-active-grade]>.membership-benefit-item:nth-child(1),
+.membership-benefit-columns[data-active-grade]>.membership-benefit-item:nth-child(7),
+.membership-benefit-columns[data-active-grade]>.membership-benefit-item:nth-child(13),
+.membership-benefit-columns[data-active-grade]>.membership-benefit-item:nth-child(17),
+.membership-benefit-columns[data-active-grade]>.membership-benefit-item:nth-child(23),
+.membership-benefit-columns[data-active-grade]>.membership-benefit-item:nth-child(29){display:flex!important;grid-column:1!important}
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(2),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(8),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(14),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(18),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(24),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(30),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(3),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(9),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(15),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(19),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(25),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(31),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(4),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(10),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(15),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(20),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(26),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(32),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(5),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(11),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(16),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(21),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(27),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(33),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(6),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(12),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(16),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(22),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(28),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(34){display:flex!important;grid-column:2!important}
+}
 </style>
 </head><body><div id="wrap"><div data-shared-header></div><main class="membership-page"><section class="membership-intro">
   <div class="membership-title-group">
@@ -333,7 +382,7 @@
     </div>
     <div class="membership-grade-baseline"></div>
     <div class="membership-grade-labels" role="group" aria-label="등급 선택">
-      <button class="membership-grade-label" type="button" data-grade="1" aria-pressed="false">Green</button>
+      <button class="membership-grade-label" type="button" data-grade="1" aria-pressed="true">Green</button>
       <button class="membership-grade-label" type="button" data-grade="2" aria-pressed="false">White</button>
       <button class="membership-grade-label" type="button" data-grade="3" aria-pressed="false">Silver</button>
       <button class="membership-grade-label" type="button" data-grade="4" aria-pressed="false">Gold</button>
@@ -342,7 +391,7 @@
   </div>
   <div class="membership-benefit-section" aria-label="멤버십 혜택 항목">
     <div class="membership-benefit-divider"></div>
-    <div class="membership-benefit-columns">
+    <div class="membership-benefit-columns" data-active-grade="1">
             <div class="membership-benefit-item"><span>회원등급</span></div>
             <div class="membership-benefit-item"><span>Green</span></div>
             <div class="membership-benefit-item"><span>White</span></div>
