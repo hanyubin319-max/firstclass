@@ -90,9 +90,48 @@
 .membership-grade-chart{width:100%;max-width:100%;overflow:visible}
 .membership-grade-bars,.membership-grade-baseline{display:none}
 .membership-grade-labels{width:100%;display:flex}
-.membership-grade-label{width:20%;height:44px;min-width:0;flex:1 1 20%;font-size:14px}
-.membership-benefit-section{max-width:100%;overflow-x:auto}
-.membership-benefit-divider,.membership-benefit-columns{width:1295px}
+.membership-grade-label{width:20%;height:44px;min-width:0;flex:1 1 20%;padding:0 2px;border:0;background:var(--neutral-light-gray);color:var(--neutral-charcoal);font-size:14px;font-weight:600;cursor:pointer}
+.membership-grade-label[aria-pressed="true"]{background:var(--neutral-gray);color:var(--neutral-white)}
+.membership-benefit-section{max-width:100%;overflow:visible}
+.membership-benefit-divider{width:100%}
+.membership-benefit-columns{width:100%;grid-template-columns:minmax(0,35%) minmax(0,65%)}
+.membership-benefit-item{grid-column:1}
+.membership-benefit-columns[data-active-grade]>.membership-benefit-item{display:none}
+.membership-benefit-columns[data-active-grade]>.membership-benefit-item:nth-child(6n+1){display:flex;grid-column:1}
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(2),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(8),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(14),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(18),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(24),
+.membership-benefit-columns[data-active-grade="1"]>.membership-benefit-item:nth-child(30),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(3),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(9),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(15),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(19),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(25),
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(31),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(4),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(10),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(15),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(20),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(26),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(32),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(5),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(11),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(16),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(21),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(27),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(33),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(6),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(12),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(16),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(22),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(28),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(34){display:flex;grid-column:2}
+.membership-benefit-columns[data-active-grade="2"]>.membership-benefit-item:nth-child(15),
+.membership-benefit-columns[data-active-grade="3"]>.membership-benefit-item:nth-child(15),
+.membership-benefit-columns[data-active-grade="4"]>.membership-benefit-item:nth-child(16),
+.membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(16){grid-column:2}
 .membership-policy-notes{grid-template-columns:minmax(0,1fr);gap:20px;margin-top:64px;padding:20px;border-radius:16px;font-size:12px;line-height:1.7}
 .membership-policy-notes p{gap:8px}
 .membership-order-guide{white-space:normal}
@@ -157,12 +196,12 @@
       <div class="membership-grade-bar">결제 금액 50만원 이상<br>Or 구매횟수 13회 이상</div>
     </div>
     <div class="membership-grade-baseline"></div>
-    <div class="membership-grade-labels">
-      <div class="membership-grade-label">Green</div>
-      <div class="membership-grade-label">White</div>
-      <div class="membership-grade-label">Silver</div>
-      <div class="membership-grade-label">Gold</div>
-      <div class="membership-grade-label">Vip</div>
+    <div class="membership-grade-labels" role="group" aria-label="등급 선택">
+      <button class="membership-grade-label" type="button" data-grade="1" aria-pressed="false">Green</button>
+      <button class="membership-grade-label" type="button" data-grade="2" aria-pressed="false">White</button>
+      <button class="membership-grade-label" type="button" data-grade="3" aria-pressed="false">Silver</button>
+      <button class="membership-grade-label" type="button" data-grade="4" aria-pressed="false">Gold</button>
+      <button class="membership-grade-label" type="button" data-grade="5" aria-pressed="false">Vip</button>
     </div>
   </div>
   <div class="membership-benefit-section" aria-label="멤버십 혜택 항목">
@@ -213,4 +252,21 @@
 <div class="biodance-footer-text-frame"><div class="biodance-footer-customer-frame"><p class="biodance-footer-customer-text"><span>고객센터. 1600-6586</span><span class="biodance-footer-customer-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span class="biodance-footer-hours">평일 10:00 - 18:00 점심 13:00 - 14:00</span><span class="biodance-footer-holiday">(주말, 공휴일 휴무)</span></p></div>
 <div class="biodance-footer-info-frame"><p class="biodance-footer-split-info"><span>통신판매업신고번호. 2020-서울강남-01005</span><span class="biodance-footer-info-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span>개인정보관리책임자. 박재빈</span></p><p class="biodance-footer-contact-inquiry"><span>국내 협업 문의. contact@beautyselection.co.kr</span><span class="biodance-footer-contact-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span>글로벌 협업 문의. contact_global@beautyselection.co.kr</span></p><p class="biodance-footer-split-info"><span>주소. 06071 , 서울 강남구 도산대로100길 22-5</span><span class="biodance-footer-info-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span>Hosting by Cafe24</span></p></div><p class="biodance-footer-copyright">Copyright © Biodance.All rights reserved.</p>
                     <p class="portfolio-disclaimer">이 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 제작한 사이트입니다.</p></div></div>
-<div class="biodance-footer-nav-frame"><div class="biodance-footer-nav-list"><a href="membership.html"><p>Membership</p></a></div><div class="biodance-footer-nav-list"><a href="review.html"><p>Review</p></a><a href="event.html"><p>Event</p></a><a href="#mypage"><p>My page</p></a><a href="#terms"><p>이용약관</p></a><a href="#privacy"><p>개인정보처리방침</p></a></div></div></footer></div></body></html>
+<div class="biodance-footer-nav-frame"><div class="biodance-footer-nav-list"><a href="membership.html"><p>Membership</p></a></div><div class="biodance-footer-nav-list"><a href="review.html"><p>Review</p></a><a href="event.html"><p>Event</p></a><a href="#mypage"><p>My page</p></a><a href="#terms"><p>이용약관</p></a><a href="#privacy"><p>개인정보처리방침</p></a></div></div></footer></div>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  const gradeButtons=document.querySelectorAll(".membership-grade-label[data-grade]");
+  const benefitGrid=document.querySelector(".membership-benefit-columns");
+  if(!benefitGrid)return;
+  gradeButtons.forEach(function(button){
+    button.addEventListener("click",function(){
+      const selected=button.dataset.grade;
+      benefitGrid.dataset.activeGrade=selected;
+      gradeButtons.forEach(function(item){
+        item.setAttribute("aria-pressed",item===button?"true":"false");
+      });
+    });
+  });
+});
+</script>
+</body></html>
