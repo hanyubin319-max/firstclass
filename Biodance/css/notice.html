@@ -92,6 +92,13 @@
 .notice-list-header .notice-list-cell{font-weight:600;background:var(--neutral-light-gray)}
 .notice-list-row+.notice-list-row{margin-top:0}
 .notice-cell-author{color:var(--neutral-gray)}
+.notice-page + .product-pagination{display:flex;align-items:center;justify-content:center;gap:12px;margin:-80px auto 120px}
+#notice-pagination .pagination-number,#notice-pagination .pagination-arrow{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 8px;border:0;background:transparent;color:var(--neutral-charcoal);font:500 14px var(--font-primary);cursor:pointer}
+#notice-pagination .pagination-number.is-active{font-weight:700;text-decoration:underline;text-underline-offset:4px}
+#notice-pagination .pagination-number:disabled,#notice-pagination .pagination-arrow:disabled{opacity:.35;cursor:default}
+#notice-pagination .pagination-arrow::before{content:"";width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(225deg)}
+#notice-pagination .pagination-arrow[data-page="next"]::before{transform:rotate(45deg)}
+@media(max-width:700px){#notice-pagination{margin:-40px auto 72px;gap:8px}}
 @media(max-width:700px){
 .notice-intro{height:186px;padding:105px 16px 0}
 .notice-title-frame h1{font-size:clamp(30px,8vw,36px)}
@@ -190,9 +197,45 @@
         <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
       </div>
   </section>
+  <nav class="product-pagination" id="notice-pagination" aria-label="공지사항 페이지 이동">
+    <button type="button" class="pagination-arrow" data-page="prev" aria-label="이전 페이지" disabled></button>
+    <button type="button" class="pagination-number is-active" data-page="1" aria-current="page">1</button>
+    <button type="button" class="pagination-number" data-page="2">2</button>
+    <button type="button" class="pagination-arrow" data-page="next" aria-label="다음 페이지"></button>
+  </nav>
 </main><footer class="biodance-footer" aria-label="바이오던스 푸터">
 <div class="biodance-footer-content"><img class="biodance-footer-logo" src="../img/logo-2.png" alt="바이오던스">
 <div class="biodance-footer-text-frame"><div class="biodance-footer-customer-frame"><p class="biodance-footer-customer-text"><span>고객센터. 1600-6586</span><span class="biodance-footer-customer-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span class="biodance-footer-hours">평일 10:00 - 18:00 점심 13:00 - 14:00</span><span class="biodance-footer-holiday">(주말, 공휴일 휴무)</span></p></div>
 <div class="biodance-footer-info-frame"><p class="biodance-footer-split-info"><span>통신판매업신고번호. 2020-서울강남-01005</span><span class="biodance-footer-info-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span>개인정보관리책임자. 박재빈</span></p><p class="biodance-footer-contact-inquiry"><span>국내 협업 문의. contact@beautyselection.co.kr</span><span class="biodance-footer-contact-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span>글로벌 협업 문의. contact_global@beautyselection.co.kr</span></p><p class="biodance-footer-split-info"><span>주소. 06071 , 서울 강남구 도산대로100길 22-5</span><span class="biodance-footer-info-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span>Hosting by Cafe24</span></p></div><p class="biodance-footer-copyright">Copyright © Biodance.All rights reserved.</p>
                     <p class="portfolio-disclaimer">이 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 제작한 사이트입니다.</p></div></div>
-<div class="biodance-footer-nav-frame"><div class="biodance-footer-nav-list"><a href="membership.html"><p>Membership</p></a></div><div class="biodance-footer-nav-list"><a href="review.html"><p>Review</p></a><a href="event.html"><p>Event</p></a><a href="notice.html"><p>Notice</p></a><a href="#mypage"><p>My page</p></a><a href="#terms"><p>이용약관</p></a><a href="#privacy"><p>개인정보처리방침</p></a></div></div></footer></div></body></html>
+<div class="biodance-footer-nav-frame"><div class="biodance-footer-nav-list"><a href="membership.html"><p>Membership</p></a></div><div class="biodance-footer-nav-list"><a href="review.html"><p>Review</p></a><a href="event.html"><p>Event</p></a><a href="notice.html"><p>Notice</p></a><a href="#mypage"><p>My page</p></a><a href="#terms"><p>이용약관</p></a><a href="#privacy"><p>개인정보처리방침</p></a></div></div></footer></div><script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const list=document.querySelector('.notice-content');
+  const rows=[...document.querySelectorAll('.notice-list-row')];
+  const pagination=document.querySelector('#notice-pagination');
+  const pageSize=10;
+  const totalPages=Math.ceil(rows.length/pageSize);
+  let currentPage=1;
+  function renderPage(){
+    rows.forEach((row,index)=>{row.hidden=index<((currentPage-1)*pageSize)||index>=(currentPage*pageSize)});
+    pagination.querySelectorAll('.pagination-number').forEach(button=>{
+      const page=Number(button.dataset.page);
+      button.classList.toggle('is-active',page===currentPage);
+      if(page===currentPage)button.setAttribute('aria-current','page');
+      else button.removeAttribute('aria-current');
+    });
+    pagination.querySelector('[data-page="prev"]').disabled=currentPage===1;
+    pagination.querySelector('[data-page="next"]').disabled=currentPage===totalPages;
+  }
+  pagination.addEventListener('click',event=>{
+    const button=event.target.closest('button[data-page]');
+    if(!button||button.disabled)return;
+    if(button.dataset.page==='prev')currentPage--;
+    else if(button.dataset.page==='next')currentPage++;
+    else currentPage=Number(button.dataset.page);
+    renderPage();
+  });
+  renderPage();
+});
+</script>
+</body></html>
