@@ -71,6 +71,34 @@
  .b-notice-list a{grid-template-columns:58px 1fr;gap:10px;padding:18px 2px}.b-notice-date{grid-column:2;text-align:left}
  .b-table th,.b-table td{padding:13px 10px;font-size:12px}
 }
+
+/* Notice page title and notice-list header frame */
+.notice-page{<main class="notice-page">
+  <section class="notice-intro" aria-labelledby="notice-title">
+    <div class="notice-title-group">
+      <div class="notice-title-frame"><h1 id="notice-title">Notice</h1></div>
+      <div class="notice-subtitle-frame"><p>공지사항</p></div>
+    </div>
+  </section>
+  <section class="notice-content" aria-label="공지사항 목록">
+    <div class="notice-list-frame" role="table" aria-label="공지사항">
+      <div class="notice-list-cell notice-cell-label" role="columnheader">내용</div>
+      <div class="notice-list-cell notice-cell-title" role="columnheader">제목</div>
+      <div class="notice-list-cell notice-cell-author" role="columnheader">작성자</div>
+    </div>
+  </section>
+</main>.notice-list-cell:last-child{border-right:0}
+.notice-cell-title{justify-content:flex-start;padding-left:30px}
+@media(max-width:700px){
+.notice-intro{height:186px;padding:105px 16px 0}
+.notice-title-frame h1{font-size:clamp(30px,8vw,36px)}
+.notice-subtitle-frame p{font-size:14px}
+.notice-content{width:calc(100% - 32px);max-width:none;margin:80px auto 72px}
+.notice-list-frame{grid-template-columns:64px minmax(0,1fr) 82px;height:64px}
+.notice-list-cell{height:64px;font-size:12px}
+.notice-cell-title{padding-left:14px}
+}
+
 </style>
 </head><body><div id="wrap"><div data-shared-header></div><main class="b-page"><section class="b-intro"><div><h1>Notice</h1><p>바이오던스 공식몰의 새로운 소식을 확인하세요</p></div></section><div class="b-wrap"><section class="b-section"><div class="b-section-head"><div><span class="b-eyebrow">COMMUNITY / NOTICE</span><h2>공지사항</h2><p class="b-copy">공식몰 운영 및 서비스 관련 안내를 확인할 수 있습니다.</p></div><span class="b-pill">NOTICE</span></div><div class="b-notice-list"><a href="#shipping"><span class="b-notice-tag">GUIDE</span><span class="b-notice-title">배송 및 고객센터 운영 안내</span><time class="b-notice-date">운영 안내</time></a><a href="#service"><span class="b-notice-tag">UPDATE</span><span class="b-notice-title">공식몰 서비스 이용 안내</span><time class="b-notice-date">서비스 안내</time></a><a href="#event"><span class="b-notice-tag">NEWS</span><span class="b-notice-title">바이오던스 이벤트 및 프로모션 안내</span><time class="b-notice-date">브랜드 소식</time></a></div><p class="b-copy" style="margin-top:18px;font-size:12px">※ 안내 내용은 예시 구성입니다. 실제 공지 등록 시 제목과 게시일, 상세 내용을 관리자 등록 정보로 교체해 주세요.</p></section><section class="b-section b-band"><span class="b-eyebrow">NEED HELP?</span><h2 class="b-heading">궁금한 점이 있으신가요?</h2><p class="b-copy">배송 및 주문 관련 문의는 고객센터 또는 FAQ를 확인해 주세요.</p><a class="b-cta" href="faq.html">FAQ 확인하기　↗</a></section></div></main><footer class="biodance-footer" aria-label="바이오던스 푸터">
 <div class="biodance-footer-content"><img class="biodance-footer-logo" src="../img/logo-2.png" alt="바이오던스">
