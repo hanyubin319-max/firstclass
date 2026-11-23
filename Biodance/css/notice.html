@@ -82,14 +82,15 @@
 .notice-subtitle-frame{display:flex;height:28px;align-items:center;justify-content:center}
 .notice-subtitle-frame p{margin:0;color:var(--neutral-charcoal);font-size:16px;font-weight:400;line-height:1;text-align:center}
 .notice-content{width:1600px;max-width:calc(100% - 40px);margin:80px auto 120px;border-top:0}
-.notice-list-frame{display:grid;width:100%;height:81px;grid-template-columns:80px minmax(0,1fr) 120px;border:0;border-radius:10px;overflow:hidden;margin:0}
+.notice-list-frame{display:grid;width:100%;height:81px;grid-template-columns:80px minmax(0,1fr) 120px;border:0;border-radius:20px;overflow:hidden;margin:0}
 .notice-list-cell{display:flex;min-width:0;height:81px;align-items:center;justify-content:center;border:0;font-size:14px;font-weight:400;line-height:1.4;color:var(--neutral-charcoal);background:var(--neutral-white)}
 .notice-list-row{position:relative}
 .notice-list-row[hidden]{display:none!important}
-.notice-list-row::after{content:"";position:absolute;inset:0;border-bottom:2px solid var(--neutral-light-gray);border-radius:0 0 10px 10px;pointer-events:none}
-.notice-list-cell:first-child{border-radius:10px 0 0 10px}
-.notice-list-cell:last-child{border-radius:0 10px 10px 0}
+.notice-list-row::after{content:"";position:absolute;inset:0;border-bottom:2px solid var(--neutral-light-gray);border-radius:0 0 20px 20px;pointer-events:none}
+.notice-list-cell:first-child{border-radius:20px 0 0 20px}
+.notice-list-cell:last-child{border-radius:0 20px 20px 0}
 .notice-cell-title{justify-content:flex-start;padding-left:30px}
+.notice-list-header .notice-cell-title{justify-content:center;padding-left:0;text-align:center}
 .notice-list-header .notice-list-cell{font-weight:600;background:var(--neutral-light-gray)}
 .notice-list-row+.notice-list-row{margin-top:0}
 .notice-cell-author{color:var(--neutral-gray)}
@@ -101,6 +102,7 @@
 .notice-list-frame{grid-template-columns:64px minmax(0,1fr) 82px;height:64px}
 .notice-list-cell{height:64px;font-size:12px}
 .notice-cell-title{padding-left:14px}
+.notice-list-header .notice-cell-title{justify-content:center;padding-left:0;text-align:center}
 }</style>
 </head><body><div id="wrap"><div data-shared-header></div><main class="notice-page">
   <section class="notice-intro" aria-labelledby="notice-title">
