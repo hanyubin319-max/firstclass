@@ -7,9 +7,12 @@
 <script src="common-header.js" defer></script><style>
 .b-page{width:100%;color:var(--neutral-charcoal);background:#fff;font-family:var(--font-primary)}
 .b-page *{box-sizing:border-box}
-.b-intro{height:220px;display:flex;justify-content:center;align-items:flex-start;padding:120px 16px 0;text-align:center}
-.b-intro h1{margin:0;font-size:42px;line-height:1;font-weight:600;letter-spacing:-.035em}
-.b-intro p{margin:16px 0 0;font-size:16px;line-height:1.5;color:#555}
+.event-intro{display:flex;width:100%;height:220px;align-items:flex-start;justify-content:center;padding-top:120px}
+.event-title-group{display:flex;width:max-content;height:fit-content;flex-direction:column;align-items:center;gap:16px}
+.event-title-frame{display:flex;height:42px;align-items:center;justify-content:center}
+.event-title-frame h1{margin:0;color:var(--neutral-charcoal);font-size:42px;font-weight:600;line-height:1;text-align:center}
+.event-subtitle-frame{display:flex;height:28px;align-items:center;justify-content:center}
+.event-subtitle-frame p{margin:0;color:var(--neutral-charcoal);font-size:16px;font-weight:400;line-height:1;text-align:center}
 .b-wrap{width:min(1260px,calc(100% - 40px));margin:44px auto 120px}
 .b-eyebrow{font-size:11px;letter-spacing:.18em;font-weight:600;color:#69cfc5}
 .b-heading{margin:12px 0 18px;font-size:clamp(26px,3vw,38px);line-height:1.25;font-weight:600;letter-spacing:-.04em}
@@ -60,7 +63,7 @@
 .b-region a:hover{background:#e8f8f5;border-color:#b8e9e3}
 .b-region strong{font-size:18px}.b-region span{font-size:12px;color:#888}
 @media(max-width:700px){
- .b-intro{height:200px;padding-top:105px}.b-intro h1{font-size:34px}.b-intro p{font-size:13px;margin-top:13px}
+ .event-intro{height:220px;padding:120px 16px 0}.event-title-frame h1{font-size:clamp(30px,8vw,36px)}.event-subtitle-frame p{font-size:clamp(12px,3.6vw,14px)}
  .b-wrap{width:calc(100% - 32px);margin:28px auto 72px}.b-grid{grid-template-columns:1fr;gap:12px;margin-top:22px}
  .b-card{min-height:0;padding:24px}.b-card h3{margin-top:18px;font-size:17px}
  .b-band{border-radius:18px;padding:26px 20px}.b-section{margin-top:52px}.b-section-head{display:block}
@@ -72,7 +75,7 @@
  .b-table th,.b-table td{padding:13px 10px;font-size:12px}
 }
 </style>
-</head><body><div id="wrap"><div data-shared-header></div><main class="b-page"><section class="b-intro"><div><h1>Global Stores</h1><p>바이오던스를 전 세계에서 만나보세요</p></div></section><div class="b-wrap"><section class="b-band"><span class="b-eyebrow">BIODANCE WORLDWIDE</span><h2 class="b-heading">세계 여러 지역에서<br>바이오던스를 만나보세요.</h2><p class="b-copy">국가 및 지역별 공식 판매 채널을 확인할 수 있도록 구성한 글로벌 스토어 안내 페이지입니다. 구매 전 판매처의 공식 여부와 배송 가능 지역을 확인해 주세요.</p></section><section class="b-section"><div class="b-section-head"><div><span class="b-eyebrow">FIND YOUR STORE</span><h2>지역별 스토어</h2></div></div><div class="b-region"><a href="#korea"><strong>Korea</strong><span>대한민국 · Official Mall ↗</span></a><a href="#north-america"><strong>North America</strong><span>북미 지역 ↗</span></a><a href="#asia"><strong>Asia</strong><span>아시아 지역 ↗</span></a><a href="#global"><strong>Global</strong><span>기타 글로벌 채널 ↗</span></a></div><p class="b-copy" style="margin-top:20px;font-size:12px">※ 실제 판매처 URL은 공식 확인 후 연결해 주세요. 현재 지역 카드는 스토어 정보 배치용 UI입니다.</p></section><section class="b-section"><span class="b-eyebrow">SHOP OFFICIAL</span><h2 class="b-heading">공식몰에서 안심하고 쇼핑하세요.</h2><p class="b-copy">국내 공식몰의 제품과 이벤트 정보를 확인하고 바이오던스의 다양한 제품을 만나보세요.</p><a class="b-cta" href="category.html">공식몰 쇼핑하기　↗</a></section></div></main><footer class="biodance-footer" aria-label="바이오던스 푸터">
+</head><body><div id="wrap"><div data-shared-header></div><main class="b-page"><section class="event-intro" aria-labelledby="global-stores-title"><div class="event-title-group"><div class="event-title-frame"><h1 id="global-stores-title">Global Stores</h1></div><div class="event-subtitle-frame"><p>바이오던스를 전 세계에서 만나보세요</p></div></div></section><div class="b-wrap"><section class="b-band"><span class="b-eyebrow">BIODANCE WORLDWIDE</span><h2 class="b-heading">세계 여러 지역에서<br>바이오던스를 만나보세요.</h2><p class="b-copy">국가 및 지역별 공식 판매 채널을 확인할 수 있도록 구성한 글로벌 스토어 안내 페이지입니다. 구매 전 판매처의 공식 여부와 배송 가능 지역을 확인해 주세요.</p></section><section class="b-section"><div class="b-section-head"><div><span class="b-eyebrow">FIND YOUR STORE</span><h2>지역별 스토어</h2></div></div><div class="b-region"><a href="#korea"><strong>Korea</strong><span>대한민국 · Official Mall ↗</span></a><a href="#north-america"><strong>North America</strong><span>북미 지역 ↗</span></a><a href="#asia"><strong>Asia</strong><span>아시아 지역 ↗</span></a><a href="#global"><strong>Global</strong><span>기타 글로벌 채널 ↗</span></a></div><p class="b-copy" style="margin-top:20px;font-size:12px">※ 실제 판매처 URL은 공식 확인 후 연결해 주세요. 현재 지역 카드는 스토어 정보 배치용 UI입니다.</p></section><section class="b-section"><span class="b-eyebrow">SHOP OFFICIAL</span><h2 class="b-heading">공식몰에서 안심하고 쇼핑하세요.</h2><p class="b-copy">국내 공식몰의 제품과 이벤트 정보를 확인하고 바이오던스의 다양한 제품을 만나보세요.</p><a class="b-cta" href="category.html">공식몰 쇼핑하기　↗</a></section></div></main><footer class="biodance-footer" aria-label="바이오던스 푸터">
 <div class="biodance-footer-content"><img class="biodance-footer-logo" src="../img/logo-2.png" alt="바이오던스">
 <div class="biodance-footer-text-frame"><div class="biodance-footer-customer-frame"><p class="biodance-footer-customer-text"><span>고객센터. 1600-6586</span><span class="biodance-footer-customer-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span class="biodance-footer-hours">평일 10:00 - 18:00 점심 13:00 - 14:00</span><span class="biodance-footer-holiday">(주말, 공휴일 휴무)</span></p></div>
 <div class="biodance-footer-info-frame"><p class="biodance-footer-split-info"><span>통신판매업신고번호. 2020-서울강남-01005</span><span class="biodance-footer-info-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span>개인정보관리책임자. 박재빈</span></p><p class="biodance-footer-contact-inquiry"><span>국내 협업 문의. contact@beautyselection.co.kr</span><span class="biodance-footer-contact-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span>글로벌 협업 문의. contact_global@beautyselection.co.kr</span></p><p class="biodance-footer-split-info"><span>주소. 06071 , 서울 강남구 도산대로100길 22-5</span><span class="biodance-footer-info-divider">&nbsp;&nbsp; / &nbsp;&nbsp;</span><span>Hosting by Cafe24</span></p></div><p class="biodance-footer-copyright">Copyright © Biodance.All rights reserved.</p>
