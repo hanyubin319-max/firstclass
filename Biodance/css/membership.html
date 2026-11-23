@@ -323,6 +323,13 @@
 .membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(28),
 .membership-benefit-columns[data-active-grade="5"]>.membership-benefit-item:nth-child(34){display:flex!important;grid-column:2!important}
 }
+
+/* Mobile grade selector spacing and rose background */
+@media(max-width:700px){
+.membership-benefit-section{margin-top:10px!important}
+.membership-grade-label{background:color-mix(in srgb,var(--brand-rose) 40%,transparent)!important}
+.membership-grade-label[aria-pressed="true"]{background:color-mix(in srgb,var(--brand-rose) 40%,transparent)!important}
+}
 </style>
 </head><body><div id="wrap"><div data-shared-header></div><main class="membership-page"><section class="membership-intro">
   <div class="membership-title-group">
