@@ -82,12 +82,15 @@
 .membership-card-title{grid-column:2;grid-row:1;margin:0;font-size:24px;text-align:left}
 .membership-card-copy{grid-column:2;grid-row:2;margin:0;font-size:18px;text-align:left;align-items:flex-start}
 .membership-card-copy span{text-align:left}
-.membership-grid{width:100%;grid-template-columns:minmax(0,350px)}
-.membership-card{min-width:0}
+.membership-grid{width:100%;grid-template-columns:minmax(0,500px)}
+.membership-card{width:100%;min-width:0}
 .membership-grade-intro{padding:0 8px;gap:12px}
 .membership-grade-intro h2{font-size:26px}
 .membership-grade-intro p{font-size:14px;line-height:1.5}
-.membership-grade-chart{max-width:100%;overflow-x:auto}
+.membership-grade-chart{width:100%;max-width:100%;overflow:visible}
+.membership-grade-bars,.membership-grade-baseline{display:none}
+.membership-grade-labels{width:100%;display:flex}
+.membership-grade-label{width:20%;height:44px;min-width:0;flex:1 1 20%;font-size:14px}
 .membership-benefit-section{max-width:100%;overflow-x:auto}
 .membership-benefit-divider,.membership-benefit-columns{width:1295px}
 .membership-policy-notes{grid-template-columns:minmax(0,1fr);gap:20px;margin-top:64px;padding:20px;border-radius:16px;font-size:12px;line-height:1.7}
