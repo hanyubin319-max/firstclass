@@ -264,6 +264,14 @@
 .membership-policy-notes p{gap:8px}
 .membership-order-guide{white-space:normal}
 }
+
+/* Membership mobile footer: restore a full-width, left-aligned navigation layout */
+@media(max-width:700px){
+.membership-page~.biodance-footer .biodance-footer-nav-frame,
+#wrap>.biodance-footer .biodance-footer-nav-frame{display:flex!important;align-self:stretch!important;width:100%!important;max-width:100%!important;flex-direction:row!important;justify-content:space-between!important;align-items:flex-start!important;gap:24px!important}
+#wrap>.biodance-footer .biodance-footer-nav-list{display:flex!important;flex:1 1 0!important;width:0!important;min-width:0!important;align-items:flex-start!important;text-align:left!important}
+#wrap>.biodance-footer .biodance-footer-nav-list p{width:100%!important;text-align:left!important}
+}
 </style>
 </head><body><div id="wrap"><div data-shared-header></div><main class="membership-page"><section class="membership-intro">
   <div class="membership-title-group">
