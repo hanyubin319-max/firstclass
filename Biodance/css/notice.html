@@ -81,11 +81,14 @@
 .notice-title-frame h1{margin:0;color:var(--neutral-charcoal);font-size:42px;font-weight:600;line-height:1;text-align:center}
 .notice-subtitle-frame{display:flex;height:28px;align-items:center;justify-content:center}
 .notice-subtitle-frame p{margin:0;color:var(--neutral-charcoal);font-size:16px;font-weight:400;line-height:1;text-align:center}
-.notice-content{width:1600px;max-width:calc(100% - 40px);margin:80px auto 120px}
-.notice-list-frame{display:grid;width:100%;height:81px;grid-template-columns:80px minmax(0,1fr) 120px;border:1px solid var(--neutral-border-gray)}
-.notice-list-cell{display:flex;height:81px;align-items:center;justify-content:center;border-right:1px solid var(--neutral-border-gray);font-size:14px;font-weight:500;line-height:1.4}
+.notice-content{width:1600px;max-width:calc(100% - 40px);margin:80px auto 120px;border-top:0}
+.notice-list-frame{display:grid;width:100%;height:81px;grid-template-columns:80px minmax(0,1fr) 120px;border:1px solid var(--neutral-border-gray);margin:0}
+.notice-list-cell{display:flex;min-width:0;height:81px;align-items:center;justify-content:center;border-right:1px solid var(--neutral-border-gray);font-size:14px;font-weight:400;line-height:1.4;color:var(--neutral-charcoal);background:var(--neutral-white)}
 .notice-list-cell:last-child{border-right:0}
 .notice-cell-title{justify-content:flex-start;padding-left:30px}
+.notice-list-header .notice-list-cell{font-weight:600;background:var(--neutral-light-gray)}
+.notice-list-row+.notice-list-row{margin-top:0}
+.notice-cell-author{color:var(--neutral-gray)}
 @media(max-width:700px){
 .notice-intro{height:186px;padding:105px 16px 0}
 .notice-title-frame h1{font-size:clamp(30px,8vw,36px)}
@@ -103,11 +106,86 @@
     </div>
   </section>
   <section class="notice-content" aria-label="공지사항 목록">
-    <div class="notice-list-frame" role="table" aria-label="공지사항">
+    <div class="notice-list-frame notice-list-header" role="row">
       <div class="notice-list-cell notice-cell-label" role="columnheader">내용</div>
       <div class="notice-list-cell notice-cell-title" role="columnheader">제목</div>
       <div class="notice-list-cell notice-cell-author" role="columnheader">작성자</div>
     </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">공지</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">2026년 추석연휴 배송안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">공지</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">아이패치&버블 부스터&씨켈프 세럼 무료체험단 당첨자 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">공지</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">오늘 출발 배송 서비스 안내'바이오던스 글로번 공식 판매처 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">공지</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">바이오던스 글로벌 공식 판매처 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">공지</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">바이오던스 온라인 공식 판매처 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">30</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">개인정보 처리방침 변경 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">29</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">개인정보 처리방침 변경 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">28</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">콜라겐 선세럼 무료체험단 이벤트 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">27</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">[EVENT] 상반기 적립금 100% 사용 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">26</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">젤리 세럼 미스트 무료체험단 이벤트 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">25</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">개인정보 처리방침 변경 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">24</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">캐비어 PDRN 마스크 리뷰 이벤트 당첨 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">23</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">개인정보 처리방침 변경 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">22</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">블랙프라이데이 경품 당첨자 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
+      <div class="notice-list-frame notice-list-row" role="row">
+        <div class="notice-list-cell notice-cell-label" role="cell">21</div>
+        <div class="notice-list-cell notice-cell-title" role="cell">개인정보 처리방침 변경 안내</div>
+        <div class="notice-list-cell notice-cell-author" role="cell">Biodance</div>
+      </div>
   </section>
 </main><footer class="biodance-footer" aria-label="바이오던스 푸터">
 <div class="biodance-footer-content"><img class="biodance-footer-logo" src="../img/logo-2.png" alt="바이오던스">
