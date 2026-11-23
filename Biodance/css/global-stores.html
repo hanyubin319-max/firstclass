@@ -74,8 +74,84 @@
  .b-notice-list a{grid-template-columns:58px 1fr;gap:10px;padding:18px 2px}.b-notice-date{grid-column:2;text-align:left}
  .b-table th,.b-table td{padding:13px 10px;font-size:12px}
 }
+
+.global-stores-content{width:1600px;max-width:calc(100% - 40px);margin:0 auto 120px}
+.global-stores-hero{display:block;width:100%;height:auto;margin:80px auto 0;object-fit:cover}
+.global-stores-list{width:100%;margin:0}
+.global-store-listbox{display:flex;width:100%;height:160px;align-items:stretch;gap:0}
+.global-store-country{display:flex;flex:0 0 260px;height:160px;align-items:center;justify-content:flex-start;gap:52px;padding:0 30px;border-radius:20px 0 0 20px}
+.global-store-country span{font-size:24px;font-weight:500;line-height:1.2;color:var(--neutral-charcoal)}
+.global-store-logos{display:flex;flex:0 0 1340px;min-width:0;height:160px;align-items:center;justify-content:flex-start;gap:32px;padding:0 30px;border-radius:0 20px 20px 0;border-bottom:2px solid var(--neutral-border-gray);overflow:hidden}
+.global-store-logos img{display:block;width:auto;height:auto;max-width:180px;max-height:100px;object-fit:contain}
+@media(max-width:1640px){
+.global-stores-content{width:calc(100% - 40px);max-width:none}
+.global-store-listbox{width:100%}
+.global-store-country{flex-basis:260px}
+.global-store-logos{flex:1 1 auto}
+}
+@media(max-width:700px){
+.global-stores-content{width:calc(100% - 32px);margin-bottom:72px}
+.global-stores-hero{margin-top:64px}
+.global-store-listbox{height:auto;min-height:120px}
+.global-store-country{flex:0 0 34%;height:auto;min-height:120px;gap:0;padding:0 12px;border-radius:16px 0 0 16px}
+.global-store-country span{font-size:clamp(14px,3.8vw,20px);overflow-wrap:anywhere}
+.global-store-logos{flex:1 1 auto;height:auto;min-height:120px;gap:12px;padding:12px;border-radius:0 16px 16px 0}
+.global-store-logos img{max-width:30%;max-height:72px}
+}
 </style>
-</head><body><div id="wrap"><div data-shared-header></div><main class="b-page"><section class="event-intro" aria-labelledby="global-stores-title"><div class="event-title-group"><div class="event-title-frame"><h1 id="global-stores-title">Global Stores</h1></div><div class="event-subtitle-frame"><p>바이오던스를 전 세계에서 만나보세요</p></div></div></section></main><footer class="biodance-footer" aria-label="바이오던스 푸터">
+</head><body><div id="wrap"><div data-shared-header></div><main class="b-page"><section class="event-intro" aria-labelledby="global-stores-title"><div class="event-title-group"><div class="event-title-frame"><h1 id="global-stores-title">Global Stores</h1></div><div class="event-subtitle-frame"><p>바이오던스를 전 세계에서 만나보세요</p></div></div></section><section class="global-stores-content" aria-label="Global Stores">
+  <img class="global-stores-hero" src="../img/Global%20Stores.jpg" alt="Global Stores">
+  <div class="global-stores-list">
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Global</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-1.png" alt="" loading="lazy"><img src="../img/Global%20Stores-2.png" alt="" loading="lazy"><img src="../img/Global%20Stores-3.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>U.S.A</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-4.png" alt="" loading="lazy"><img src="../img/Global%20Stores-5.png" alt="" loading="lazy"><img src="../img/Global%20Stores-6.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Canada</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-7.png" alt="" loading="lazy"><img src="../img/Global%20Stores-8.png" alt="" loading="lazy"><img src="../img/Global%20Stores-9.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Japan</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-10.png" alt="" loading="lazy"><img src="../img/Global%20Stores-11.png" alt="" loading="lazy"><img src="../img/Global%20Stores-12.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Taiwan</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-13.png" alt="" loading="lazy"><img src="../img/Global%20Stores-14.png" alt="" loading="lazy"><img src="../img/Global%20Stores-15.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Singapore</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-16.png" alt="" loading="lazy"><img src="../img/Global%20Stores-17.png" alt="" loading="lazy"><img src="../img/Global%20Stores-18.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Thailand</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-19.png" alt="" loading="lazy"><img src="../img/Global%20Stores-20.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Indoneisa</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-21.png" alt="" loading="lazy"><img src="../img/Global%20Stores-22.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Malaysia</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-23.png" alt="" loading="lazy"><img src="../img/Global%20Stores-24.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>UK</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-25.png" alt="" loading="lazy"><img src="../img/Global%20Stores-26.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Middle east</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-27.png" alt="" loading="lazy"><img src="../img/Global%20Stores-28.png" alt="" loading="lazy"></div>
+      </div>
+      <div class="global-store-listbox">
+        <div class="global-store-country"><span>Australia</span></div>
+        <div class="global-store-logos"><img src="../img/Global%20Stores-29.png" alt="" loading="lazy"><img src="../img/Global%20Stores-30.png" alt="" loading="lazy"></div>
+      </div>
+  </div>
+</section></main><footer class="biodance-footer" aria-label="바이오던스 푸터">
             <div class="biodance-footer-content">
                 <img class="biodance-footer-logo" src="../img/logo-2.png" alt="바이오던스">
                 <div class="biodance-footer-text-frame">
