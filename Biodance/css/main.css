@@ -5361,3 +5361,18 @@ body {
         border-left: 1px solid var(--neutral-border-gray);
     }
 }
+
+/* Match PC active dropdown colors in the mobile expanded submenu. */
+@media (max-width: 700px) {
+    .site-header .main-nav .mobile-submenu-panel .mega-primary,
+    .site-header .main-nav .mobile-submenu-panel .mega-intro,
+    .site-header .main-nav .mobile-submenu-panel .mega-community {
+        background: var(--teal-mint) !important;
+    }
+
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a,
+    .site-header .main-nav .mobile-submenu-panel .mega-intro a,
+    .site-header .main-nav .mobile-submenu-panel .mega-community a {
+        color: var(--neutral-white) !important;
+    }
+}
