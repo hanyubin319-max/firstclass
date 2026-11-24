@@ -5377,6 +5377,26 @@ body {
     }
 }
 
+
+/* Keep mobile submenu typography and edges steady in every interaction state. */
+@media (max-width: 700px) {
+    .site-header .main-nav .mobile-submenu-panel {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a,
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a:hover,
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a:focus-visible,
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a:active,
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a.is-active {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        transform: none !important;
+    }
+}
+
 /* Match desktop dropdown text opacity on mobile submenu links. */
 @media (max-width: 700px) {
     .site-header .main-nav .mobile-submenu-panel a {
