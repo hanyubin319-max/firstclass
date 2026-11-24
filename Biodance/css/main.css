@@ -5363,15 +5363,4 @@ body {
     opacity: 1 !important;
 }
 
-/* Mobile submenu links use a separate, more specific white-text override. */
-@media (max-width: 700px) {
-    .site-header .main-nav .mobile-submenu-panel .mega-primary a:hover,
-    .site-header .main-nav .mobile-submenu-panel .mega-primary a:focus-visible,
-    .site-header .main-nav .mobile-submenu-panel .mega-intro a:hover,
-    .site-header .main-nav .mobile-submenu-panel .mega-intro a:focus-visible,
-    .site-header .main-nav .mobile-submenu-panel .mega-community a:hover,
-    .site-header .main-nav .mobile-submenu-panel .mega-community a:focus-visible {
-        color: var(--teal-mint, #5AD8CC) !important;
-        opacity: 1 !important;
-    }
-}
+/* Mobile submenu has a mint background, so keep its labels white on touch devices. */
