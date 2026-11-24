@@ -1,17 +1,20 @@
-/* Brand Story: 9 full-screen panels with vertical scroll snapping */
+/* Brand Story: nine panels sized to the visible area below the shared header */
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 112px;
 }
 
 .brand-story-pages {
   width: 100%;
-  scroll-snap-type: y mandatory;
+  padding-top: 112px;
 }
 
 .brand-story-page-section {
   width: 100%;
-  height: 573px;
-  min-height: 573px;
+  height: calc(100vh - 112px);
+  height: calc(100svh - 112px);
+  min-height: 0;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
@@ -27,9 +30,12 @@ html {
 .brand-story-page-section.page-8 { background-color: #F7F4EB; }
 .brand-story-page-section.page-9 { background-color: #F0F0ED; }
 
-@media (max-width: 700px) {
+/* 모바일 공통 헤더: 프로모션 바 32px + 헤더 58px */
+@media (max-width: 1300px) {
+  html { scroll-padding-top: 90px; }
+  .brand-story-pages { padding-top: 90px; }
   .brand-story-page-section {
-    height: 100svh;
-    min-height: 573px;
+    height: calc(100vh - 90px);
+    height: calc(100svh - 90px);
   }
 }
