@@ -172,6 +172,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     closeMegaMenu();
   }
 
+  // Clear mobile-only injected panels when returning to tablet/desktop width.
+  const resetMobileSubmenusOnDesktop = () => {
+    if (!window.matchMedia('(min-width: 701px)').matches || !mainNav) return;
+    mainNav.querySelectorAll('.mobile-submenu-panel').forEach(panel => panel.remove());
+    menuLinks.forEach(link => {
+      link.setAttribute('aria-expanded', 'false');
+      const plus = link.querySelector('.main-nav-plus');
+      if (plus) plus.setAttribute('aria-label', link.textContent.trim() + ' 하위 메뉴 열기');
+    });
+    closeMegaMenu();
+  };
+  window.addEventListener('resize', resetMobileSubmenusOnDesktop);
+  resetMobileSubmenusOnDesktop();
+
   // On mobile, tapping anywhere outside the navigation and menu button closes it.
   document.addEventListener('click', event => {
     const clickedInsideNav = event.target.closest('#main-nav');
