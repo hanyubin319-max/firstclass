@@ -5376,3 +5376,16 @@ body {
         color: var(--neutral-white) !important;
     }
 }
+
+/* Match desktop dropdown text opacity on mobile submenu links. */
+@media (max-width: 700px) {
+    .site-header .main-nav .mobile-submenu-panel a {
+        opacity: 0.8 !important;
+        transition: opacity 0.2s ease;
+    }
+
+    .site-header .main-nav .mobile-submenu-panel a:hover,
+    .site-header .main-nav .mobile-submenu-panel a:focus-visible {
+        opacity: 1 !important;
+    }
+}
