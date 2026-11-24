@@ -85,23 +85,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const sourcePanel = megaMenu?.querySelector('[data-panel="' + menuName + '"]');
     if (menuName === 'product') {
+      // Keep the existing Product lower menu only; omit its three extra secondary submenu panels.
       const primary = megaMenu?.querySelector('.mega-primary');
       if (primary) panel.append(primary.cloneNode(true));
-      megaMenu?.querySelectorAll('.mega-secondary').forEach(source => {
-        const clone = source.cloneNode(true);
-        clone.hidden = true;
-        panel.append(clone);
-      });
-      panel.addEventListener('click', event => {
-        const trigger = event.target.closest('[data-submenu]');
-        if (!trigger) return;
-        event.preventDefault();
-        const target = panel.querySelector('[data-panel="' + trigger.dataset.submenu + '"]');
-        if (!target) return;
-        const opening = target.hidden;
-        panel.querySelectorAll('.mega-secondary').forEach(item => item.hidden = true);
-        target.hidden = !opening;
-      });
     } else if (sourcePanel) {
       panel.append(sourcePanel.cloneNode(true));
     }
