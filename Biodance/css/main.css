@@ -5359,7 +5359,7 @@ body {
 .site-header .header-mega-menu .mega-intro > a:focus-visible,
 .site-header .header-mega-menu .mega-community > a:hover,
 .site-header .header-mega-menu .mega-community > a:focus-visible {
-    color: var(--teal-mint, #5AD8CC) !important;
+    color: var(--neutral-white, #fff) !important;
     opacity: 1 !important;
 }
 
