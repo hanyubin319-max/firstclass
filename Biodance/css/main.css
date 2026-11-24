@@ -5311,3 +5311,53 @@ body {
         display: none !important;
     }
 }
+
+/* Mobile expanded submenu panels opened by the Plus icons. */
+@media (max-width: 700px) {
+    .site-header .main-nav .mobile-submenu-panel {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+        gap: 0;
+        padding: 4px 20px 14px;
+        background: var(--neutral-white);
+    }
+
+    .site-header .main-nav .mobile-submenu-panel[hidden],
+    .site-header .main-nav .mobile-submenu-panel [hidden] {
+        display: none !important;
+    }
+
+    .site-header .main-nav .mobile-submenu-panel .mega-intro,
+    .site-header .main-nav .mobile-submenu-panel .mega-column {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        background: transparent;
+    }
+
+    .site-header .main-nav .mobile-submenu-panel a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 9px 0;
+        color: var(--neutral-charcoal);
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: left;
+        text-decoration: none;
+        background: transparent;
+    }
+
+    .site-header .main-nav .mobile-submenu-panel .mega-secondary {
+        padding: 4px 0 4px 14px;
+        border-left: 1px solid var(--neutral-border-gray);
+    }
+}
