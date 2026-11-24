@@ -5347,12 +5347,31 @@ body {
 }
 
 
-/* Submenu hover: use the same mint highlight as the top navigation. */
-.site-header .header-mega-menu a:hover,
-.site-header .header-mega-menu a:focus-visible,
-.site-header .header-mega-menu a.is-active,
-.site-header .main-nav .mobile-submenu-panel a:hover,
-.site-header .main-nav .mobile-submenu-panel a:focus-visible {
-    color: var(--teal-mint) !important;
-    opacity: 1;
+
+
+/* Submenu hover: explicit selectors override the existing white hover rules. */
+.site-header .header-mega-menu .mega-primary > a:hover,
+.site-header .header-mega-menu .mega-primary > a:focus-visible,
+.site-header .header-mega-menu .mega-primary > a.is-active,
+.site-header .header-mega-menu .mega-secondary > a:hover,
+.site-header .header-mega-menu .mega-secondary > a:focus-visible,
+.site-header .header-mega-menu .mega-intro > a:hover,
+.site-header .header-mega-menu .mega-intro > a:focus-visible,
+.site-header .header-mega-menu .mega-community > a:hover,
+.site-header .header-mega-menu .mega-community > a:focus-visible {
+    color: var(--teal-mint, #5AD8CC) !important;
+    opacity: 1 !important;
+}
+
+/* Mobile submenu links use a separate, more specific white-text override. */
+@media (max-width: 700px) {
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a:hover,
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a:focus-visible,
+    .site-header .main-nav .mobile-submenu-panel .mega-intro a:hover,
+    .site-header .main-nav .mobile-submenu-panel .mega-intro a:focus-visible,
+    .site-header .main-nav .mobile-submenu-panel .mega-community a:hover,
+    .site-header .main-nav .mobile-submenu-panel .mega-community a:focus-visible {
+        color: var(--teal-mint, #5AD8CC) !important;
+        opacity: 1 !important;
+    }
 }
