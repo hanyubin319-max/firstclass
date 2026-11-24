@@ -89,7 +89,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       const primary = megaMenu?.querySelector('.mega-primary');
       if (primary) panel.append(primary.cloneNode(true));
     } else if (sourcePanel) {
-      panel.append(sourcePanel.cloneNode(true));
+      const clone = sourcePanel.cloneNode(true);
+      clone.removeAttribute('hidden');
+      panel.append(clone);
     }
     return panel;
   }
