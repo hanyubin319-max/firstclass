@@ -5347,18 +5347,26 @@ body {
 
 
 
-/* Desktop submenu interaction: selected/hovered labels stay full-opacity white. */
+/* Desktop submenu interaction: preserve each label's own color and raise opacity to 100%. */
 @media (min-width: 701px) {
     .site-header .header-mega-menu .mega-intro > a:hover,
     .site-header .header-mega-menu .mega-intro > a:focus-visible,
+    .site-header .header-mega-menu .mega-intro > a.is-active,
     .site-header .header-mega-menu .mega-primary > a:hover,
     .site-header .header-mega-menu .mega-primary > a:focus-visible,
     .site-header .header-mega-menu .mega-primary > a.is-active,
     .site-header .header-mega-menu .mega-secondary > a:hover,
     .site-header .header-mega-menu .mega-secondary > a:focus-visible,
+    .site-header .header-mega-menu .mega-secondary > a.is-active,
     .site-header .header-mega-menu .mega-community > a:hover,
-    .site-header .header-mega-menu .mega-community > a:focus-visible {
-        color: #fff !important;
+    .site-header .header-mega-menu .mega-community > a:focus-visible,
+    .site-header .header-mega-menu .mega-community > a.is-active {
+        opacity: 1 !important;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a:hover > span,
+    .site-header .header-mega-menu .mega-primary > a:focus-visible > span,
+    .site-header .header-mega-menu .mega-primary > a.is-active > span {
         opacity: 1 !important;
     }
 }
