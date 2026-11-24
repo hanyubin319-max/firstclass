@@ -117,6 +117,96 @@
 .global-store-logos-japan{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;padding:20px 30px}
 .global-store-logo-row{display:flex;align-items:center;gap:52px;width:100%;min-height:calc((100% - 0px)/2)}
 .global-store-logo-row img{flex:0 0 auto}
+
+/* 모바일 반응형: PC 레이아웃은 유지하고 700px 이하에서만 재배치 */
+@media(max-width:700px){
+  .global-store-listbox{
+    display:flex;
+    flex-direction:column;
+    height:auto;
+    min-height:0;
+    margin-bottom:16px;
+  }
+  .global-store-country{
+    width:100%;
+    min-height:68px;
+    height:auto;
+    flex:0 0 auto;
+    padding:16px;
+    border-radius:24px 24px 0 0;
+    border-bottom:0;
+  }
+  .global-store-country span{
+    font-size:18px;
+    line-height:1.3;
+    text-align:center;
+  }
+  .global-store-logos{
+    display:flex;
+    width:100%;
+    min-height:96px;
+    height:auto;
+    flex:0 0 auto;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:16px 20px;
+    padding:20px 14px;
+    border-radius:0 0 24px 24px;
+    border-bottom:1px solid var(--neutral-border-gray);
+    overflow:visible;
+  }
+  .global-store-logos img{
+    width:auto;
+    max-width:min(38%,120px);
+    max-height:56px;
+    object-fit:contain;
+  }
+  .global-store-listbox-japan{
+    height:auto;
+    min-height:0;
+    flex-direction:column;
+    border-radius:24px;
+    overflow:hidden;
+  }
+  .global-store-listbox-japan .global-store-country{
+    width:100%;
+    height:auto;
+    min-height:68px;
+    flex:0 0 auto;
+    border-radius:0;
+  }
+  .global-store-listbox-japan .global-store-logos{
+    width:100%;
+    height:auto;
+    min-height:0;
+    flex:0 0 auto;
+    border-radius:0;
+    padding:18px 14px 26px;
+  }
+  .global-store-logos-japan{
+    align-items:stretch;
+    justify-content:center;
+    gap:18px;
+  }
+  .global-store-logo-row{
+    min-height:0;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:16px 20px;
+  }
+  .global-store-logo-row img{
+    max-width:min(38%,120px);
+    max-height:56px;
+  }
+  .global-store-listbox-japan::after{
+    right:0;
+    bottom:0;
+    left:0;
+    height:24px;
+    border-radius:0 0 24px 24px;
+  }
+}
 </style>
 </head><body><div id="wrap"><div data-shared-header></div><main class="b-page"><section class="event-intro" aria-labelledby="global-stores-title"><div class="event-title-group"><div class="event-title-frame"><h1 id="global-stores-title">Global Stores</h1></div><div class="event-subtitle-frame"><p>바이오던스를 전 세계에서 만나보세요</p></div></div></section><section class="global-stores-content" aria-label="Global Stores">
   <img class="global-stores-hero" src="../img/Global%20Stores.jpg" alt="Global Stores">
