@@ -4580,6 +4580,7 @@ body {
 
     .site-header .main-nav.is-open {
         display: flex !important;
+        padding: 0 1px !important;
     }
 
     .site-header .menu-toggle {
@@ -4594,6 +4595,7 @@ body {
 
     .site-header .main-nav > a,
     .site-header .main-nav > a:nth-child(n) {
+        padding: 12px 10px !important;
         background-color: var(--neutral-white) !important;
         background-image: none !important;
     }
