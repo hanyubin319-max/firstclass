@@ -5304,3 +5304,10 @@ body {
         margin: 0 0 0 auto !important;
     }
 }
+
+/* Plus icons are mobile-navigation only; never show them on PC/tablet. */
+@media (min-width: 701px) {
+    .site-header .main-nav .main-nav-plus {
+        display: none !important;
+    }
+}
