@@ -5256,3 +5256,29 @@ body {
     width: 100%;
     z-index: 10000 !important;
 }
+/* Mobile navigation: place the Plus icon at the opposite end of each menu label. */
+@media (max-width: 700px) {
+    .site-header .main-nav > a,
+    .site-header .main-nav > a:nth-child(n) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .site-header .main-nav .main-nav-plus {
+        display: block;
+        flex: 0 0 20px;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(15%);
+    }
+
+    .site-header .main-nav > a.is-active .main-nav-plus,
+    .site-header .main-nav > a:hover .main-nav-plus,
+    .site-header .main-nav > a:focus-visible .main-nav-plus,
+    .site-header .main-nav > a:active .main-nav-plus {
+        filter: brightness(0) invert(1);
+    }
+}
