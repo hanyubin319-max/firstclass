@@ -5409,3 +5409,12 @@ body {
         opacity: 1 !important;
     }
 }
+
+/* Hide only the three Product submenu arrows on mobile; keep desktop arrows. */
+@media (max-width: 700px) {
+    .site-header .header-mega-menu .mega-primary a[data-submenu="menu_product"] span,
+    .site-header .header-mega-menu .mega-primary a[data-submenu="menu_product2"] span,
+    .site-header .header-mega-menu .mega-primary a[data-submenu="menu_product3"] span {
+        display: none !important;
+    }
+}
