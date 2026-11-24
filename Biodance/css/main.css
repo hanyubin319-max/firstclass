@@ -5418,3 +5418,12 @@ body {
         display: none !important;
     }
 }
+
+/* Hide Product category chevrons inside the cloned mobile submenu only. */
+@media (max-width: 700px) {
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a[data-submenu="menu_product"] span,
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a[data-submenu="menu_product2"] span,
+    .site-header .main-nav .mobile-submenu-panel .mega-primary a[data-submenu="menu_product3"] span {
+        display: none !important;
+    }
+}
