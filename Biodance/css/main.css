@@ -5349,18 +5349,20 @@ body {
 
 
 
-/* Submenu hover: explicit selectors override the existing white hover rules. */
-.site-header .header-mega-menu .mega-primary > a:hover,
-.site-header .header-mega-menu .mega-primary > a:focus-visible,
-.site-header .header-mega-menu .mega-primary > a.is-active,
-.site-header .header-mega-menu .mega-secondary > a:hover,
-.site-header .header-mega-menu .mega-secondary > a:focus-visible,
-.site-header .header-mega-menu .mega-intro > a:hover,
-.site-header .header-mega-menu .mega-intro > a:focus-visible,
-.site-header .header-mega-menu .mega-community > a:hover,
-.site-header .header-mega-menu .mega-community > a:focus-visible {
-    color: var(--neutral-white, #fff) !important;
-    opacity: 1 !important;
+/* Desktop submenu interaction: selected/hovered labels stay full-opacity white. */
+@media (min-width: 701px) {
+    .site-header .header-mega-menu .mega-intro > a:hover,
+    .site-header .header-mega-menu .mega-intro > a:focus-visible,
+    .site-header .header-mega-menu .mega-primary > a:hover,
+    .site-header .header-mega-menu .mega-primary > a:focus-visible,
+    .site-header .header-mega-menu .mega-primary > a.is-active,
+    .site-header .header-mega-menu .mega-secondary > a:hover,
+    .site-header .header-mega-menu .mega-secondary > a:focus-visible,
+    .site-header .header-mega-menu .mega-community > a:hover,
+    .site-header .header-mega-menu .mega-community > a:focus-visible {
+        color: #fff !important;
+        opacity: 1 !important;
+    }
 }
 
 /* Mobile submenu has a mint background, so keep its labels white on touch devices. */
