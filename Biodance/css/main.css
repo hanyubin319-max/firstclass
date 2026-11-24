@@ -5322,13 +5322,7 @@ body {
     }
 }
 
-/* Product dropdown arrows turn mint when the corresponding menu item is hovered or focused. */
-.site-header .header-mega-menu .mega-primary > a:hover > span,
-.site-header .header-mega-menu .mega-primary > a:focus-visible > span {
-    color: var(--action-hover) !important;
-}
-
-/* Make the dropdown chevron itself respond to pointer hover, independently of its label. */
+/* Desktop Product arrows also stay white during hover, focus, and selection. */
 @media (min-width: 701px) {
     .site-header .header-mega-menu .mega-primary > a > span {
         cursor: pointer;
@@ -5340,9 +5334,13 @@ body {
         mask: url("../img/chevron-right-2.svg") center / 16px 24px no-repeat !important;
     }
 
+    .site-header .header-mega-menu .mega-primary > a:hover > span,
+    .site-header .header-mega-menu .mega-primary > a:focus-visible > span,
+    .site-header .header-mega-menu .mega-primary > a.is-active > span,
     .site-header .header-mega-menu .mega-primary > a > span:hover,
     .site-header .header-mega-menu .mega-primary > a > span:focus-visible {
-        color: var(--action-hover) !important;
+        color: #fff !important;
+        opacity: 1 !important;
     }
 }
 
