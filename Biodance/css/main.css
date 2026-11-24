@@ -5282,3 +5282,25 @@ body {
         filter: brightness(0) invert(1);
     }
 }
+
+/* Mobile Plus icon alignment override: keep label and icon on one horizontal line. */
+@media (max-width: 700px) {
+    .site-header .main-nav.is-open > a,
+    .site-header .main-nav.is-open > a:nth-child(n) {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+    }
+
+    .site-header .main-nav.is-open > a > .main-nav-plus {
+        display: block !important;
+        width: 20px !important;
+        height: 20px !important;
+        flex: 0 0 20px !important;
+        margin: 0 0 0 auto !important;
+    }
+}
