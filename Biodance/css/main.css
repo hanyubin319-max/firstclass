@@ -5372,3 +5372,22 @@ body {
 }
 
 /* Mobile submenu has a mint background, so keep its labels white on touch devices. */
+
+
+/* All desktop mega-menu submenu links: interaction always restores full opacity. */
+@media (min-width: 701px) {
+    .site-header .header-mega-menu a:is(:hover, :focus-visible, :active, .is-active),
+    .site-header .header-mega-menu .mega-intro a:is(:hover, :focus-visible, :active, .is-active),
+    .site-header .header-mega-menu .mega-primary a:is(:hover, :focus-visible, :active, .is-active),
+    .site-header .header-mega-menu .mega-secondary a:is(:hover, :focus-visible, :active, .is-active),
+    .site-header .header-mega-menu .mega-community a:is(:hover, :focus-visible, :active, .is-active),
+    .site-header .header-mega-menu .mega-new a:is(:hover, :focus-visible, :active, .is-active),
+    .site-header .header-mega-menu .mega-event a:is(:hover, :focus-visible, :active, .is-active) {
+        opacity: 1 !important;
+    }
+
+    .site-header .header-mega-menu a:is(:hover, :focus-visible, :active, .is-active) > span,
+    .site-header .header-mega-menu a:is(:hover, :focus-visible, :active, .is-active) > span::before {
+        opacity: 1 !important;
+    }
+}
