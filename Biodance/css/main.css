@@ -5320,7 +5320,7 @@ body {
         box-sizing: border-box;
         flex-direction: column;
         gap: 0;
-        padding: 4px 20px 14px;
+        padding: 4px 0 14px;
         background: var(--neutral-white);
     }
 
@@ -5347,7 +5347,7 @@ body {
         display: block;
         width: 100%;
         box-sizing: border-box;
-        padding: 9px 0;
+        padding: 9px 10px;
         color: var(--neutral-charcoal);
         font-size: 14px;
         line-height: 1.5;
