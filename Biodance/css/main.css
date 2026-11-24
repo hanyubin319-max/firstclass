@@ -5327,3 +5327,21 @@ body {
 .site-header .header-mega-menu .mega-primary > a:focus-visible > span {
     color: var(--action-hover) !important;
 }
+
+/* Make the dropdown chevron itself respond to pointer hover, independently of its label. */
+@media (min-width: 701px) {
+    .site-header .header-mega-menu .mega-primary > a > span {
+        cursor: pointer;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a > span::before {
+        background: currentColor !important;
+        -webkit-mask: url("../img/chevron-right-2.svg") center / 16px 24px no-repeat !important;
+        mask: url("../img/chevron-right-2.svg") center / 16px 24px no-repeat !important;
+    }
+
+    .site-header .header-mega-menu .mega-primary > a > span:hover,
+    .site-header .header-mega-menu .mega-primary > a > span:focus-visible {
+        color: var(--action-hover) !important;
+    }
+}
