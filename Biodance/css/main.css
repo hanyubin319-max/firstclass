@@ -5345,3 +5345,14 @@ body {
         color: var(--action-hover) !important;
     }
 }
+
+
+/* Submenu hover: use the same mint highlight as the top navigation. */
+.site-header .header-mega-menu a:hover,
+.site-header .header-mega-menu a:focus-visible,
+.site-header .header-mega-menu a.is-active,
+.site-header .main-nav .mobile-submenu-panel a:hover,
+.site-header .main-nav .mobile-submenu-panel a:focus-visible {
+    color: var(--teal-mint) !important;
+    opacity: 1;
+}
