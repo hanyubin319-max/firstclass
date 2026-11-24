@@ -165,6 +165,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   function closeMobileMenu() {
     if (!mainNav || !menuToggle) return;
     mainNav.classList.remove('is-open');
+    mainNav.querySelectorAll('.mobile-submenu-panel').forEach(panel => panel.remove());
+    menuLinks.forEach(link => link.setAttribute('aria-expanded', 'false'));
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-label', '메뉴 열기');
     closeMegaMenu();
@@ -186,6 +188,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const isOpen = mainNav.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     menuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
-    if (!isOpen) closeMegaMenu();
+    if (!isOpen) {
+      mainNav.querySelectorAll('.mobile-submenu-panel').forEach(panel => panel.remove());
+      menuLinks.forEach(link => link.setAttribute('aria-expanded', 'false'));
+      closeMegaMenu();
+    }
   });
 });
