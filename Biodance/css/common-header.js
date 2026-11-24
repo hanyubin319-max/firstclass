@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       mainNav.querySelectorAll('.mobile-submenu-panel').forEach(panel => panel.remove());
       menuLinks.forEach(item => {
         item.setAttribute('aria-expanded', 'false');
+        item.classList.remove('is-active');
         const icon = item.querySelector('.main-nav-plus');
         if (icon) icon.setAttribute('aria-label', item.textContent.trim() + ' 하위 메뉴 열기');
       });
@@ -131,6 +132,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const panel = buildMobileSubmenu(link.dataset.menu);
         link.insertAdjacentElement('afterend', panel);
         link.setAttribute('aria-expanded', 'true');
+        link.classList.add('is-active');
         plus.setAttribute('aria-label', link.textContent.trim() + ' 하위 메뉴 닫기');
       }
     };
@@ -166,7 +168,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!mainNav || !menuToggle) return;
     mainNav.classList.remove('is-open');
     mainNav.querySelectorAll('.mobile-submenu-panel').forEach(panel => panel.remove());
-    menuLinks.forEach(link => link.setAttribute('aria-expanded', 'false'));
+    menuLinks.forEach(link => { link.setAttribute('aria-expanded', 'false'); link.classList.remove('is-active'); });
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-label', '메뉴 열기');
     closeMegaMenu();
@@ -204,7 +206,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     menuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
     if (!isOpen) {
       mainNav.querySelectorAll('.mobile-submenu-panel').forEach(panel => panel.remove());
-      menuLinks.forEach(link => link.setAttribute('aria-expanded', 'false'));
+      menuLinks.forEach(link => { link.setAttribute('aria-expanded', 'false'); link.classList.remove('is-active'); });
       closeMegaMenu();
     }
   });
