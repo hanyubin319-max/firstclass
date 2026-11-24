@@ -5322,7 +5322,7 @@ body {
     }
 }
 
-/* Desktop Product arrows also stay white during hover, focus, and selection. */
+/* Product chevrons: keep their normal inherited color; restore full opacity on interaction. */
 @media (min-width: 701px) {
     .site-header .header-mega-menu .mega-primary > a > span {
         cursor: pointer;
@@ -5332,14 +5332,12 @@ body {
         background: currentColor !important;
         -webkit-mask: url("../img/chevron-right-2.svg") center / 16px 24px no-repeat !important;
         mask: url("../img/chevron-right-2.svg") center / 16px 24px no-repeat !important;
+        opacity: 1 !important;
     }
 
-    .site-header .header-mega-menu .mega-primary > a:hover > span,
-    .site-header .header-mega-menu .mega-primary > a:focus-visible > span,
-    .site-header .header-mega-menu .mega-primary > a.is-active > span,
-    .site-header .header-mega-menu .mega-primary > a > span:hover,
-    .site-header .header-mega-menu .mega-primary > a > span:focus-visible {
-        color: #fff !important;
+    .site-header .header-mega-menu .mega-primary > a:is(:hover, :focus-visible, :active, .is-active),
+    .site-header .header-mega-menu .mega-primary > a:is(:hover, :focus-visible, :active, .is-active) > span,
+    .site-header .header-mega-menu .mega-primary > a:is(:hover, :focus-visible, :active, .is-active) > span::before {
         opacity: 1 !important;
     }
 }
