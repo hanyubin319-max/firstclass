@@ -1,25 +1,37 @@
-/* Brand Story: nine panels sized to the visible area below the shared header */
+/* Brand Story: edge-to-edge full-screen panels with no gaps, including before footer */
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 112px;
+  scroll-padding-top: 0;
+}
+
+body,
+#wrap {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .brand-story-pages {
+  display: block;
   width: 100%;
-  padding-top: 112px;
+  margin: 0;
+  padding: 0;
 }
 
 .brand-story-page-section {
+  display: block;
   width: 100%;
-  height: calc(100vh - 112px);
-  height: calc(100svh - 112px);
+  height: 100vh;
+  height: 100svh;
   min-height: 0;
+  margin: 0;
+  padding: 0;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
 
-/* 각 페이지를 구분할 수 있도록 채도를 낮춘 유사 계열 컬러 적용 */
+/* 페이지별로 구분되는 은은한 배경색 */
 .brand-story-page-section.page-1 { background-color: #F8F4F1; }
 .brand-story-page-section.page-2 { background-color: #F5F1EC; }
 .brand-story-page-section.page-3 { background-color: #F3F5F1; }
@@ -30,12 +42,11 @@ html {
 .brand-story-page-section.page-8 { background-color: #F7F4EB; }
 .brand-story-page-section.page-9 { background-color: #F0F0ED; }
 
-/* 모바일 공통 헤더: 프로모션 바 32px + 헤더 58px */
-@media (max-width: 1300px) {
-  html { scroll-padding-top: 90px; }
-  .brand-story-pages { padding-top: 90px; }
-  .brand-story-page-section {
-    height: calc(100vh - 90px);
-    height: calc(100svh - 90px);
-  }
+/* 9번째 페이지 바로 다음에 푸터를 붙이고 바깥 여백 제거 */
+#wrap > .biodance-footer {
+  display: block;
+  width: 100%;
+  margin: 0 !important;
 }
+
+/* 공통 헤더는 기존 fixed 위치를 유지하며 첫 페이지 위에 겹쳐 표시 */
