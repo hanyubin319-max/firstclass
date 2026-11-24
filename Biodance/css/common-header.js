@@ -77,6 +77,69 @@ document.addEventListener('DOMContentLoaded', async () => {
       link.setAttribute('aria-expanded', String(active));
     });
   }
+  // Mobile Plus buttons expand the matching submenu directly below each top-level item.
+  function buildMobileSubmenu(menuName) {
+    const panel = document.createElement('div');
+    panel.className = 'mobile-submenu-panel';
+    panel.dataset.mobilePanel = menuName;
+
+    const sourcePanel = megaMenu?.querySelector('[data-panel="' + menuName + '"]');
+    if (menuName === 'product') {
+      const primary = megaMenu?.querySelector('.mega-primary');
+      if (primary) panel.append(primary.cloneNode(true));
+      megaMenu?.querySelectorAll('.mega-secondary').forEach(source => {
+        const clone = source.cloneNode(true);
+        clone.hidden = true;
+        panel.append(clone);
+      });
+      panel.addEventListener('click', event => {
+        const trigger = event.target.closest('[data-submenu]');
+        if (!trigger) return;
+        event.preventDefault();
+        const target = panel.querySelector('[data-panel="' + trigger.dataset.submenu + '"]');
+        if (!target) return;
+        const opening = target.hidden;
+        panel.querySelectorAll('.mega-secondary').forEach(item => item.hidden = true);
+        target.hidden = !opening;
+      });
+    } else if (sourcePanel) {
+      panel.append(sourcePanel.cloneNode(true));
+    }
+    return panel;
+  }
+
+  menuLinks.forEach(link => {
+    const plus = link.querySelector('.main-nav-plus');
+    if (!plus) return;
+    plus.setAttribute('role', 'button');
+    plus.setAttribute('tabindex', '0');
+    plus.setAttribute('aria-label', link.textContent.trim() + ' 하위 메뉴 열기');
+    const toggleMobileSubmenu = event => {
+      if (!window.matchMedia('(max-width: 700px)').matches) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const existing = link.nextElementSibling?.classList.contains('mobile-submenu-panel')
+        ? link.nextElementSibling : null;
+      const isOpening = !existing || existing.hidden;
+      mainNav.querySelectorAll('.mobile-submenu-panel').forEach(panel => panel.remove());
+      menuLinks.forEach(item => {
+        item.setAttribute('aria-expanded', 'false');
+        const icon = item.querySelector('.main-nav-plus');
+        if (icon) icon.setAttribute('aria-label', item.textContent.trim() + ' 하위 메뉴 열기');
+      });
+      if (isOpening) {
+        const panel = buildMobileSubmenu(link.dataset.menu);
+        link.insertAdjacentElement('afterend', panel);
+        link.setAttribute('aria-expanded', 'true');
+        plus.setAttribute('aria-label', link.textContent.trim() + ' 하위 메뉴 닫기');
+      }
+    };
+    plus.addEventListener('click', toggleMobileSubmenu);
+    plus.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') toggleMobileSubmenu(event);
+    });
+  });
+
   function toggleSecondaryMenu(link) {
     const target = megaMenu?.querySelector('[data-panel="' + link.dataset.submenu + '"]');
     if (!target) return;
