@@ -4,7 +4,7 @@ html {
   min-height: 100%;
   overflow-x: clip;
   overflow-y: auto;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scroll-snap-type: y mandatory;
   scroll-padding-top: 0;
 }
@@ -727,4 +727,10 @@ body,
     transform: none;
     animation: none;
   }
+}
+
+
+/* JS가 프레임 단위로 이동하는 동안 브라우저의 스냅 개입을 잠시 중지 */
+html.is-wheel-animating {
+  scroll-snap-type: none !important;
 }
