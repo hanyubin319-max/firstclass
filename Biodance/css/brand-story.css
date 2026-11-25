@@ -126,3 +126,80 @@ body,
     flex-basis: 50%;
   }
 }
+
+
+/* Brand Story page 1 text content */
+.brand-story-page-section.page-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-story-intro {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+  color: #292929;
+}
+
+.brand-story-intro-title,
+.brand-story-intro-subtitle,
+.brand-story-intro-copy p {
+  padding: 0;
+  font-family: var(--font-primary, "Pretendard Variable", sans-serif);
+}
+
+.brand-story-intro-title {
+  margin: 0 0 40px;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.brand-story-intro-subtitle {
+  margin: 0 0 68px;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.brand-story-intro-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.brand-story-intro-copy p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 700px) {
+  .brand-story-intro {
+    width: calc(100% - 40px);
+  }
+
+  .brand-story-intro-title {
+    margin-bottom: 24px;
+    font-size: clamp(32px, 8vw, 60px);
+  }
+
+  .brand-story-intro-subtitle {
+    margin-bottom: 36px;
+    font-size: clamp(26px, 6.4vw, 48px);
+  }
+
+  .brand-story-intro-copy p {
+    font-size: 15px;
+    line-height: 1.65;
+    word-break: keep-all;
+  }
+
+  .brand-story-intro-copy br {
+    display: none;
+  }
+}
