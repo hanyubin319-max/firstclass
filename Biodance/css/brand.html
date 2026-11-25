@@ -156,71 +156,7 @@
 </script>
 
 
-<script>
-  (() => {
-    const targets = [
-      ...document.querySelectorAll(".brand-story-page-section"),
-      document.querySelector("#wrap > .biodance-footer")
-    ].filter(Boolean);
 
-    if (!targets.length) return;
-
-    let wheelTotal = 0;
-    let wheelTimer = null;
-    let scrolling = false;
-    let unlockTimer = null;
-
-    const finishWheel = () => {
-      if (Math.abs(wheelTotal) < 25 || scrolling) {
-        wheelTotal = 0;
-        return;
-      }
-
-      const direction = wheelTotal > 0 ? 1 : -1;
-      wheelTotal = 0;
-
-      const currentY = window.scrollY;
-      let currentIndex = 0;
-      let nearestDistance = Infinity;
-
-      targets.forEach((target, index) => {
-        const distance = Math.abs(target.getBoundingClientRect().top);
-        if (distance < nearestDistance) {
-          nearestDistance = distance;
-          currentIndex = index;
-        }
-      });
-
-      const nextIndex = Math.max(0, Math.min(targets.length - 1, currentIndex + direction));
-      if (nextIndex === currentIndex) return;
-
-      scrolling = true;
-      window.clearTimeout(unlockTimer);
-      targets[nextIndex].scrollIntoView({ behavior: "smooth", block: "start" });
-
-      unlockTimer = window.setTimeout(() => {
-        scrolling = false;
-      }, 1100);
-    };
-
-    window.addEventListener("wheel", (event) => {
-      if (event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-      event.preventDefault();
-      if (scrolling) return;
-
-      wheelTotal += event.deltaY;
-      window.clearTimeout(wheelTimer);
-      wheelTimer = window.setTimeout(finishWheel, 90);
-    }, { passive: false });
-
-    window.addEventListener("scrollend", () => {
-      scrolling = false;
-      window.clearTimeout(unlockTimer);
-    });
-  })();
-</script>
 
 </body>
 </html>
