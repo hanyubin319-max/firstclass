@@ -454,14 +454,15 @@ body,
 .brand-story-page8-content {
   position: absolute;
   z-index: 5;
-  top: 50%;
+  top: auto;
+  bottom: 270px;
   left: 125px;
   width: calc(100% - 250px);
   max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transform: translateY(-50%);
+  transform: none;
   color: #333333;
   text-align: left;
   font-family: var(--font-primary, "Pretendard Variable", sans-serif);
