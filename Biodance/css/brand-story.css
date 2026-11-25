@@ -1,10 +1,12 @@
 /* Brand Story: edge-to-edge full-screen panels with no gaps, including before footer */
 html {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
   scroll-padding-top: 0;
-  overscroll-behavior-y: contain;
 }
 
 body,
