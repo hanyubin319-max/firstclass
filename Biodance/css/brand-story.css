@@ -521,6 +521,43 @@ body,
 }
 
 
+/* Keep the two navigation columns together, then group them with footer content */
+#wrap > .biodance-footer {
+  position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+#wrap > .biodance-footer > .brand-story-footer-inner {
+  position: absolute;
+  left: 186px;
+  right: 140px;
+  bottom: 332px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+#wrap > .biodance-footer .biodance-footer-nav-frame {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+  width: max-content;
+  margin: 0;
+}
+
+#wrap > .biodance-footer .biodance-footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 0;
+}
+
 /* Brand Story page footer: match the full-screen story panels */
 #wrap > .biodance-footer {
   width: 100%;
@@ -571,6 +608,29 @@ body,
     height: auto;
     min-height: 100svh;
     padding: 60px 20px 40px;
+  }
+
+  #wrap > .biodance-footer > .brand-story-footer-inner {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 40px;
+  }
+
+  #wrap > .biodance-footer .biodance-footer-nav-frame {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  #wrap > .biodance-footer .biodance-footer-nav-list {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
   }
 
   #wrap > .biodance-footer .biodance-footer-logo {
