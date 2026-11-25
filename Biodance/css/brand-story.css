@@ -519,3 +519,78 @@ body,
     font-size: 11px;
   }
 }
+
+
+/* Brand Story page footer: match the full-screen story panels */
+#wrap > .biodance-footer {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 0;
+  box-sizing: border-box;
+  padding: 209px 140px;
+  border-radius: 0;
+}
+
+/* Control footer spacing with margins instead of the shared flex gap */
+#wrap > .biodance-footer .biodance-footer-content {
+  gap: 0;
+}
+
+#wrap > .biodance-footer .biodance-footer-logo {
+  margin: 0 0 28px;
+}
+
+#wrap > .biodance-footer .biodance-footer-customer-frame {
+  margin: 0 0 28px;
+}
+
+#wrap > .biodance-footer .biodance-footer-info-frame {
+  gap: 0;
+  margin: 0;
+}
+
+#wrap > .biodance-footer .biodance-footer-info-frame p {
+  margin: 0 0 8px;
+}
+
+#wrap > .biodance-footer .biodance-footer-info-frame p:last-child {
+  margin-bottom: 0;
+}
+
+#wrap > .biodance-footer .biodance-footer-copyright {
+  margin: 30px 0 0;
+}
+
+#wrap > .biodance-footer .portfolio-disclaimer {
+  margin: 30px 0 0;
+}
+
+@media (max-width: 700px) {
+  #wrap > .biodance-footer {
+    height: auto;
+    min-height: 100svh;
+    padding: 60px 20px 40px;
+  }
+
+  #wrap > .biodance-footer .biodance-footer-logo {
+    margin-bottom: 20px;
+  }
+
+  #wrap > .biodance-footer .biodance-footer-customer-frame {
+    margin-bottom: 20px;
+  }
+
+  #wrap > .biodance-footer .biodance-footer-info-frame {
+    gap: 0 !important;
+  }
+
+  #wrap > .biodance-footer .biodance-footer-info-frame p {
+    margin-bottom: 8px;
+  }
+
+  #wrap > .biodance-footer .biodance-footer-copyright,
+  #wrap > .biodance-footer .portfolio-disclaimer {
+    margin-top: 30px;
+  }
+}
