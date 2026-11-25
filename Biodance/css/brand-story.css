@@ -671,7 +671,6 @@ body,
 
 
 /* 섹션이 화면에 들어오면 텍스트가 아래에서 위로 나타나는 모션 */
-@media (prefers-reduced-motion: no-preference) {
   .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
   .brand-story-motion-ready .brand-story-page-section .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
@@ -711,16 +710,3 @@ body,
   .brand-story-motion-ready .brand-story-page-section.page-5.is-active .brand-story-content {
     transform: translate3d(0, -50%, 0);
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .brand-story-page-section .brand-story-intro,
-  .brand-story-page-section .brand-story-content,
-  .brand-story-page-section .brand-story-page6-copy,
-  .brand-story-page-section .brand-story-page7-content,
-  .brand-story-page-section .brand-story-page8-content {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
