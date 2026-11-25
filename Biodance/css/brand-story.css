@@ -340,9 +340,7 @@ body,
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
-  padding: 0;
-  gap: 0;
+  gap: 20px;
   padding: 0;
   color: #FFFFFF;
   text-align: center;
