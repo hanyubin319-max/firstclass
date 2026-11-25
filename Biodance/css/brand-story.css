@@ -493,9 +493,9 @@ body,
 
 .brand-story-page8-image {
   display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+  width: 510px;
+  height: 186px;
+  max-width: none;
   margin: 0;
   padding: 0;
   object-fit: contain;
