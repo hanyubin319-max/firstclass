@@ -666,76 +666,30 @@ body,
 }
 
 
-/* 모든 브랜드 스토리 섹션 텍스트 스크롤 모션 */
+/* 참고 사이트처럼 스크롤 진행에 연동되는 텍스트 모션 */
 @media (prefers-reduced-motion: no-preference) {
   .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
   .brand-story-motion-ready .brand-story-page-section .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
-    opacity: 0;
-    transition: opacity 1000ms ease, transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: 0ms;
+    opacity: var(--story-motion-progress, 0);
+    transition: none;
+    will-change: transform, opacity;
   }
 
   .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
-    transform: translate3d(0, 36px, 0);
+    transform: translate3d(0, var(--story-motion-y, 48px), 0);
   }
 
   .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section.page-4 .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section.page-5 .brand-story-content {
-    transform: translate3d(0, calc(-50% + 36px), 0);
-  }
-
-  .brand-story-motion-ready .brand-story-page-section .brand-story-intro.is-visible,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-content.is-visible,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy.is-visible,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content.is-visible,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content.is-visible {
-    opacity: 1;
-    transition-delay: 1000ms;
-  }
-
-  .brand-story-motion-ready .brand-story-page-section .brand-story-intro.is-visible,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy.is-visible,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content.is-visible,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content.is-visible {
-    transform: translate3d(0, 0, 0);
-  }
-
-  .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content.is-visible,
-  .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content.is-visible,
-  .brand-story-motion-ready .brand-story-page-section.page-4 .brand-story-content.is-visible,
-  .brand-story-motion-ready .brand-story-page-section.page-5 .brand-story-content.is-visible {
-    transform: translate3d(0, -50%, 0);
-  }
-
-  .brand-story-motion-ready .brand-story-page-section .brand-story-intro.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-content.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content.is-leaving {
-    opacity: 0;
-    transition-delay: 0ms;
-  }
-
-  .brand-story-motion-ready .brand-story-page-section .brand-story-intro.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content.is-leaving {
-    transform: translate3d(0, 36px, 0);
-  }
-
-  .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section.page-4 .brand-story-content.is-leaving,
-  .brand-story-motion-ready .brand-story-page-section.page-5 .brand-story-content.is-leaving {
-    transform: translate3d(0, calc(-50% + 36px), 0);
+    transform: translate3d(0, calc(-50% + var(--story-motion-y, 48px)), 0);
   }
 }
 
@@ -745,8 +699,8 @@ body,
   .brand-story-page-section .brand-story-page6-copy,
   .brand-story-page-section .brand-story-page7-content,
   .brand-story-page-section .brand-story-page8-content {
-    opacity: 1;
-    transform: none;
-    transition: none;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
