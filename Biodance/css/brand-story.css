@@ -2,7 +2,9 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
   scroll-padding-top: 0;
+  overscroll-behavior-y: contain;
 }
 
 body,
@@ -59,8 +61,8 @@ body,
   margin: 0 !important;
   margin-top: 0 !important;
   border-radius: 0 !important;
-  scroll-snap-align: none;
-  scroll-snap-stop: normal;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 /* Brand Story image panels: apply images directly to the page sections */
