@@ -333,6 +333,8 @@ body,
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0;
+  padding: 0;
   color: #FFFFFF;
   text-align: center;
   font-family: var(--font-primary, "Pretendard Variable", sans-serif);
