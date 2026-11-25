@@ -266,7 +266,7 @@ body,
 }
 
 .brand-story-content-title {
-  margin: 0 0 48px;
+  margin: 0 0 20px;
   font-size: 70px;
   font-weight: 600;
   line-height: 1.5;
@@ -274,7 +274,7 @@ body,
 }
 
 .brand-story-content-subtitle {
-  margin: 0 0 48px;
+  margin: 0 0 20px;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.5;
@@ -312,12 +312,12 @@ body,
   }
 
   .brand-story-content-title {
-    margin: 0 0 48px;
+    margin: 0 0 20px;
     font-size: clamp(28px, 7vw, 44px);
   }
 
   .brand-story-content-subtitle {
-    margin: 0 0 48px;
+    margin: 0 0 20px;
     font-size: clamp(18px, 4.5vw, 28px);
   }
 
