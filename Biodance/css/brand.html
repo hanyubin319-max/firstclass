@@ -142,18 +142,33 @@
 </div>
 
 <script>
-  // 각 브랜드 스토리 섹션이 화면에 들어오면 텍스트를 아래에서 위로 등장시킵니다.
+  // 모든 브랜드 스토리 섹션의 텍스트를 화면 진입/이탈에 맞춰 움직입니다.
   document.documentElement.classList.add("brand-story-motion-ready");
 
   const brandStorySections = document.querySelectorAll(
-    ".brand-story-page-section.page-2, .brand-story-page-section.page-3, .brand-story-page-section.page-4, .brand-story-page-section.page-5"
+    ".brand-story-page-section"
   );
+  const textSelector = [
+    ".brand-story-intro",
+    ".brand-story-content",
+    ".brand-story-page6-copy",
+    ".brand-story-page7-content",
+    ".brand-story-page8-content"
+  ].join(", ");
 
-  const brandStoryObserver = new IntersectionObserver((entries, observer) => {
+  const brandStoryObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
+      const text = entry.target.querySelector(textSelector);
+      if (!text) return;
+
       if (entry.isIntersecting) {
-        entry.target.querySelector(".brand-story-content")?.classList.add("is-visible");
-        observer.unobserve(entry.target);
+        text.classList.remove("is-leaving");
+        text.classList.add("is-visible");
+      } else if (entry.boundingClientRect.top < 0) {
+        text.classList.remove("is-visible");
+        text.classList.add("is-leaving");
+      } else {
+        text.classList.remove("is-visible", "is-leaving");
       }
     });
   }, {
