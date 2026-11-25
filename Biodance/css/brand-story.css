@@ -666,30 +666,87 @@ body,
 }
 
 
-/* 스크롤 진입 시 브랜드 스토리 텍스트 등장 모션 */
+/* 모든 브랜드 스토리 섹션 텍스트 스크롤 모션 */
 @media (prefers-reduced-motion: no-preference) {
+  .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-content,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
+    opacity: 0;
+    transition: opacity 1000ms ease, transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 0ms;
+  }
+
+  .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
+    transform: translate3d(0, 36px, 0);
+  }
+
   .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section.page-4 .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section.page-5 .brand-story-content {
-    opacity: 0;
     transform: translate3d(0, calc(-50% + 36px), 0);
-    transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .brand-story-motion-ready .brand-story-page-section .brand-story-intro.is-visible,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-content.is-visible,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy.is-visible,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content.is-visible,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content.is-visible {
+    opacity: 1;
+    transition-delay: 1000ms;
+  }
+
+  .brand-story-motion-ready .brand-story-page-section .brand-story-intro.is-visible,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy.is-visible,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content.is-visible,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content.is-visible {
+    transform: translate3d(0, 0, 0);
   }
 
   .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content.is-visible,
   .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content.is-visible,
   .brand-story-motion-ready .brand-story-page-section.page-4 .brand-story-content.is-visible,
   .brand-story-motion-ready .brand-story-page-section.page-5 .brand-story-content.is-visible {
-    opacity: 1;
     transform: translate3d(0, -50%, 0);
+  }
+
+  .brand-story-motion-ready .brand-story-page-section .brand-story-intro.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-content.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content.is-leaving {
+    opacity: 0;
+    transition-delay: 0ms;
+  }
+
+  .brand-story-motion-ready .brand-story-page-section .brand-story-intro.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content.is-leaving {
+    transform: translate3d(0, 36px, 0);
+  }
+
+  .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section.page-4 .brand-story-content.is-leaving,
+  .brand-story-motion-ready .brand-story-page-section.page-5 .brand-story-content.is-leaving {
+    transform: translate3d(0, calc(-50% + 36px), 0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brand-story-content {
+  .brand-story-page-section .brand-story-intro,
+  .brand-story-page-section .brand-story-content,
+  .brand-story-page-section .brand-story-page6-copy,
+  .brand-story-page-section .brand-story-page7-content,
+  .brand-story-page-section .brand-story-page8-content {
     opacity: 1;
-    transform: translateY(-50%);
+    transform: none;
     transition: none;
   }
 }
