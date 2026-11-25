@@ -62,3 +62,18 @@ body,
   scroll-snap-align: none;
   scroll-snap-stop: normal;
 }
+
+/* Brand Story image panels */
+.brand-story-page-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-story-page-section .brand-story-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
