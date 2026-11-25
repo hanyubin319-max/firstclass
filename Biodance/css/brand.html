@@ -142,21 +142,17 @@
 </div>
 
 <script>
-  // 각 섹션이 화면 중앙에 안착하면 텍스트가 아래에서 위로 나타납니다.
-  document.documentElement.classList.add("brand-story-motion-ready");
-
-  const storySections = document.querySelectorAll(".brand-story-page-section");
-  const storyObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      entry.target.classList.toggle("is-active", entry.isIntersecting);
-    });
-  }, {
-    root: null,
-    rootMargin: "-20% 0px -20% 0px",
-    threshold: 0.15
-  });
-
-  storySections.forEach((section) => storyObserver.observe(section));
+  (() => {
+    const sections = document.querySelectorAll(".brand-story-page-section");
+    if (!sections.length || !("IntersectionObserver" in window)) return;
+    document.documentElement.classList.add("brand-story-motion-ready");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-active", entry.isIntersecting && entry.intersectionRatio >= 0.5);
+      });
+    }, { threshold: [0, 0.5, 1] });
+    sections.forEach((section) => observer.observe(section));
+  })();
 </script>
 
 </body>
