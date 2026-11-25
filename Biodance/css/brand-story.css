@@ -31,15 +31,17 @@ body,
   scroll-snap-stop: always;
 }
 
-/* 페이지별로 구분되는 은은한 배경색 */
-.brand-story-page-section.page-1 { background-color: #F8F4F1; }
-.brand-story-page-section.page-2 { background-color: #F5F1EC; }
-.brand-story-page-section.page-3 { background-color: #F3F5F1; }
-.brand-story-page-section.page-4 { background-color: #EEF4F2; }
-.brand-story-page-section.page-5 { background-color: #F0F3F7; }
-.brand-story-page-section.page-6 { background-color: #F4F0F5; }
-.brand-story-page-section.page-7 { background-color: #F8F0F1; }
-.brand-story-page-section.page-8 { background-color: #F7F4EB; }
+/* 모든 전체 프레임의 기본 배경색 */
+.brand-story-page-section.page-1,
+.brand-story-page-section.page-2,
+.brand-story-page-section.page-3,
+.brand-story-page-section.page-4,
+.brand-story-page-section.page-5,
+.brand-story-page-section.page-6,
+.brand-story-page-section.page-7,
+.brand-story-page-section.page-8 {
+  background-color: #FFFFFF;
+}
 /* 마지막 브랜드 스토리 페이지 바로 다음에 푸터를 붙이고 바깥 여백 제거 */
 #wrap > .biodance-footer {
   display: block;
