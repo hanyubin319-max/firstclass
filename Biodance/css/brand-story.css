@@ -434,10 +434,21 @@ body,
 .brand-story-page-section.page-8 {
   position: relative;
   isolation: isolate;
-  background-image: url("../img/Brand-8.png");
-  background-position: right top;
-  background-repeat: no-repeat;
-  background-size: 2907px 1085px;
+  background-color: #FFFFFF;
+}
+
+.brand-story-page8-background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 0;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%);
 }
 
 .brand-story-page8-content {
