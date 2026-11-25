@@ -435,9 +435,9 @@ body,
   position: relative;
   isolation: isolate;
   background-image: url("../img/Brand-8.png");
-  background-position: center;
+  background-position: right top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 2907px 1085px;
 }
 
 .brand-story-page8-content {
