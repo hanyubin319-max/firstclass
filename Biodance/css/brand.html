@@ -142,40 +142,52 @@
 </div>
 
 <script>
-  // 모든 브랜드 스토리 섹션의 텍스트를 화면 진입/이탈에 맞춰 움직입니다.
+  // 스크롤 위치에 따라 각 섹션의 텍스트가 올라오고, 섹션을 벗어나면 내려갑니다.
   document.documentElement.classList.add("brand-story-motion-ready");
 
-  const brandStorySections = document.querySelectorAll(
+  const storyMotionItems = Array.from(document.querySelectorAll(
     ".brand-story-page-section"
-  );
-  const textSelector = [
-    ".brand-story-intro",
-    ".brand-story-content",
-    ".brand-story-page6-copy",
-    ".brand-story-page7-content",
-    ".brand-story-page8-content"
-  ].join(", ");
+  )).map((section) => ({
+    section,
+    text: section.querySelector(
+      ".brand-story-intro, .brand-story-content, .brand-story-page6-copy, .brand-story-page7-content, .brand-story-page8-content"
+    )
+  })).filter((item) => item.text);
 
-  const brandStoryObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const text = entry.target.querySelector(textSelector);
-      if (!text) return;
+  let storyMotionTicking = false;
 
-      if (entry.isIntersecting) {
-        text.classList.remove("is-leaving");
-        text.classList.add("is-visible");
-      } else if (entry.boundingClientRect.top < 0) {
-        text.classList.remove("is-visible");
-        text.classList.add("is-leaving");
-      } else {
-        text.classList.remove("is-visible", "is-leaving");
-      }
+  function updateStoryTextMotion() {
+    const viewportHeight = window.innerHeight;
+
+    storyMotionItems.forEach(({ section, text }) => {
+      const rect = section.getBoundingClientRect();
+
+      // 화면 아래에서 진입할 때와 화면 위로 빠져나갈 때를 각각 계산합니다.
+      const enterProgress = Math.min(1, Math.max(0,
+        (viewportHeight * 0.85 - rect.top) / (viewportHeight * 0.35)
+      ));
+      const leaveProgress = Math.min(1, Math.max(0,
+        rect.bottom / (viewportHeight * 0.5)
+      ));
+      const progress = Math.min(enterProgress, leaveProgress);
+
+      text.style.setProperty("--story-motion-progress", progress.toFixed(3));
+      text.style.setProperty("--story-motion-y", ((1 - progress) * 48).toFixed(1) + "px");
     });
-  }, {
-    threshold: 0.5
-  });
 
-  brandStorySections.forEach((section) => brandStoryObserver.observe(section));
+    storyMotionTicking = false;
+  }
+
+  function requestStoryTextMotion() {
+    if (!storyMotionTicking) {
+      window.requestAnimationFrame(updateStoryTextMotion);
+      storyMotionTicking = true;
+    }
+  }
+
+  window.addEventListener("scroll", requestStoryTextMotion, { passive: true });
+  window.addEventListener("resize", requestStoryTextMotion);
+  updateStoryTextMotion();
 </script>
 
 </body>
