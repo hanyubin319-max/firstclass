@@ -668,30 +668,46 @@ body,
 }
 
 
-/* 참고 사이트처럼 스크롤 진행에 연동되는 텍스트 모션 */
+/* 섹션이 화면에 들어오면 텍스트가 아래에서 위로 나타나는 모션 */
 @media (prefers-reduced-motion: no-preference) {
   .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
   .brand-story-motion-ready .brand-story-page-section .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
-    opacity: var(--story-motion-progress, 0);
-    transition: none;
-    will-change: transform, opacity;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
   }
 
   .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
-    transform: translate3d(0, var(--story-motion-y, 48px), 0);
+    transform: translate3d(0, 42px, 0);
   }
 
   .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section.page-4 .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section.page-5 .brand-story-content {
-    transform: translate3d(0, calc(-50% + var(--story-motion-y, 48px)), 0);
+    transform: translate3d(0, calc(-50% + 42px), 0);
+  }
+
+  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-intro,
+  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-content,
+  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page6-copy,
+  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page7-content,
+  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page8-content {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .brand-story-motion-ready .brand-story-page-section.page-2.is-active .brand-story-content,
+  .brand-story-motion-ready .brand-story-page-section.page-3.is-active .brand-story-content,
+  .brand-story-motion-ready .brand-story-page-section.page-4.is-active .brand-story-content,
+  .brand-story-motion-ready .brand-story-page-section.page-5.is-active .brand-story-content {
+    transform: translate3d(0, -50%, 0);
   }
 }
 
