@@ -138,8 +138,10 @@ body,
 }
 
 .brand-story-intro {
+  position: absolute;
+  left: 125px;
   width: min(1200px, calc(100% - 250px));
-  margin: 0 0 0 125px;
+  margin: 0;
   color: #FFFFFF;
 }
 
@@ -182,8 +184,9 @@ body,
 
 @media (max-width: 700px) {
   .brand-story-intro {
+    left: 20px;
     width: calc(100% - 40px);
-    margin: 0 auto;
+    margin: 0;
   }
 
   .brand-story-intro-title {
