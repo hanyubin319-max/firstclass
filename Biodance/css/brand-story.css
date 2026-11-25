@@ -488,3 +488,61 @@ body,
     max-width: 100%;
   }
 }
+
+
+/* Brand Story page 8: sales milestone */
+.brand-story-page8-content {
+  position: absolute;
+  top: 50%;
+  left: 125px;
+  width: min(710px, calc(100% - 250px));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: translateY(-50%);
+  color: #333333;
+  text-align: left;
+  font-family: var(--font-primary, "Pretendard Variable", sans-serif);
+}
+
+.brand-story-page8-content h2 {
+  margin: 0 0 20px;
+  padding: 0;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.brand-story-page8-note {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.brand-story-page8-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 700px) {
+  .brand-story-page8-content {
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .brand-story-page8-content h2 {
+    margin-bottom: 16px;
+    font-size: clamp(32px, 7vw, 48px);
+  }
+
+  .brand-story-page8-note {
+    font-size: 11px;
+  }
+}
