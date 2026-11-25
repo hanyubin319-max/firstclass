@@ -49,4 +49,16 @@ body,
   margin: 0 !important;
 }
 
-/* 공통 헤더는 기존 fixed 위치를 유지하며 첫 페이지 위에 겹쳐 표시 */
+
+/* Brand Story footer: keep the shared footer layout, but remove the gap and rounded cutout */
+#wrap > .biodance-footer {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: none;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  border-radius: 0 !important;
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
+}
