@@ -234,8 +234,12 @@ body,
   position: absolute;
   top: 50%;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   width: min(710px, calc(50% - 170px));
   transform: translateY(-50%);
+  padding: 0;
   font-family: var(--font-primary, "Pretendard Variable", sans-serif);
   color: #FFFFFF;
 }
@@ -256,12 +260,13 @@ body,
 
 .brand-story-content-title,
 .brand-story-content-subtitle,
+.brand-story-content-copy,
 .brand-story-content-copy p {
   padding: 0;
 }
 
 .brand-story-content-title {
-  margin: 0 0 48px;
+  margin: 0;
   font-size: 70px;
   font-weight: 600;
   line-height: 1.5;
@@ -269,7 +274,7 @@ body,
 }
 
 .brand-story-content-subtitle {
-  margin: 0 0 48px;
+  margin: 0;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.5;
@@ -280,6 +285,7 @@ body,
   display: flex;
   flex-direction: column;
   gap: 25px;
+  margin: 0;
 }
 
 .brand-story-content-copy p {
@@ -294,6 +300,7 @@ body,
 @media (max-width: 700px) {
   .brand-story-content {
     width: calc(50% - 48px);
+    gap: 16px;
   }
 
   .brand-story-content.content-right {
@@ -305,12 +312,12 @@ body,
   }
 
   .brand-story-content-title {
-    margin-bottom: 24px;
+    margin: 0;
     font-size: clamp(28px, 7vw, 44px);
   }
 
   .brand-story-content-subtitle {
-    margin-bottom: 24px;
+    margin: 0;
     font-size: clamp(18px, 4.5vw, 28px);
   }
 
@@ -326,13 +333,15 @@ body,
 
 
 /* Brand Story page 6 closing statement */
-.brand-story-page6-copy {
+ .brand-story-page6-copy {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 25px;
+  padding: 0;
   gap: 0;
   padding: 0;
   color: #FFFFFF;
