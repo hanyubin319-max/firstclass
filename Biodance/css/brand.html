@@ -142,6 +142,54 @@
 </div>
 
 <script>
+  // 휠 한 번의 동작으로 전체 화면 섹션 하나씩 이동합니다.
+  const snapPanels = Array.from(document.querySelectorAll(
+    ".brand-story-page-section, #wrap > .biodance-footer"
+  ));
+  let snapLocked = false;
+  let wheelGestureActive = false;
+  let wheelGestureTimer;
+
+  function moveToSnapPanel(direction) {
+    if (snapLocked) return;
+
+    const currentPosition = window.scrollY;
+    let currentIndex = 0;
+    let smallestDistance = Infinity;
+
+    snapPanels.forEach((panel, index) => {
+      const panelTop = panel.getBoundingClientRect().top + window.scrollY;
+      const distance = Math.abs(panelTop - currentPosition);
+      if (distance < smallestDistance) {
+        smallestDistance = distance;
+        currentIndex = index;
+      }
+    });
+
+    const nextIndex = Math.max(0, Math.min(snapPanels.length - 1, currentIndex + direction));
+    if (nextIndex === currentIndex) return;
+
+    snapLocked = true;
+    const targetTop = snapPanels[nextIndex].getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
+    window.setTimeout(() => { snapLocked = false; }, 1000);
+  }
+
+  window.addEventListener("wheel", (event) => {
+    if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+    event.preventDefault();
+
+    if (!wheelGestureActive) {
+      wheelGestureActive = true;
+      moveToSnapPanel(event.deltaY > 0 ? 1 : -1);
+    }
+
+    window.clearTimeout(wheelGestureTimer);
+    wheelGestureTimer = window.setTimeout(() => {
+      wheelGestureActive = false;
+    }, 650);
+  }, { passive: false });
+
   // 각 섹션이 화면 중앙에 안착하면 텍스트가 아래에서 위로 나타납니다.
   document.documentElement.classList.add("brand-story-motion-ready");
 
