@@ -213,7 +213,12 @@ body,
 
 /* 2~5번 페이지의 지정 프레임 컬러 */
 .page-2 .frame-right {
-  background-color: var(--neutral-cream);
+  background-color: #9DBBA3;
+}
+
+/* 2번 페이지 오른쪽 프레임의 텍스트 색상 */
+.page-2 .brand-story-content {
+  color: #FFFFFF;
 }
 
 .page-3 .frame-left {
