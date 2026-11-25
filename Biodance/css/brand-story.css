@@ -40,9 +40,7 @@ body,
 .brand-story-page-section.page-6 { background-color: #F4F0F5; }
 .brand-story-page-section.page-7 { background-color: #F8F0F1; }
 .brand-story-page-section.page-8 { background-color: #F7F4EB; }
-.brand-story-page-section.page-9 { background-color: #F0F0ED; }
-
-/* 9번째 페이지 바로 다음에 푸터를 붙이고 바깥 여백 제거 */
+/* 마지막 브랜드 스토리 페이지 바로 다음에 푸터를 붙이고 바깥 여백 제거 */
 #wrap > .biodance-footer {
   display: block;
   width: 100%;
@@ -76,3 +74,55 @@ body,
 .brand-story-page-section.page-6 { background-image: url("../img/Brand-6.png"); }
 .brand-story-page-section.page-7 { background-image: url("../img/Brand-7.png"); }
 .brand-story-page-section.page-8 { background-image: url("../img/Brand-8.png"); }
+
+
+/* 2~5번 페이지: 좌우 반반 프레임 */
+.brand-story-page-section.page-2,
+.brand-story-page-section.page-3,
+.brand-story-page-section.page-4,
+.brand-story-page-section.page-5 {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.brand-story-frame {
+  flex: 0 1 952px;
+  width: 50%;
+  min-width: 0;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 지정된 페이지별 이미지 */
+.page-2 .image-brand-2 { background-image: url("../img/Brand-2.png"); }
+.page-3 .image-brand-3 { background-image: url("../img/Brand-3.png"); }
+.page-4 .image-brand-4 { background-image: url("../img/Brand-4.png"); }
+.page-5 .image-brand-5 { background-image: url("../img/Brand-5.png"); }
+
+/* 프레임이 맞닿는 안쪽 모서리에만 60px 라운드 적용 */
+.page-2 .frame-left { border-bottom-right-radius: 60px; }
+.page-2 .frame-right { border-bottom-left-radius: 60px; }
+
+.page-3 .frame-left,
+.page-4 .frame-left {
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+.page-3 .frame-right,
+.page-4 .frame-right {
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+
+.page-5 .frame-left { border-top-right-radius: 60px; }
+.page-5 .frame-right { border-top-left-radius: 60px; }
+
+/* 작은 화면에서는 두 프레임이 화면 너비의 절반씩 차지 */
+@media (max-width: 952px) {
+  .brand-story-frame {
+    flex-basis: 50%;
+  }
+}
