@@ -203,3 +203,21 @@ body,
     display: none;
   }
 }
+
+
+/* 2~5번 페이지의 지정 프레임 컬러 */
+.page-2 .frame-right {
+  background-color: var(--neutral-cream);
+}
+
+.page-3 .frame-left {
+  background-color: rgba(253, 126, 158, 0.7);
+}
+
+.page-4 .frame-right {
+  background-color: rgba(248, 164, 138, 0.7);
+}
+
+.page-5 .frame-left {
+  background-color: var(--teal-mint);
+}
