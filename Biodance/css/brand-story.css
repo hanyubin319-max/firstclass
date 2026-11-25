@@ -670,43 +670,57 @@ body,
 }
 
 
-/* 섹션이 화면에 들어오면 텍스트가 아래에서 위로 나타나는 모션 */
+/* 페이지 진입 시 텍스트가 아래에서 위로 등장하고 재진입 시 다시 실행 */
+.brand-story-motion-ready .brand-story-page-section .brand-story-intro,
+.brand-story-motion-ready .brand-story-page-section .brand-story-content,
+.brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
+.brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
+.brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.brand-story-motion-ready .brand-story-page-section .brand-story-intro,
+.brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
+.brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
+.brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
+  transform: translate3d(0, 42px, 0);
+}
+.brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content,
+.brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content,
+.brand-story-motion-ready .brand-story-page-section.page-4 .brand-story-content,
+.brand-story-motion-ready .brand-story-page-section.page-5 .brand-story-content {
+  transform: translate3d(0, calc(-50% + 42px), 0);
+}
+.brand-story-motion-ready .brand-story-page-section.is-active .brand-story-intro,
+.brand-story-motion-ready .brand-story-page-section.is-active .brand-story-content,
+.brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page6-copy,
+.brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page7-content,
+.brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page8-content {
+  opacity: 1;
+  animation: brandStoryTextEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.brand-story-motion-ready .brand-story-page-section.page-2.is-active .brand-story-content,
+.brand-story-motion-ready .brand-story-page-section.page-3.is-active .brand-story-content,
+.brand-story-motion-ready .brand-story-page-section.page-4.is-active .brand-story-content,
+.brand-story-motion-ready .brand-story-page-section.page-5.is-active .brand-story-content {
+  animation-name: brandStoryTextEnterCentered;
+}
+@keyframes brandStoryTextEnter {
+  from { opacity: 0; transform: translate3d(0, 42px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes brandStoryTextEnterCentered {
+  from { opacity: 0; transform: translate3d(0, calc(-50% + 42px), 0); }
+  to { opacity: 1; transform: translate3d(0, -50%, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
   .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
   .brand-story-motion-ready .brand-story-page-section .brand-story-content,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
   .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
-    opacity: 0;
-    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
-  }
-
-  .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
-  .brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
-    transform: translate3d(0, 42px, 0);
-  }
-
-  .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content,
-  .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content,
-  .brand-story-motion-ready .brand-story-page-section.page-4 .brand-story-content,
-  .brand-story-motion-ready .brand-story-page-section.page-5 .brand-story-content {
-    transform: translate3d(0, calc(-50% + 42px), 0);
-  }
-
-  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-intro,
-  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-content,
-  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page6-copy,
-  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page7-content,
-  .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page8-content {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: none;
+    animation: none;
   }
-
-  .brand-story-motion-ready .brand-story-page-section.page-2.is-active .brand-story-content,
-  .brand-story-motion-ready .brand-story-page-section.page-3.is-active .brand-story-content,
-  .brand-story-motion-ready .brand-story-page-section.page-4.is-active .brand-story-content,
-  .brand-story-motion-ready .brand-story-page-section.page-5.is-active .brand-story-content {
-    transform: translate3d(0, -50%, 0);
-  }
+}
