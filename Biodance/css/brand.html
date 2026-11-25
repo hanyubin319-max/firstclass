@@ -184,7 +184,7 @@
       let nearestDistance = Infinity;
 
       targets.forEach((target, index) => {
-        const distance = Math.abs(target.getBoundingClientRect().top + currentY);
+        const distance = Math.abs(target.getBoundingClientRect().top);
         if (distance < nearestDistance) {
           nearestDistance = distance;
           currentIndex = index;
