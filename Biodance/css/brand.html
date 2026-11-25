@@ -140,5 +140,28 @@
             </div>
         </footer>
 </div>
+
+<script>
+  // 각 브랜드 스토리 섹션이 화면에 들어오면 텍스트를 아래에서 위로 등장시킵니다.
+  document.documentElement.classList.add("brand-story-motion-ready");
+
+  const brandStorySections = document.querySelectorAll(
+    ".brand-story-page-section.page-2, .brand-story-page-section.page-3, .brand-story-page-section.page-4, .brand-story-page-section.page-5"
+  );
+
+  const brandStoryObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.querySelector(".brand-story-content")?.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.25
+  });
+
+  brandStorySections.forEach((section) => brandStoryObserver.observe(section));
+</script>
+
 </body>
 </html>
