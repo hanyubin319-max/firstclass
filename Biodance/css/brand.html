@@ -157,6 +157,109 @@
 
 
 
+<script>
+  (() => {
+    const panels = [
+      ...document.querySelectorAll(".brand-story-page-section"),
+      document.querySelector("#wrap > .biodance-footer")
+    ].filter(Boolean);
+
+    if (panels.length < 2) return;
+
+    let wheelDelta = 0;
+    let wheelTimer = 0;
+    let animating = false;
+    let frameId = 0;
+
+    const nearestPanelIndex = () => {
+      let nearest = 0;
+      let distance = Infinity;
+      panels.forEach((panel, index) => {
+        const currentDistance = Math.abs(panel.getBoundingClientRect().top);
+        if (currentDistance < distance) {
+          distance = currentDistance;
+          nearest = index;
+        }
+      });
+      return nearest;
+    };
+
+    const animateToPanel = (index) => {
+      const destination = Math.round(window.scrollY + panels[index].getBoundingClientRect().top);
+      const origin = window.scrollY;
+      const distance = destination - origin;
+      if (Math.abs(distance) < 2) return;
+
+      animating = true;
+      document.documentElement.classList.add("is-wheel-animating");
+      const duration = 950;
+      const startedAt = performance.now();
+
+      const step = (now) => {
+        const progress = Math.min((now - startedAt) / duration, 1);
+        const eased = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        window.scrollTo(0, origin + distance * eased);
+
+        if (progress < 1) {
+          frameId = requestAnimationFrame(step);
+        } else {
+          window.scrollTo(0, destination);
+          document.documentElement.classList.remove("is-wheel-animating");
+          animating = false;
+          frameId = 0;
+        }
+      };
+
+      frameId = requestAnimationFrame(step);
+    };
+
+    window.addEventListener("wheel", (event) => {
+      if (event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      const direction = Math.sign(event.deltaY);
+      if (!direction) return;
+
+      const currentIndex = nearestPanelIndex();
+      const nextIndex = currentIndex + direction;
+      if (nextIndex < 0 || nextIndex >= panels.length) return;
+
+      event.preventDefault();
+      if (animating) return;
+
+      wheelDelta += event.deltaY;
+      window.clearTimeout(wheelTimer);
+      wheelTimer = window.setTimeout(() => {
+        if (Math.abs(wheelDelta) >= 12) {
+          const targetDirection = Math.sign(wheelDelta);
+          const index = nearestPanelIndex();
+          const targetIndex = Math.max(0, Math.min(panels.length - 1, index + targetDirection));
+          if (targetIndex !== index) animateToPanel(targetIndex);
+        }
+        wheelDelta = 0;
+      }, 100);
+    }, { passive: false });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      if (!["ArrowDown", "ArrowUp", "PageDown", "PageUp", " "].includes(event.key)) return;
+      if (event.target && /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
+      if (animating) {
+        event.preventDefault();
+        return;
+      }
+      const direction = event.key === "ArrowUp" || event.key === "PageUp" ? -1 : 1;
+      const next = nearestPanelIndex() + direction;
+      if (next >= 0 && next < panels.length) {
+        event.preventDefault();
+        animateToPanel(next);
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
