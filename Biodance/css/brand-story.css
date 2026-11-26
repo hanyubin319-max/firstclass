@@ -122,9 +122,9 @@ body,
 }
 
 /* 페이지별 텍스트 컬러 */
-.page-2 .brand-story-content { color: #9DBBA3; }
-.page-3 .brand-story-content { color: var(--brand-rose, #FD7E9E); }
-.page-4 .brand-story-content { color: var(--sale, #F8A48A); }
+.page-2 .brand-story-content { color: var(--teal-mint, #5AD8CC); }
+.page-3 .brand-story-content { color: var(--teal-mint, #5AD8CC); }
+.page-4 .brand-story-content { color: var(--teal-mint, #5AD8CC); }
 .page-5 .brand-story-content { color: var(--teal-mint, #5AD8CC); }
 
 /* 프레임이 맞닿는 안쪽 모서리에만 60px 라운드 적용 */
@@ -261,7 +261,7 @@ body,
 
 /* 2번 페이지 텍스트 컬러 */
 .page-2 .brand-story-content.content-charcoal {
-  color: #9DBBA3;
+  color: var(--teal-mint, #5AD8CC);
 }
 
 .brand-story-content-title,
