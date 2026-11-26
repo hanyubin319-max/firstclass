@@ -309,11 +309,19 @@ body,
   pointer-events: none;
 }
 
-/* Page 5: keep Brand-04 artwork 27px above the frame bottom */
-.brand-story-page-section.page-5 .brand-story-content-image {
-  top: auto;
-  bottom: 27px;
-  transform: translateX(-50%);
+/* Page 5: fix Brand-04 image position 27px from the bottom of its pink frame */
+.brand-story-page-section.page-5 .brand-story-frame:has(.brand-story-content-image) {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.brand-story-page-section.page-5 .brand-story-frame .brand-story-content-image {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 27px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
 }
 
 .brand-story-content-index {
