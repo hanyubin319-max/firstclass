@@ -78,3 +78,13 @@
   .key-ingredient-description{font-size:clamp(18px,4.5vw,30px)}
   .key-ingredients-disclaimer{margin-top:80px;padding:0 16px}
 }
+
+
+.key-ingredient-note{
+  margin:0 0 15px;
+  color:var(--neutral-charcoal);
+  font-size:14px;
+  font-weight:400;
+  line-height:1.5;
+}
+.key-ingredients-list{margin-bottom:0}
