@@ -472,15 +472,15 @@ body,
 .brand-story-page8-content {
   position: absolute;
   z-index: 5;
-  top: auto;
-  bottom: 270px;
+  top: 50%;
+  bottom: auto;
   left: 125px;
   width: calc(100% - 250px);
   max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transform: none;
+  transform: translateY(-50%);
   color: #333333;
   text-align: left;
   font-family: var(--font-primary, "Pretendard Variable", sans-serif);
@@ -685,9 +685,11 @@ body,
 }
 .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
 .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
-.brand-story-motion-ready .brand-story-page-section .brand-story-page7-content,
-.brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
+.brand-story-motion-ready .brand-story-page-section .brand-story-page7-content {
   transform: translate3d(0, 42px, 0);
+}
+.brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
+  transform: translate3d(0, calc(-50% + 42px), 0);
 }
 .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content,
 .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content,
@@ -701,7 +703,7 @@ body,
 .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page7-content,
 .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page8-content {
   opacity: 1;
-  animation: brandStoryTextEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: brandStoryTextEnterCentered 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .brand-story-motion-ready .brand-story-page-section.page-2.is-active .brand-story-content,
 .brand-story-motion-ready .brand-story-page-section.page-3.is-active .brand-story-content,
