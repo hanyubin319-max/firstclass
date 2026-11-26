@@ -277,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function selectTopCategory(tab) {
+    currentPage = 1;
     activeTitle = tab.dataset.category;
     activeCategory = activeTitle;
     configureSortForCategory();
@@ -302,6 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   subTabs.forEach(tab => {
     tab.addEventListener('click', () => {
+      currentPage = 1;
       activeSubcategory = tab.dataset.subcategory;
       subTabs.forEach(item => item.classList.toggle('is-active', item === tab));
       renderProducts();
@@ -318,8 +320,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
   });
 
-  setFilter.addEventListener('change', renderProducts);
-  sort.addEventListener('change', renderProducts);
+  setFilter.addEventListener('change', () => { currentPage = 1; renderProducts(); });
+  sort.addEventListener('change', () => { currentPage = 1; renderProducts(); });
 
 
   const categoryParams = new URLSearchParams(window.location.search);
