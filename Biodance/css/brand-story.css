@@ -457,7 +457,7 @@ body,
 
 .brand-story-page8-background {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
   z-index: 0;
   display: block;
@@ -466,7 +466,7 @@ body,
   max-width: none;
   margin: 0;
   padding: 0;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .brand-story-page8-content {
