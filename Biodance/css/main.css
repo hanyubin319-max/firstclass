@@ -3714,24 +3714,14 @@ body {
     border-radius: 12px;
 }
 
-.model-pick-woni-badge {
-    position: absolute;
+.model-pick-grid .model-pick-image-frame .product-label {
     top: 9px;
-    left: 9px;
+    right: 9px;
+    left: auto;
     z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 58px;
+    width: 70px;
+    min-width: 70px;
     height: 22px;
-    box-sizing: border-box;
-    padding: 0 8px;
-    border-radius: 2px;
-    background: var(--brand-rose);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
     pointer-events: none;
 }
 
