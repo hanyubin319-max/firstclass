@@ -66,7 +66,7 @@
   line-height:1.5;
 }
 .key-ingredients-disclaimer{
-  margin:150px auto 0;
+  margin:150px auto 150px;
   color:var(--neutral-charcoal);
   font-size:12px;
   font-weight:400;
