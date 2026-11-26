@@ -99,14 +99,21 @@ body,
 }
 
 .brand-story-frame {
-  flex: 0 0 50%;
-  width: 50%;
-  max-width: 50%;
+  flex: 0 0 660px;
+  width: 660px;
+  max-width: 660px;
   min-width: 0;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* 이미지 프레임은 텍스트 프레임(660px)을 제외한 나머지 너비를 채움 */
+.brand-story-frame[class*="image-brand-"] {
+  flex: 1 1 0;
+  width: auto;
+  max-width: none;
 }
 
 /* 지정된 페이지별 이미지 */
@@ -120,7 +127,7 @@ body,
 .page-3 .frame-left,
 .page-4 .frame-right,
 .page-5 .frame-left {
-  background-color: rgba(255, 182, 193, 0.7);
+  background-color: var(--brand-pink);
 }
 
 /* 민트 배경 프레임 안의 텍스트는 모두 흰색 */
@@ -194,6 +201,24 @@ body,
 }
 
 @media (max-width: 700px) {
+  .brand-story-page-section.page-2 .brand-story-frame,
+  .brand-story-page-section.page-3 .brand-story-frame,
+  .brand-story-page-section.page-4 .brand-story-frame,
+  .brand-story-page-section.page-5 .brand-story-frame {
+    flex: 0 0 50%;
+    width: 50%;
+    max-width: 50%;
+  }
+
+  .brand-story-page-section.page-2 .brand-story-frame[class*="image-brand-"],
+  .brand-story-page-section.page-3 .brand-story-frame[class*="image-brand-"],
+  .brand-story-page-section.page-4 .brand-story-frame[class*="image-brand-"],
+  .brand-story-page-section.page-5 .brand-story-frame[class*="image-brand-"] {
+    flex: 0 0 50%;
+    width: 50%;
+    max-width: 50%;
+  }
+
   .brand-story-intro {
     top: 50%;
     left: 20px;
