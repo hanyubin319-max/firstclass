@@ -628,7 +628,7 @@ body,
 @media (max-width: 700px) {
   #wrap > .biodance-footer {
     height: auto;
-    min-height: 100svh;
+    min-height: calc(100svh - var(--brand-header-height, 0px));
     padding: 60px 20px 40px;
   }
 
