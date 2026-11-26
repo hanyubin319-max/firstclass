@@ -5396,3 +5396,29 @@ body {
         opacity: 1 !important;
     }
 }
+
+
+/* Final hero control alignment: navigation matches pagination height */
+.hero-sec .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal {
+    line-height: 1 !important;
+    margin-bottom: 20px !important;
+}
+.hero-sec .hero-controls .hero-navigation {
+    height: 20px !important;
+    min-height: 20px !important;
+    margin-bottom: 20px !important;
+    align-self: center;
+}
+.hero-sec .hero-controls .hero-navigation button.swiper-button-prev,
+.hero-sec .hero-controls .hero-navigation button.swiper-button-next {
+    height: 100% !important;
+}
+@media (max-width: 1024px) {
+    .hero-sec .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal {
+        font-size: 15px !important;
+    }
+    .hero-sec .hero-controls .hero-navigation {
+        height: 15px !important;
+        min-height: 15px !important;
+    }
+}
