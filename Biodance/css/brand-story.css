@@ -356,18 +356,18 @@ body,
 }
 
 .brand-story-content-title {
-  margin: 0 0 20px;
+  margin: 0;
   font-size: 60px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 100%;
   letter-spacing: -0.03em;
 }
 
 .brand-story-content-subtitle {
-  margin: 0 0 20px;
+  margin: 0;
   font-size: 40px;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 100%;
   letter-spacing: -0.03em;
 }
 
