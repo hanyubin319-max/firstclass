@@ -142,8 +142,36 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!wrapper.contains(event.target)) closeMenu();
     });
   }
+  const oldestOption = document.createElement('option');
+  oldestOption.value = 'oldest';
+  oldestOption.textContent = '오래된 순';
+  sort.appendChild(oldestOption);
+
   enhanceSelect(sort);
   enhanceSelect(setFilter);
+
+  function configureSortForCategory() {
+    const isAllProducts = activeTitle === '전체상품';
+    const newestOption = [...sort.options].find(option => option.value === 'newest');
+    if (newestOption) newestOption.textContent = isAllProducts ? '최신순' : '신상품';
+    [...sort.options].forEach(option => {
+      option.hidden = isAllProducts
+        ? !['newest', 'oldest'].includes(option.value)
+        : option.value === 'oldest';
+    });
+    const customMenu = sort.parentElement.querySelector('.custom-select-menu');
+    if (customMenu) {
+      [...customMenu.children].forEach(item => {
+        item.hidden = isAllProducts
+          ? !['newest', 'oldest'].includes(item.dataset.value)
+          : item.dataset.value === 'oldest';
+        if (item.dataset.value === 'newest') item.textContent = isAllProducts ? '최신순' : '신상품';
+      });
+    }
+    if (isAllProducts) sort.value = 'newest';
+    else if (sort.value === 'oldest') sort.value = 'recommended';
+    sort.dispatchEvent(new Event('change'));
+  }
 
   let activeTitle = 'Best';
   let activeCategory = 'Best';
@@ -174,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mode = sort.value;
     const sorted = [...visibleCards];
     if (mode === 'newest') sorted.sort((a, b) => Number(b.dataset.date || 0) - Number(a.dataset.date || 0));
+    if (mode === 'oldest') sorted.sort((a, b) => Number(a.dataset.date || 0) - Number(b.dataset.date || 0));
     if (mode === 'popular' || mode === 'recommended') sorted.sort((a, b) => Number(b.dataset.popularity || 0) - Number(a.dataset.popularity || 0));
     if (mode === 'price-low') sorted.sort((a, b) => Number(a.dataset.price || 0) - Number(b.dataset.price || 0));
     if (mode === 'price-high') sorted.sort((a, b) => Number(b.dataset.price || 0) - Number(a.dataset.price || 0));
@@ -200,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function selectTopCategory(tab) {
     activeTitle = tab.dataset.category;
     activeCategory = activeTitle;
+    configureSortForCategory();
     activeSubcategory = '';
     topTabs.forEach(item => {
       const selected = item === tab;
@@ -239,6 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (requestedCategory === '전체상품') {
     activeTitle = '전체상품';
     activeCategory = activeTitle;
+    configureSortForCategory();
     activeSubcategory = '';
     topTabs.forEach(item => {
       item.classList.remove('is-active');
