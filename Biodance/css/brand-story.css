@@ -309,6 +309,13 @@ body,
   pointer-events: none;
 }
 
+/* Page 5: keep Brand-04 artwork 27px above the frame bottom */
+.brand-story-page-section.page-5 .brand-story-content-image {
+  top: auto;
+  bottom: 27px;
+  transform: translateX(-50%);
+}
+
 .brand-story-content-index {
   display: block;
   margin: 0 0 20px;
