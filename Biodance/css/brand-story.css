@@ -121,6 +121,17 @@ body,
 .page-4 .image-brand-4 { background-image: url("../img/Brand-4.png"); }
 .page-5 .image-brand-5 { background-image: url("../img/Brand-5.png"); }
 
+/* 좌측 프레임은 크림 컬러로 통일 */
+.brand-story-frame.frame-left {
+  background-color: var(--cream, #F5F0E8);
+}
+
+/* 페이지별 텍스트 컬러 */
+.page-2 .brand-story-content { color: #9DBBA3; }
+.page-3 .brand-story-content { color: var(--rose, #E8A0A8); }
+.page-4 .brand-story-content { color: var(--sale, #F08A78); }
+.page-5 .brand-story-content { color: var(--teal-mint, #9AD8C8); }
+
 /* 프레임이 맞닿는 안쪽 모서리에만 60px 라운드 적용 */
 .page-2 .frame-left { border-bottom-right-radius: 60px; }
 .page-2 .frame-right { border-bottom-left-radius: 60px; }
