@@ -5422,3 +5422,11 @@ body {
         min-height: 15px !important;
     }
 }
+
+
+/* Homepage Woni's Pick cards are links to the full selection */
+.model-pick-grid a.model-pick-item {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
