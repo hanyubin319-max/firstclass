@@ -201,7 +201,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function sortCards(visibleCards) {
     const mode = sort.value;
     const sorted = [...visibleCards];
-    if (mode === 'newest') sorted.sort((a, b) => Number(b.dataset.date || 0) - Number(a.dataset.date || 0));
+    if (mode === 'newest') sorted.sort((a, b) => {
+      const aIsNew = [...a.querySelectorAll('.product-label')].some(label => label.textContent.trim().toUpperCase() === 'NEW');
+      const bIsNew = [...b.querySelectorAll('.product-label')].some(label => label.textContent.trim().toUpperCase() === 'NEW');
+      if (aIsNew !== bIsNew) return aIsNew ? -1 : 1;
+      return Number(b.dataset.date || 0) - Number(a.dataset.date || 0);
+    });
     if (mode === 'oldest') sorted.sort((a, b) => Number(a.dataset.date || 0) - Number(b.dataset.date || 0));
     if (mode === 'popular' || mode === 'recommended') sorted.sort((a, b) => Number(b.dataset.popularity || 0) - Number(a.dataset.popularity || 0));
     if (mode === 'price-low') sorted.sort((a, b) => Number(a.dataset.price || 0) - Number(b.dataset.price || 0));
@@ -223,20 +228,52 @@ document.addEventListener('DOMContentLoaded', () => {
       const trigger = customSort?.querySelector('.custom-select-trigger');
       if (trigger && selectedOption) trigger.textContent = selectedOption.textContent;
     }
+
     const filteredCards = sortCards(cards.filter(matchesCategory));
-    const visibleCards = activeSubcategory && activeSubcategory !== "Woni's Pick" ? filteredCards.slice(0, 5) : filteredCards;
-    cards.forEach(card => { card.hidden = !visibleCards.includes(card); });
-    visibleCards.forEach(card => grid.appendChild(card));
-    count.textContent = String(visibleCards.length);
-    empty.hidden = visibleCards.length !== 0;
-    grid.hidden = visibleCards.length === 0;
+    const columns = Math.max(1, getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length);
+    const pageSize = columns * 5;
+    const totalPages = Math.max(1, Math.ceil(filteredCards.length / pageSize));
+    currentPage = Math.min(Math.max(1, currentPage), totalPages);
+    const pageCards = filteredCards.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+    cards.forEach(card => { card.hidden = !pageCards.includes(card); });
+    pageCards.forEach(card => grid.appendChild(card));
+    count.textContent = String(filteredCards.length);
+    empty.hidden = filteredCards.length !== 0;
+    grid.hidden = filteredCards.length === 0;
     categoryTitle.textContent = activeTitle;
     setFilterWrap.hidden = activeTitle !== '단품/세트';
-    pagination.hidden = visibleCards.length === 0;
-    // Until a page-size setting is chosen, all available products remain on one page.
-    currentPage = 1;
-    pagination.querySelector('[data-page="1"]').textContent = '1';
-    pagination.querySelector('[data-page="1"]').classList.add('is-active');
+
+    pagination.hidden = filteredCards.length === 0;
+    if (filteredCards.length > 0) {
+      const pageButtons = [];
+      const prev = document.createElement('button');
+      prev.type = 'button';
+      prev.className = 'pagination-arrow';
+      prev.dataset.page = 'prev';
+      prev.setAttribute('aria-label', '이전 페이지');
+      prev.disabled = currentPage === 1;
+      pageButtons.push(prev);
+
+      for (let page = 1; page <= totalPages; page++) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'pagination-number' + (page === currentPage ? ' is-active' : '');
+        button.dataset.page = String(page);
+        button.textContent = String(page);
+        if (page === currentPage) button.setAttribute('aria-current', 'page');
+        pageButtons.push(button);
+      }
+
+      const next = document.createElement('button');
+      next.type = 'button';
+      next.className = 'pagination-arrow';
+      next.dataset.page = 'next';
+      next.setAttribute('aria-label', '다음 페이지');
+      next.disabled = currentPage === totalPages;
+      pageButtons.push(next);
+      pagination.replaceChildren(...pageButtons);
+    }
   }
 
   function selectTopCategory(tab) {
@@ -269,6 +306,16 @@ document.addEventListener('DOMContentLoaded', () => {
       subTabs.forEach(item => item.classList.toggle('is-active', item === tab));
       renderProducts();
     });
+  });
+
+  pagination.addEventListener('click', event => {
+    const button = event.target.closest('button[data-page]');
+    if (!button || button.disabled) return;
+    const page = button.dataset.page;
+    if (page === 'prev') currentPage = Math.max(1, currentPage - 1);
+    else if (page === 'next') currentPage += 1;
+    else currentPage = Number(page);
+    renderProducts();
   });
 
   setFilter.addEventListener('change', renderProducts);
