@@ -108,7 +108,7 @@ body,
 }
 
 /* 지정된 페이지별 이미지 */
-.page-2 .image-brand-2 { background-image: url("../img/Brand-2.png"); }
+.page-2 .image-brand-2 { background-image: url("../img/Brand-2.png?v=20261126"); }
 .page-3 .image-brand-3 { background-image: url("../img/Brand-3.png"); }
 .page-4 .image-brand-4 { background-image: url("../img/Brand-4.png"); }
 .page-5 .image-brand-5 { background-image: url("../img/Brand-5.png"); }
