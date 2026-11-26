@@ -148,7 +148,7 @@ body,
 
 .page-3 .brand-story-content,
 .page-5 .brand-story-content {
-  color: #D6336C;
+  color: var(--teal-mint);
 }
 
 /* 모든 이미지 프레임과 배경 프레임의 네 모서리 직각 처리 */
