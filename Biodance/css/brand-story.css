@@ -290,13 +290,23 @@ body,
   text-align: left;
 }
 
+.brand-story-frame:has(.brand-story-content-image) {
+  position: relative;
+  overflow: hidden;
+}
+
 .brand-story-content-image {
-  display: block;
-  width: 100%;
-  max-width: 360px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
   height: auto;
-  object-fit: contain;
-  margin: 0 0 24px;
+  max-width: none;
+  max-height: none;
+  display: block;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .brand-story-content-index {
