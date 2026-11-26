@@ -476,7 +476,7 @@ body,
 .brand-story-page8-content {
   position: absolute;
   z-index: 5;
-  top: 50%;
+  top: 56%;
   bottom: auto;
   left: 125px;
   width: calc(100% - 250px);
@@ -526,7 +526,7 @@ body,
 
 @media (max-width: 700px) {
   .brand-story-page8-content {
-    top: 50%;
+    top: 56%;
     left: 20px;
     width: calc(100% - 40px);
     transform: translateY(-50%);
