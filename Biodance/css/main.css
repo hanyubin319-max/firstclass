@@ -5404,8 +5404,8 @@ body {
     margin-bottom: 20px !important;
 }
 .hero-sec .hero-controls .hero-navigation {
-    height: 20px !important;
-    min-height: 20px !important;
+    height: 15px !important;
+    min-height: 15px !important;
     margin-bottom: 20px !important;
     align-self: center;
 }
