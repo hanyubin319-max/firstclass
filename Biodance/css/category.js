@@ -203,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sorted = [...visibleCards];
     if (mode === 'newest') sorted.sort((a, b) => Number(b.dataset.date || 0) - Number(a.dataset.date || 0));
     if (mode === 'oldest') sorted.sort((a, b) => Number(a.dataset.date || 0) - Number(b.dataset.date || 0));
-    if (mode === 'oldest') sorted.sort((a, b) => Number(a.dataset.date || 0) - Number(b.dataset.date || 0));
     if (mode === 'popular' || mode === 'recommended') sorted.sort((a, b) => Number(b.dataset.popularity || 0) - Number(a.dataset.popularity || 0));
     if (mode === 'price-low') sorted.sort((a, b) => Number(a.dataset.price || 0) - Number(b.dataset.price || 0));
     if (mode === 'price-high') sorted.sort((a, b) => Number(b.dataset.price || 0) - Number(a.dataset.price || 0));
