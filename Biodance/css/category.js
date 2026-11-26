@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPage = 1;
 
   function matchesCategory(card) {
+    if (activeTitle === '전체상품') return true;
     if (activeTitle === 'Promotion' && activeSubcategory === "Woni's Pick") {
       return Boolean(card.querySelector('.product-label.label-woni-pick'));
     }
@@ -180,7 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderProducts() {
-    const visibleCards = sortCards(cards.filter(matchesCategory)).slice(0, activeSubcategory ? 5 : undefined);
+    const filteredCards = sortCards(cards.filter(matchesCategory));
+    const visibleCards = activeSubcategory && activeSubcategory !== "Woni's Pick" ? filteredCards.slice(0, 5) : filteredCards;
     cards.forEach(card => { card.hidden = !visibleCards.includes(card); });
     visibleCards.forEach(card => grid.appendChild(card));
     count.textContent = String(visibleCards.length);
@@ -234,7 +236,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const requestedCategory = categoryParams.get('category');
   const matchingTopTab = topTabs.find(tab => tab.dataset.category === requestedCategory);
   const matchingSubTab = subTabs.find(tab => tab.dataset.subcategory === requestedCategory);
-  if (matchingTopTab) {
+  if (requestedCategory === '전체상품') {
+    activeTitle = '전체상품';
+    activeCategory = activeTitle;
+    activeSubcategory = '';
+    topTabs.forEach(item => {
+      item.classList.remove('is-active');
+      item.setAttribute('aria-selected', 'false');
+    });
+    typeSubcategories.hidden = true;
+    concernSubcategories.hidden = true;
+    skinSubcategories.hidden = true;
+    promotionSubcategories.hidden = true;
+    renderProducts();
+  } else if (matchingTopTab) {
     selectTopCategory(matchingTopTab);
   } else if (matchingSubTab) {
     const parentTab = matchingSubTab.closest('#type-subcategories') ? document.querySelector('#tab-type') : matchingSubTab.closest('#concern-subcategories') ? document.querySelector('#tab-concern') : matchingSubTab.closest('#skin-subcategories') ? document.querySelector('#tab-skin') : topTabs.find(tab => tab.dataset.category === 'Promotion');
