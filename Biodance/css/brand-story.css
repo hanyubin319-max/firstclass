@@ -668,7 +668,9 @@ body,
 }
 
 #wrap > .biodance-footer .biodance-footer-nav-list {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   width: max-content;
   margin: 0;
 }
@@ -746,7 +748,9 @@ body,
   }
 
   #wrap > .biodance-footer .biodance-footer-nav-list {
-    display: contents;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
     flex: none;
     min-width: 0;
     width: auto;
@@ -871,9 +875,3 @@ html.is-wheel-animating {
   }
 }
 
-/* Brand Story footer: consistent compact spacing between every navigation link */
-@media (max-width: 1100px) {
-  #wrap > .biodance-footer .biodance-footer-nav-frame {
-    gap: 12px !important;
-  }
-}
