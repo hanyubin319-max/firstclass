@@ -203,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sorted = [...visibleCards];
     if (mode === 'newest') sorted.sort((a, b) => Number(b.dataset.date || 0) - Number(a.dataset.date || 0));
     if (mode === 'oldest') sorted.sort((a, b) => Number(a.dataset.date || 0) - Number(b.dataset.date || 0));
+    if (mode === 'oldest') sorted.sort((a, b) => Number(a.dataset.date || 0) - Number(b.dataset.date || 0));
     if (mode === 'popular' || mode === 'recommended') sorted.sort((a, b) => Number(b.dataset.popularity || 0) - Number(a.dataset.popularity || 0));
     if (mode === 'price-low') sorted.sort((a, b) => Number(a.dataset.price || 0) - Number(b.dataset.price || 0));
     if (mode === 'price-high') sorted.sort((a, b) => Number(b.dataset.price || 0) - Number(a.dataset.price || 0));
@@ -210,6 +211,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderProducts() {
+    const isAllProducts = activeTitle === '전체상품';
+    const allowedSorts = isAllProducts ? ['newest', 'oldest'] : ['recommended', 'newest', 'popular', 'price-low', 'price-high'];
+    [...sort.options].forEach(option => { option.hidden = !allowedSorts.includes(option.value); });
+    const customSort = sort.closest('.custom-select');
+    if (customSort) {
+      customSort.querySelectorAll('.custom-select-option').forEach(option => { option.hidden = !allowedSorts.includes(option.dataset.value); });
+    }
+    if (!allowedSorts.includes(sort.value)) {
+      sort.value = isAllProducts ? 'newest' : 'recommended';
+      const selectedOption = sort.selectedOptions[0];
+      const trigger = customSort?.querySelector('.custom-select-trigger');
+      if (trigger && selectedOption) trigger.textContent = selectedOption.textContent;
+    }
     const filteredCards = sortCards(cards.filter(matchesCategory));
     const visibleCards = activeSubcategory && activeSubcategory !== "Woni's Pick" ? filteredCards.slice(0, 5) : filteredCards;
     cards.forEach(card => { card.hidden = !visibleCards.includes(card); });
