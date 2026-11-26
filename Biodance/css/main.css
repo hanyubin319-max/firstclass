@@ -99,16 +99,7 @@ body {
 }
 .hero-sec .hero-controls .swiper-pagination {
     position: static;
-    
-    
-    
-    
-    
-    color: var(--text-secondary);
-    font-family: var(--font-primary);
-    
-    
-    
+    margin-bottom: 20px;
 }
 .hero-sec .hero-pagination-divider {
     display: block;
@@ -120,7 +111,7 @@ body {
 .hero-sec .hero-navigation {
     display: flex;
     align-items: center;
-    
+    margin-bottom: 20px;
 }
 .hero-sec .hero-navigation .swiper-button-prev,
 .hero-sec .hero-navigation .swiper-button-next {
