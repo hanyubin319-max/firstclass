@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const typeSubcategories = document.querySelector('#type-subcategories');
   const concernSubcategories = document.querySelector('#concern-subcategories');
   const skinSubcategories = document.querySelector('#skin-subcategories');
+  const promotionSubcategories = document.querySelector('#promotion-subcategories');
 
   // Replace native select menus with accessible custom dropdowns so option hover/selection can use the brand mint.
   function enhanceSelect(select) {
@@ -154,6 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (activeTitle === '단품/세트') {
       return setFilter.value === 'all' || card.dataset.productType === setFilter.value;
     }
+    if (activeTitle === 'Promotion') {
+      return Boolean(activeSubcategory) && card.dataset.promotionGroup === activeSubcategory;
+    }
+    if (activeTitle === '공식몰 단독기획') return card.dataset.topCategory === activeTitle;
+    if (activeSubcategory) {
+      const values = (card.dataset[activeTitle === '유형별' ? 'subcategory' : activeTitle === '고민별' ? 'concerns' : 'skinTypes'] || '').split('|');
+      return values.includes(activeSubcategory);
+    }
     return true;
   }
 
@@ -195,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     typeSubcategories.hidden = activeTitle !== '유형별' && activeTitle !== '단품/세트';
     concernSubcategories.hidden = activeTitle !== '고민별';
     skinSubcategories.hidden = activeTitle !== '피부타입별';
+    promotionSubcategories.hidden = activeTitle !== 'Promotion';
     document.querySelector('#tab-type').setAttribute('aria-expanded', String(!typeSubcategories.hidden));
     document.querySelector('#tab-concern').setAttribute('aria-expanded', String(!concernSubcategories.hidden));
     document.querySelector('#tab-skin').setAttribute('aria-expanded', String(!skinSubcategories.hidden));
@@ -224,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (matchingTopTab) {
     selectTopCategory(matchingTopTab);
   } else if (matchingSubTab) {
-    const parentTab = matchingSubTab.closest('#type-subcategories') ? document.querySelector('#tab-type') : matchingSubTab.closest('#concern-subcategories') ? document.querySelector('#tab-concern') : document.querySelector('#tab-skin');
+    const parentTab = matchingSubTab.closest('#type-subcategories') ? document.querySelector('#tab-type') : matchingSubTab.closest('#concern-subcategories') ? document.querySelector('#tab-concern') : matchingSubTab.closest('#skin-subcategories') ? document.querySelector('#tab-skin') : topTabs.find(tab => tab.dataset.category === 'Promotion');
     selectTopCategory(parentTab);
     matchingSubTab.click();
   } else {
