@@ -57,7 +57,7 @@ body,
 .brand-story-page-section.page-6,
 .brand-story-page-section.page-7,
 .brand-story-page-section.page-8 {
-  background-color: var(--teal-mint, #5AD8CC);
+  background-color: #FFFFFF;
 }
 /* Brand Story footer: keep the shared footer layout, but remove the gap and rounded cutout */
 #wrap > .biodance-footer {
@@ -434,7 +434,7 @@ body,
 .brand-story-page-section.page-8 {
   position: relative;
   isolation: isolate;
-  background-color: var(--teal-mint, #5AD8CC);
+  background-color: #FFFFFF;
 }
 
 .brand-story-page8-background {
