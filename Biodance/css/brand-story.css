@@ -290,9 +290,9 @@ body,
   color: #333333;
 }
 
-/* 2번 페이지 텍스트는 흰색으로 표시 */
+/* 2번 페이지 텍스트 컬러 */
 .page-2 .brand-story-content.content-charcoal {
-  color: #FFFFFF;
+  color: #9DBBA3;
 }
 
 .brand-story-content-title,
