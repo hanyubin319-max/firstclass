@@ -147,7 +147,9 @@ body,
 
 .brand-story-intro {
   position: absolute;
+  top: 50%;
   left: 125px;
+  transform: translateY(-50%);
   width: min(1200px, calc(100% - 250px));
   margin: 0;
   color: #FFFFFF;
@@ -192,7 +194,9 @@ body,
 
 @media (max-width: 700px) {
   .brand-story-intro {
+    top: 50%;
     left: 20px;
+    transform: translateY(-50%);
     width: calc(100% - 40px);
     margin: 0;
   }
@@ -684,6 +688,9 @@ body,
   will-change: opacity, transform;
 }
 .brand-story-motion-ready .brand-story-page-section .brand-story-intro,
+.brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
+  transform: translate3d(0, calc(-50% + 42px), 0);
+}
 .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
 .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content {
   transform: translate3d(0, 42px, 0);
@@ -699,11 +706,14 @@ body,
 }
 .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-intro,
 .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-content,
-.brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page6-copy,
-.brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page7-content,
 .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page8-content {
   opacity: 1;
   animation: brandStoryTextEnterCentered 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page6-copy,
+.brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page7-content {
+  opacity: 1;
+  animation: brandStoryTextEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .brand-story-motion-ready .brand-story-page-section.page-2.is-active .brand-story-content,
 .brand-story-motion-ready .brand-story-page-section.page-3.is-active .brand-story-content,
