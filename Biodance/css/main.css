@@ -5398,15 +5398,15 @@ body {
 }
 
 
-/* Final hero control alignment: navigation matches pagination height */
+/* Final hero control alignment: equal heights and 10px bottom spacing */
 .hero-sec .hero-controls .swiper-pagination.swiper-pagination-fraction.swiper-pagination-horizontal {
     line-height: 1 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 10px !important;
 }
 .hero-sec .hero-controls .hero-navigation {
-    height: 15px !important;
-    min-height: 15px !important;
-    margin-bottom: 20px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    margin-bottom: 10px !important;
     align-self: center;
 }
 .hero-sec .hero-controls .hero-navigation button.swiper-button-prev,
