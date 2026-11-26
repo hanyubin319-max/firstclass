@@ -143,6 +143,26 @@
 
 <script>
   (() => {
+    const root = document.documentElement;
+    const syncHeaderHeight = () => {
+      const header = document.querySelector(".site-header");
+      if (!header) return false;
+      const height = Math.ceil(header.getBoundingClientRect().height);
+      root.style.setProperty("--brand-header-height", height + "px");
+      return true;
+    };
+
+    if (syncHeaderHeight()) return;
+    const observer = new MutationObserver(() => {
+      if (syncHeaderHeight()) observer.disconnect();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    window.addEventListener("resize", syncHeaderHeight);
+  })();
+</script>
+
+<script>
+  (() => {
     const sections = document.querySelectorAll(".brand-story-page-section");
     if (!sections.length || !("IntersectionObserver" in window)) return;
     document.documentElement.classList.add("brand-story-motion-ready");
@@ -175,7 +195,8 @@
       let nearest = 0;
       let distance = Infinity;
       panels.forEach((panel, index) => {
-        const currentDistance = Math.abs(panel.getBoundingClientRect().top);
+        const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--brand-header-height")) || 0;
+        const currentDistance = Math.abs(panel.getBoundingClientRect().top - headerHeight);
         if (currentDistance < distance) {
           distance = currentDistance;
           nearest = index;
@@ -185,7 +206,8 @@
     };
 
     const animateToPanel = (index) => {
-      const destination = Math.round(window.scrollY + panels[index].getBoundingClientRect().top);
+      const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--brand-header-height")) || 0;
+      const destination = Math.round(window.scrollY + panels[index].getBoundingClientRect().top - headerHeight);
       const origin = window.scrollY;
       const distance = destination - origin;
       if (Math.abs(distance) < 2) return;
