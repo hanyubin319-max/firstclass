@@ -1,0 +1,24 @@
+/* Biodance Key Ingredients page */
+.key-ingredients-page{width:100%;color:var(--neutral-charcoal);background:var(--neutral-white);font-family:var(--font-primary)}
+.key-ingredients-page *{box-sizing:border-box}
+.key-ingredients-intro{display:flex;width:100%;justify-content:center;margin-top:150px;padding:0 20px}
+.key-ingredients-intro h1{margin:0;color:var(--neutral-charcoal);font-size:48px;font-weight:500;line-height:1.2;text-align:center}
+.key-ingredients-list{display:flex;width:1350px;max-width:calc(100% - 48px);flex-direction:column;gap:100px;margin:80px auto 150px}
+.key-ingredient-card{display:flex;width:100%;height:543px;flex:0 0 543px;overflow:hidden;border:3px solid var(--neutral-border-gray);border-radius:60px}
+.key-ingredient-image{display:flex;width:500px;min-width:0;height:100%;flex:0 0 500px;align-items:center;justify-content:center;overflow:hidden}
+.key-ingredient-image img{display:block;width:100%;height:100%;object-fit:cover}
+.key-ingredient-copy{width:844px;min-width:0;height:100%;flex:0 0 844px;background:var(--neutral-cream)}
+@media(max-width:1400px){
+ .key-ingredients-list{width:calc(100% - 48px)}
+ .key-ingredient-card{height:auto;min-height:40.22vw}
+ .key-ingredient-image{width:37.04%;flex-basis:37.04%}
+ .key-ingredient-copy{width:62.52%;flex-basis:62.52%}
+}
+@media(max-width:700px){
+ .key-ingredients-intro{margin-top:100px;padding:0 16px}
+ .key-ingredients-intro h1{font-size:clamp(26px,7vw,36px)}
+ .key-ingredients-list{width:calc(100% - 32px);max-width:none;gap:40px;margin:48px auto 80px}
+ .key-ingredient-card{min-height:0;height:auto;flex-direction:column;border-radius:32px}
+ .key-ingredient-image{width:100%;height:auto;aspect-ratio:500/270;flex:0 0 auto}
+ .key-ingredient-copy{width:100%;height:240px;flex:0 0 240px}
+}
