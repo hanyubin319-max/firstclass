@@ -101,6 +101,7 @@ body {
     position: static;
     width: auto;
     flex: 0 0 auto;
+    line-height: 1;
     margin: 0 20px 20px 0;
 }
 .hero-sec .hero-pagination-divider {
@@ -113,6 +114,7 @@ body {
 .hero-sec .hero-navigation {
     display: flex;
     flex: 0 0 auto;
+    height: 1em;
     align-items: center;
     margin: 0 0 20px;
 }
@@ -121,7 +123,7 @@ body {
     position: static;
     display: flex;
     width: 24px;
-    height: 32px;
+    height: 100%;
     margin: 0;
     padding: 0;
     align-items: center;
