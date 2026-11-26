@@ -138,13 +138,13 @@ body,
   border-radius: 0;
 }
 
-.page-2 .image-brand-2,
-.page-4 .image-brand-4 {
+.brand-story-page-section.page-2 .image-brand-2,
+.brand-story-page-section.page-4 .image-brand-4 {
   border-bottom-right-radius: 120px;
 }
 
-.page-3 .image-brand-3,
-.page-5 .image-brand-5 {
+.brand-story-page-section.page-3 .image-brand-3,
+.brand-story-page-section.page-5 .image-brand-5 {
   border-bottom-left-radius: 120px;
 }
 
