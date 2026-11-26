@@ -251,25 +251,6 @@ body,
   color: #FFFFFF;
 }
 
-.brand-story-content::before,
-.brand-story-content::after {
-  content: "";
-  display: block;
-  flex: 0 0 2px;
-  width: 653px;
-  max-width: 100%;
-  height: 2px;
-  background-color: #FFFFFF;
-}
-
-.brand-story-content::before {
-  margin-bottom: 30px;
-}
-
-.brand-story-content::after {
-  margin-top: 30px;
-}
-
 .brand-story-content.content-right {
   right: 125px;
   align-items: flex-end;
