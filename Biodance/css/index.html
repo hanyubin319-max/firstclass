@@ -173,28 +173,28 @@
                         <article class="model-pick-item">
                             <div class="model-pick-image-frame"><img src="../img/pick-5.png" alt="포어 퍼펙팅 콜라겐 펩타이드 듀오"><span class="product-label label-woni-pick">원이PICK</span></div>
                             <div class="model-pick-info">
-                                <p class="model-pick-name">[원이PICK/화잘먹듀오] 포어 퍼펙팅 콜라겐 펩타이드 듀오</p>
+                                <p class="model-pick-name">[원이PICK/화잘먹듀오] 포어 퍼펙...</p>
                                 <p class="model-pick-price">71,000</p>
                             </div>
                         </article>
                         <article class="model-pick-item">
                             <div class="model-pick-image-frame"><img src="../img/pick-6.png" alt="화잘먹 세럼 포어 퍼펙팅 콜라겐 펩타이드 세럼 30ml"><span class="product-label label-woni-pick">원이PICK</span></div>
                             <div class="model-pick-info">
-                                <p class="model-pick-name">[원이PICK] 화잘먹 세럼 포어 퍼펙팅 콜라겐 펩타이드 세럼 30ml</p>
+                                <p class="model-pick-name">[원이PICK] 화잘먹 세럼 포어 퍼펙...</p>
                                 <p class="model-pick-price">32,000</p>
                             </div>
                         </article>
                         <article class="model-pick-item">
                             <div class="model-pick-image-frame"><img src="../img/pick-7.png" alt="콜라겐 더블 케어 SET (마스크+세럼)"><span class="product-label label-woni-pick">원이PICK</span></div>
                             <div class="model-pick-info">
-                                <p class="model-pick-name">[원이PICK] 콜라겐 더블 케어 SET (마스크+세럼)</p>
+                                <p class="model-pick-name">[원이PICK] 콜라겐 더블 케어 SE...</p>
                                 <p class="model-pick-price">72,000</p>
                             </div>
                         </article>
                         <article class="model-pick-item">
                             <div class="model-pick-image-frame"><img src="../img/pick-8.png" alt="콜라겐 펩타이드 젤리 세럼 미스트 50ml"><span class="product-label label-woni-pick">원이PICK</span></div>
                             <div class="model-pick-info">
-                                <p class="model-pick-name">[원이PICK] 콜라겐 펩타이드 젤리 세럼 미스트 50ml</p>
+                                <p class="model-pick-name">[원이PICK] 콜라겐 펩타이드 젤리...</p>
                                 <p class="model-pick-price">19,000</p>
                             </div>
                         </article>
@@ -280,16 +280,16 @@
             const modelPickInfo = document.querySelectorAll('.model-pick-grid .model-pick-item .model-pick-info');
             const modelPickText = [
                 [
-                    { name: '[원이PICK/화잘먹듀오] 포어 퍼펙...', price: '71,000' },
-                    { name: '[원이PICK] 화잘먹 세럼 포어 퍼펙...', price: '32,000' },
-                    { name: '[원이PICK] 콜라겐 더블 케어 SE...', price: '72,000' },
-                    { name: '[원이PICK] 콜라겐 펩타이드 젤리...', price: '19,000' },
+                    '[원이PICK/화잘먹듀오] 포어 퍼펙...',
+                    '[원이PICK] 화잘먹 세럼 포어 퍼펙...',
+                    '[원이PICK] 콜라겐 더블 케어 SE...',
+                    '[원이PICK] 콜라겐 펩타이드 젤리...',
                 ],
                 [
-                    { name: '[공식몰1등/원이PICK] [16매/32...', price: '80,000' },
-                    { name: '[15매입] 리얼 딥 마스크 버라이어...', price: '75,000' },
-                    { name: '낮밤 콜라겐 세트(마스크+패드)', price: '46,000' },
-                    { name: '[15매입] 리얼 딥 마스크 버라이...', price: '75,000' },
+                    '[공식몰1등/원이PICK] [16매/32...',
+                    '[15매입] 리얼 딥 마스크 버라이어...',
+                    '낮밤 콜라겐 세트(마스크+패드)',
+                    '[15매입] 리얼 딥 마스크 버라이...',
                 ],
             ];
             let isRotating = false;
@@ -365,8 +365,7 @@
                         modelPickImages.splice(0, modelPickImages.length, ...nextLayers);
                         isAlternatePick = nextIsAlternatePick;
                         modelPickInfo.forEach((info, index) => {
-                            info.querySelector('.model-pick-name').textContent = modelPickText[Number(isAlternatePick)][index].name;
-                            info.querySelector('.model-pick-price').textContent = modelPickText[Number(isAlternatePick)][index].price;
+                            info.querySelector('.model-pick-name').textContent = modelPickText[Number(isAlternatePick)][index];
                         });
                         modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
                         isRotating = false;
