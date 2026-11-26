@@ -243,7 +243,7 @@ body,
   display: flex;
   flex-direction: column;
   gap: 0;
-  width: 660px;
+  width: min(410px, calc(50% - 250px));
   max-width: calc(100% - 48px);
   transform: translateY(-50%);
   padding: 0;
@@ -284,10 +284,9 @@ body,
 
 .brand-story-content-index {
   display: block;
-  align-self: center;
   margin: 0 0 20px;
   font: inherit;
-  text-align: center;
+  text-align: inherit;
 }
 
 .brand-story-content-title,
