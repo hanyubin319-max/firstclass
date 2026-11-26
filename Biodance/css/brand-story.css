@@ -113,12 +113,12 @@ body,
 .page-4 .image-brand-4 { background-image: url("../img/Brand-4.png"); }
 .page-5 .image-brand-5 { background-image: url("../img/Brand-5.png?v=20261126"); }
 
-/* 이미지 옆 단색 배경 프레임: 민트 70% 투명도 */
+/* 이미지 옆 단색 배경 프레임: 흰색 */
 .page-2 .frame-right,
 .page-3 .frame-left,
 .page-4 .frame-right,
 .page-5 .frame-left {
-  background-color: rgba(90, 216, 204, 0.7);
+  background-color: #FFFFFF;
 }
 
 /* 민트 배경 프레임 안의 텍스트는 모두 흰색 */
