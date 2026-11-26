@@ -908,3 +908,10 @@ html.is-wheel-animating {
   }
 }
 
+/* 브랜드 스토리 2~5번 박스 제목 행간 */
+.brand-story-page-section.page-2 .brand-story-content-title,
+.brand-story-page-section.page-3 .brand-story-content-title,
+.brand-story-page-section.page-4 .brand-story-content-title,
+.brand-story-page-section.page-5 .brand-story-content-title {
+  line-height: 120%;
+}
