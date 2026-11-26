@@ -121,7 +121,7 @@
   font-size: 16px;
   cursor: pointer;
 }
-.category-subtab:hover, .category-subtab.is-active {
+.category-subtab.is-active {
   background: var(--teal-mint);
   border-color: var(--teal-mint);
   color: var(--neutral-white);
