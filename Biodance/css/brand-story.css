@@ -270,8 +270,9 @@ body,
   display: flex;
   flex-direction: column;
   gap: 0;
-  width: 410px;
-  max-width: calc(100% - 48px);
+  width: auto;
+  max-width: 410px;
+  height: auto;
   transform: translateY(-50%);
   padding: 0;
   font-family: var(--font-primary, "Pretendard Variable", sans-serif);
@@ -389,8 +390,9 @@ body,
 @media (max-width: 700px) {
   /* 모바일에서는 텍스트를 각 50% 패널 안에만 배치 */
   .brand-story-content {
-    width: calc(50% - 36px);
+    width: auto;
     max-width: calc(50% - 36px);
+    height: auto;
   }
 
   .brand-story-content.content-right {
