@@ -121,16 +121,19 @@ body,
 .page-4 .image-brand-4 { background-image: url("../img/Brand-4.png"); }
 .page-5 .image-brand-5 { background-image: url("../img/Brand-5.png"); }
 
-/* 좌측 프레임은 크림 컬러로 통일 */
-.brand-story-frame.frame-left {
-  background-color: var(--cream, #F5F0E8);
+/* 이미지 옆에 배치된 단색 배경 프레임은 모두 크림 컬러 */
+.page-2 .frame-right,
+.page-3 .frame-left,
+.page-4 .frame-right,
+.page-5 .frame-left {
+  background-color: var(--neutral-cream, #FEFAF7);
 }
 
 /* 페이지별 텍스트 컬러 */
 .page-2 .brand-story-content { color: #9DBBA3; }
-.page-3 .brand-story-content { color: var(--rose, #E8A0A8); }
-.page-4 .brand-story-content { color: var(--sale, #F08A78); }
-.page-5 .brand-story-content { color: var(--teal-mint, #9AD8C8); }
+.page-3 .brand-story-content { color: var(--brand-rose, #FD7E9E); }
+.page-4 .brand-story-content { color: var(--sale, #F8A48A); }
+.page-5 .brand-story-content { color: var(--teal-mint, #5AD8CC); }
 
 /* 프레임이 맞닿는 안쪽 모서리에만 60px 라운드 적용 */
 .page-2 .frame-left { border-bottom-right-radius: 60px; }
@@ -243,31 +246,19 @@ body,
 }
 
 
-/* 2~5번 페이지의 지정 프레임 컬러 */
-.brand-story-frame.frame-left {
-  background-color: var(--cream);
-}
-
-.page-2 .frame-right {
-  background-color: #9DBBA3;
-}
-
-/* 2번 페이지 오른쪽 프레임의 텍스트 색상 */
-.page-2 .brand-story-content {
-  color: var(--sale);
-}
-
-.page-3 .frame-left {
-  background-color: rgba(253, 126, 158, 0.7);
-}
-
-.page-4 .frame-right {
-  background-color: rgba(248, 164, 138, 0.7);
-}
-
+/* 2~5번 페이지의 단색 배경 프레임은 크림 컬러로 통일 */
+.page-2 .frame-right,
+.page-3 .frame-left,
+.page-4 .frame-right,
 .page-5 .frame-left {
-  background-color: var(--teal-mint);
+  background-color: var(--neutral-cream, #FEFAF7);
 }
+
+/* 페이지별 텍스트 컬러 */
+.page-2 .brand-story-content { color: #9DBBA3; }
+.page-3 .brand-story-content { color: var(--brand-rose, #FD7E9E); }
+.page-4 .brand-story-content { color: var(--sale, #F8A48A); }
+.page-5 .brand-story-content { color: var(--teal-mint, #5AD8CC); }
 
 
 /* Brand Story pages 2~5 text panels */
