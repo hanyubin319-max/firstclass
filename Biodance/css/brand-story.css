@@ -3,7 +3,8 @@ html {
   width: 100%;
   min-height: 100%;
   overflow-x: clip;
-  overflow-y: auto;
+  overflow-y: overlay;
+  scrollbar-gutter: auto;
   scroll-behavior: auto;
   scroll-snap-type: y mandatory;
   scroll-padding-top: var(--brand-header-height, 0px);
@@ -476,7 +477,7 @@ body,
 .brand-story-page8-content {
   position: absolute;
   z-index: 5;
-  top: 56%;
+  top: 64%;
   bottom: auto;
   left: 125px;
   width: calc(100% - 250px);
@@ -526,7 +527,7 @@ body,
 
 @media (max-width: 700px) {
   .brand-story-page8-content {
-    top: 56%;
+    top: 64%;
     left: 20px;
     width: calc(100% - 40px);
     transform: translateY(-50%);
@@ -567,17 +568,16 @@ body,
 
 #wrap > .biodance-footer .biodance-footer-nav-frame {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 40px;
+  gap: 8px;
   width: max-content;
   margin: 0;
 }
 
 #wrap > .biodance-footer .biodance-footer-nav-list {
-  display: flex;
-  flex-direction: column;
+  display: contents;
   width: max-content;
   margin: 0;
 }
@@ -647,13 +647,14 @@ body,
 
   #wrap > .biodance-footer .biodance-footer-nav-frame {
     width: 100%;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    gap: 24px;
+    gap: 8px;
   }
 
   #wrap > .biodance-footer .biodance-footer-nav-list {
-    flex: 1 1 0;
+    display: contents;
+    flex: none;
     min-width: 0;
     width: auto;
   }
