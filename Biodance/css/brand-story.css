@@ -98,8 +98,9 @@ body,
 }
 
 .brand-story-frame {
-  flex: 1 1 50%;
-  width: 50%;
+  flex: 0 1 660px;
+  width: 660px;
+  max-width: 50%;
   min-width: 0;
   height: 100%;
   background-position: center;
@@ -118,15 +119,18 @@ body,
 .page-3 .frame-left,
 .page-4 .frame-right,
 .page-5 .frame-left {
-  background-color: rgba(90, 216, 204, 0.7);
+  background-color: rgba(255, 182, 193, 0.7);
 }
 
 /* 민트 배경 프레임 안의 텍스트는 모두 흰색 */
 .page-2 .brand-story-content,
-.page-3 .brand-story-content,
-.page-4 .brand-story-content,
-.page-5 .brand-story-content {
+.page-4 .brand-story-content {
   color: #FFFFFF;
+}
+
+.page-3 .brand-story-content,
+.page-5 .brand-story-content {
+  color: #D6336C;
 }
 
 /* Brand-2~5: 모서리는 기본 0, 지정된 이미지 모서리만 120px */
@@ -239,7 +243,8 @@ body,
   display: flex;
   flex-direction: column;
   gap: 0;
-  width: min(710px, calc(50% - 170px));
+  width: 660px;
+  max-width: calc(100% - 48px);
   transform: translateY(-50%);
   padding: 0;
   font-family: var(--font-primary, "Pretendard Variable", sans-serif);
@@ -275,6 +280,14 @@ body,
   left: 125px;
   align-items: flex-start;
   text-align: left;
+}
+
+.brand-story-content-index {
+  display: block;
+  align-self: center;
+  margin: 0 0 20px;
+  font: inherit;
+  text-align: center;
 }
 
 .brand-story-content-title,
@@ -318,7 +331,8 @@ body,
 
 @media (max-width: 700px) {
   .brand-story-content {
-    width: calc(50% - 48px);
+    width: calc(100% - 48px);
+    max-width: calc(100% - 48px);
   }
 
   .brand-story-content.content-right {
