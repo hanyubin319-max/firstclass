@@ -258,15 +258,6 @@ body,
   text-align: left;
 }
 
-.brand-story-content.content-charcoal {
-  color: #333333;
-}
-
-/* 2번 페이지 텍스트 컬러 */
-.page-2 .brand-story-content.content-charcoal {
-  color: var(--teal-mint, #5AD8CC);
-}
-
 .brand-story-content-title,
 .brand-story-content-subtitle,
 .brand-story-content-copy,
