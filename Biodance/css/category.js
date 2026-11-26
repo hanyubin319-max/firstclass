@@ -151,6 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentPage = 1;
 
   function matchesCategory(card) {
+    if (activeTitle === 'Promotion' && activeSubcategory === "Woni's Pick") {
+      return Boolean(card.querySelector('.product-label.label-woni-pick'));
+    }
     if (card.dataset.topCategory !== activeTitle) return false;
     if (activeTitle === '단품/세트') {
       return setFilter.value === 'all' || card.dataset.productType === setFilter.value;
