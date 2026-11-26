@@ -48,7 +48,7 @@ body,
   scroll-snap-stop: always;
 }
 
-/* 모든 전체 프레임의 기본 배경색 */
+/* 모든 섹션의 기본 배경색 */
 .brand-story-page-section.page-1,
 .brand-story-page-section.page-2,
 .brand-story-page-section.page-3,
@@ -57,7 +57,7 @@ body,
 .brand-story-page-section.page-6,
 .brand-story-page-section.page-7,
 .brand-story-page-section.page-8 {
-  background-color: #FFFFFF;
+  background-color: var(--teal-mint, #5AD8CC);
 }
 /* Brand Story footer: keep the shared footer layout, but remove the gap and rounded cutout */
 #wrap > .biodance-footer {
@@ -440,7 +440,7 @@ body,
 .brand-story-page-section.page-8 {
   position: relative;
   isolation: isolate;
-  background-color: #FFFFFF;
+  background-color: var(--teal-mint, #5AD8CC);
 }
 
 .brand-story-page8-background {
