@@ -277,6 +277,21 @@
 
         if (modelPickButton && modelPickImage && modelPickProductImages.length === 4) {
             let isAlternatePick = false;
+            const modelPickInfo = document.querySelectorAll('.model-pick-grid .model-pick-item .model-pick-info');
+            const modelPickText = [
+                [
+                    { name: '[원이PICK/화잘먹듀오] 포어 퍼펙팅 콜라겐 펩타이드 듀오', price: '71,000' },
+                    { name: '[원이PICK] 화잘먹 세럼 포어 퍼펙팅 콜라겐 펩타이드 세럼 30ml', price: '32,000' },
+                    { name: '[원이PICK] 콜라겐 더블 케어 SET (마스크+세럼)', price: '72,000' },
+                    { name: '[원이PICK] 콜라겐 펩타이드 젤리 세럼 미스트 50ml', price: '19,000' },
+                ],
+                [
+                    { name: '[공식몰1등/원이PICK] [16매/32매] 바이오 콜라겐 리얼 딥 마스크', price: '80,000' },
+                    { name: '[16매입] 리얼 딥 마스크 버라이어티 팩', price: '75,000' },
+                    { name: '낮밤 콜라겐 세럼(마스크+패드)', price: '46,000' },
+                    { name: '[15매입] 리얼 딥 마스크 버라이어티 팩', price: '75,000' },
+                ],
+            ];
             let isRotating = false;
             const modelPickImages = [modelPickImage, ...modelPickProductImages];
             const fadeDuration = 500;
@@ -349,6 +364,10 @@
 
                         modelPickImages.splice(0, modelPickImages.length, ...nextLayers);
                         isAlternatePick = nextIsAlternatePick;
+                        modelPickInfo.forEach((info, index) => {
+                            info.querySelector('.model-pick-name').textContent = modelPickText[Number(isAlternatePick)][index].name;
+                            info.querySelector('.model-pick-price').textContent = modelPickText[Number(isAlternatePick)][index].price;
+                        });
                         modelPickButton.setAttribute('aria-pressed', String(isAlternatePick));
                         isRotating = false;
                     }, fadeDuration + 50);
