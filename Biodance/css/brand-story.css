@@ -127,10 +127,10 @@ body,
 }
 
 /* 지정된 페이지별 이미지 */
-.page-2 .image-brand-2 { background-image: url("../img/Brand-2.png?v=20261126"); }
-.page-3 .image-brand-3 { background-image: url("../img/Brand-3.png"); }
-.page-4 .image-brand-4 { background-image: url("../img/Brand-4.png"); }
-.page-5 .image-brand-5 { background-image: url("../img/Brand-5.png?v=20261126"); }
+.page-2 .image-brand-2 { background-image: url("../img/Brand-01.png"); }
+.page-3 .image-brand-3 { background-image: url("../img/Brand-02.png"); }
+.page-4 .image-brand-4 { background-image: url("../img/Brand-03.png"); }
+.page-5 .image-brand-5 { background-image: url("../img/Brand-04.png"); }
 
 /* 이미지 옆 단색 배경 프레임: 브랜드 핑크 변수 적용 */
 .page-2 .frame-right,
