@@ -57,10 +57,10 @@
   align-items:center;
   justify-content:center;
   padding:0 12px;
-  border:1px solid var(--neutral-border-gray);
+  border:1px solid var(--neutral-gray);
   border-radius:6px;
   background:var(--neutral-white);
-  color:var(--neutral-border-gray);
+  color:var(--neutral-gray);
   font-size:16px;
   font-weight:400;
   line-height:1.5;
