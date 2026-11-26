@@ -122,9 +122,9 @@
   cursor: pointer;
 }
 .category-subtab:hover, .category-subtab.is-active {
-  background: var(--neutral-charcoal);
-  border-color: var(--neutral-charcoal);
-  color: var(--neutral-white);
+  background: var(--teal-mint);
+  border-color: var(--teal-mint);
+  color: var(--neutral-charcoal);
 }
 @media (max-width: 1024px) { .category-tabs { gap: 0; } }
 @media (max-width: 700px) {
