@@ -59,14 +59,6 @@ body,
 .brand-story-page-section.page-8 {
   background-color: #FFFFFF;
 }
-/* 마지막 브랜드 스토리 페이지 바로 다음에 푸터를 붙이고 바깥 여백 제거 */
-#wrap > .biodance-footer {
-  display: block;
-  width: 100%;
-  margin: 0 !important;
-}
-
-
 /* Brand Story footer: keep the shared footer layout, but remove the gap and rounded cutout */
 #wrap > .biodance-footer {
   position: relative;
@@ -153,14 +145,6 @@ body,
 .page-5 .frame-left { border-top-right-radius: 60px; }
 .page-5 .frame-right { border-top-left-radius: 60px; }
 
-/* 작은 화면에서는 두 프레임이 화면 너비의 절반씩 차지 */
-@media (max-width: 952px) {
-  .brand-story-frame {
-    flex-basis: 50%;
-  }
-}
-
-
 /* Brand Story page 1 text content */
 .brand-story-page-section.page-1 {
   display: flex;
@@ -244,21 +228,6 @@ body,
     display: none;
   }
 }
-
-
-/* 2~5번 페이지의 단색 배경 프레임은 크림 컬러로 통일 */
-.page-2 .frame-right,
-.page-3 .frame-left,
-.page-4 .frame-right,
-.page-5 .frame-left {
-  background-color: var(--neutral-cream, #FEFAF7);
-}
-
-/* 페이지별 텍스트 컬러 */
-.page-2 .brand-story-content { color: #9DBBA3; }
-.page-3 .brand-story-content { color: var(--brand-rose, #FD7E9E); }
-.page-4 .brand-story-content { color: var(--sale, #F8A48A); }
-.page-5 .brand-story-content { color: var(--teal-mint, #5AD8CC); }
 
 
 /* Brand Story pages 2~5 text panels */
@@ -730,9 +699,6 @@ body,
 .brand-story-motion-ready .brand-story-page-section .brand-story-page6-copy,
 .brand-story-motion-ready .brand-story-page-section .brand-story-page7-content {
   transform: translate3d(0, 42px, 0);
-}
-.brand-story-motion-ready .brand-story-page-section .brand-story-page8-content {
-  transform: translate3d(0, calc(-50% + 42px), 0);
 }
 .brand-story-motion-ready .brand-story-page-section.page-2 .brand-story-content,
 .brand-story-motion-ready .brand-story-page-section.page-3 .brand-story-content,
