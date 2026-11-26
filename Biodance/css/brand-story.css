@@ -508,7 +508,7 @@ body,
   color: #333333;
   font-size: 60px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: -0.03em;
 }
 
@@ -737,11 +737,13 @@ body,
 .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page8-content {
   opacity: 1;
   animation: brandStoryTextEnterCentered 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.35s;
 }
 .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page6-copy,
 .brand-story-motion-ready .brand-story-page-section.is-active .brand-story-page7-content {
   opacity: 1;
   animation: brandStoryTextEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.35s;
 }
 .brand-story-motion-ready .brand-story-page-section.page-2.is-active .brand-story-content,
 .brand-story-motion-ready .brand-story-page-section.page-3.is-active .brand-story-content,
