@@ -3,8 +3,9 @@ html {
   width: 100%;
   min-height: 100%;
   overflow-x: clip;
-  overflow-y: overlay;
+  overflow-y: auto;
   scrollbar-gutter: auto;
+  scrollbar-width: none;
   scroll-behavior: auto;
   scroll-snap-type: y mandatory;
   scroll-padding-top: var(--brand-header-height, 0px);
@@ -12,6 +13,13 @@ html {
 
 body {
   overflow-x: clip;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 body,
@@ -167,7 +175,7 @@ body,
   margin: 0 0 20px;
   font-size: 60px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.5;
   letter-spacing: -0.03em;
 }
 
@@ -569,11 +577,25 @@ body,
 #wrap > .biodance-footer .biodance-footer-nav-frame {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: flex-start;
-  gap: 8px;
+  gap: 0;
   width: max-content;
   margin: 0;
+  text-align: right;
+}
+
+#wrap > .biodance-footer .biodance-footer-nav-frame a {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+#wrap > .biodance-footer .biodance-footer-nav-frame a p {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
 }
 
 #wrap > .biodance-footer .biodance-footer-nav-list {
@@ -649,7 +671,9 @@ body,
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 0;
+    align-items: flex-start;
+    text-align: left;
   }
 
   #wrap > .biodance-footer .biodance-footer-nav-list {
