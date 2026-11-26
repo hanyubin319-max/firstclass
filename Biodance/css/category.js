@@ -142,11 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!wrapper.contains(event.target)) closeMenu();
     });
   }
-  const oldestOption = document.createElement('option');
-  oldestOption.value = 'oldest';
-  oldestOption.textContent = '오래된 순';
-  sort.appendChild(oldestOption);
-
   enhanceSelect(sort);
   enhanceSelect(setFilter);
 
